@@ -1,0 +1,19 @@
+:::: {.header-logos}
+::: {.grid}
+::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
+![](images/uidaho_logo.png){width=100px}
+:::
+::: {.g-col-7 .d-flex .justify-content-center .align-items-center}
+![](images/vandalizer_logo.png){width=500px}
+:::
+::: {.g-col-3 .d-flex .justify-content-center .align-items-center}
+![](images/suu_logo.png){width=200px}
+:::
+:::
+::::
+
+---
+
+::: {style="display: flex; justify-content: center; align-items: center; height: 400px;"}
+![](images/construction.png)
+:::

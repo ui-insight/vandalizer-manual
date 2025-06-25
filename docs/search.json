@@ -78,15 +78,5 @@
     "crumbs": [
       "Introduction"
     ]
-  },
-  {
-    "objectID": "tasks.html#types-of-tasks",
-    "href": "tasks.html#types-of-tasks",
-    "title": "Tasks",
-    "section": "Types of Tasks",
-    "text": "Types of Tasks\n\n\n\nExtraction tasks: Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e. any information that the user can expect using the ‘Find’ feature on a document processor like Microsoft Word.\nPrompt tasks: Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.\nFormatting tasks: Vandalizer structures its outputs into the format that the user requests, such as a table with a summary below it.\n\n\n\n\n\n\n\n\n\nIn the toolbox window, users can create tasks by clicking on the Chat tab at the top of the window. From there, users can either click on  Run a task or on the\n\n TASKS\n\nbutton",
-    "crumbs": [
-      "Tasks"
-    ]
   }
 ]
