@@ -36,9 +36,12 @@ Users choose which terms Vandalizer pulls from a document by typing them under �
 Users enter their query using natural language prompts in the “write your prompt here” box
 :::
 
+# Types of Tasks
+
 ::: {style="display: flex; align-items: center; gap: 2rem;"}
 
 ::: {style="flex: 3;"}
+
 1. **Extraction tasks:** Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e. any information that the user can expect using the 'Find' feature on a document processor like Microsoft Word.
 
 2. **Prompt tasks:** Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.

@@ -32,5 +32,6 @@ format:
   html:
     theme: sandstone
     css: styles.css
-    toc: false
+    toc: true
+    toc-location: left
     number-sections: false

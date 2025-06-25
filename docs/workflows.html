@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>steps – Vandalizer Wiki</title>
+<title>workflows – Vandalizer Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./workflow.qmd" rel="next">
+<link href="./example.html" rel="next">
 <link href="./tasks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar floating fullcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./steps.html">Steps</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./workflows.html">Workflows</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -140,14 +140,8 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./steps.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Steps</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./workflow.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Workflow</span></a>
+  <a href="./workflows.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Workflows</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,10 +158,18 @@ ul.task-list li input[type="checkbox"] {
 </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#workflows" id="toc-workflows" class="nav-link active" data-scroll-target="#workflows">Workflows</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/workflows.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
@@ -194,10 +196,24 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="images/workflow.png"></p>
 </div>
 </div>
-<section id="steps" class="level1 text-center">
-<h1>Steps</h1>
+<section id="workflows" class="level1 text-center">
+<h1>Workflows</h1>
 </section>
-<p><strong>Steps</strong></p>
+<p>A <strong>workflow</strong> is a coordinated assemblage of AI tasks, organized into steps that Vandalizer performs in sequence. Designing workflows can take some time and consideration, but their reproducibility can save RA offices substantial time, particularly for multi-step processes that will be repeated.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Steps
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All tasks within a step receive the same input and run independantly of each other</p>
+</div>
+</div>
+<p>Workflows arrange AI tasks into sequential groups called steps. The purpose of a step is to organize the inputs available to tasks. All tasks within a step receive the same input and all tasks within a step contribute to the step output. The outputs from an upstream step will inform the inputs for a downstream step. For example, a user might ask Vandalizer to extract key information from an NSF Notice of Award (Step 1), then format that information into a template (step 2). This workflow ensures that Vandalizer extracts the same information from each NSF NOA (step 1), and that the outputs are structured consistently, without duplicate information (step 2).</p>
 
 
 
@@ -608,8 +624,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workflow.qmd" class="pagination-link" aria-label="Workflow">
-        <span class="nav-page-text">Workflow</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./example.html" class="pagination-link" aria-label="Examples">
+        <span class="nav-page-text">Examples</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -618,4 +634,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/steps.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/workflows.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
