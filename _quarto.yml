@@ -21,10 +21,8 @@ website:
         href: interface.qmd
       - text: "Tasks"
         href: tasks.qmd
-      - text: "Steps"
-        href: steps.qmd
-      - text: "Workflow"
-        href: workflow.qmd
+      - text: "Workflows"
+        href: workflows.qmd
       - text: "Examples"
         href: example.qmd
       - text: "Next Steps"
