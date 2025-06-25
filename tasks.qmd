@@ -28,6 +28,14 @@
 
 **Tasks** describe the jobs that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time.  Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.
 
+::: {.callout-tip}
+## DESIGNING TASKS
+- Extraction Tasks
+Users choose which terms Vandalizer pulls from a document by typing them under “Add term to extract” or by clicking “From Document” to have AI suggest an initial set. 
+- Prompt and Formatting Tasks
+Users enter their query using natural language prompts in the “write your prompt here” box
+:::
+
 ::: {style="display: flex; align-items: center; gap: 2rem;"}
 
 ::: {style="flex: 3;"}
@@ -50,3 +58,4 @@
 
 In the toolbox window, users can create tasks by clicking on the **Chat** tab at the top of the window. From there, users can either click on 
   <span style="color: #2c7eaabc;">{{< fa diagram-project >}}</span> **Run a task** or on the <div style="border: 2px solid #ccc; padding: 4px; display: inline-block;">{{< fa diagram-project >}} **TASKS**</div> button
+
