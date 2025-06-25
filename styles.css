@@ -1,0 +1,41 @@
+/* Make sidebar text bigger and bolder */
+.sidebar .sidebar-item .sidebar-item-text {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+}
+
+/* Make active page link more prominent */
+.sidebar .sidebar-item.active .sidebar-item-text {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+}
+
+/* Even tighter spacing between sidebar items */
+.sidebar .sidebar-item {
+  padding: 0.3rem 1rem !important;
+}
+
+/* Make sidebar title bigger if you have one */
+.sidebar .sidebar-title {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+}
+
+/* Make page navigation arrows bigger */
+.page-navigation {
+  font-size: 1.5rem !important;
+}
+
+.page-navigation .nav-page {
+  padding: 1rem 1.5rem !important;
+  font-size: 1.2rem !important;
+}
+
+.page-navigation .nav-page-text {
+  font-size: 1.1rem !important;
+}
+
+/* Make the arrow icons bigger */
+.page-navigation .bi {
+  font-size: 1.8rem !important;
+}

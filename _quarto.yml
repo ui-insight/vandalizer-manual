@@ -1,0 +1,32 @@
+project:
+  type: website
+  output-dir: docs
+  title: "Vandalizer Wiki"
+
+website:
+  title: "Vandalizer Wiki"
+  page-navigation: true
+  sidebar:
+    style: "floating"
+    contents:
+      - text: "Home"
+        href: index.qmd
+      - text: "Disclaimer"
+        href: disclaimer.qmd
+      - text: "Introduction"
+        href: introduction.qmd
+      - text: "Interface"
+        href: interface.qmd
+      - text: "Workflow"
+        href: workflow.qmd
+      - text: "Examples"
+        href: example.qmd
+      - text: "Next Steps"
+        href: next-steps.qmd
+
+format:
+  html:
+    theme: sandstone
+    css: styles.css
+    toc: false
+    number-sections: false

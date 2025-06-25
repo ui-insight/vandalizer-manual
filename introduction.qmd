@@ -1,0 +1,40 @@
+---
+title: ""
+format:
+  html:
+    page-layout: full
+---
+
+:::: {.header-logos}
+::: {.grid}
+::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
+![](images/uidaho_logo.png){width=100px}
+:::
+::: {.g-col-7 .d-flex .justify-content-center .align-items-center}
+![](images/vandalizer_logo.png){width=500px}
+:::
+::: {.g-col-3 .d-flex .justify-content-center .align-items-center}
+![](images/suu_logo.png){width=200px}
+:::
+:::
+::::
+
+---
+
+::: {.text-center}
+# Introduction
+:::
+
+## Understanding Vandalizer Components
+
+Within Vandalizer, users can create **tasks**, which are specific, repeatable jobs handled by AI. These tasks can be collected into **steps** with every task within each step receiving the same input. Steps can then be chained together, where downstream steps receive input from upstream steps, creating structured, repeatable **workflows**.
+
+These Workflows—tasks coordinated into steps—can be reused across documents with similar formats or content. All tasks and workflows are organized within **workspaces**, which serve as centralized hubs for managing and tracking work. Workspaces can be customized to align with the needs of a Research Administration office, organized by individual users, job roles, or document types.
+
+*With Vandalizer, Research Administrators can create efficient, reusable systems that improve consistency and productivity across their document and data processing tasks.*
+
+---
+
+## Accessing Vandalizer
+
+Vandalizer can be accessed through university specific access points. For the University of Southern Utah, this access point is: [https://nsfai.suu.edu/](https://nsfai.suu.edu/). SUU employees should contact Nathan Wiggins ([nathanwiggins@suu.edu](nathanwiggins@suu.edu)) for access.
