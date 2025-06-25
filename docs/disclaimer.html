@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -171,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-right" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
@@ -212,6 +212,63 @@ Important
 
 
 </main> <!-- /main -->
+<script>
+function toggleImage(img) {
+    if (img.classList.contains('enlarged')) {
+        // Restore to original position and size
+        img.style.position = '';
+        img.style.top = '';
+        img.style.left = '';
+        img.style.transform = '';
+        img.style.zIndex = '';
+        img.style.boxShadow = '';
+        img.style.maxWidth = '';
+        img.style.maxHeight = '';
+        img.style.width = '';
+        img.style.height = '';
+        img.classList.remove('enlarged');
+        
+        // Restore original width
+        if (img.dataset.originalWidth) {
+            img.style.width = img.dataset.originalWidth;
+        }
+        
+        // Move back to original parent
+        if (img.dataset.originalParent) {
+            const originalParent = document.querySelector(`[data-original-id="${img.dataset.originalParent}"]`);
+            if (originalParent) {
+                originalParent.appendChild(img);
+            }
+        }
+        
+        // Clean up
+        delete img.dataset.originalParent;
+        delete img.dataset.originalWidth;
+    } else {
+        // Store original width
+        img.dataset.originalWidth = img.style.width || '';
+        
+        // Store reference to original parent
+        const originalParent = img.parentElement;
+        originalParent.setAttribute('data-original-id', Date.now());
+        img.dataset.originalParent = originalParent.getAttribute('data-original-id');
+        
+        // Enlarge and move to body level with viewport constraints
+        img.style.position = 'fixed';
+        img.style.top = '50%';
+        img.style.left = '50%';
+        img.style.transform = 'translate(-50%, -50%)';
+        img.style.maxWidth = '90vw';
+        img.style.maxHeight = '90vh';
+        img.style.width = 'auto';
+        img.style.height = 'auto';
+        img.style.zIndex = '2147483647';
+        img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+        img.classList.add('enlarged');
+        document.body.appendChild(img);
+    }
+}
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -611,7 +668,7 @@ Important
     }
   });
   </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link" aria-label="Home">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>

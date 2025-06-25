@@ -40,39 +40,11 @@
   font-size: 1.8rem !important;
 }
 
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  cursor: pointer;
+.popup-image {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
 }
-.lightbox img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90%;
-  max-height: 90%;
-}
-
-.loading-dots {
-    display: inline-block;
-    animation: spin 1s linear infinite;
-}
-
-.loading-dots::before {
-    content: "⠋";
-    font-size: 16px;
-    color: #3498db;
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-

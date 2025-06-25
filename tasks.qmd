@@ -3,6 +3,7 @@ title: ""
 format:
   html:
     page-layout: full
+    include-after-body: scripts.html
 ---
 
 :::: {.header-logos}
@@ -22,10 +23,7 @@ format:
 ---
 
 ::: {.text-center}
-<img src="images/workflow.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-<img src="images/workflow.png">
-</div>
+![](images/workflow.png){width="75%" class="popup-image" onclick="toggleImage(this)"}
 :::
 
 ::: {.text-center}
@@ -57,11 +55,7 @@ Users enter their query using natural language prompts in the “write your prom
 :::
 
 ::: {style="flex: 2; text-align: center; display: flex; align-items: center; justify-content: center;"}
-![](images/tasks.png){width="100%" style="cursor: pointer;" onclick="document.getElementById('lightbox').style.display='block'"}
-
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-  <img src="images/tasks.png">
-</div>
+![](images/tasks.png){width="75%" class="popup-image" onclick="toggleImage(this)"}
 :::
 
 :::

@@ -3,6 +3,7 @@ title: ""
 format:
   html:
     page-layout: full
+    include-after-body: scripts.html
 ---
 
 :::: {.header-logos}
@@ -22,16 +23,12 @@ format:
 ---
 
 ::: {.text-center}
-<img src="images/workflow.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-<img src="images/workflow.png">
-</div>
+![](images/workflow.png){width="75%" class="popup-image" onclick="toggleImage(this)"}
 :::
 
 ::: {.text-center}
 # Workflows
 :::
-
 
 A **workflow** is a coordinated assemblage of AI tasks, organized into steps that Vandalizer performs in sequence. Designing workflows can take some time and consideration, but their reproducibility can save RA offices substantial time, particularly for multi-step processes that will be repeated.
 

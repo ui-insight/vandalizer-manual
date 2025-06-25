@@ -3,6 +3,7 @@ title: ""
 format:
   html:
     page-layout: full
+    include-after-body: scripts.html
 ---
 
 :::: {.header-logos}
@@ -30,19 +31,13 @@ After logging into Vandalizer, a user will be directed to a page with two primar
 Second, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows. 
 
 ::: {.text-center}
-<img src="images/interface.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-<img src="images/interface.png">
-</div>
+![](images/interface.png){width="90%" class="popup-image" onclick="toggleImage(this)"}
 :::
 
 In the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the <i class="fas fa-spinner fa-spin"></i> symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).
  
 ::: {.text-center}
-<img src="images/ocr.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-<img src="images/ocr.png">
-</div>
+![](images/ocr.png){width="90%" class="popup-image" onclick="toggleImage(this)"}
 :::
 
 When the system is finished analyzing, the user will see the symbol change to  {{< fa code >}}. This symbol indicates that Vandalizer has finished extracting the text data from the document.  Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.

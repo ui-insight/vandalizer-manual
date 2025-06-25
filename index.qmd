@@ -3,6 +3,7 @@ title: ""
 format:
   html:
     page-layout: full
+    include-after-body: scripts.html
 ---
 
 :::: {.header-logos}

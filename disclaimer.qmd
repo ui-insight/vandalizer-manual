@@ -1,3 +1,11 @@
+---
+title: ""
+format:
+  html:
+    page-layout: full
+    include-after-body: scripts.html
+---
+
 :::: {.header-logos}
 ::: {.grid}
 ::: {.g-col-2 .d-flex .justify-content-center .align-items-center}

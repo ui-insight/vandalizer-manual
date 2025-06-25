@@ -190,6 +190,63 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
+<script>
+function toggleImage(img) {
+    if (img.classList.contains('enlarged')) {
+        // Restore to original position and size
+        img.style.position = '';
+        img.style.top = '';
+        img.style.left = '';
+        img.style.transform = '';
+        img.style.zIndex = '';
+        img.style.boxShadow = '';
+        img.style.maxWidth = '';
+        img.style.maxHeight = '';
+        img.style.width = '';
+        img.style.height = '';
+        img.classList.remove('enlarged');
+        
+        // Restore original width
+        if (img.dataset.originalWidth) {
+            img.style.width = img.dataset.originalWidth;
+        }
+        
+        // Move back to original parent
+        if (img.dataset.originalParent) {
+            const originalParent = document.querySelector(`[data-original-id="${img.dataset.originalParent}"]`);
+            if (originalParent) {
+                originalParent.appendChild(img);
+            }
+        }
+        
+        // Clean up
+        delete img.dataset.originalParent;
+        delete img.dataset.originalWidth;
+    } else {
+        // Store original width
+        img.dataset.originalWidth = img.style.width || '';
+        
+        // Store reference to original parent
+        const originalParent = img.parentElement;
+        originalParent.setAttribute('data-original-id', Date.now());
+        img.dataset.originalParent = originalParent.getAttribute('data-original-id');
+        
+        // Enlarge and move to body level with viewport constraints
+        img.style.position = 'fixed';
+        img.style.top = '50%';
+        img.style.left = '50%';
+        img.style.transform = 'translate(-50%, -50%)';
+        img.style.maxWidth = '90vw';
+        img.style.maxHeight = '90vh';
+        img.style.width = 'auto';
+        img.style.height = 'auto';
+        img.style.zIndex = '2147483647';
+        img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+        img.classList.add('enlarged');
+        document.body.appendChild(img);
+    }
+}
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
