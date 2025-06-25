@@ -1,3 +1,10 @@
+---
+title: ""
+format:
+  html:
+    page-layout: full
+---
+
 :::: {.header-logos}
 ::: {.grid}
 ::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
