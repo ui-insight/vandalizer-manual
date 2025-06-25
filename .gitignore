@@ -1,6 +1,5 @@
 # Quarto build artifacts except docs/
 *_files/
-*.html
 *.pdf
 *.docx
 *.ipynb
@@ -8,4 +7,7 @@
 *.knit.md
 .quarto/
 
-/.quarto/
+# Don't ignore html files inside docs/
+*.html
+!docs/
+!docs/**/*.html
