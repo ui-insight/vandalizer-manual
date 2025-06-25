@@ -42,6 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -162,6 +164,39 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<div class="header-logos">
+<div class="grid">
+<div class="g-col-2 d-flex justify-content-center align-items-center">
+<p><img src="images/uidaho_logo.png" class="img-fluid" width="100"></p>
+</div>
+<div class="g-col-7 d-flex justify-content-center align-items-center">
+<p><img src="images/vandalizer_logo.png" class="img-fluid" width="500"></p>
+</div>
+<div class="g-col-3 d-flex justify-content-center align-items-center">
+<p><img src="images/suu_logo.png" class="img-fluid" width="200"></p>
+</div>
+</div>
+</div>
+<hr>
+<section id="the-vandalizer-interface" class="level1 text-center">
+<h1>The Vandalizer Interface</h1>
+</section>
+<p>After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that is extracted from the document. These documents provide the input to Vandalizer tasks and workflows.</p>
+<p>Second, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows.</p>
+<div class="text-center">
+<img src="images/interface.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+<p><img src="images/interface.png"></p>
+</div>
+</div>
+<p>In the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the <i class="fas fa-spinner fa-spin"></i> symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).</p>
+<div class="text-center">
+<img src="images/ocr.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+<p><img src="images/ocr.png"></p>
+</div>
+</div>
+<p>When the system is finished analyzing, the user will see the symbol change to <i class="fa-solid fa-code" aria-label="code"></i>. This symbol indicates that Vandalizer has finished extracting the text data from the document. Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.</p>
 
 
 
@@ -582,4 +617,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/interface.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>

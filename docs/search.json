@@ -30,6 +30,16 @@
     ]
   },
   {
+    "objectID": "interface.html",
+    "href": "interface.html",
+    "title": "The Vandalizer Interface",
+    "section": "",
+    "text": "The Vandalizer Interface\n\nAfter logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that is extracted from the document. These documents provide the input to Vandalizer tasks and workflows.\nSecond, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows.\n\n\n\n\n\n\nIn the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the  symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).\n\n\n\n\n\n\nWhen the system is finished analyzing, the user will see the symbol change to . This symbol indicates that Vandalizer has finished extracting the text data from the document. Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.",
+    "crumbs": [
+      "Interface"
+    ]
+  },
+  {
     "objectID": "index.html#what-is-vandalizer",
     "href": "index.html#what-is-vandalizer",
     "title": "A Beginner’s Guide to Vandalizer",
