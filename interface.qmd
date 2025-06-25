@@ -39,3 +39,11 @@ In the Document Viewer window, users can upload files via drag and drop, or by p
 :::
 
 When the system is finished analyzing, the user will see the symbol change to  {{< fa code >}}. This symbol indicates that Vandalizer has finished extracting the text data from the document.  Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.
+
+## Chatting with a document in Vandalizer
+
+Once a user uploads a document to Vandalizer, the user can chat with the document directly to quickly extract information from a document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the **Chat** tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.
+
+The chat tool is great for a user who wants to pose quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.
+ 
+

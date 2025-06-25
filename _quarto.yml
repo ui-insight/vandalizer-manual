@@ -19,6 +19,10 @@ website:
         href: introduction.qmd
       - text: "Interface"
         href: interface.qmd
+      - text: "Tasks"
+        href: tasks.qmd
+      - text: "Steps"
+        href: steps.qmd
       - text: "Workflow"
         href: workflow.qmd
       - text: "Examples"

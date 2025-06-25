@@ -1,0 +1,52 @@
+:::: {.header-logos}
+::: {.grid}
+::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
+![](images/uidaho_logo.png){width=100px}
+:::
+::: {.g-col-7 .d-flex .justify-content-center .align-items-center}
+![](images/vandalizer_logo.png){width=500px}
+:::
+::: {.g-col-3 .d-flex .justify-content-center .align-items-center}
+![](images/suu_logo.png){width=200px}
+:::
+:::
+::::
+
+---
+
+::: {.text-center}
+<img src="images/workflow.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+<img src="images/workflow.png">
+</div>
+:::
+
+::: {.text-center}
+# Tasks
+:::
+
+
+**Tasks** describe the jobs that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time.  Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.
+
+::: {style="display: flex; align-items: center; gap: 2rem;"}
+
+::: {style="flex: 3;"}
+1. **Extraction tasks:** Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e. any information that the user can expect using the 'Find' feature on a document processor like Microsoft Word.
+
+2. **Prompt tasks:** Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.
+
+3. **Formatting tasks:** Vandalizer structures its outputs into the format that the user requests, such as a table with a summary below it.
+:::
+
+::: {style="flex: 2; text-align: center; display: flex; align-items: center; justify-content: center;"}
+![](images/tasks.png){width="100%" style="cursor: pointer;" onclick="document.getElementById('lightbox').style.display='block'"}
+
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+  <img src="images/tasks.png">
+</div>
+:::
+
+:::
+
+In the toolbox window, users can create tasks by clicking on the **Chat** tab at the top of the window. From there, users can either click on 
+  <span style="color: #2c7eaabc;">{{< fa diagram-project >}}</span> **Run a task** or on the <div style="border: 2px solid #ccc; padding: 4px; display: inline-block;">{{< fa diagram-project >}} **TASKS**</div> button

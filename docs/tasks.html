@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>interface – Vandalizer Wiki</title>
+<title>tasks – Vandalizer Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./tasks.html" rel="next">
-<link href="./introduction.html" rel="prev">
+<link href="./steps.html" rel="next">
+<link href="./interface.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./interface.html">Interface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tasks.html">Tasks</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,13 +130,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./interface.html" class="sidebar-item-text sidebar-link active">
+  <a href="./interface.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Interface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tasks.html" class="sidebar-item-text sidebar-link">
+  <a href="./tasks.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tasks</span></a>
   </div>
 </li>
@@ -190,32 +190,38 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <hr>
-<section id="the-vandalizer-interface" class="level1 text-center">
-<h1>The Vandalizer Interface</h1>
+<div class="text-center">
+<img src="images/workflow.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
+<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+<p><img src="images/workflow.png"></p>
+</div>
+</div>
+<section id="tasks" class="level1 text-center">
+<h1>Tasks</h1>
 </section>
-<p>After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that is extracted from the document. These documents provide the input to Vandalizer tasks and workflows.</p>
-<p>Second, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows.</p>
-<div class="text-center">
-<img src="images/interface.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
+<p><strong>Tasks</strong> describe the jobs that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time. Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.</p>
+<div style="display: flex; align-items: center; gap: 2rem;">
+<div style="flex: 3;">
+<ol type="1">
+<li><p><strong>Extraction tasks:</strong> Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e.&nbsp;any information that the user can expect using the ‘Find’ feature on a document processor like Microsoft Word.</p></li>
+<li><p><strong>Prompt tasks:</strong> Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.</p></li>
+<li><p><strong>Formatting tasks:</strong> Vandalizer structures its outputs into the format that the user requests, such as a table with a summary below it.</p></li>
+</ol>
+</div>
+<div style="flex: 2; text-align: center; display: flex; align-items: center; justify-content: center;">
+<p><img src="images/tasks.png" class="img-fluid" style="cursor: pointer;;width:100.0%" onclick="document.getElementById('lightbox').style.display='block'"></p>
 <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-<p><img src="images/interface.png"></p>
+<p><img src="images/tasks.png"></p>
 </div>
 </div>
-<p>In the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the <i class="fas fa-spinner fa-spin"></i> symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).</p>
-<div class="text-center">
-<img src="images/ocr.png" style="width:90%; cursor:pointer; margin-bottom:20px;" onclick="document.getElementById('lightbox').style.display='block'">
-<div id="lightbox" class="lightbox" onclick="this.style.display='none'">
-<p><img src="images/ocr.png"></p>
 </div>
+In the toolbox window, users can create tasks by clicking on the <strong>Chat</strong> tab at the top of the window. From there, users can either click on <span style="color: #2c7eaabc;"><i class="fa-solid fa-diagram-project" aria-label="diagram-project"></i></span> <strong>Run a task</strong> or on the
+<div style="border: 2px solid #ccc; padding: 4px; display: inline-block;">
+<i class="fa-solid fa-diagram-project" aria-label="diagram-project"></i> <strong>TASKS</strong>
 </div>
-<p>When the system is finished analyzing, the user will see the symbol change to <i class="fa-solid fa-code" aria-label="code"></i>. This symbol indicates that Vandalizer has finished extracting the text data from the document. Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.</p>
-<section id="chatting-with-a-document-in-vandalizer" class="level2">
-<h2 class="anchored" data-anchor-id="chatting-with-a-document-in-vandalizer">Chatting with a document in Vandalizer</h2>
-<p>Once a user uploads a document to Vandalizer, the user can chat with the document directly to quickly extract information from a document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the <strong>Chat</strong> tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.</p>
-<p>The chat tool is great for a user who wants to pose quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.</p>
+<p>button</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -619,13 +625,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./introduction.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./interface.html" class="pagination-link" aria-label="Interface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Interface</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./tasks.html" class="pagination-link" aria-label="Tasks">
-        <span class="nav-page-text">Tasks</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./steps.html" class="pagination-link" aria-label="Steps">
+        <span class="nav-page-text">Steps</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -634,4 +640,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/interface.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/tasks.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
