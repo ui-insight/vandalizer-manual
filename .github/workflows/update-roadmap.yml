@@ -44,9 +44,9 @@ jobs:
               assignees: [.assignees[].login],
               repository: "'$repo'"
             }'); then
-            echo "$all_issues" | jq '.' > docs/issues.json
+            echo "$all_issues" | jq '.' > data/issues.json
           else
-            echo "[]" > docs/issues.json
+            echo "[]" > data/issues.json
             exit 1
           fi
         env:
