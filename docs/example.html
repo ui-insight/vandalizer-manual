@@ -156,9 +156,22 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Next Steps</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./roadmap.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Roadmap</span></a>
+  </div>
+</li>
     </ul>
     </div>
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#example-workflow" id="toc-example-workflow" class="nav-link active" data-scroll-target="#example-workflow">Example Workflow</a></li>
+  <li><a href="#other-workflow-ideas" id="toc-other-workflow-ideas" class="nav-link" data-scroll-target="#other-workflow-ideas">Other Workflow Ideas</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/example.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -184,68 +197,303 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <hr>
-<div style="display: flex; justify-content: center; align-items: center; height: 400px;">
-<p><img src="images/construction.png" class="img-fluid"></p>
-</div>
+<section id="example-workflow" class="level1 text-center">
+<h1>Example Workflow</h1>
+</section>
+<p>Workflows are best understood through practice. The following section offers a walkthrough building an example workflow and provides some suggested use-cases.</p>
+<p>Let’s say that a user wants to use Vandalizer to create an RFA checklist. RFA’s often contain similar information, but it may not always be communicated the same way between RFA documents. For this reason, the user is going to need added flexibility from Vandalizer, so they will select a prompt task to extract key information from the RFA such as deadlines, eligibility criteria, award information, or application criteria. The user wants their output structured in a table so that information can be easily compared between documents. Here are the steps that the user will take.</p>
+<p>Upload an RFA. This step will allow Vandalizer to perform OCR and extract text from the document. Wait until the OCR process is finished as indicated by the spinner icon changing to a data display icon .</p>
+<p>Create tasks. This workflow requires the coordination of two tasks, a prompt task and formatting task. To add these tasks, the user will click the button at the bottom of the toolbox window, then click +New Task to add each task. For both a prompt task and formatting task, the user will name the task, then write their query for Vandalizer.</p>
+<p>Create a workflow. Once the user creates some tasks, they are ready to create a workflow that coordinates these tasks. To do this, the user will press the Workflows tab on the right side of the toolbox window. From there, the user will click on +New Workflow.</p>
+<p>Coordinate steps. The user determines how information will flow between steps in their workflow. All tasks within a step receive the same input. In this case, information from the prompt step will flow downstream to the formatting step. Therefore, the user determines that this workflow requires a two-step process where the prompt task is assigned to step 1 and the formatting task is assigned to step 2.</p>
+<p>Assign tasks to each step. Under the workflows tab, the user adds two steps, titling them “RFA Extraction” and “Format RFA Checklist.” Then, the user clicks on each step to assign pre-made tasks to each step.</p>
+<p>Run workflow. Now that the user’s tasks are appropriately assembled and coordinated, the user is ready to run the workflow. The user clicks Run Workflow in the bottom right corner of the toolbox window and Vandalizer produces the desired output.</p>
+<p>Apply to other documents. This workflow is saved into the user’s Vandalizer workspace. Now the user can run the same assemblage of tasks on future RFA’s.</p>
+<section id="other-workflow-ideas" class="level1 text-center">
+<h1>Other Workflow Ideas</h1>
+</section>
+<ul>
+<li><p>RFA checklist creation tool. Using a prompt task identify key dates, deadlines, eligibility criteria, award information, application criteria. A prompt task is best here because the necessary information won’t always be present in the same place between RFA’s.</p></li>
+<li><p>NSF award notice Extraction. Using an extract task important information from an award letter such as PI, dates, or total budget can be extracted. Because NSF award notices use a standard format an extraction task is a better choice than a prompt task.</p></li>
+</ul>
 
 
 
 </main> <!-- /main -->
 <script>
 function toggleImage(img) {
-    if (img.classList.contains('enlarged')) {
-        // Restore to original position and size
-        img.style.position = '';
-        img.style.top = '';
-        img.style.left = '';
-        img.style.transform = '';
-        img.style.zIndex = '';
-        img.style.boxShadow = '';
-        img.style.maxWidth = '';
-        img.style.maxHeight = '';
-        img.style.width = '';
-        img.style.height = '';
-        img.classList.remove('enlarged');
-        
-        // Restore original width
-        if (img.dataset.originalWidth) {
-            img.style.width = img.dataset.originalWidth;
-        }
-        
-        // Move back to original parent
-        if (img.dataset.originalParent) {
-            const originalParent = document.querySelector(`[data-original-id="${img.dataset.originalParent}"]`);
-            if (originalParent) {
-                originalParent.appendChild(img);
-            }
-        }
-        
-        // Clean up
-        delete img.dataset.originalParent;
-        delete img.dataset.originalWidth;
-    } else {
-        // Store original width
-        img.dataset.originalWidth = img.style.width || '';
-        
-        // Store reference to original parent
-        const originalParent = img.parentElement;
-        originalParent.setAttribute('data-original-id', Date.now());
-        img.dataset.originalParent = originalParent.getAttribute('data-original-id');
-        
-        // Enlarge and move to body level with viewport constraints
-        img.style.position = 'fixed';
-        img.style.top = '50%';
-        img.style.left = '50%';
-        img.style.transform = 'translate(-50%, -50%)';
-        img.style.maxWidth = '90vw';
-        img.style.maxHeight = '90vh';
-        img.style.width = 'auto';
-        img.style.height = 'auto';
-        img.style.zIndex = '2147483647';
-        img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
-        img.classList.add('enlarged');
-        document.body.appendChild(img);
+if (img.classList.contains('enlarged')) {
+// Restore to original position and size
+ img.style.position = '';
+ img.style.top = '';
+ img.style.left = '';
+ img.style.transform = '';
+ img.style.zIndex = '';
+ img.style.boxShadow = '';
+ img.style.maxWidth = '';
+ img.style.maxHeight = '';
+ img.style.width = '';
+ img.style.height = '';
+ img.classList.remove('enlarged');
+// Restore original width
+if (img.dataset.originalWidth) {
+ img.style.width = img.dataset.originalWidth;
+ }
+// Move back to original parent
+if (img.dataset.originalParent) {
+const originalParent = document.querySelector(`[data-original-id="${img.dataset.originalParent}"]`);
+if (originalParent) {
+ originalParent.appendChild(img);
+ }
+ }
+// Clean up
+delete img.dataset.originalParent;
+delete img.dataset.originalWidth;
+ } else {
+// Store original width
+ img.dataset.originalWidth = img.style.width || '';
+// Store reference to original parent
+const originalParent = img.parentElement;
+ originalParent.setAttribute('data-original-id', Date.now());
+ img.dataset.originalParent = originalParent.getAttribute('data-original-id');
+// Enlarge and move to body level with viewport constraints
+ img.style.position = 'fixed';
+ img.style.top = '50%';
+ img.style.left = '50%';
+ img.style.transform = 'translate(-50%, -50%)';
+ img.style.maxWidth = '90vw';
+ img.style.maxHeight = '90vh';
+ img.style.width = 'auto';
+ img.style.height = 'auto';
+ img.style.zIndex = '2147483647';
+ img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+ img.classList.add('enlarged');
+ document.body.appendChild(img);
+ }
+}
+
+// === ROADMAP FUNCTIONALITY ===
+// Only load Plotly on roadmap page to avoid conflicts
+if (document.getElementById('roadmap-summary')) {
+  // Load Plotly.js dynamically
+  const script = document.createElement('script');
+  script.src = 'https://cdn.plot.ly/plotly-latest.min.js';
+  script.onload = function() {
+    initializeRoadmap();
+  };
+  document.head.appendChild(script);
+}
+
+function initializeRoadmap() {
+  // Function to create summary statistics
+  function createSummary(issues) {
+    const totalIssues = issues.length;
+    const uniqueLabels = new Set();
+    let totalLabels = 0;
+    
+    issues.forEach(issue => {
+      const labels = issue.labels || [];
+      labels.forEach(label => {
+        uniqueLabels.add(label);
+        totalLabels++;
+      });
+    });
+    
+    const avgLabelsPerIssue = totalIssues > 0 ? (totalLabels / totalIssues).toFixed(1) : 0;
+    
+    return {
+      totalIssues,
+      uniqueLabels: uniqueLabels.size,
+      avgLabelsPerIssue
+    };
+  }
+
+  // Function to count issues by creation date
+  function countIssuesByDate(issues) {
+    const dateCounts = {};
+    
+    issues.forEach(issue => {
+      const date = new Date(issue.created_at).toISOString().split('T')[0]; // YYYY-MM-DD
+      dateCounts[date] = (dateCounts[date] || 0) + 1;
+    });
+    
+    // Sort dates
+    const sortedDates = Object.keys(dateCounts).sort();
+    const counts = sortedDates.map(date => dateCounts[date]);
+    
+    return { dates: sortedDates, counts };
+  }
+
+  // Function to create timeline chart
+  function createTimelineChart(dateData) {
+    if (dateData.dates.length === 0) {
+      document.getElementById('roadmap-timeline-chart').innerHTML = '<p>No date data available</p>';
+      return;
     }
+    
+    const data = [{
+      type: 'scatter',
+      mode: 'lines+markers',
+      x: dateData.dates,
+      y: dateData.counts,
+      marker: {
+        color: '#4ECDC4',
+        size: 6
+      },
+      line: {
+        color: '#4ECDC4',
+        width: 2
+      },
+      hovertemplate: '<b>%{x}</b><br>' +
+                     'Issues created: %{y}<br>' +
+                     '<extra></extra>'
+    }];
+    
+    const layout = {
+      title: 'Issues Created Over Time',
+      xaxis: { 
+        title: 'Date',
+        type: 'date'
+      },
+      yaxis: { 
+        title: 'Number of Issues Created'
+      },
+      margin: { t: 60, b: 80, l: 60, r: 40 }
+    };
+    
+    const config = { displayModeBar: false };
+    
+    Plotly.newPlot('roadmap-timeline-chart', data, layout, config);
+  }
+
+  // Function to count label frequency
+  function countLabels(issues) {
+    const labelCounts = {};
+    
+    issues.forEach(issue => {
+      const labels = issue.labels || [];
+      labels.forEach(label => {
+        labelCounts[label] = (labelCounts[label] || 0) + 1;
+      });
+    });
+    
+    return labelCounts;
+  }
+
+  // Function to create pie chart
+  function createPieChart(labelCounts) {
+    const labels = Object.keys(labelCounts);
+    const counts = Object.values(labelCounts);
+    
+    if (labels.length === 0) {
+      document.getElementById('roadmap-pie-chart').innerHTML = '<p>No labels found</p>';
+      return;
+    }
+    
+    const data = [{
+      type: 'pie',
+      labels: labels,
+      values: counts,
+      hovertemplate: '<b>%{label}</b><br>' +
+                     'Issues: %{value}<br>' +
+                     'Percentage: %{percent}<br>' +
+                     '<extra></extra>'
+    }];
+    
+    const layout = {
+      title: 'Issue Distribution by Label',
+      margin: { t: 60, b: 40, l: 40, r: 40 }
+    };
+    
+    const config = { displayModeBar: false };
+    
+    Plotly.newPlot('roadmap-pie-chart', data, layout, config);
+  }
+
+  // Function to create bar chart
+  function createBarChart(labelCounts) {
+    const labels = Object.keys(labelCounts);
+    const counts = Object.values(labelCounts);
+    
+    if (labels.length === 0) {
+      document.getElementById('roadmap-bar-chart').innerHTML = '<p>No labels found</p>';
+      return;
+    }
+    
+    const data = [{
+      type: 'bar',
+      x: labels,
+      y: counts,
+      marker: {
+        color: '#4ECDC4'
+      }
+    }];
+    
+    const layout = {
+      title: 'Issue Count by Label',
+      xaxis: { title: 'Labels' },
+      yaxis: { title: 'Number of Issues' },
+      margin: { t: 60, b: 100, l: 60, r: 40 }
+    };
+    
+    const config = { displayModeBar: false };
+    
+    Plotly.newPlot('roadmap-bar-chart', data, layout, config);
+  }
+
+  // Load and process data
+  async function loadRoadmapData() {
+    try {
+      const response = await fetch('data/issues.json');
+      const issues = await response.json();
+      
+      if (issues.length === 0) {
+        document.getElementById('roadmap-summary').innerHTML = '<p>No issues data available</p>';
+        document.getElementById('roadmap-timeline-chart').innerHTML = '<p>No issues data available</p>';
+        document.getElementById('roadmap-pie-chart').innerHTML = '<p>No issues data available</p>';
+        document.getElementById('roadmap-bar-chart').innerHTML = '<p>No issues data available</p>';
+        return;
+      }
+      
+      // Create summary
+      const summary = createSummary(issues);
+      document.getElementById('roadmap-summary').innerHTML = `
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+          <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin: 0; color: #4ECDC4;">${summary.totalIssues}</h3>
+            <p style="margin: 5px 0 0 0;">Open Issues</p>
+          </div>
+          <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin: 0; color: #4ECDC4;">${summary.uniqueLabels}</h3>
+            <p style="margin: 5px 0 0 0;">Unique Labels</p>
+          </div>
+          <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <h3 style="margin: 0; color: #4ECDC4;">${summary.avgLabelsPerIssue}</h3>
+            <p style="margin: 5px 0 0 0;">Avg Labels per Issue</p>
+          </div>
+        </div>
+      `;
+      
+      // Create timeline chart
+      const dateData = countIssuesByDate(issues);
+      createTimelineChart(dateData);
+      
+      // Create label charts
+      const labelCounts = countLabels(issues);
+      createPieChart(labelCounts);
+      createBarChart(labelCounts);
+      
+    } catch (error) {
+      console.error('Error loading issues data:', error);
+      document.getElementById('roadmap-summary').innerHTML = '<p>Error loading issue data</p>';
+      document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Could not load chart</p>';
+      document.getElementById('roadmap-pie-chart').innerHTML = '<p>Could not load chart</p>';
+      document.getElementById('roadmap-bar-chart').innerHTML = '<p>Could not load chart</p>';
+    }
+  }
+
+  // Load roadmap data
+  loadRoadmapData();
 }
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
@@ -664,4 +912,4 @@ function toggleImage(img) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/example.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/nate-layman/vandalizer-manual/edit/main/example.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
