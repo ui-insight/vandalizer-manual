@@ -1,5 +1,5 @@
 # .github/workflows/update-dashboard.yml
-name: Update Issue Dashboard
+name: Update Roadmap
 
 on:
   schedule:
@@ -57,7 +57,7 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render Quarto Document
-        run: quarto render dashboard.qmd
+        run: quarto render
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
