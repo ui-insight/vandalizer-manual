@@ -16,35 +16,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        
+      - name: Render Quarto Document (first pass)
+        run: quarto render
+        
       - name: Collect Issues Data
         run: |
-          # Create data directory
-          mkdir -p data
-          
-          # Repository to monitor
+          mkdir -p docs/data
           repo="ui-insight/vandalizer"
-          echo "Fetching issues from $repo..."
           
-          # Test authentication first
-          echo "Testing authentication..."
           if ! gh auth status; then
-            echo "Authentication failed"
             exit 1
           fi
           
-          # Test basic repository access first
-          echo "Testing repository access..."
-          if gh api "repos/$repo" --jq '.full_name'; then
-            echo "✓ Repository access confirmed"
-          else
-            echo "✗ Cannot access repository metadata"
-            echo "Response from API:"
-            gh api "repos/$repo" || echo "API call failed"
-            exit 1
-          fi
-          
-          # Get issues using gh CLI with pagination and error handling
-          echo "Fetching issues..."
           if all_issues=$(gh api "repos/$repo/issues" \
             --paginate \
             --jq '.[] | select(.pull_request == null) | {
@@ -59,51 +45,26 @@ jobs:
               assignees: [.assignees[].login],
               repository: "'$repo'"
             }'); then
-            
-            # Save raw data
-            echo "$all_issues" | jq '.' > data/issues.json
-            
-            # Simple log output
-            issue_count=$(echo "$all_issues" | jq 'length')
-            echo "Successfully collected $issue_count issues from $repo"
+            echo "$all_issues" | jq '.' > docs/data/issues.json
           else
-            echo "Failed to fetch issues from $repo"
-            echo "This might be due to:"
-            echo "  - Repository not found or no access"
-            echo "  - Invalid token permissions"
-            echo "  - Network issues"
-            
-            # Create empty data file to prevent downstream errors
-            echo "[]" > data/issues.json
+            echo "[]" > docs/data/issues.json
             exit 1
           fi
         env:
           GH_TOKEN: ${{ secrets.VANDALIZER_ISSUES_TOKEN }}
           
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        
-      - name: Render Quarto Document
-        run: |
-          echo "Rendering Quarto document..."
-          quarto render
-          echo "Quarto render completed"
+      - name: Final Quarto Render
+        run: quarto render
           
       - name: Commit and push changes
         run: |
-          # Configure git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git add docs/
           
-          # Add files
-          git add data/ docs/
-          
-          # Check if there are changes to commit
           if git diff --staged --quiet; then
-            echo "No changes to commit"
+            exit 0
           else
-            echo "Changes detected, committing..."
             git commit -m "Update roadmap dashboard - $(date)"
             git push
-            echo "Changes pushed to docs/ - pages-build-deployment will handle deployment"
           fi
