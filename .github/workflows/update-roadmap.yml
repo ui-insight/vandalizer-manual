@@ -32,7 +32,19 @@ jobs:
             exit 1
           fi
           
+          # Test basic repository access first
+          echo "Testing repository access..."
+          if gh api "repos/$repo" --jq '.full_name'; then
+            echo "✓ Repository access confirmed"
+          else
+            echo "✗ Cannot access repository metadata"
+            echo "Response from API:"
+            gh api "repos/$repo" || echo "API call failed"
+            exit 1
+          fi
+          
           # Get issues using gh CLI with pagination and error handling
+          echo "Fetching issues..."
           if all_issues=$(gh api "repos/$repo/issues" \
             --paginate \
             --jq '.[] | select(.pull_request == null) | {
@@ -46,7 +58,7 @@ jobs:
               labels: [.labels[].name],
               assignees: [.assignees[].login],
               repository: "'$repo'"
-            }' 2>/dev/null); then
+            }'); then
             
             # Save raw data
             echo "$all_issues" | jq '.' > data/issues.json
