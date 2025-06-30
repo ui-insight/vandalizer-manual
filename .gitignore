@@ -9,6 +9,7 @@
 
 # Don't ignore html files inside docs/
 *.html
+!scripts.html
 !docs/
 !docs/**/*.html
 
