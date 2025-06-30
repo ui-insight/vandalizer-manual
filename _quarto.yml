@@ -27,6 +27,8 @@ website:
         href: example.qmd
       - text: "Next Steps"
         href: next-steps.qmd
+      - text: "Roadmap"
+        href: roadmap.qmd
 
 format:
   html:

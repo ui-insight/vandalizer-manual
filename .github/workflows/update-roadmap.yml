@@ -1,0 +1,72 @@
+# .github/workflows/update-dashboard.yml
+name: Update Issue Dashboard
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC (adjust timezone as needed)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-dashboard:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Collect Issues Data
+        run: |
+          # Create data directory
+          mkdir -p data
+          
+          # Repository to monitor
+          repo="ui-insight/vandalizer"
+          
+          echo "Fetching issues from $repo..."
+          
+          # Get issues using gh CLI with pagination
+          all_issues=$(gh api "repos/$repo/issues" \
+            --paginate \
+            --jq '.[] | select(.pull_request == null) | {
+              id: .id,
+              number: .number,
+              title: .title,
+              url: .html_url,
+              state: .state,
+              created_at: .created_at,
+              updated_at: .updated_at,
+              labels: [.labels[].name],
+              assignees: [.assignees[].login],
+              repository: "'$repo'"
+            }' 2>/dev/null || echo "[]")
+          
+          # Save raw data
+          echo "$all_issues" | jq '.' > data/issues.json
+          
+          # Simple log output
+          issue_count=$(echo "$all_issues" | jq 'length')
+          echo "Collected $issue_count issues from $repo"
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render Quarto Document
+        run: quarto render dashboard.qmd
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
