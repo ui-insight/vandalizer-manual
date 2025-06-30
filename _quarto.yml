@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: docs
   title: "Vandalizer Wiki"
+  post-render: 
+  - cp data/issues.json docs/issues.json
 
 website:
   title: "Vandalizer Wiki"

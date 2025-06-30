@@ -19,7 +19,7 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         
-      - name: Render Quarto Document (first pass)
+      - name: Render Quarto Document
         run: quarto render
         
       - name: Collect Issues Data
@@ -52,14 +52,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.VANDALIZER_ISSUES_TOKEN }}
           
-      - name: Final Quarto Render
-        run: quarto render
-          
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add docs/
+          git add data/ docs/
           
           if git diff --staged --quiet; then
             exit 0

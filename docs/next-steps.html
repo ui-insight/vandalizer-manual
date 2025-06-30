@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-aa9238ba561dfc496d5ec7026d47e64d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -197,56 +197,60 @@ ul.task-list li input[type="checkbox"] {
 
 
 </main> <!-- /main -->
-<script>
 function toggleImage(img) {
-if (img.classList.contains('enlarged')) {
-// Restore to original position and size
- img.style.position = '';
- img.style.top = '';
- img.style.left = '';
- img.style.transform = '';
- img.style.zIndex = '';
- img.style.boxShadow = '';
- img.style.maxWidth = '';
- img.style.maxHeight = '';
- img.style.width = '';
- img.style.height = '';
- img.classList.remove('enlarged');
-// Restore original width
-if (img.dataset.originalWidth) {
- img.style.width = img.dataset.originalWidth;
- }
-// Move back to original parent
-if (img.dataset.originalParent) {
-const originalParent = document.querySelector(`[data-original-id="${img.dataset.originalParent}"]`);
-if (originalParent) {
- originalParent.appendChild(img);
- }
- }
-// Clean up
-delete img.dataset.originalParent;
-delete img.dataset.originalWidth;
- } else {
-// Store original width
- img.dataset.originalWidth = img.style.width || '';
-// Store reference to original parent
-const originalParent = img.parentElement;
- originalParent.setAttribute('data-original-id', Date.now());
- img.dataset.originalParent = originalParent.getAttribute('data-original-id');
-// Enlarge and move to body level with viewport constraints
- img.style.position = 'fixed';
- img.style.top = '50%';
- img.style.left = '50%';
- img.style.transform = 'translate(-50%, -50%)';
- img.style.maxWidth = '90vw';
- img.style.maxHeight = '90vh';
- img.style.width = 'auto';
- img.style.height = 'auto';
- img.style.zIndex = '2147483647';
- img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
- img.classList.add('enlarged');
- document.body.appendChild(img);
- }
+  if (img.classList.contains('enlarged')) {
+    // Restore to original position and size
+    img.style.position = '';
+    img.style.top = '';
+    img.style.left = '';
+    img.style.transform = '';
+    img.style.zIndex = '';
+    img.style.boxShadow = '';
+    img.style.maxWidth = '';
+    img.style.maxHeight = '';
+    img.style.width = '';
+    img.style.height = '';
+    img.classList.remove('enlarged');
+    
+    // Restore original width
+    if (img.dataset.originalWidth) {
+      img.style.width = img.dataset.originalWidth;
+    }
+    
+    // Move back to original parent
+    if (img.dataset.originalParent) {
+      const originalParent = document.querySelector(`[data-original-id="${img.dataset.originalParent}"]`);
+      if (originalParent) {
+        originalParent.appendChild(img);
+      }
+    }
+    
+    // Clean up
+    delete img.dataset.originalParent;
+    delete img.dataset.originalWidth;
+  } else {
+    // Store original width
+    img.dataset.originalWidth = img.style.width || '';
+    
+    // Store reference to original parent
+    const originalParent = img.parentElement;
+    originalParent.setAttribute('data-original-id', Date.now());
+    img.dataset.originalParent = originalParent.getAttribute('data-original-id');
+    
+    // Enlarge and move to body level with viewport constraints
+    img.style.position = 'fixed';
+    img.style.top = '50%';
+    img.style.left = '50%';
+    img.style.transform = 'translate(-50%, -50%)';
+    img.style.maxWidth = '90vw';
+    img.style.maxHeight = '90vh';
+    img.style.width = 'auto';
+    img.style.height = 'auto';
+    img.style.zIndex = '2147483647';
+    img.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+    img.classList.add('enlarged');
+    document.body.appendChild(img);
+  }
 }
 
 // === ROADMAP FUNCTIONALITY ===
@@ -258,7 +262,21 @@ if (document.getElementById('roadmap-summary')) {
   script.onload = function() {
     initializeRoadmap();
   };
+  script.onerror = function() {
+    console.error('Failed to load Plotly.js');
+    showFallbackMessage('Failed to load charting library');
+  };
   document.head.appendChild(script);
+}
+
+function showFallbackMessage(message) {
+  const elements = ['roadmap-summary', 'roadmap-timeline-chart', 'roadmap-pie-chart', 'roadmap-bar-chart'];
+  elements.forEach(id =&gt; {
+    const element = document.getElementById(id);
+    if (element) {
+      element.innerHTML = `<p style="color: #e74c3c; text-align: center; padding: 20px;">${message}</p>`;
+    }
+  });
 }
 
 function initializeRoadmap() {
@@ -268,15 +286,15 @@ function initializeRoadmap() {
     const uniqueLabels = new Set();
     let totalLabels = 0;
     
-    issues.forEach(issue => {
+    issues.forEach(issue =&gt; {
       const labels = issue.labels || [];
-      labels.forEach(label => {
+      labels.forEach(label =&gt; {
         uniqueLabels.add(label);
         totalLabels++;
       });
     });
     
-    const avgLabelsPerIssue = totalIssues > 0 ? (totalLabels / totalIssues).toFixed(1) : 0;
+    const avgLabelsPerIssue = totalIssues &gt; 0 ? (totalLabels / totalIssues).toFixed(1) : 0;
     
     return {
       totalIssues,
@@ -289,22 +307,31 @@ function initializeRoadmap() {
   function countIssuesByDate(issues) {
     const dateCounts = {};
     
-    issues.forEach(issue => {
-      const date = new Date(issue.created_at).toISOString().split('T')[0]; // YYYY-MM-DD
-      dateCounts[date] = (dateCounts[date] || 0) + 1;
+    issues.forEach(issue =&gt; {
+      if (!issue.created_at) return; // Skip issues without creation date
+      
+      try {
+        const date = new Date(issue.created_at).toISOString().split('T')[0]; // YYYY-MM-DD
+        dateCounts[date] = (dateCounts[date] || 0) + 1;
+      } catch (error) {
+        console.warn('Invalid date format:', issue.created_at);
+      }
     });
     
     // Sort dates
     const sortedDates = Object.keys(dateCounts).sort();
-    const counts = sortedDates.map(date => dateCounts[date]);
+    const counts = sortedDates.map(date =&gt; dateCounts[date]);
     
     return { dates: sortedDates, counts };
   }
 
   // Function to create timeline chart
   function createTimelineChart(dateData) {
+    const chartElement = document.getElementById('roadmap-timeline-chart');
+    if (!chartElement) return;
+    
     if (dateData.dates.length === 0) {
-      document.getElementById('roadmap-timeline-chart').innerHTML = '<p>No date data available</p>';
+      chartElement.innerHTML = '<p style="text-align: center; color: #666;">No date data available for timeline</p>';
       return;
     }
     
@@ -327,7 +354,10 @@ function initializeRoadmap() {
     }];
     
     const layout = {
-      title: 'Issues Created Over Time',
+      title: {
+        text: 'Issues Created Over Time',
+        font: { size: 16 }
+      },
       xaxis: { 
         title: 'Date',
         type: 'date'
@@ -335,10 +365,15 @@ function initializeRoadmap() {
       yaxis: { 
         title: 'Number of Issues Created'
       },
-      margin: { t: 60, b: 80, l: 60, r: 40 }
+      margin: { t: 60, b: 80, l: 60, r: 40 },
+      paper_bgcolor: 'rgba(0,0,0,0)',
+      plot_bgcolor: 'rgba(0,0,0,0)'
     };
     
-    const config = { displayModeBar: false };
+    const config = { 
+      displayModeBar: false,
+      responsive: true
+    };
     
     Plotly.newPlot('roadmap-timeline-chart', data, layout, config);
   }
@@ -347,10 +382,12 @@ function initializeRoadmap() {
   function countLabels(issues) {
     const labelCounts = {};
     
-    issues.forEach(issue => {
+    issues.forEach(issue =&gt; {
       const labels = issue.labels || [];
-      labels.forEach(label => {
-        labelCounts[label] = (labelCounts[label] || 0) + 1;
+      labels.forEach(label =&gt; {
+        if (label &amp;&amp; typeof label === 'string') {
+          labelCounts[label] = (labelCounts[label] || 0) + 1;
+        }
       });
     });
     
@@ -359,11 +396,14 @@ function initializeRoadmap() {
 
   // Function to create pie chart
   function createPieChart(labelCounts) {
+    const chartElement = document.getElementById('roadmap-pie-chart');
+    if (!chartElement) return;
+    
     const labels = Object.keys(labelCounts);
     const counts = Object.values(labelCounts);
     
     if (labels.length === 0) {
-      document.getElementById('roadmap-pie-chart').innerHTML = '<p>No labels found</p>';
+      chartElement.innerHTML = '<p style="text-align: center; color: #666;">No labels found for pie chart</p>';
       return;
     }
     
@@ -374,82 +414,155 @@ function initializeRoadmap() {
       hovertemplate: '<b>%{label}</b><br>' +
                      'Issues: %{value}<br>' +
                      'Percentage: %{percent}<br>' +
-                     '<extra></extra>'
+                     '<extra></extra>',
+      textinfo: 'label+percent',
+      textposition: 'auto'
     }];
     
     const layout = {
-      title: 'Issue Distribution by Label',
-      margin: { t: 60, b: 40, l: 40, r: 40 }
+      title: {
+        text: 'Issue Distribution by Label',
+        font: { size: 16 }
+      },
+      margin: { t: 60, b: 40, l: 40, r: 40 },
+      paper_bgcolor: 'rgba(0,0,0,0)',
+      showlegend: true
     };
     
-    const config = { displayModeBar: false };
+    const config = { 
+      displayModeBar: false,
+      responsive: true
+    };
     
     Plotly.newPlot('roadmap-pie-chart', data, layout, config);
   }
 
   // Function to create bar chart
   function createBarChart(labelCounts) {
+    const chartElement = document.getElementById('roadmap-bar-chart');
+    if (!chartElement) return;
+    
     const labels = Object.keys(labelCounts);
     const counts = Object.values(labelCounts);
     
     if (labels.length === 0) {
-      document.getElementById('roadmap-bar-chart').innerHTML = '<p>No labels found</p>';
+      chartElement.innerHTML = '<p style="text-align: center; color: #666;">No labels found for bar chart</p>';
       return;
     }
     
+    // Sort by count descending
+    const sortedData = labels.map((label, index) =&gt; ({
+      label,
+      count: counts[index]
+    })).sort((a, b) =&gt; b.count - a.count);
+    
     const data = [{
       type: 'bar',
-      x: labels,
-      y: counts,
+      x: sortedData.map(item =&gt; item.label),
+      y: sortedData.map(item =&gt; item.count),
       marker: {
-        color: '#4ECDC4'
-      }
+        color: '#4ECDC4',
+        opacity: 0.8
+      },
+      hovertemplate: '<b>%{x}</b><br>' +
+                     'Issues: %{y}<br>' +
+                     '<extra></extra>'
     }];
     
     const layout = {
-      title: 'Issue Count by Label',
-      xaxis: { title: 'Labels' },
-      yaxis: { title: 'Number of Issues' },
-      margin: { t: 60, b: 100, l: 60, r: 40 }
+      title: {
+        text: 'Issue Count by Label',
+        font: { size: 16 }
+      },
+      xaxis: { 
+        title: 'Labels',
+        tickangle: -45
+      },
+      yaxis: { 
+        title: 'Number of Issues'
+      },
+      margin: { t: 60, b: 120, l: 60, r: 40 },
+      paper_bgcolor: 'rgba(0,0,0,0)',
+      plot_bgcolor: 'rgba(0,0,0,0)'
     };
     
-    const config = { displayModeBar: false };
+    const config = { 
+      displayModeBar: false,
+      responsive: true
+    };
     
     Plotly.newPlot('roadmap-bar-chart', data, layout, config);
   }
 
+  // Function to try multiple data sources
+  async function tryLoadData(urls) {
+    for (const url of urls) {
+      try {
+        console.log(`Attempting to load data from: ${url}`);
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          console.warn(`Unexpected content type: ${contentType}`);
+        }
+        
+        const data = await response.json();
+        console.log(`Successfully loaded data from: ${url}`, data);
+        return data;
+      } catch (error) {
+        console.warn(`Failed to load from ${url}:`, error.message);
+        continue;
+      }
+    }
+    throw new Error('All data sources failed');
+  }
+
   // Load and process data
   async function loadRoadmapData() {
+    // Try multiple possible data locations
+    const possibleUrls = [
+      'issues.json',
+      './issues.json',
+      'data/issues.json',
+      '../data/issues.json'
+    ];
+    
     try {
       const response = await fetch('issues.json');
       const issues = await response.json();
       
       if (issues.length === 0) {
-        document.getElementById('roadmap-summary').innerHTML = '<p>No issues data available</p>';
-        document.getElementById('roadmap-timeline-chart').innerHTML = '<p>No issues data available</p>';
-        document.getElementById('roadmap-pie-chart').innerHTML = '<p>No issues data available</p>';
-        document.getElementById('roadmap-bar-chart').innerHTML = '<p>No issues data available</p>';
+        showNoDataMessage();
         return;
       }
       
+      console.log(`Loaded ${issues.length} issues`);
+      
       // Create summary
       const summary = createSummary(issues);
-      document.getElementById('roadmap-summary').innerHTML = `
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
-          <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-            <h3 style="margin: 0; color: #4ECDC4;">${summary.totalIssues}</h3>
-            <p style="margin: 5px 0 0 0;">Open Issues</p>
+      const summaryElement = document.getElementById('roadmap-summary');
+      if (summaryElement) {
+        summaryElement.innerHTML = `
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+            <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h3 style="margin: 0; color: #4ECDC4; font-size: 2em;">${summary.totalIssues}</h3>
+              <p style="margin: 5px 0 0 0; color: #666;">Open Issues</p>
+            </div>
+            <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h3 style="margin: 0; color: #4ECDC4; font-size: 2em;">${summary.uniqueLabels}</h3>
+              <p style="margin: 5px 0 0 0; color: #666;">Unique Labels</p>
+            </div>
+            <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <h3 style="margin: 0; color: #4ECDC4; font-size: 2em;">${summary.avgLabelsPerIssue}</h3>
+              <p style="margin: 5px 0 0 0; color: #666;">Avg Labels per Issue</p>
+            </div>
           </div>
-          <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-            <h3 style="margin: 0; color: #4ECDC4;">${summary.uniqueLabels}</h3>
-            <p style="margin: 5px 0 0 0;">Unique Labels</p>
-          </div>
-          <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-            <h3 style="margin: 0; color: #4ECDC4;">${summary.avgLabelsPerIssue}</h3>
-            <p style="margin: 5px 0 0 0;">Avg Labels per Issue</p>
-          </div>
-        </div>
-      `;
+        `;
+      }
       
       // Create timeline chart
       const dateData = countIssuesByDate(issues);
@@ -462,17 +575,28 @@ function initializeRoadmap() {
       
     } catch (error) {
       console.error('Error loading issues data:', error);
-      document.getElementById('roadmap-summary').innerHTML = '<p>Error loading issue data</p>';
-      document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Could not load chart</p>';
-      document.getElementById('roadmap-pie-chart').innerHTML = '<p>Could not load chart</p>';
-      document.getElementById('roadmap-bar-chart').innerHTML = '<p>Could not load chart</p>';
+      showErrorMessage(error.message);
     }
   }
-
-  // Load roadmap data
-  loadRoadmapData();
-}
-</script>
+  
+  function showNoDataMessage() {
+    const summaryElement = document.getElementById('roadmap-summary');
+    if (summaryElement) {
+      summaryElement.innerHTML = '<div style="text-align: center; padding: 40px; background: #f8f9fa; border-radius: 8px; color: #666;"><h3>No Issues Data Available</h3><p>There are no issues to display at this time.</p></div>';
+    }
+    
+    const chartElements = ['roadmap-timeline-chart', 'roadmap-pie-chart', 'roadmap-bar-chart'];
+    chartElements.forEach(id =&gt; {
+      const element = document.getElementById(id);
+      if (element) {
+        element.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">No data available for charts</p>';
+      }
+    });
+  }
+  
+  function showErrorMessage(errorMsg) {
+    const summaryElement = document.getElementById('roadmap-summary');
+    if (summaryElement
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
