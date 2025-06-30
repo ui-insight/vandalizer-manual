@@ -1,11 +1,8 @@
-# .github/workflows/update-dashboard.yml
 name: Update Roadmap
-
 on:
   schedule:
-    # Run daily at 6 AM UTC (adjust timezone as needed)
     - cron: '0 6 * * *'
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   update-dashboard:
@@ -13,24 +10,16 @@ jobs:
     permissions:
       contents: write
       issues: read
-      pages: write
-      id-token: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
       - name: Collect Issues Data
         run: |
-          # Create data directory
           mkdir -p data
-          
-          # Repository to monitor
           repo="ui-insight/vandalizer"
-          
           echo "Fetching issues from $repo..."
           
-          # Get issues using gh CLI with pagination
           all_issues=$(gh api "repos/$repo/issues" \
             --paginate \
             --jq '.[] | select(.pull_request == null) | {
@@ -44,29 +33,30 @@ jobs:
               labels: [.labels[].name],
               assignees: [.assignees[].login],
               repository: "'$repo'"
-            }' 2>/dev/null || echo "[]")
+            }')
           
-          # Save raw data
           echo "$all_issues" | jq '.' > data/issues.json
-          
-          # Simple log output
           issue_count=$(echo "$all_issues" | jq 'length')
           echo "Collected $issue_count issues from $repo"
-
+        env:
+          GH_TOKEN: ${{ github.token }}  # or your PAT if needed
+          
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
+        
       - name: Render Quarto Document
         run: quarto render
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update roadmap dashboard - $(date)"
+            git push
+            echo "Changes pushed - this will trigger the pages-build-deployment workflow"
+          fi
+        
