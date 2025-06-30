@@ -1,8 +1,10 @@
+# .github/workflows/update-dashboard.yml
 name: Update Roadmap
 on:
   schedule:
+    # Run daily at 6 AM UTC (adjust timezone as needed)
     - cron: '0 6 * * *'
-  workflow_dispatch:
+  workflow_dispatch: # Allow manual trigger
 
 jobs:
   update-dashboard:
@@ -16,11 +18,22 @@ jobs:
         
       - name: Collect Issues Data
         run: |
+          # Create data directory
           mkdir -p data
+          
+          # Repository to monitor
           repo="ui-insight/vandalizer"
           echo "Fetching issues from $repo..."
           
-          all_issues=$(gh api "repos/$repo/issues" \
+          # Test authentication first
+          echo "Testing authentication..."
+          if ! gh auth status; then
+            echo "Authentication failed"
+            exit 1
+          fi
+          
+          # Get issues using gh CLI with pagination and error handling
+          if all_issues=$(gh api "repos/$repo/issues" \
             --paginate \
             --jq '.[] | select(.pull_request == null) | {
               id: .id,
@@ -33,30 +46,52 @@ jobs:
               labels: [.labels[].name],
               assignees: [.assignees[].login],
               repository: "'$repo'"
-            }')
-          
-          echo "$all_issues" | jq '.' > data/issues.json
-          issue_count=$(echo "$all_issues" | jq 'length')
-          echo "Collected $issue_count issues from $repo"
+            }' 2>/dev/null); then
+            
+            # Save raw data
+            echo "$all_issues" | jq '.' > data/issues.json
+            
+            # Simple log output
+            issue_count=$(echo "$all_issues" | jq 'length')
+            echo "Successfully collected $issue_count issues from $repo"
+          else
+            echo "Failed to fetch issues from $repo"
+            echo "This might be due to:"
+            echo "  - Repository not found or no access"
+            echo "  - Invalid token permissions"
+            echo "  - Network issues"
+            
+            # Create empty data file to prevent downstream errors
+            echo "[]" > data/issues.json
+            exit 1
+          fi
         env:
-          GH_TOKEN: ${{ github.token }}  # or your PAT if needed
+          GH_TOKEN: ${{ secrets.VANDALIZER_ISSUES_TOKEN }}
           
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         
       - name: Render Quarto Document
-        run: quarto render
-        
+        run: |
+          echo "Rendering Quarto document..."
+          quarto render
+          echo "Quarto render completed"
+          
       - name: Commit and push changes
         run: |
+          # Configure git
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add .
+          
+          # Add files
+          git add data/ docs/
+          
+          # Check if there are changes to commit
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
+            echo "Changes detected, committing..."
             git commit -m "Update roadmap dashboard - $(date)"
             git push
-            echo "Changes pushed - this will trigger the pages-build-deployment workflow"
+            echo "Changes pushed to docs/ - pages-build-deployment will handle deployment"
           fi
-        
