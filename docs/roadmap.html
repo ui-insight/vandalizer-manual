@@ -562,14 +562,6 @@ function initializeRoadmap() {
 
   // Load and process data
   async function loadRoadmapData() {
-    // Try multiple possible data locations
-    const possibleUrls = [
-      'issues.json',
-      './issues.json',
-      'data/issues.json',
-      '../data/issues.json'
-    ];
-    
     try {
       const response = await fetch('issues.json');
       const issues = await response.json();
