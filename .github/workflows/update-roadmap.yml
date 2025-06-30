@@ -24,7 +24,6 @@ jobs:
         
       - name: Collect Issues Data
         run: |
-          mkdir -p docs/data
           repo="ui-insight/vandalizer"
           
           if ! gh auth status; then
@@ -45,9 +44,9 @@ jobs:
               assignees: [.assignees[].login],
               repository: "'$repo'"
             }'); then
-            echo "$all_issues" | jq '.' > docs/data/issues.json
+            echo "$all_issues" | jq '.' > docs/issues.json
           else
-            echo "[]" > docs/data/issues.json
+            echo "[]" > docs/issues.json
             exit 1
           fi
         env:
