@@ -502,11 +502,12 @@ function initializeRoadmap() {
           
           try {
             issues = JSON.parse(text);
+            console.log(`✓ Successfully parsed ${issues.length} issues from JSON array`);
             successfulPath = path;
             break;
           } catch (jsonError) {
             console.log(`✗ JSON parsing failed for ${path}:`, jsonError.message);
-            console.log('Full content:', text);
+            console.log('Response content (first 500 chars):', text.substring(0, 500));
             continue;
           }
         } else {
