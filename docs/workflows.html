@@ -290,19 +290,104 @@ let showAllIssuesPriority = false;
 function initializeRoadmap() {
   console.log('Initializing roadmap...');
 
-  // Generic modal for showing issue lists
+  // Priority extraction and ordering functions
+  function extractPriority(issue) {
+    const labels = issue.labels || [];
+    const priorityLabels = labels.filter(label => 
+      label.toLowerCase().includes('priority') || 
+      label.toLowerCase().includes('high') || 
+      label.toLowerCase().includes('medium') || 
+      label.toLowerCase().includes('low')
+    );
+    
+    if (priorityLabels.length === 0) return 'No Priority';
+    
+    // Return the first priority label found
+    return priorityLabels[0];
+  }
+
+  function getPriorityOrder(priority) {
+    const priorityStr = priority.toLowerCase();
+    if (priorityStr.includes('high') || priorityStr.includes('critical')) return 0;
+    if (priorityStr.includes('medium')) return 1;
+    if (priorityStr.includes('low')) return 2;
+    return 3; // No priority
+  }
+
+  function getPriorityColor(priority) {
+    const priorityStr = priority.toLowerCase();
+    if (priorityStr.includes('high') || priorityStr.includes('critical')) return '#FF4444';
+    if (priorityStr.includes('medium')) return '#FF8C00';
+    if (priorityStr.includes('low')) return '#4285F4';
+    return '#888888'; // No priority
+  }
+
+  function sortIssuesByPriority(issues) {
+    return issues.sort((a, b) => {
+      const priorityA = extractPriority(a);
+      const priorityB = extractPriority(b);
+      const orderA = getPriorityOrder(priorityA);
+      const orderB = getPriorityOrder(priorityB);
+      
+      if (orderA !== orderB) {
+        return orderA - orderB; // Sort by priority order
+      }
+      
+      // If same priority, sort alphabetically by title
+      return a.title.localeCompare(b.title);
+    });
+  }
+
+  // Enhanced modal for showing issue lists with priority ordering and coloring
   function showModal(title, issues) {
     const modal = document.createElement('div');
     modal.style.cssText = `position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 10000;`;
     
-    const issuesList = issues.map(issue => `<li style="margin-bottom: 8px;">${issue}</li>`).join('');
+    // Sort issues by priority
+    const sortedIssues = sortIssuesByPriority(issues);
+    
+    // Group issues by priority for better display
+    const issuesByPriority = {};
+    sortedIssues.forEach(issue => {
+      const priority = extractPriority(issue);
+      if (!issuesByPriority[priority]) {
+        issuesByPriority[priority] = [];
+      }
+      issuesByPriority[priority].push(issue);
+    });
+    
+    // Create HTML for grouped issues
+    let issuesHTML = '';
+    const priorityOrder = ['High Priority', 'Medium Priority', 'Low Priority', 'No Priority'];
+    
+    Object.keys(issuesByPriority).forEach(priority => {
+      const color = getPriorityColor(priority);
+      const issueList = issuesByPriority[priority];
+      
+      issuesHTML += `
+        <div style="margin-bottom: 20px;">
+          <h4 style="color: ${color}; margin-bottom: 10px; border-bottom: 2px solid ${color}; padding-bottom: 5px;">
+            ${priority} (${issueList.length} issues)
+          </h4>
+          <ul style="list-style: none; padding-left: 10px;">
+            ${issueList.map(issue => `
+              <li style="margin-bottom: 8px; padding: 8px; background: rgba(${color.slice(1).match(/.{2}/g).map(x => parseInt(x, 16)).join(', ')}, 0.1); border-radius: 4px; border-left: 4px solid ${color};">
+                <span style="color: ${color}; font-weight: bold;">●</span> ${issue.title}
+              </li>
+            `).join('')}
+          </ul>
+        </div>
+      `;
+    });
+    
     modal.innerHTML = `
       <div style="background: white; border-radius: 8px; padding: 20px; max-width: 80%; max-height: 80%; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
-          <h3>${title} (${issues.length} issues)</h3>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px;">
+          <h3 style="margin: 0;">${title} (${issues.length} issues)</h3>
           <button onclick="this.closest('div').parentElement.parentElement.remove()" style="background: #ff4444; color: white; border: none; border-radius: 4px; padding: 8px 12px; cursor: pointer;">Close</button>
         </div>
-        <ul style="list-style: none; padding: 0;">${issuesList}</ul>
+        <div style="font-size: 12px; color: #666; margin-bottom: 15px;">Issues are ordered by priority: High → Medium → Low → No Priority</div>
+        ${issuesHTML}
       </div>
     `;
     
@@ -323,11 +408,9 @@ function initializeRoadmap() {
     };
   }
 
-  // Helper functions for cumulative data
+  // Helper functions for cumulative data - UPDATED to return full issue objects
   function getAllOpenedIssuesByDate(issues, targetDate) {
-    return issues
-      .filter(issue => new Date(issue.created_at).toISOString().split('T')[0] <= targetDate)
-      .map(issue => issue.title);
+    return issues.filter(issue => new Date(issue.created_at).toISOString().split('T')[0] <= targetDate);
   }
 
   function getAllClosedIssuesByDate(issues, targetDate) {
@@ -336,8 +419,7 @@ function initializeRoadmap() {
       .filter(issue => {
         const closeDate = issue.closed_at || issue.created_at;
         return new Date(closeDate).toISOString().split('T')[0] <= targetDate;
-      })
-      .map(issue => issue.title);
+      });
   }
 
   // Create timeline chart (opened vs closed workflow)
@@ -350,18 +432,18 @@ function initializeRoadmap() {
     // All issues contribute to "opened" by creation date
     issues.forEach(issue => {
       const date = new Date(issue.created_at).toISOString().split('T')[0];
-      if (!openedData[date]) openedData[date] = { count: 0, titles: [] };
+      if (!openedData[date]) openedData[date] = { count: 0, issues: [] };
       openedData[date].count++;
-      openedData[date].titles.push(issue.title);
+      openedData[date].issues.push(issue);
     });
     
     // Only closed issues contribute to "closed"
     issues.filter(issue => issue.state === 'closed').forEach(issue => {
       const dateToUse = issue.closed_at || issue.created_at;
       const date = new Date(dateToUse).toISOString().split('T')[0];
-      if (!closedData[date]) closedData[date] = { count: 0, titles: [] };
+      if (!closedData[date]) closedData[date] = { count: 0, issues: [] };
       closedData[date].count++;
-      closedData[date].titles.push(issue.title);
+      closedData[date].issues.push(issue);
     });
     
     const data = [];
@@ -377,8 +459,6 @@ function initializeRoadmap() {
       openedDates.forEach(date => {
         cumulative += openedData[date].count;
         openedCounts.push(cumulative);
-        
-        const titles = openedData[date].titles;
         
         openedHoverText.push(`<b>${date}</b><br>Cumulative opened: ${cumulative}<br><br><i>Click to see all issues opened by this date</i>`);
         allClickData[`opened-${date}`] = { date, type: 'opened', issues: getAllOpenedIssuesByDate(issues, date) };
@@ -405,8 +485,6 @@ function initializeRoadmap() {
       closedDates.forEach(date => {
         cumulative += closedData[date].count;
         closedCounts.push(cumulative);
-        
-        const titles = closedData[date].titles;
         
         closedHoverText.push(`<b>${date}</b><br>Cumulative closed: ${cumulative}<br><br><i>Click to see all issues closed by this date</i>`);
         allClickData[`closed-${date}`] = { date, type: 'closed', issues: getAllClosedIssuesByDate(issues, date) };
@@ -445,7 +523,7 @@ function initializeRoadmap() {
     console.log('Timeline chart completed');
   }
 
-  // Create open issues trend with separate impulse chart - FIXED VERSION
+  // Create open issues trend with separate impulse chart - UPDATED
   function createBacklogChart(issues) {
     console.log('Creating open issues chart...');
     
@@ -456,7 +534,7 @@ function initializeRoadmap() {
       events.push({
         date: new Date(issue.created_at),
         type: 'opened',
-        title: issue.title
+        issue: issue
       });
     });
     
@@ -466,7 +544,7 @@ function initializeRoadmap() {
       events.push({
         date: closeDate,
         type: 'closed',
-        title: issue.title
+        issue: issue
       });
     });
     
@@ -489,7 +567,7 @@ function initializeRoadmap() {
     const trendHoverText = [];
     const openIssuesClickData = {};
     let currentOpen = 0;
-    let currentOpenIssues = new Set(); // Track actual open issues
+    let currentOpenIssues = new Map(); // Track actual open issues with full objects
     let previousOpen = 0;
     
     // Process each date
@@ -498,9 +576,9 @@ function initializeRoadmap() {
       const openedToday = dayEvents.opened.length;
       const closedToday = dayEvents.closed.length;
       
-      // Update the set of open issues
-      dayEvents.opened.forEach(event => currentOpenIssues.add(event.title));
-      dayEvents.closed.forEach(event => currentOpenIssues.delete(event.title));
+      // Update the map of open issues
+      dayEvents.opened.forEach(event => currentOpenIssues.set(event.issue.title, event.issue));
+      dayEvents.closed.forEach(event => currentOpenIssues.delete(event.issue.title));
       
       previousOpen = currentOpen;
       currentOpen += openedToday;
@@ -522,7 +600,7 @@ function initializeRoadmap() {
         // Store all currently open issues for this date
         openIssuesClickData[dateStr] = { 
           date: dateStr, 
-          issues: Array.from(currentOpenIssues).sort() 
+          issues: Array.from(currentOpenIssues.values()) 
         };
       }
     });
@@ -565,7 +643,7 @@ function initializeRoadmap() {
       }
     });
     
-    // Chart 2: Weekly activity impulses (aggregated) - FIXED VERSION
+    // Chart 2: Weekly activity impulses (aggregated) - UPDATED
     const impulseData = [];
     
     // Helper function to get week start date (Monday)
@@ -607,10 +685,10 @@ function initializeRoadmap() {
       weeklyOpenedCounts.push(openedCount);
       weeklyClosedCounts.push(-closedCount);
       
-      // Store weekly issues for click handling
+      // Store weekly issues for click handling (convert events to issues)
       weeklyClickData[weekStart] = {
-        opened: weekEvents.opened.map(e => e.title),
-        closed: weekEvents.closed.map(e => e.title)
+        opened: weekEvents.opened.map(e => e.issue),
+        closed: weekEvents.closed.map(e => e.issue)
       };
       
       // Create hover text for the week range
@@ -801,12 +879,12 @@ function initializeRoadmap() {
       if (nonPriorityLabels.length === 0) {
         if (!labelData['No Label']) labelData['No Label'] = { count: 0, issues: [] };
         labelData['No Label'].count++;
-        labelData['No Label'].issues.push(issue.title);
+        labelData['No Label'].issues.push(issue);
       } else {
         nonPriorityLabels.forEach(label => {
           if (!labelData[label]) labelData[label] = { count: 0, issues: [] };
           labelData[label].count++;
-          labelData[label].issues.push(issue.title);
+          labelData[label].issues.push(issue);
         });
       }
     });
@@ -880,27 +958,11 @@ function initializeRoadmap() {
     const priorityData = {};
     
     filteredIssues.forEach(issue => {
-      const labels = issue.labels || [];
+      const priority = extractPriority(issue);
       
-      // Look for priority-related labels
-      const priorityLabels = labels.filter(label => 
-        label.toLowerCase().includes('priority') || 
-        label.toLowerCase().includes('high') || 
-        label.toLowerCase().includes('medium') || 
-        label.toLowerCase().includes('low')
-      );
-      
-      if (priorityLabels.length === 0) {
-        if (!priorityData['No Priority']) priorityData['No Priority'] = { count: 0, issues: [] };
-        priorityData['No Priority'].count++;
-        priorityData['No Priority'].issues.push(issue.title);
-      } else {
-        priorityLabels.forEach(label => {
-          if (!priorityData[label]) priorityData[label] = { count: 0, issues: [] };
-          priorityData[label].count++;
-          priorityData[label].issues.push(issue.title);
-        });
-      }
+      if (!priorityData[priority]) priorityData[priority] = { count: 0, issues: [] };
+      priorityData[priority].count++;
+      priorityData[priority].issues.push(issue);
     });
     
     const labels = Object.keys(priorityData);

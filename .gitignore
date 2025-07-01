@@ -7,3 +7,5 @@
 *.knit.md
 .quarto/
 /docs
+
+/.quarto/
