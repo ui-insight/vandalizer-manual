@@ -28,7 +28,7 @@ jobs:
           if ! gh auth status; then
             exit 1
           fi
-          if all_issues=$(gh api "repos/$repo/issues" \
+          if all_issues=$(gh api "repos/$repo/issues?state=all" \
             --paginate \
             --jq '.[] | select(.pull_request == null) | {
               id: .id,

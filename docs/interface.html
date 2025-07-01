@@ -316,7 +316,7 @@ function initializeRoadmap() {
     };
   }
 
-  // Function to count issues by creation date and state
+  // Function to count cumulative issues by creation date and current state
   function countIssuesByDateAndState(issues) {
     const openData = {};
     const closedData = {};
@@ -364,7 +364,7 @@ function initializeRoadmap() {
       openCounts.push(openCumulative);
       closedCounts.push(closedCumulative);
       
-      // Collect titles for tooltips
+      // Collect titles for tooltips (only issues created on this specific date)
       openTitles.push(openData[date] ? openData[date].titles : []);
       closedTitles.push(closedData[date] ? closedData[date].titles : []);
     });
@@ -387,25 +387,33 @@ function initializeRoadmap() {
     
     // Create custom hover text for each point
     const openHoverText = dateData.dates.map((date, index) => {
-      const titles = dateData.open.titles[index];
-      if (titles.length === 0) return `<b>${date}</b><br>No open issues created`;
+      const dailyTitles = dateData.open.titles[index];
+      const cumulativeCount = dateData.open.counts[index];
       
-      const titlesList = titles.length > 3 
-        ? titles.slice(0, 3).join('<br>') + `<br>... and ${titles.length - 3} more`
-        : titles.join('<br>');
+      if (dailyTitles.length === 0) {
+        return `<b>${date}</b><br>Cumulative open issues: ${cumulativeCount}<br>No open issues created this day`;
+      }
       
-      return `<b>${date}</b><br>Open issues: ${titles.length}<br><br><i>Issues created:</i><br>${titlesList}`;
+      const titlesList = dailyTitles.length > 3 
+        ? dailyTitles.slice(0, 3).join('<br>') + `<br>... and ${dailyTitles.length - 3} more`
+        : dailyTitles.join('<br>');
+      
+      return `<b>${date}</b><br>Cumulative open issues: ${cumulativeCount}<br>Created this day: ${dailyTitles.length}<br><br><i>Issues created:</i><br>${titlesList}`;
     });
     
     const closedHoverText = dateData.dates.map((date, index) => {
-      const titles = dateData.closed.titles[index];
-      if (titles.length === 0) return `<b>${date}</b><br>No closed issues created`;
+      const dailyTitles = dateData.closed.titles[index];
+      const cumulativeCount = dateData.closed.counts[index];
       
-      const titlesList = titles.length > 3 
-        ? titles.slice(0, 3).join('<br>') + `<br>... and ${titles.length - 3} more`
-        : titles.join('<br>');
+      if (dailyTitles.length === 0) {
+        return `<b>${date}</b><br>Cumulative closed issues: ${cumulativeCount}<br>No closed issues created this day`;
+      }
       
-      return `<b>${date}</b><br>Closed issues: ${titles.length}<br><br><i>Issues created:</i><br>${titlesList}`;
+      const titlesList = dailyTitles.length > 3 
+        ? dailyTitles.slice(0, 3).join('<br>') + `<br>... and ${dailyTitles.length - 3} more`
+        : dailyTitles.join('<br>');
+      
+      return `<b>${date}</b><br>Cumulative closed issues: ${cumulativeCount}<br>Created this day: ${dailyTitles.length}<br><br><i>Issues created:</i><br>${titlesList}`;
     });
     
     const data = [
@@ -467,24 +475,39 @@ function initializeRoadmap() {
     Plotly.newPlot('roadmap-timeline-chart', data, layout, config);
   }
 
-  // Function to count label frequency
+  // Function to count label frequency with issue titles
   function countLabels(issues) {
-    const labelCounts = {};
+    const labelData = {};
     
     issues.forEach(issue => {
       const labels = issue.labels || [];
-      labels.forEach(label => {
-        labelCounts[label] = (labelCounts[label] || 0) + 1;
-      });
+      const title = issue.title;
+      
+      if (labels.length === 0) {
+        // Handle unlabeled issues
+        if (!labelData['No Label']) {
+          labelData['No Label'] = { count: 0, issues: [] };
+        }
+        labelData['No Label'].count++;
+        labelData['No Label'].issues.push(title);
+      } else {
+        labels.forEach(label => {
+          if (!labelData[label]) {
+            labelData[label] = { count: 0, issues: [] };
+          }
+          labelData[label].count++;
+          labelData[label].issues.push(title);
+        });
+      }
     });
     
-    return labelCounts;
+    return labelData;
   }
 
   // Function to create pie chart
-  function createPieChart(labelCounts) {
-    const labels = Object.keys(labelCounts);
-    const counts = Object.values(labelCounts);
+  function createPieChart(labelData) {
+    const labels = Object.keys(labelData);
+    const counts = labels.map(label => labelData[label].count);
     
     if (labels.length === 0) {
       document.getElementById('roadmap-pie-chart').innerHTML = '<p>No labels found</p>';
@@ -493,14 +516,24 @@ function initializeRoadmap() {
     
     console.log('Creating pie chart with', labels.length, 'labels');
     
+    // Create custom hover text with issue titles
+    const hoverText = labels.map(label => {
+      const issues = labelData[label].issues;
+      const count = labelData[label].count;
+      
+      const issuesList = issues.length > 5 
+        ? issues.slice(0, 5).join('<br>') + `<br>... and ${issues.length - 5} more`
+        : issues.join('<br>');
+      
+      return `<b>${label}</b><br>Issues: ${count}<br><br><i>Issues with this label:</i><br>${issuesList}`;
+    });
+    
     const data = [{
       type: 'pie',
       labels: labels,
       values: counts,
-      hovertemplate: '<b>%{label}</b><br>' +
-                     'Issues: %{value}<br>' +
-                     'Percentage: %{percent}<br>' +
-                     '<extra></extra>'
+      hovertemplate: '%{hovertext}<extra></extra>',
+      hovertext: hoverText
     }];
     
     const layout = {
@@ -513,39 +546,6 @@ function initializeRoadmap() {
     Plotly.newPlot('roadmap-pie-chart', data, layout, config);
   }
 
-  // Function to create bar chart
-  function createBarChart(labelCounts) {
-    const labels = Object.keys(labelCounts);
-    const counts = Object.values(labelCounts);
-    
-    if (labels.length === 0) {
-      document.getElementById('roadmap-bar-chart').innerHTML = '<p>No labels found</p>';
-      return;
-    }
-    
-    console.log('Creating bar chart with', labels.length, 'labels');
-    
-    const data = [{
-      type: 'bar',
-      x: labels,
-      y: counts,
-      marker: {
-        color: '#4ECDC4'
-      }
-    }];
-    
-    const layout = {
-      title: 'Issue Count by Label',
-      xaxis: { title: 'Labels' },
-      yaxis: { title: 'Number of Issues' },
-      margin: { t: 60, b: 100, l: 60, r: 40 }
-    };
-    
-    const config = { displayModeBar: false };
-    
-    Plotly.newPlot('roadmap-bar-chart', data, layout, config);
-  }
-
   // Load and process data
   async function loadRoadmapData() {
     console.log('Attempting to load roadmap data...');
@@ -554,9 +554,7 @@ function initializeRoadmap() {
     
     // Show loading state
     document.getElementById('roadmap-summary').innerHTML = '<p>Loading issue data...</p>';
-    document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Loading timeline chart...</p>';
     document.getElementById('roadmap-pie-chart').innerHTML = '<p>Loading pie chart...</p>';
-    document.getElementById('roadmap-bar-chart').innerHTML = '<p>Loading bar chart...</p>';
     
     // Try multiple possible paths for the issues.json file
     const possiblePaths = [
@@ -638,7 +636,6 @@ function initializeRoadmap() {
       document.getElementById('roadmap-summary').innerHTML = `<p>Error: ${errorMessage}</p>`;
       document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
       document.getElementById('roadmap-pie-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
-      document.getElementById('roadmap-bar-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
       return;
     }
     
@@ -649,7 +646,6 @@ function initializeRoadmap() {
       document.getElementById('roadmap-summary').innerHTML = noDataMessage;
       document.getElementById('roadmap-timeline-chart').innerHTML = noDataMessage;
       document.getElementById('roadmap-pie-chart').innerHTML = noDataMessage;
-      document.getElementById('roadmap-bar-chart').innerHTML = noDataMessage;
       return;
     }
     
@@ -680,9 +676,8 @@ function initializeRoadmap() {
       createTimelineChart(dateData);
       
       // Create label charts
-      const labelCounts = countLabels(issues);
-      createPieChart(labelCounts);
-      createBarChart(labelCounts);
+      const labelData = countLabels(issues);
+      createPieChart(labelData);
       
       console.log('Roadmap visualization complete!');
       
@@ -692,7 +687,6 @@ function initializeRoadmap() {
       document.getElementById('roadmap-summary').innerHTML = errorMessage;
       document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
       document.getElementById('roadmap-pie-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
-      document.getElementById('roadmap-bar-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
     }
   }
 
