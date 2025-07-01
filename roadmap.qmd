@@ -29,9 +29,9 @@ format:
 ## Issues by Creation Date
 
 <div id="roadmap-timeline-chart" style="height: 400px;"></div>
+<div id="roadmap-backlog-chart" style="height: 400px;"></div>
 
 ## Issues by Label
 
 <div id="roadmap-pie-chart" style="height: 400px;"></div>
 
-<div id="roadmap-bar-chart" style="height: 500px;"></div>

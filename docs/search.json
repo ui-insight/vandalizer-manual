@@ -1,5 +1,25 @@
 [
   {
+    "objectID": "example.html",
+    "href": "example.html",
+    "title": "Example Workflow",
+    "section": "",
+    "text": "Example Workflow\n\nWorkflows are best understood through practice. The following section offers a walkthrough building an example workflow and provides some suggested use-cases.\nLet’s say that a user wants to use Vandalizer to create an RFA checklist. RFA’s often contain similar information, but it may not always be communicated the same way between RFA documents. For this reason, the user is going to need added flexibility from Vandalizer, so they will select a prompt task to extract key information from the RFA such as deadlines, eligibility criteria, award information, or application criteria. The user wants their output structured in a table so that information can be easily compared between documents. Here are the steps that the user will take.\nUpload an RFA. This step will allow Vandalizer to perform OCR and extract text from the document. Wait until the OCR process is finished as indicated by the spinner icon changing to a data display icon .\nCreate tasks. This workflow requires the coordination of two tasks, a prompt task and formatting task. To add these tasks, the user will click the button at the bottom of the toolbox window, then click +New Task to add each task. For both a prompt task and formatting task, the user will name the task, then write their query for Vandalizer.\nCreate a workflow. Once the user creates some tasks, they are ready to create a workflow that coordinates these tasks. To do this, the user will press the Workflows tab on the right side of the toolbox window. From there, the user will click on +New Workflow.\nCoordinate steps. The user determines how information will flow between steps in their workflow. All tasks within a step receive the same input. In this case, information from the prompt step will flow downstream to the formatting step. Therefore, the user determines that this workflow requires a two-step process where the prompt task is assigned to step 1 and the formatting task is assigned to step 2.\nAssign tasks to each step. Under the workflows tab, the user adds two steps, titling them “RFA Extraction” and “Format RFA Checklist.” Then, the user clicks on each step to assign pre-made tasks to each step.\nRun workflow. Now that the user’s tasks are appropriately assembled and coordinated, the user is ready to run the workflow. The user clicks Run Workflow in the bottom right corner of the toolbox window and Vandalizer produces the desired output.\nApply to other documents. This workflow is saved into the user’s Vandalizer workspace. Now the user can run the same assemblage of tasks on future RFA’s.\n\nOther Workflow Ideas\n\n\nRFA checklist creation tool. Using a prompt task identify key dates, deadlines, eligibility criteria, award information, application criteria. A prompt task is best here because the necessary information won’t always be present in the same place between RFA’s.\nNSF award notice Extraction. Using an extract task important information from an award letter such as PI, dates, or total budget can be extracted. Because NSF award notices use a standard format an extraction task is a better choice than a prompt task.",
+    "crumbs": [
+      "Examples"
+    ]
+  },
+  {
+    "objectID": "index.html#what-is-vandalizer",
+    "href": "index.html#what-is-vandalizer",
+    "title": "A Beginner’s Guide to Vandalizer",
+    "section": "What is Vandalizer?",
+    "text": "What is Vandalizer?\n\n\nVandalizer is an AI workflow management tool designed to assist research administrators in managing and streamlining their work.\nAt research institutions across the United States, Research Administration (RA) offices are facing increasing demands with limited resources. AI tools promise to ease the burden of routine administrative tasks, but commercially available AI tools do not reliably meet RA offices’ high standards for accuracy, reproducibility, flexibility and security. While general use AI tools create exciting opportunities for augmentation, there is a gap between their potential and their practical implementation in RA offices.\nVandalizer is an AI workflow management tool designed to assist research administrators in managing and streamlining their work. The goal is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.\n\n\n\n\n\n\n\n\nWHY USE VANDALIZER?\n\n\n\nDOMAIN KNOWLEDGE: Vandalizer is purpose-built for Research Administration, enabling offices to deploy AI tools at scale without compromising standards.\nACCURACY: Vandalizer ensures correct data extraction and transformation without hallucinations.\nREPRODUCIBILITY: Vandalizer delivers consistent results across repeated inputs and users.\nFLEXIBILITY: Vandalizer adapts to diverse data environments, evolving workflows, and advancing AI models.\nSECURITY: Vandalizer complies with organizational IT policies and data governance requirements.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
     "objectID": "workflows.html",
     "href": "workflows.html",
     "title": "Workflows",
@@ -7,6 +27,56 @@
     "text": "Workflows\n\nA workflow is a coordinated assemblage of AI tasks, organized into steps that Vandalizer performs in sequence. Designing workflows can take some time and consideration, but their reproducibility can save RA offices substantial time, particularly for multi-step processes that will be repeated.\n\n\n\n\n\n\nSteps\n\n\n\nAll tasks within a step receive the same input and run independantly of each other\n\n\nWorkflows arrange AI tasks into sequential groups called steps. The purpose of a step is to organize the inputs available to tasks. All tasks within a step receive the same input and all tasks within a step contribute to the step output. The outputs from an upstream step will inform the inputs for a downstream step. For example, a user might ask Vandalizer to extract key information from an NSF Notice of Award (Step 1), then format that information into a template (step 2). This workflow ensures that Vandalizer extracts the same information from each NSF NOA (step 1), and that the outputs are structured consistently, without duplicate information (step 2).",
     "crumbs": [
       "Workflows"
+    ]
+  },
+  {
+    "objectID": "tasks.html",
+    "href": "tasks.html",
+    "title": "Tasks",
+    "section": "",
+    "text": "Tasks\n\nTasks describe the jobs that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time. Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.\n\n\n\n\n\n\nDESIGNING TASKS\n\n\n\n\nExtraction Tasks Users choose which terms Vandalizer pulls from a document by typing them under “Add term to extract” or by clicking “From Document” to have AI suggest an initial set.\nPrompt and Formatting Tasks Users enter their query using natural language prompts in the “write your prompt here” box\n\n\n\n\nTypes of Tasks\n\n\n\nExtraction tasks: Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e. any information that the user can expect using the ‘Find’ feature on a document processor like Microsoft Word.\nPrompt tasks: Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.\nFormatting tasks: Vandalizer structures its outputs into the format that the user requests, such as a table with a summary below it.\n\n\n\n\n\n\nIn the toolbox window, users can create tasks by clicking on the Chat tab at the top of the window. From there, users can either click on  Run a task or on the\n\n TASKS\n\nbutton",
+    "crumbs": [
+      "Tasks"
+    ]
+  },
+  {
+    "objectID": "interface.html",
+    "href": "interface.html",
+    "title": "The Vandalizer Interface",
+    "section": "",
+    "text": "After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that is extracted from the document. These documents provide the input to Vandalizer tasks and workflows.\nSecond, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows.\nIn the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the  symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).\nWhen the system is finished analyzing, the user will see the symbol change to . This symbol indicates that Vandalizer has finished extracting the text data from the document. Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.",
+    "crumbs": [
+      "Interface"
+    ]
+  },
+  {
+    "objectID": "interface.html#chatting-with-a-document-in-vandalizer",
+    "href": "interface.html#chatting-with-a-document-in-vandalizer",
+    "title": "The Vandalizer Interface",
+    "section": "Chatting with a document in Vandalizer",
+    "text": "Chatting with a document in Vandalizer\nOnce a user uploads a document to Vandalizer, the user can chat with the document directly to quickly extract information from a document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the Chat tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.\nThe chat tool is great for a user who wants to pose quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.",
+    "crumbs": [
+      "Interface"
+    ]
+  },
+  {
+    "objectID": "roadmap.html#issues-by-creation-date",
+    "href": "roadmap.html#issues-by-creation-date",
+    "title": "Roadmap",
+    "section": "Issues by Creation Date",
+    "text": "Issues by Creation Date",
+    "crumbs": [
+      "Roadmap"
+    ]
+  },
+  {
+    "objectID": "roadmap.html#issues-by-label",
+    "href": "roadmap.html#issues-by-label",
+    "title": "Roadmap",
+    "section": "Issues by Label",
+    "text": "Issues by Label",
+    "crumbs": [
+      "Roadmap"
     ]
   },
   {
@@ -37,76 +107,6 @@
     "text": "Accessing Vandalizer\nVandalizer can be accessed through university specific access points. For the University of Southern Utah, this access point is: https://nsfai.suu.edu/. SUU employees should contact Nathan Wiggins (nathanwiggins@suu.edu) for access.",
     "crumbs": [
       "Introduction"
-    ]
-  },
-  {
-    "objectID": "example.html",
-    "href": "example.html",
-    "title": "Example Workflow",
-    "section": "",
-    "text": "Example Workflow\n\nWorkflows are best understood through practice. The following section offers a walkthrough building an example workflow and provides some suggested use-cases.\nLet’s say that a user wants to use Vandalizer to create an RFA checklist. RFA’s often contain similar information, but it may not always be communicated the same way between RFA documents. For this reason, the user is going to need added flexibility from Vandalizer, so they will select a prompt task to extract key information from the RFA such as deadlines, eligibility criteria, award information, or application criteria. The user wants their output structured in a table so that information can be easily compared between documents. Here are the steps that the user will take.\nUpload an RFA. This step will allow Vandalizer to perform OCR and extract text from the document. Wait until the OCR process is finished as indicated by the spinner icon changing to a data display icon .\nCreate tasks. This workflow requires the coordination of two tasks, a prompt task and formatting task. To add these tasks, the user will click the button at the bottom of the toolbox window, then click +New Task to add each task. For both a prompt task and formatting task, the user will name the task, then write their query for Vandalizer.\nCreate a workflow. Once the user creates some tasks, they are ready to create a workflow that coordinates these tasks. To do this, the user will press the Workflows tab on the right side of the toolbox window. From there, the user will click on +New Workflow.\nCoordinate steps. The user determines how information will flow between steps in their workflow. All tasks within a step receive the same input. In this case, information from the prompt step will flow downstream to the formatting step. Therefore, the user determines that this workflow requires a two-step process where the prompt task is assigned to step 1 and the formatting task is assigned to step 2.\nAssign tasks to each step. Under the workflows tab, the user adds two steps, titling them “RFA Extraction” and “Format RFA Checklist.” Then, the user clicks on each step to assign pre-made tasks to each step.\nRun workflow. Now that the user’s tasks are appropriately assembled and coordinated, the user is ready to run the workflow. The user clicks Run Workflow in the bottom right corner of the toolbox window and Vandalizer produces the desired output.\nApply to other documents. This workflow is saved into the user’s Vandalizer workspace. Now the user can run the same assemblage of tasks on future RFA’s.\n\nOther Workflow Ideas\n\n\nRFA checklist creation tool. Using a prompt task identify key dates, deadlines, eligibility criteria, award information, application criteria. A prompt task is best here because the necessary information won’t always be present in the same place between RFA’s.\nNSF award notice Extraction. Using an extract task important information from an award letter such as PI, dates, or total budget can be extracted. Because NSF award notices use a standard format an extraction task is a better choice than a prompt task.",
-    "crumbs": [
-      "Examples"
-    ]
-  },
-  {
-    "objectID": "roadmap.html#issues-by-creation-date",
-    "href": "roadmap.html#issues-by-creation-date",
-    "title": "Roadmap",
-    "section": "Issues by Creation Date",
-    "text": "Issues by Creation Date",
-    "crumbs": [
-      "Roadmap"
-    ]
-  },
-  {
-    "objectID": "roadmap.html#issues-by-label",
-    "href": "roadmap.html#issues-by-label",
-    "title": "Roadmap",
-    "section": "Issues by Label",
-    "text": "Issues by Label",
-    "crumbs": [
-      "Roadmap"
-    ]
-  },
-  {
-    "objectID": "tasks.html",
-    "href": "tasks.html",
-    "title": "Tasks",
-    "section": "",
-    "text": "Tasks\n\nTasks describe the jobs that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time. Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.\n\n\n\n\n\n\nDESIGNING TASKS\n\n\n\n\nExtraction Tasks Users choose which terms Vandalizer pulls from a document by typing them under “Add term to extract” or by clicking “From Document” to have AI suggest an initial set.\nPrompt and Formatting Tasks Users enter their query using natural language prompts in the “write your prompt here” box\n\n\n\n\nTypes of Tasks\n\n\n\nExtraction tasks: Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e. any information that the user can expect using the ‘Find’ feature on a document processor like Microsoft Word.\nPrompt tasks: Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.\nFormatting tasks: Vandalizer structures its outputs into the format that the user requests, such as a table with a summary below it.\n\n\n\n\n\n\nIn the toolbox window, users can create tasks by clicking on the Chat tab at the top of the window. From there, users can either click on  Run a task or on the\n\n TASKS\n\nbutton",
-    "crumbs": [
-      "Tasks"
-    ]
-  },
-  {
-    "objectID": "index.html#what-is-vandalizer",
-    "href": "index.html#what-is-vandalizer",
-    "title": "A Beginner’s Guide to Vandalizer",
-    "section": "What is Vandalizer?",
-    "text": "What is Vandalizer?\n\n\nVandalizer is an AI workflow management tool designed to assist research administrators in managing and streamlining their work.\nAt research institutions across the United States, Research Administration (RA) offices are facing increasing demands with limited resources. AI tools promise to ease the burden of routine administrative tasks, but commercially available AI tools do not reliably meet RA offices’ high standards for accuracy, reproducibility, flexibility and security. While general use AI tools create exciting opportunities for augmentation, there is a gap between their potential and their practical implementation in RA offices.\nVandalizer is an AI workflow management tool designed to assist research administrators in managing and streamlining their work. The goal is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.\n\n\n\n\n\n\n\n\nWHY USE VANDALIZER?\n\n\n\nDOMAIN KNOWLEDGE: Vandalizer is purpose-built for Research Administration, enabling offices to deploy AI tools at scale without compromising standards.\nACCURACY: Vandalizer ensures correct data extraction and transformation without hallucinations.\nREPRODUCIBILITY: Vandalizer delivers consistent results across repeated inputs and users.\nFLEXIBILITY: Vandalizer adapts to diverse data environments, evolving workflows, and advancing AI models.\nSECURITY: Vandalizer complies with organizational IT policies and data governance requirements.",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "interface.html",
-    "href": "interface.html",
-    "title": "The Vandalizer Interface",
-    "section": "",
-    "text": "After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that is extracted from the document. These documents provide the input to Vandalizer tasks and workflows.\nSecond, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows.\nIn the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the  symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).\nWhen the system is finished analyzing, the user will see the symbol change to . This symbol indicates that Vandalizer has finished extracting the text data from the document. Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.",
-    "crumbs": [
-      "Interface"
-    ]
-  },
-  {
-    "objectID": "interface.html#chatting-with-a-document-in-vandalizer",
-    "href": "interface.html#chatting-with-a-document-in-vandalizer",
-    "title": "The Vandalizer Interface",
-    "section": "Chatting with a document in Vandalizer",
-    "text": "Chatting with a document in Vandalizer\nOnce a user uploads a document to Vandalizer, the user can chat with the document directly to quickly extract information from a document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the Chat tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.\nThe chat tool is great for a user who wants to pose quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.",
-    "crumbs": [
-      "Interface"
     ]
   }
 ]
