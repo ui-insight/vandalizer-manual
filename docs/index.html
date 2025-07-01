@@ -483,6 +483,7 @@ function initializeRoadmap() {
     // Try multiple possible paths for the issues.json file
     const possiblePaths = [
       'issues.json',           // Site root
+      '/vandalizer-manual/issues.json',  // Absolute path based on your URL
       './issues.json',         // Relative to current page
       '../issues.json',        // Parent directory
       '/issues.json',          // Absolute site root
@@ -496,7 +497,13 @@ function initializeRoadmap() {
     for (const path of possiblePaths) {
       try {
         console.log(`Trying to fetch from: ${path}`);
+        const fullUrl = new URL(path, window.location.href);
+        console.log(`Full URL: ${fullUrl.href}`);
+        
         const response = await fetch(path);
+        
+        console.log(`Response status: ${response.status} ${response.statusText}`);
+        console.log(`Response URL: ${response.url}`);
         
         if (response.ok) {
           console.log(`✓ Successfully fetched from: ${path}`);
