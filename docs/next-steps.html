@@ -400,7 +400,7 @@ function initializeRoadmap() {
     }
     
     Plotly.newPlot('roadmap-timeline-chart', data, {
-      title: 'Issues Opened vs Closed Over Time (Click points for details)',
+      title: 'Issues Opened',
       xaxis: { title: 'Date', type: 'date' },
       yaxis: { title: 'Cumulative Count' },
       margin: { t: 60, b: 80, l: 60, r: 40 },
@@ -509,7 +509,7 @@ function initializeRoadmap() {
       mode: 'lines+markers',
       x: dates,
       y: openCounts,
-      name: 'Total Open Issues',
+      name: 'Open Issues',
       marker: { color: '#4285F4', size: 6 },
       line: { color: '#4285F4', width: 3, shape: 'hv' },
       hovertemplate: '%{hovertext}<extra></extra>',
@@ -640,7 +640,10 @@ function initializeRoadmap() {
     const impulseChartDiv = document.getElementById('roadmap-impulse-chart');
     if (impulseChartDiv) {
       Plotly.newPlot('roadmap-impulse-chart', impulseData, {
-        title: 'Weekly Issue Activity (Click bars for details)',
+        title: {
+          text: 'Weekly Issue Activity',
+          font: { size: 16 }
+        },
         xaxis: { title: 'Date', type: 'date' },
         yaxis: { 
           title: 'Weekly Changes',
@@ -650,7 +653,7 @@ function initializeRoadmap() {
           showgrid: true,
           gridcolor: 'rgba(0,0,0,0.1)'
         },
-        margin: { t: 60, b: 80, l: 60, r: 40 },
+        margin: { t: 80, b: 80, l: 60, r: 40 },
         showlegend: true,
         legend: { x: 0.02, y: 0.98 },
         barmode: 'overlay',
@@ -680,7 +683,10 @@ function initializeRoadmap() {
       document.getElementById('roadmap-backlog-chart').parentNode.appendChild(container);
       
       Plotly.newPlot('roadmap-impulse-chart', impulseData, {
-        title: 'Weekly Activity (Click bars for details)',
+        title: {
+          text: 'Weekly Issue Activity',
+          font: { size: 16 }
+        },
         xaxis: { 
           title: 'Week Starting (Monday)', 
           type: 'date',
@@ -694,7 +700,7 @@ function initializeRoadmap() {
           showgrid: true,
           gridcolor: 'rgba(0,0,0,0.1)'
         },
-        margin: { t: 80, b: 80, l: 60, r: 40 },
+        margin: { t: 100, b: 80, l: 60, r: 40 },
         showlegend: true,
         legend: { x: 0.02, y: 0.98 },
         barmode: 'overlay'
@@ -811,10 +817,7 @@ function initializeRoadmap() {
     
     const hoverText = labels.map(label => {
       const issues = labelData[label].issues;
-      const preview = issues.length > 5 
-        ? issues.slice(0, 5).join('<br>') + `<br>... and ${issues.length - 5} more`
-        : issues.join('<br>');
-      return `<b>${label}</b><br>Issues: ${issues.length}<br><br><i>Click to see all issues</i><br><br>${preview}`;
+      return `<b>${label}</b><br>Issues: ${issues.length}<br><br><i>Click to see all issues</i>`;
     });
     
     const issueType = showAllIssues ? 'All Issues' : 'Open Issues';
@@ -910,10 +913,7 @@ function initializeRoadmap() {
     
     const hoverText = labels.map(label => {
       const issues = priorityData[label].issues;
-      const preview = issues.length > 5 
-        ? issues.slice(0, 5).join('<br>') + `<br>... and ${issues.length - 5} more`
-        : issues.join('<br>');
-      return `<b>${label}</b><br>Issues: ${issues.length}<br><br><i>Click to see all issues</i><br><br>${preview}`;
+      return `<b>${label}</b><br>Issues: ${issues.length}<br><br><i>Click to see all issues</i>`;
     });
     
     const issueType = showAllIssues ? 'All Issues' : 'Open Issues';

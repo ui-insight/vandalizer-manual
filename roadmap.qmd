@@ -26,6 +26,7 @@ format:
   <p>Loading issue data...</p>
 </div>
 
+<br> 
 <br>
 
 ## Issues by Creation Date
