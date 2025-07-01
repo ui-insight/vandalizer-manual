@@ -16,12 +16,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-      
-      - name: Render Quarto Document
-        run: quarto render
-      
       - name: Collect Issues Data
         run: |
           repo="ui-insight/vandalizer"
@@ -50,6 +44,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.VANDALIZER_ISSUES_TOKEN }}
       
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+      
+      - name: Render Quarto Document
+        run: quarto render
+
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
