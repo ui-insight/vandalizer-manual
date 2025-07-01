@@ -25,7 +25,7 @@ format:
 :::
 
 ::: {.text-center}
-**Authors**: Barrie Robison, Luke Sheneman, John Brunsfeld, Nathan Layman, Jason Cahoon, and Sarah Martonick
+**Authors**: Barrie Robison, Luke Sheneman, John Brunsfeld, Jason Cahoon, Nathan Layman, and Sarah Martonick
 :::
 
 
