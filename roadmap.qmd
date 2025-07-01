@@ -26,6 +26,8 @@ format:
   <p>Loading issue data...</p>
 </div>
 
+<br>
+
 ## Issues by Creation Date
 
 <div id="roadmap-timeline-chart" style="height: 400px;"></div>
