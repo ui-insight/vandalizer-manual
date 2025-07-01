@@ -315,20 +315,64 @@ function initializeRoadmap() {
     };
   }
 
-  // Function to count issues by creation date
-  function countIssuesByDate(issues) {
-    const dateCounts = {};
+  // Function to count issues by creation date and state
+  function countIssuesByDateAndState(issues) {
+    const openData = {};
+    const closedData = {};
     
     issues.forEach(issue => {
       const date = new Date(issue.created_at).toISOString().split('T')[0]; // YYYY-MM-DD
-      dateCounts[date] = (dateCounts[date] || 0) + 1;
+      const state = issue.state;
+      const title = issue.title;
+      
+      if (state === 'open') {
+        if (!openData[date]) {
+          openData[date] = { count: 0, titles: [] };
+        }
+        openData[date].count++;
+        openData[date].titles.push(title);
+      } else if (state === 'closed') {
+        if (!closedData[date]) {
+          closedData[date] = { count: 0, titles: [] };
+        }
+        closedData[date].count++;
+        closedData[date].titles.push(title);
+      }
     });
     
-    // Sort dates
-    const sortedDates = Object.keys(dateCounts).sort();
-    const counts = sortedDates.map(date => dateCounts[date]);
+    // Get all unique dates and sort them
+    const allDates = Array.from(new Set([
+      ...Object.keys(openData),
+      ...Object.keys(closedData)
+    ])).sort();
     
-    return { dates: sortedDates, counts };
+    // Build arrays with cumulative counts
+    let openCumulative = 0;
+    let closedCumulative = 0;
+    
+    const openCounts = [];
+    const closedCounts = [];
+    const openTitles = [];
+    const closedTitles = [];
+    
+    allDates.forEach(date => {
+      // Add daily counts to cumulative totals
+      openCumulative += openData[date] ? openData[date].count : 0;
+      closedCumulative += closedData[date] ? closedData[date].count : 0;
+      
+      openCounts.push(openCumulative);
+      closedCounts.push(closedCumulative);
+      
+      // Collect titles for tooltips
+      openTitles.push(openData[date] ? openData[date].titles : []);
+      closedTitles.push(closedData[date] ? closedData[date].titles : []);
+    });
+    
+    return {
+      dates: allDates,
+      open: { counts: openCounts, titles: openTitles },
+      closed: { counts: closedCounts, titles: closedTitles }
+    };
   }
 
   // Function to create timeline chart
@@ -340,34 +384,81 @@ function initializeRoadmap() {
     
     console.log('Creating timeline chart with', dateData.dates.length, 'data points');
     
-    const data = [{
-      type: 'scatter',
-      mode: 'lines+markers',
-      x: dateData.dates,
-      y: dateData.counts,
-      marker: {
-        color: '#4ECDC4',
-        size: 6
+    // Create custom hover text for each point
+    const openHoverText = dateData.dates.map((date, index) => {
+      const titles = dateData.open.titles[index];
+      if (titles.length === 0) return `<b>${date}</b><br>No open issues created`;
+      
+      const titlesList = titles.length > 3 
+        ? titles.slice(0, 3).join('<br>') + `<br>... and ${titles.length - 3} more`
+        : titles.join('<br>');
+      
+      return `<b>${date}</b><br>Open issues: ${titles.length}<br><br><i>Issues created:</i><br>${titlesList}`;
+    });
+    
+    const closedHoverText = dateData.dates.map((date, index) => {
+      const titles = dateData.closed.titles[index];
+      if (titles.length === 0) return `<b>${date}</b><br>No closed issues created`;
+      
+      const titlesList = titles.length > 3 
+        ? titles.slice(0, 3).join('<br>') + `<br>... and ${titles.length - 3} more`
+        : titles.join('<br>');
+      
+      return `<b>${date}</b><br>Closed issues: ${titles.length}<br><br><i>Issues created:</i><br>${titlesList}`;
+    });
+    
+    const data = [
+      {
+        type: 'scatter',
+        mode: 'lines+markers',
+        x: dateData.dates,
+        y: dateData.open.counts,
+        name: 'Open Issues',
+        marker: {
+          color: '#4285F4', // Blue
+          size: 6
+        },
+        line: {
+          color: '#4285F4',
+          width: 3
+        },
+        hovertemplate: '%{hovertext}<extra></extra>',
+        hovertext: openHoverText
       },
-      line: {
-        color: '#4ECDC4',
-        width: 2
-      },
-      hovertemplate: '<b>%{x}</b><br>' +
-                     'Issues created: %{y}<br>' +
-                     '<extra></extra>'
-    }];
+      {
+        type: 'scatter',
+        mode: 'lines+markers',
+        x: dateData.dates,
+        y: dateData.closed.counts,
+        name: 'Closed Issues',
+        marker: {
+          color: '#FF8C00', // Orange
+          size: 6
+        },
+        line: {
+          color: '#FF8C00',
+          width: 3
+        },
+        hovertemplate: '%{hovertext}<extra></extra>',
+        hovertext: closedHoverText
+      }
+    ];
     
     const layout = {
-      title: 'Issues Created Over Time',
+      title: 'Cumulative Issues Created Over Time',
       xaxis: { 
         title: 'Date',
         type: 'date'
       },
       yaxis: { 
-        title: 'Number of Issues Created'
+        title: 'Cumulative Number of Issues'
       },
-      margin: { t: 60, b: 80, l: 60, r: 40 }
+      margin: { t: 60, b: 80, l: 60, r: 40 },
+      showlegend: true,
+      legend: {
+        orientation: 'h',
+        y: -0.2
+      }
     };
     
     const config = { displayModeBar: false };
@@ -506,8 +597,31 @@ function initializeRoadmap() {
             break;
           } catch (jsonError) {
             console.log(`✗ JSON parsing failed for ${path}:`, jsonError.message);
-            console.log('Response content (first 500 chars):', text.substring(0, 500));
-            continue;
+            
+            // Try parsing as concatenated JSON objects (fallback for old format)
+            try {
+              console.log('Attempting to parse as concatenated JSON objects...');
+              
+              // Split on }{ pattern and add proper separators
+              let fixedJson = text.trim();
+              
+              // Replace }\n{ or }{ with },\n{
+              fixedJson = fixedJson.replace(/\}\s*\{/g, '},\n{');
+              
+              // Wrap in array brackets
+              fixedJson = '[' + fixedJson + ']';
+              
+              console.log('Fixed JSON first 200 chars:', fixedJson.substring(0, 200));
+              
+              issues = JSON.parse(fixedJson);
+              console.log(`✓ Successfully parsed ${issues.length} issues from concatenated JSON`);
+              successfulPath = path;
+              break;
+            } catch (fixError) {
+              console.log(`✗ Concatenated JSON parsing also failed for ${path}:`, fixError.message);
+              console.log('Response content (first 500 chars):', text.substring(0, 500));
+              continue;
+            }
           }
         } else {
           console.log(`✗ Failed to fetch from ${path}: ${response.status} - ${response.statusText}`);
@@ -561,7 +675,7 @@ function initializeRoadmap() {
       `;
       
       // Create timeline chart
-      const dateData = countIssuesByDate(issues);
+      const dateData = countIssuesByDateAndState(issues);
       createTimelineChart(dateData);
       
       // Create label charts
