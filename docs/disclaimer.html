@@ -508,20 +508,27 @@ function initializeRoadmap() {
     }
     
     if (!issues) {
-      throw new Error('Could not find issues.json file in any of the expected locations');
+      const errorMessage = 'Could not find issues.json file in any of the expected locations';
+      console.error(errorMessage);
+      document.getElementById('roadmap-summary').innerHTML = `<p>Error: ${errorMessage}</p>`;
+      document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
+      document.getElementById('roadmap-pie-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
+      document.getElementById('roadmap-bar-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
+      return;
     }
     
     console.log(`Successfully loaded ${issues.length} issues from: ${successfulPath}`);
       
-      if (issues.length === 0) {
-        const noDataMessage = '<p>No issues data available (file loaded but empty)</p>';
-        document.getElementById('roadmap-summary').innerHTML = noDataMessage;
-        document.getElementById('roadmap-timeline-chart').innerHTML = noDataMessage;
-        document.getElementById('roadmap-pie-chart').innerHTML = noDataMessage;
-        document.getElementById('roadmap-bar-chart').innerHTML = noDataMessage;
-        return;
-      }
-      
+    if (issues.length === 0) {
+      const noDataMessage = '<p>No issues data available (file loaded but empty)</p>';
+      document.getElementById('roadmap-summary').innerHTML = noDataMessage;
+      document.getElementById('roadmap-timeline-chart').innerHTML = noDataMessage;
+      document.getElementById('roadmap-pie-chart').innerHTML = noDataMessage;
+      document.getElementById('roadmap-bar-chart').innerHTML = noDataMessage;
+      return;
+    }
+    
+    try {
       console.log('Processing data and creating visualizations...');
       
       // Create summary
@@ -555,8 +562,8 @@ function initializeRoadmap() {
       console.log('Roadmap visualization complete!');
       
     } catch (error) {
-      console.error('Error loading issues data:', error);
-      const errorMessage = `<p>Error loading issue data: ${error.message}</p>`;
+      console.error('Error in roadmap processing:', error);
+      const errorMessage = `<p>Error processing roadmap: ${error.message}</p>`;
       document.getElementById('roadmap-summary').innerHTML = errorMessage;
       document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
       document.getElementById('roadmap-pie-chart').innerHTML = '<p>Could not load chart - see console for details</p>';
