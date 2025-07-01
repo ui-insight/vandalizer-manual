@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-aa9238ba561dfc496d5ec7026d47e64d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -254,9 +254,9 @@ const originalParent = img.parentElement;
 if (document.getElementById('roadmap-summary')) {
   // Load Plotly.js dynamically
   const script = document.createElement('script');
-  script.src = 'https://cdn.plot.ly/plotly-latest.min.js';
+  script.src = 'https://cdn.plot.ly/plotly-3.0.1.min.js';
   script.onload = function() {
-    console.log('Plotly loaded successfully');
+    console.log('Plotly 3.0.1 loaded successfully');
     initializeRoadmap();
   };
   script.onerror = function() {
@@ -433,9 +433,64 @@ function initializeRoadmap() {
 
   // Load and process data
   async function loadRoadmapData() {
-    try {
-      const response = await fetch('issues.json');
-      const issues = await response.json();
+    console.log('Attempting to load roadmap data...');
+    console.log('Current URL:', window.location.href);
+    console.log('Current pathname:', window.location.pathname);
+    
+    // Show loading state
+    document.getElementById('roadmap-summary').innerHTML = '<p>Loading issue data...</p>';
+    document.getElementById('roadmap-timeline-chart').innerHTML = '<p>Loading timeline chart...</p>';
+    document.getElementById('roadmap-pie-chart').innerHTML = '<p>Loading pie chart...</p>';
+    document.getElementById('roadmap-bar-chart').innerHTML = '<p>Loading bar chart...</p>';
+    
+    // Try multiple possible paths for the issues.json file
+    const possiblePaths = [
+      'issues.json',           // Site root
+      './issues.json',         // Relative to current page
+      '../issues.json',        // Parent directory
+      '/issues.json',          // Absolute site root
+      'data/issues.json',      // In a data folder
+      '_site/issues.json'      // In _site folder
+    ];
+    
+    let issues = null;
+    let successfulPath = null;
+    
+    for (const path of possiblePaths) {
+      try {
+        console.log(`Trying to fetch from: ${path}`);
+        const response = await fetch(path);
+        
+        if (response.ok) {
+          console.log(`✓ Successfully fetched from: ${path}`);
+          console.log('Response headers:', response.headers.get('content-type'));
+          
+          const text = await response.text();
+          console.log('Response content length:', text.length);
+          console.log('First 200 characters:', text.substring(0, 200));
+          
+          try {
+            issues = JSON.parse(text);
+            successfulPath = path;
+            break;
+          } catch (jsonError) {
+            console.log(`✗ JSON parsing failed for ${path}:`, jsonError.message);
+            console.log('Full content:', text);
+            continue;
+          }
+        } else {
+          console.log(`✗ Failed to fetch from ${path}: ${response.status} - ${response.statusText}`);
+        }
+      } catch (error) {
+        console.log(`✗ Error fetching from ${path}:`, error.message);
+      }
+    }
+    
+    if (!issues) {
+      throw new Error('Could not find issues.json file in any of the expected locations');
+    }
+    
+    console.log(`Successfully loaded ${issues.length} issues from: ${successfulPath}`);
       
       if (issues.length === 0) {
         const noDataMessage = '<p>No issues data available (file loaded but empty)</p>';

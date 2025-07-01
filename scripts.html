@@ -55,9 +55,9 @@ const originalParent = img.parentElement;
 if (document.getElementById('roadmap-summary')) {
   // Load Plotly.js dynamically
   const script = document.createElement('script');
-  script.src = 'https://cdn.plot.ly/plotly-latest.min.js';
+  script.src = 'https://cdn.plot.ly/plotly-3.0.1.min.js';
   script.onload = function() {
-    console.log('Plotly loaded successfully');
+    console.log('Plotly 3.0.1 loaded successfully');
     initializeRoadmap();
   };
   script.onerror = function() {
