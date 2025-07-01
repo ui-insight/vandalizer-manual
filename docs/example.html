@@ -317,6 +317,23 @@ function initializeRoadmap() {
     };
   }
 
+  // Helper functions for cumulative data
+  function getAllOpenedIssuesByDate(issues, targetDate) {
+    return issues
+      .filter(issue => new Date(issue.created_at).toISOString().split('T')[0] <= targetDate)
+      .map(issue => issue.title);
+  }
+
+  function getAllClosedIssuesByDate(issues, targetDate) {
+    return issues
+      .filter(issue => issue.state === 'closed')
+      .filter(issue => {
+        const closeDate = issue.closed_at || issue.created_at;
+        return new Date(closeDate).toISOString().split('T')[0] <= targetDate;
+      })
+      .map(issue => issue.title);
+  }
+
   // Create timeline chart (opened vs closed workflow)
   function createTimelineChart(issues) {
     console.log('Creating timeline chart...');
@@ -356,19 +373,16 @@ function initializeRoadmap() {
         openedCounts.push(cumulative);
         
         const titles = openedData[date].titles;
-        const titlesList = titles.length > 3 
-          ? titles.slice(0, 3).join('<br>') + `<br>... and ${titles.length - 3} more`
-          : titles.join('<br>');
         
-        openedHoverText.push(`<b>${date}</b><br>Cumulative opened: ${cumulative}<br>Opened this day: ${titles.length}<br><br><i>Click to see all issues</i><br><br>${titlesList}`);
-        allClickData[`opened-${date}`] = { date, type: 'opened', issues: titles };
+        openedHoverText.push(`<b>${date}</b><br>Cumulative opened: ${cumulative}<br><br><i>Click to see all issues opened by this date</i>`);
+        allClickData[`opened-${date}`] = { date, type: 'opened', issues: getAllOpenedIssuesByDate(issues, date) };
       });
       
       data.push({
         type: 'scatter', mode: 'lines+markers',
-        x: openedDates, y: openedCounts, name: 'Open Issues',
-        marker: { color: '#4285F4', size: 8 },
-        line: { color: '#4285F4', width: 3 },
+        x: openedDates, y: openedCounts, name: 'Total Issues',
+        marker: { color: '#4ECDC4', size: 8 },
+        line: { color: '#4ECDC4', width: 3 },
         hovertemplate: '%{hovertext}<extra></extra>',
         hovertext: openedHoverText,
         customdata: openedDates.map(date => `opened-${date}`)
@@ -387,12 +401,9 @@ function initializeRoadmap() {
         closedCounts.push(cumulative);
         
         const titles = closedData[date].titles;
-        const titlesList = titles.length > 3 
-          ? titles.slice(0, 3).join('<br>') + `<br>... and ${titles.length - 3} more`
-          : titles.join('<br>');
         
-        closedHoverText.push(`<b>${date}</b><br>Cumulative closed: ${cumulative}<br>Closed this day: ${titles.length}<br><br><i>Click to see all issues</i><br><br>${titlesList}`);
-        allClickData[`closed-${date}`] = { date, type: 'closed', issues: titles };
+        closedHoverText.push(`<b>${date}</b><br>Cumulative closed: ${cumulative}<br><br><i>Click to see all issues closed by this date</i>`);
+        allClickData[`closed-${date}`] = { date, type: 'closed', issues: getAllClosedIssuesByDate(issues, date) };
       });
       
       data.push({
@@ -420,7 +431,7 @@ function initializeRoadmap() {
         const key = eventData.points[0].customdata;
         const info = allClickData[key];
         if (info) {
-          showModal(`Issues ${info.type} on ${info.date}`, info.issues);
+          showModal(`All issues ${info.type} by ${info.date}`, info.issues);
         }
       }
     });
@@ -428,9 +439,9 @@ function initializeRoadmap() {
     console.log('Timeline chart completed');
   }
 
-  // Create inventory trend with separate impulse chart
+  // Create open issues trend with separate impulse chart
   function createBacklogChart(issues) {
-    console.log('Creating backlog chart...');
+    console.log('Creating open issues chart...');
     
     const events = [];
     
@@ -469,12 +480,11 @@ function initializeRoadmap() {
     // Calculate running totals and prepare data
     const dates = [];
     const openCounts = [];
-    const openedImpulses = [];
-    const closedImpulses = [];
     const trendHoverText = [];
-    const openedHoverText = [];
-    const closedHoverText = [];
+    const openIssuesClickData = {};
     let currentOpen = 0;
+    let currentOpenIssues = new Set(); // Track actual open issues
+    let previousOpen = 0;
     
     // Process each date
     Object.keys(eventsByDate).sort().forEach(dateStr => {
@@ -482,23 +492,36 @@ function initializeRoadmap() {
       const openedToday = dayEvents.opened.length;
       const closedToday = dayEvents.closed.length;
       
+      // Update the set of open issues
+      dayEvents.opened.forEach(event => currentOpenIssues.add(event.title));
+      dayEvents.closed.forEach(event => currentOpenIssues.delete(event.title));
+      
+      previousOpen = currentOpen;
       currentOpen += openedToday;
       currentOpen -= closedToday;
       
-      dates.push(dateStr);
-      openCounts.push(currentOpen);
-      openedImpulses.push(openedToday);
-      closedImpulses.push(-closedToday); // Negative for downward impulses
-      
-      const netChange = openedToday - closedToday;
-      const changeText = netChange > 0 ? `+${netChange}` : netChange < 0 ? `${netChange}` : '±0';
-      
-      trendHoverText.push(`<b>${dateStr}</b><br>Total open issues: ${currentOpen}<br>Net change: ${changeText}<br>Opened: ${openedToday}, Closed: ${closedToday}`);
-      openedHoverText.push(`<b>${dateStr}</b><br>Issues opened: ${openedToday}`);
-      closedHoverText.push(`<b>${dateStr}</b><br>Issues closed: ${closedToday}`);
+      // Only add points where the total changed
+      if (currentOpen !== previousOpen) {
+        dates.push(dateStr);
+        openCounts.push(currentOpen);
+        
+        const netChange = openedToday - closedToday;
+        const changeText = netChange > 0 ? `+${netChange}` : netChange < 0 ? `${netChange}` : '±0';
+        
+        // Simple hover text with click instruction
+        let hoverDetails = `<b>${dateStr}</b><br>Total open issues: ${currentOpen}<br>Net change: ${changeText}<br><br><i>Click to view open issues</i>`;
+        
+        trendHoverText.push(hoverDetails);
+        
+        // Store all currently open issues for this date
+        openIssuesClickData[dateStr] = { 
+          date: dateStr, 
+          issues: Array.from(currentOpenIssues).sort() 
+        };
+      }
     });
     
-    // Chart 1: Main inventory trend line
+    // Chart 1: Main open issues trend line
     Plotly.newPlot('roadmap-backlog-chart', [{
       type: 'scatter',
       mode: 'lines+markers',
@@ -510,9 +533,10 @@ function initializeRoadmap() {
       hovertemplate: '%{hovertext}<extra></extra>',
       hovertext: trendHoverText,
       fill: 'tozeroy',
-      fillcolor: 'rgba(66, 133, 244, 0.1)'
+      fillcolor: 'rgba(66, 133, 244, 0.1)',
+      customdata: dates
     }], {
-      title: 'Issue Inventory Trend',
+      title: 'Open Issues Trend (Click points for details)',
       xaxis: { title: 'Date', type: 'date' },
       yaxis: { 
         title: 'Total Open Issues',
@@ -524,34 +548,117 @@ function initializeRoadmap() {
       legend: { x: 0.02, y: 0.98 }
     }, { displayModeBar: false });
     
-    // Chart 2: Daily activity impulses (stem plot)
+    // Add click handler for open issues chart
+    document.getElementById('roadmap-backlog-chart').on('plotly_click', function(eventData) {
+      if (eventData.points.length > 0) {
+        const dateStr = eventData.points[0].customdata;
+        const info = openIssuesClickData[dateStr];
+        if (info && info.issues.length > 0) {
+          showModal(`Open issues on ${info.date} (${info.issues.length} total)`, info.issues);
+        }
+      }
+    });
+    
+    // Chart 2: Weekly activity impulses (aggregated)
     const impulseData = [];
     
-    // Opened issues impulses (positive stems)
-    if (openedImpulses.some(count => count > 0)) {
+    // Helper function to get week start date (Monday)
+    function getWeekStart(date) {
+      const d = new Date(date);
+      const day = d.getDay();
+      const diff = d.getDate() - day + (day === 0 ? -6 : 1); // Adjust when day is Sunday
+      const monday = new Date(d.setDate(diff));
+      return monday.toISOString().split('T')[0];
+    }
+    
+    // Group events by week
+    const weeklyData = {};
+    Object.keys(eventsByDate).forEach(dateStr => {
+      const weekStart = getWeekStart(dateStr);
+      if (!weeklyData[weekStart]) {
+        weeklyData[weekStart] = { opened: [], closed: [] };
+      }
+      
+      const dayEvents = eventsByDate[dateStr];
+      weeklyData[weekStart].opened.push(...dayEvents.opened);
+      weeklyData[weekStart].closed.push(...dayEvents.closed);
+    });
+    
+    const weeklyDates = Object.keys(weeklyData).sort();
+    const weeklyClickData = {}; // Store weekly issues for click handling
+    
+    // Prepare weekly data arrays
+    const weeklyOpenedCounts = [];
+    const weeklyClosedCounts = [];
+    const weeklyOpenedHover = [];
+    const weeklyClosedHover = [];
+    
+    weeklyDates.forEach(weekStart => {
+      const weekEvents = weeklyData[weekStart];
+      const openedCount = weekEvents.opened.length;
+      const closedCount = weekEvents.closed.length;
+      
+      weeklyOpenedCounts.push(openedCount);
+      weeklyClosedCounts.push(-closedCount);
+      
+      // Store weekly issues for click handling
+      weeklyClickData[weekStart] = {
+        opened: weekEvents.opened.map(e => e.title),
+        closed: weekEvents.closed.map(e => e.title)
+      };
+      
+      // Create hover text
+      const weekEnd = new Date(weekStart);
+      weekEnd.setDate(weekEnd.getDate() + 6);
+      const weekEndStr = weekEnd.toISOString().split('T')[0];
+      
+      let openedHoverDetail = `<b>Week of ${weekStart}</b><br>(${weekStart} to ${weekEndStr})<br>Issues opened: ${openedCount}`;
+      if (openedCount > 0) {
+        openedHoverDetail += `<br><br><i>Click to see opened issues</i>`;
+      }
+      
+      let closedHoverDetail = `<b>Week of ${weekStart}</b><br>(${weekStart} to ${weekEndStr})<br>Issues closed: ${closedCount}`;
+      if (closedCount > 0) {
+        closedHoverDetail += `<br><br><i>Click to see closed issues</i>`;
+      }
+      
+      weeklyOpenedHover.push(openedHoverDetail);
+      weeklyClosedHover.push(closedHoverDetail);
+    });
+    
+    // Opened issues impulses (positive bars)
+    if (weeklyOpenedCounts.some(count => count > 0)) {
       impulseData.push({
         type: 'bar',
-        x: dates,
-        y: openedImpulses,
+        x: weeklyDates,
+        y: weeklyOpenedCounts,
         name: 'Issues Opened',
-        marker: { color: '#4285F4', opacity: 0.8 },
-        width: 1.0,
-        hovertemplate: '%{hovertext}<extra></extra>',
-        hovertext: openedHoverText
+        marker: { 
+          color: '#4285F4', 
+          opacity: 0.8
+        },
+        text: weeklyOpenedHover,
+        hovertemplate: '%{text}<extra></extra>',
+        customdata: weeklyDates.map(date => ({ date, type: 'opened' })),
+        showlegend: true
       });
     }
     
-    // Closed issues impulses (negative stems)
-    if (closedImpulses.some(count => count < 0)) {
+    // Closed issues impulses (negative bars)
+    if (weeklyClosedCounts.some(count => count < 0)) {
       impulseData.push({
         type: 'bar',
-        x: dates,
-        y: closedImpulses,
+        x: weeklyDates,
+        y: weeklyClosedCounts,
         name: 'Issues Closed',
-        marker: { color: '#FF8C00', opacity: 0.8 },
-        width: 1.0,
-        hovertemplate: '%{hovertext}<extra></extra>',
-        hovertext: closedHoverText
+        marker: { 
+          color: '#FF8C00', 
+          opacity: 0.8
+        },
+        text: weeklyClosedHover,
+        hovertemplate: '%{text}<extra></extra>',
+        customdata: weeklyDates.map(date => ({ date, type: 'closed' })),
+        showlegend: true
       });
     }
     
@@ -572,8 +679,22 @@ function initializeRoadmap() {
         margin: { t: 60, b: 80, l: 60, r: 40 },
         showlegend: true,
         legend: { x: 0.02, y: 0.98 },
-        barmode: 'overlay'
+        barmode: 'overlay',
+        hovermode: 'closest'
       }, { displayModeBar: false });
+      
+      // Add click handler for impulse chart
+      document.getElementById('roadmap-impulse-chart').on('plotly_click', function(eventData) {
+        if (eventData.points.length > 0) {
+          const clickInfo = eventData.points[0].customdata;
+          if (clickInfo && dailyClickData[clickInfo.date]) {
+            const issues = dailyClickData[clickInfo.date][clickInfo.type];
+            if (issues && issues.length > 0) {
+              showModal(`Issues ${clickInfo.type} on ${clickInfo.date}`, issues);
+            }
+          }
+        }
+      });
     } else {
       // Fallback: add the chart container and create it
       const container = document.createElement('div');
@@ -582,41 +703,83 @@ function initializeRoadmap() {
       document.getElementById('roadmap-backlog-chart').parentNode.appendChild(container);
       
       Plotly.newPlot('roadmap-impulse-chart', impulseData, {
-        title: 'Daily Issue Activity (Inflow/Outflow)',
-        xaxis: { title: 'Date', type: 'date' },
+        title: {
+          text: 'Weekly Activity'
+        },
+        xaxis: { 
+          title: 'Week Starting (Monday)', 
+          type: 'date',
+          tickformat: '%Y-%m-%d'
+        },
         yaxis: { 
-          title: 'Daily Changes',
+          title: 'Weekly Issue Count',
           zeroline: true,
           zerolinecolor: 'rgba(0,0,0,0.4)',
           zerolinewidth: 2,
           showgrid: true,
           gridcolor: 'rgba(0,0,0,0.1)'
         },
-        margin: { t: 60, b: 80, l: 60, r: 40 },
+        margin: { t: 80, b: 80, l: 60, r: 40 },
         showlegend: true,
         legend: { x: 0.02, y: 0.98 },
-        barmode: 'overlay'
+        barmode: 'overlay',
+        annotations: [{
+          text: '',
+          showarrow: false,
+          x: 0.5,
+          y: -0.15,
+          xref: 'paper',
+          yref: 'paper',
+          xanchor: 'center',
+          yanchor: 'top',
+          font: { size: 12, color: 'gray' }
+        }]
       }, { displayModeBar: false });
+      
+      // Add click handler for weekly impulse chart
+      document.getElementById('roadmap-impulse-chart').on('plotly_click', function(eventData) {
+        if (eventData.points.length > 0) {
+          const clickInfo = eventData.points[0].customdata;
+          if (clickInfo && weeklyClickData[clickInfo.date]) {
+            const issues = weeklyClickData[clickInfo.date][clickInfo.type];
+            if (issues && issues.length > 0) {
+              const weekEnd = new Date(clickInfo.date);
+              weekEnd.setDate(weekEnd.getDate() + 6);
+              const weekEndStr = weekEnd.toISOString().split('T')[0];
+              showModal(`Issues ${clickInfo.type} during week of ${clickInfo.date} (${clickInfo.date} to ${weekEndStr})`, issues);
+            }
+          }
+        }
+      });
     }
     
-    console.log('Backlog chart completed');
+    console.log('Open issues chart completed');
   }
 
-  // Create pie chart
+  // Create pie chart (open issues only)
   function createPieChart(issues) {
     console.log('Creating pie chart...');
     
+    const openIssues = issues.filter(issue => issue.state === 'open');
     const labelData = {};
     
-    issues.forEach(issue => {
+    openIssues.forEach(issue => {
       const labels = issue.labels || [];
       
-      if (labels.length === 0) {
+      // Filter out priority labels for the main chart
+      const nonPriorityLabels = labels.filter(label => 
+        !label.toLowerCase().includes('priority') && 
+        !label.toLowerCase().includes('high') && 
+        !label.toLowerCase().includes('medium') && 
+        !label.toLowerCase().includes('low')
+      );
+      
+      if (nonPriorityLabels.length === 0) {
         if (!labelData['No Label']) labelData['No Label'] = { count: 0, issues: [] };
         labelData['No Label'].count++;
         labelData['No Label'].issues.push(issue.title);
       } else {
-        labels.forEach(label => {
+        nonPriorityLabels.forEach(label => {
           if (!labelData[label]) labelData[label] = { count: 0, issues: [] };
           labelData[label].count++;
           labelData[label].issues.push(issue.title);
@@ -632,6 +795,26 @@ function initializeRoadmap() {
       return;
     }
     
+    // Unique pastel color palette for labels pie chart (no reds)
+    const labelColors = [
+      '#F5F7F7', // Very Light Grey
+      '#B39DDB', // Light Purple
+      '#A5D6A7', // Light Green
+      '#81C784', // Medium Light Green
+      '#CE93D8', // Light Pink Purple
+      '#80CBC4', // Light Teal
+      '#BCAAA4', // Light Brown
+      '#B0BEC5', // Light Blue Grey
+      '#F8BBD9', // Light Pink
+      '#FFF176', // Light Yellow
+      '#9FA8DA', // Light Indigo
+      '#C8E6C9', // Very Light Green
+      '#FFE082', // Light Amber
+      '#B2DFDB', // Very Light Teal
+      '#DCEDC8', // Very Light Lime
+      '#E1BEE7'  // Very Light Purple
+    ];
+    
     const hoverText = labels.map(label => {
       const issues = labelData[label].issues;
       const preview = issues.length > 5 
@@ -644,10 +827,13 @@ function initializeRoadmap() {
       type: 'pie', 
       labels: labels, 
       values: counts,
+      marker: {
+        colors: labelColors.slice(0, labels.length)
+      },
       hovertemplate: '%{hovertext}<extra></extra>',
       hovertext: hoverText
     }], {
-      title: 'Issue Distribution by Label (Click segments for details)',
+      title: 'Open Issues by Label (Click segments for details)',
       margin: { t: 60, b: 40, l: 40, r: 40 }
     }, { displayModeBar: false });
     
@@ -660,6 +846,102 @@ function initializeRoadmap() {
     });
     
     console.log('Pie chart completed');
+  }
+
+  // Create priority pie chart (open issues only)
+  function createPriorityChart(issues) {
+    console.log('Creating priority chart...');
+    
+    const openIssues = issues.filter(issue => issue.state === 'open');
+    const priorityData = {};
+    
+    openIssues.forEach(issue => {
+      const labels = issue.labels || [];
+      
+      // Look for priority-related labels
+      const priorityLabels = labels.filter(label => 
+        label.toLowerCase().includes('priority') || 
+        label.toLowerCase().includes('high') || 
+        label.toLowerCase().includes('medium') || 
+        label.toLowerCase().includes('low')
+      );
+      
+      if (priorityLabels.length === 0) {
+        if (!priorityData['No Priority']) priorityData['No Priority'] = { count: 0, issues: [] };
+        priorityData['No Priority'].count++;
+        priorityData['No Priority'].issues.push(issue.title);
+      } else {
+        priorityLabels.forEach(label => {
+          if (!priorityData[label]) priorityData[label] = { count: 0, issues: [] };
+          priorityData[label].count++;
+          priorityData[label].issues.push(issue.title);
+        });
+      }
+    });
+    
+    const labels = Object.keys(priorityData);
+    const counts = labels.map(label => priorityData[label].count);
+    
+    // Check if priority chart container exists, create if not
+    let priorityChartDiv = document.getElementById('roadmap-priority-chart');
+    if (!priorityChartDiv) {
+      priorityChartDiv = document.createElement('div');
+      priorityChartDiv.id = 'roadmap-priority-chart';
+      priorityChartDiv.style.cssText = 'width: 100%; height: 400px; margin-top: 30px;';
+      document.getElementById('roadmap-pie-chart').parentNode.appendChild(priorityChartDiv);
+    }
+    
+    if (labels.length === 0) {
+      priorityChartDiv.innerHTML = '<p>No priority labels found</p>';
+      return;
+    }
+    
+    // Unique pastel color palette for priority pie chart (no reds, different from labels)
+    const priorityColors = [
+      '#F5F7F7', // Very Light Grey
+      '#FFD580', // Very Light Orange
+      '#BBDEFB', // Light Sky Blue
+      '#D7CCC8', // Light Beige
+      '#F3E5F5', // Very Light Pink Purple
+      '#E0F2F1', // Very Light Mint
+      '#F1F8E9', // Very Light Lime
+      '#EDE7F6', // Pale Lavender
+      '#E3F2FD', // Pale Blue
+      '#F9FBE7', // Pale Lime
+      '#FFF8E1'  // Pale Yellow
+    ];
+    
+    const hoverText = labels.map(label => {
+      const issues = priorityData[label].issues;
+      const preview = issues.length > 5 
+        ? issues.slice(0, 5).join('<br>') + `<br>... and ${issues.length - 5} more`
+        : issues.join('<br>');
+      return `<b>${label}</b><br>Issues: ${issues.length}<br><br><i>Click to see all issues</i><br><br>${preview}`;
+    });
+    
+    Plotly.newPlot('roadmap-priority-chart', [{
+      type: 'pie', 
+      labels: labels, 
+      values: counts,
+      marker: {
+        colors: priorityColors.slice(0, labels.length)
+      },
+      hovertemplate: '%{hovertext}<extra></extra>',
+      hovertext: hoverText
+    }], {
+      title: 'Open Issues by Priority (Click segments for details)',
+      margin: { t: 60, b: 40, l: 40, r: 40 }
+    }, { displayModeBar: false });
+    
+    // Add click handler
+    document.getElementById('roadmap-priority-chart').on('plotly_click', function(eventData) {
+      if (eventData.points.length > 0) {
+        const label = eventData.points[0].label;
+        showModal(`Priority: ${label}`, priorityData[label].issues);
+      }
+    });
+    
+    console.log('Priority chart completed');
   }
 
   // Load and process data
@@ -701,6 +983,7 @@ function initializeRoadmap() {
       createTimelineChart(issues);
       createBacklogChart(issues);
       createPieChart(issues);
+      createPriorityChart(issues);
       
       console.log('All charts completed');
       
