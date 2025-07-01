@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-aa9238ba561dfc496d5ec7026d47e64d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -278,6 +278,11 @@ if (document.getElementById('roadmap-summary')) {
   script.onerror = () => document.getElementById('roadmap-summary').innerHTML = '<p>Failed to load charting library</p>';
   document.head.appendChild(script);
 }
+
+// Global variables to store data and toggle states
+let globalIssuesData = [];
+let showAllIssuesLabels = false;
+let showAllIssuesPriority = false;
 
 function initializeRoadmap() {
   console.log('Initializing roadmap...');
@@ -685,10 +690,13 @@ function initializeRoadmap() {
       document.getElementById('roadmap-impulse-chart').on('plotly_click', function(eventData) {
         if (eventData.points.length > 0) {
           const clickInfo = eventData.points[0].customdata;
-          if (clickInfo && dailyClickData[clickInfo.date]) {
-            const issues = dailyClickData[clickInfo.date][clickInfo.type];
+          if (clickInfo && weeklyClickData[clickInfo.date]) {
+            const issues = weeklyClickData[clickInfo.date][clickInfo.type];
             if (issues && issues.length > 0) {
-              showModal(`Issues ${clickInfo.type} on ${clickInfo.date}`, issues);
+              const weekEnd = new Date(clickInfo.date);
+              weekEnd.setDate(weekEnd.getDate() + 6);
+              const weekEndStr = weekEnd.toISOString().split('T')[0];
+              showModal(`Issues ${clickInfo.type} during week of ${clickInfo.date} (${clickInfo.date} to ${weekEndStr})`, issues);
             }
           }
         }
@@ -697,7 +705,7 @@ function initializeRoadmap() {
       // Fallback: add the chart container and create it
       const container = document.createElement('div');
       container.id = 'roadmap-impulse-chart';
-      container.style.cssText = 'width: 100%; height: 400px; margin-top: 30px;';
+      container.style.cssText = 'width: 100%; height: 400px; margin-top: 50px;';
       document.getElementById('roadmap-backlog-chart').parentNode.appendChild(container);
       
       Plotly.newPlot('roadmap-impulse-chart', impulseData, {
@@ -754,14 +762,44 @@ function initializeRoadmap() {
     console.log('Open issues chart completed');
   }
 
-  // Create pie chart (open issues only)
-  function createPieChart(issues) {
+  // Create toggle buttons for charts
+  function createToggleButton(containerId, buttonId, initialText, onToggle) {
+    const container = document.getElementById(containerId);
+    if (container) {
+      const buttonContainer = document.createElement('div');
+      buttonContainer.style.cssText = 'text-align: center; margin-bottom: 20px; margin-top: 10px;';
+      
+      const button = document.createElement('button');
+      button.id = buttonId;
+      button.textContent = initialText;
+      button.style.cssText = `
+        background: #4285F4; 
+        color: white; 
+        border: none; 
+        border-radius: 20px; 
+        padding: 10px 20px; 
+        cursor: pointer; 
+        font-size: 14px;
+        transition: background-color 0.3s;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      `;
+      button.addEventListener('mouseover', () => button.style.background = '#3367D6');
+      button.addEventListener('mouseout', () => button.style.background = '#4285F4');
+      button.onclick = onToggle;
+      
+      buttonContainer.appendChild(button);
+      container.insertBefore(buttonContainer, container.firstChild);
+    }
+  }
+
+  // Create pie chart (with toggle for all vs open issues)
+  function createPieChart(issues, showAllIssues = false) {
     console.log('Creating pie chart...');
     
-    const openIssues = issues.filter(issue => issue.state === 'open');
+    const filteredIssues = showAllIssues ? issues : issues.filter(issue => issue.state === 'open');
     const labelData = {};
     
-    openIssues.forEach(issue => {
+    filteredIssues.forEach(issue => {
       const labels = issue.labels || [];
       
       // Filter out priority labels for the main chart
@@ -821,6 +859,9 @@ function initializeRoadmap() {
       return `<b>${label}</b><br>Issues: ${issues.length}<br><br><i>Click to see all issues</i><br><br>${preview}`;
     });
     
+    const issueType = showAllIssues ? 'All Issues' : 'Open Issues';
+    const chartDiv = document.getElementById('roadmap-pie-chart');
+    
     Plotly.newPlot('roadmap-pie-chart', [{
       type: 'pie', 
       labels: labels, 
@@ -831,7 +872,7 @@ function initializeRoadmap() {
       hovertemplate: '%{hovertext}<extra></extra>',
       hovertext: hoverText
     }], {
-      title: 'Open Issues by Label (Click segments for details)',
+      title: `${issueType} by Label (Click segments for details)`,
       margin: { t: 60, b: 40, l: 40, r: 40 }
     }, { displayModeBar: false });
     
@@ -846,14 +887,14 @@ function initializeRoadmap() {
     console.log('Pie chart completed');
   }
 
-  // Create priority pie chart (open issues only)
-  function createPriorityChart(issues) {
+  // Create priority pie chart (with toggle for all vs open issues)
+  function createPriorityChart(issues, showAllIssues = false) {
     console.log('Creating priority chart...');
     
-    const openIssues = issues.filter(issue => issue.state === 'open');
+    const filteredIssues = showAllIssues ? issues : issues.filter(issue => issue.state === 'open');
     const priorityData = {};
     
-    openIssues.forEach(issue => {
+    filteredIssues.forEach(issue => {
       const labels = issue.labels || [];
       
       // Look for priority-related labels
@@ -885,7 +926,7 @@ function initializeRoadmap() {
     if (!priorityChartDiv) {
       priorityChartDiv = document.createElement('div');
       priorityChartDiv.id = 'roadmap-priority-chart';
-      priorityChartDiv.style.cssText = 'width: 100%; height: 400px; margin-top: 30px;';
+      priorityChartDiv.style.cssText = 'width: 100%; height: 400px; margin-top: 80px;';
       document.getElementById('roadmap-pie-chart').parentNode.appendChild(priorityChartDiv);
     }
     
@@ -917,6 +958,8 @@ function initializeRoadmap() {
       return `<b>${label}</b><br>Issues: ${issues.length}<br><br><i>Click to see all issues</i><br><br>${preview}`;
     });
     
+    const issueType = showAllIssues ? 'All Issues' : 'Open Issues';
+    
     Plotly.newPlot('roadmap-priority-chart', [{
       type: 'pie', 
       labels: labels, 
@@ -927,7 +970,7 @@ function initializeRoadmap() {
       hovertemplate: '%{hovertext}<extra></extra>',
       hovertext: hoverText
     }], {
-      title: 'Open Issues by Priority (Click segments for details)',
+      title: `${issueType} by Priority (Click segments for details)`,
       margin: { t: 60, b: 40, l: 40, r: 40 }
     }, { displayModeBar: false });
     
@@ -940,6 +983,21 @@ function initializeRoadmap() {
     });
     
     console.log('Priority chart completed');
+  }
+
+  // Toggle functions
+  function toggleLabelsChart() {
+    showAllIssuesLabels = !showAllIssuesLabels;
+    const button = document.getElementById('labels-toggle-btn');
+    button.textContent = showAllIssuesLabels ? 'Show Open Issues Only' : 'Show All Issues';
+    createPieChart(globalIssuesData, showAllIssuesLabels);
+  }
+
+  function togglePriorityChart() {
+    showAllIssuesPriority = !showAllIssuesPriority;
+    const button = document.getElementById('priority-toggle-btn');
+    button.textContent = showAllIssuesPriority ? 'Show Open Issues Only' : 'Show All Issues';
+    createPriorityChart(globalIssuesData, showAllIssuesPriority);
   }
 
   // Load and process data
@@ -957,6 +1015,9 @@ function initializeRoadmap() {
       }
       
       console.log(`Loaded ${issues.length} issues`);
+      
+      // Store data globally for toggle functionality
+      globalIssuesData = issues;
       
       // Create summary
       const summary = createSummary(issues);
@@ -980,8 +1041,14 @@ function initializeRoadmap() {
       // Create all charts
       createTimelineChart(issues);
       createBacklogChart(issues);
-      createPieChart(issues);
-      createPriorityChart(issues);
+      
+      // Create pie charts with initial state (open issues only)
+      createPieChart(issues, showAllIssuesLabels);
+      createPriorityChart(issues, showAllIssuesPriority);
+      
+      // Add toggle buttons after charts are created
+      createToggleButton('roadmap-pie-chart', 'labels-toggle-btn', 'Show All Issues', toggleLabelsChart);
+      createToggleButton('roadmap-priority-chart', 'priority-toggle-btn', 'Show All Issues', togglePriorityChart);
       
       console.log('All charts completed');
       
