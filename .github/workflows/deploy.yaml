@@ -52,25 +52,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  # Report deployment success
-  report:
-    runs-on: ubuntu-latest
-    needs: deploy
-    if: success()
-    steps:
-      - name: Report Deployment Success
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const deploymentUrl = '${{ needs.deploy.outputs.page_url || steps.deployment.outputs.page_url }}';
-            const message = `Deployment Successful\n\nSite deployed successfully\nLive site: ${deploymentUrl}\n\nDeployed from commit ${context.sha.substring(0, 7)}`;
-            
-            github.rest.repos.createCommitComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              commit_sha: context.sha,
-              body: message
-            });
-            
-            console.log(`Deployment successful! Site is live at: ${deploymentUrl}`);
