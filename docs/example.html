@@ -444,7 +444,7 @@ function initializeRoadmap() {
     console.log('Timeline chart completed');
   }
 
-  // Create open issues trend with separate impulse chart
+  // Create open issues trend with separate impulse chart - FIXED VERSION
   function createBacklogChart(issues) {
     console.log('Creating open issues chart...');
     
@@ -564,7 +564,7 @@ function initializeRoadmap() {
       }
     });
     
-    // Chart 2: Weekly activity impulses (aggregated)
+    // Chart 2: Weekly activity impulses (aggregated) - FIXED VERSION
     const impulseData = [];
     
     // Helper function to get week start date (Monday)
@@ -612,26 +612,16 @@ function initializeRoadmap() {
         closed: weekEvents.closed.map(e => e.title)
       };
       
-      // Create hover text
+      // Create hover text for the week range
       const weekEnd = new Date(weekStart);
       weekEnd.setDate(weekEnd.getDate() + 6);
       const weekEndStr = weekEnd.toISOString().split('T')[0];
       
-      let openedHoverDetail = `<b>Week of ${weekStart}</b><br>(${weekStart} to ${weekEndStr})<br>Issues opened: ${openedCount}`;
-      if (openedCount > 0) {
-        openedHoverDetail += `<br><br><i>Click to see opened issues</i>`;
-      }
-      
-      let closedHoverDetail = `<b>Week of ${weekStart}</b><br>(${weekStart} to ${weekEndStr})<br>Issues closed: ${closedCount}`;
-      if (closedCount > 0) {
-        closedHoverDetail += `<br><br><i>Click to see closed issues</i>`;
-      }
-      
-      weeklyOpenedHover.push(openedHoverDetail);
-      weeklyClosedHover.push(closedHoverDetail);
+      weeklyOpenedHover.push(`<b>Week of ${weekStart}</b><br>(${weekStart} to ${weekEndStr})<br>Issues opened: ${openedCount}<br><br><i>Click for details</i>`);
+      weeklyClosedHover.push(`<b>Week of ${weekStart}</b><br>(${weekStart} to ${weekEndStr})<br>Issues closed: ${closedCount}<br><br><i>Click for details</i>`);
     });
     
-    // Opened issues impulses (positive bars)
+    // Opened issues impulses (positive bars) - WITH PROPER HOVER
     if (weeklyOpenedCounts.some(count => count > 0)) {
       impulseData.push({
         type: 'bar',
@@ -642,14 +632,15 @@ function initializeRoadmap() {
           color: '#4285F4', 
           opacity: 0.8
         },
-        text: weeklyOpenedHover,
-        hovertemplate: '%{text}<extra></extra>',
         customdata: weeklyDates.map(date => ({ date, type: 'opened' })),
-        showlegend: true
+        showlegend: true,
+        hovertemplate: '%{hovertext}<extra></extra>',
+        hovertext: weeklyOpenedHover,
+        textposition: 'none'  // Explicitly prevent text on bars
       });
     }
     
-    // Closed issues impulses (negative bars)
+    // Closed issues impulses (negative bars) - WITH PROPER HOVER
     if (weeklyClosedCounts.some(count => count < 0)) {
       impulseData.push({
         type: 'bar',
@@ -660,21 +651,22 @@ function initializeRoadmap() {
           color: '#FF8C00', 
           opacity: 0.8
         },
-        text: weeklyClosedHover,
-        hovertemplate: '%{text}<extra></extra>',
         customdata: weeklyDates.map(date => ({ date, type: 'closed' })),
-        showlegend: true
+        showlegend: true,
+        hovertemplate: '%{hovertext}<extra></extra>',
+        hovertext: weeklyClosedHover,
+        textposition: 'none'  // Explicitly prevent text on bars
       });
     }
     
-    // Create the impulse chart (assumes there's a div with id 'roadmap-impulse-chart')
+    // Create the impulse chart
     const impulseChartDiv = document.getElementById('roadmap-impulse-chart');
     if (impulseChartDiv) {
       Plotly.newPlot('roadmap-impulse-chart', impulseData, {
-        title: 'Daily Issue Activity (Inflow/Outflow)',
+        title: 'Weekly Issue Activity (Click bars for details)',
         xaxis: { title: 'Date', type: 'date' },
         yaxis: { 
-          title: 'Daily Changes',
+          title: 'Weekly Changes',
           zeroline: true,
           zerolinecolor: 'rgba(0,0,0,0.4)',
           zerolinewidth: 2,
@@ -711,9 +703,7 @@ function initializeRoadmap() {
       document.getElementById('roadmap-backlog-chart').parentNode.appendChild(container);
       
       Plotly.newPlot('roadmap-impulse-chart', impulseData, {
-        title: {
-          text: 'Weekly Activity'
-        },
+        title: 'Weekly Activity (Click bars for details)',
         xaxis: { 
           title: 'Week Starting (Monday)', 
           type: 'date',
@@ -730,18 +720,7 @@ function initializeRoadmap() {
         margin: { t: 80, b: 80, l: 60, r: 40 },
         showlegend: true,
         legend: { x: 0.02, y: 0.98 },
-        barmode: 'overlay',
-        annotations: [{
-          text: '',
-          showarrow: false,
-          x: 0.5,
-          y: -0.15,
-          xref: 'paper',
-          yref: 'paper',
-          xanchor: 'center',
-          yanchor: 'top',
-          font: { size: 12, color: 'gray' }
-        }]
+        barmode: 'overlay'
       }, { displayModeBar: false });
       
       // Add click handler for weekly impulse chart
