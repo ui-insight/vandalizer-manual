@@ -37,7 +37,7 @@ Vandalizer is an AI management tool designed to assist research administrators i
 
 At research institutions across the United States, Research Administration (RA) offices are facing increasing demands with limited resources. AI tools promise to ease the burden of routine administrative tasks, but commercially available AI tools do not reliably meet RA offices' high standards for accuracy, reproducibility, flexibility and security. While general use AI tools create exciting opportunities for augmentation, there is a gap between their potential and their practical implementation in RA offices.
 
-The goal is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.
+The goal in developing Vandalizer is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.
 :::
 
 ::: {.g-col-5}
