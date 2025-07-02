@@ -5,7 +5,6 @@ Thank you for your interest in contributing! This guide will help you get starte
 ## Quick Start
 
 ### 1. Get Access
-
 **Email**: nlayman@uidaho.edu  
 **Subject**: "Vandalizer Documentation Access Request"
 
@@ -17,8 +16,7 @@ Include:
 *Response time: 2-3 business days*
 
 ### 2. Make Your First Edit
-
-1. Go to the [live documentation](https://nate-layman.github.io/vandalizer-manual/)
+1. Go to the [Vandalizer User Manual and Wiki](https://nate-layman.github.io/vandalizer-manual/)
 2. Click "Edit this page" on any page
 3. Make your changes in the GitHub editor
 4. Write a clear commit message describing what you changed
@@ -27,7 +25,6 @@ Include:
 Your changes go live automatically in 2-5 minutes!
 
 ### 3. Alternative: Email Your Ideas
-
 Don't want to edit directly? **Email your ideas to nlayman@uidaho.edu** and I'll incorporate them into the manual.
 
 ## What We Need Most
@@ -62,6 +59,15 @@ Don't want to edit directly? **Email your ideas to nlayman@uidaho.edu** and I'll
   Your helpful tip here
   :::
   ```
+
+## Resources for New Contributors
+
+**New to Quarto?** Start here:
+
+- **[Quarto Get Started Guide](https://quarto.org/docs/get-started/)** - Step-by-step introduction to Quarto basics
+- **[Quarto Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)** - How Quarto extends standard markdown with special features like callout boxes and cross-references
+
+**Quick tip:** You can always look at existing pages in the documentation to see how formatting is done, then copy and modify the syntax for your own content.
 
 ## Before You Commit
 
@@ -141,4 +147,4 @@ sidebar:
 
 ---
 
-**Questions?** Email nlayman@uidaho.edu - we're here to help make contributing as easy as possible!
+**Questions?** Email nlayman@uidaho.edu - we're here to help make contributing
