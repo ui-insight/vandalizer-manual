@@ -28,7 +28,7 @@ format:
 
 ## Understanding Vandalizer Components
 
-Within Vandalizer, users can create **tasks**, which are specific, repeatable jobs handled by AI. These tasks can be collected into **steps**, for which task within each step receives the same input. Steps can be chained together, where downstream steps receive input from upstream steps, creating structured, repeatable **workflows**.
+Within Vandalizer, users can create **tasks**, which are specific, repeatable jobs handled by AI. These tasks can be collected into **steps**, for which tasks within each step receive the same input. Steps can be chained together, where downstream steps receive input from upstream steps, creating structured, repeatable **workflows**.
 
 These Workflows—tasks coordinated into steps—can be reused across documents with similar formats or content. All tasks and workflows are organized within **workspaces**, which serve as centralized hubs for managing and tracking work. Workspaces can be customized to align with the needs of a Research Administration office, organized by individual users, job roles, or document types.
 
