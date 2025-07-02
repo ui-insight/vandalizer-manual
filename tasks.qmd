@@ -31,7 +31,7 @@ format:
 :::
 
 
-A **Task** describes the jobs that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time.  Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.
+A **Task** is a job that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time.  Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.
 
 # Types of Tasks
 
