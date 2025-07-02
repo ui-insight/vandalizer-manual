@@ -52,7 +52,7 @@ A **Task** is a job that Vandalizer performs. Creating sets of tasks is valuable
 
 :::
 
-In the toolbox window, users can create tasks by clicking on the **Chat** tab at the top of the window. From there, users can either click on 
+In the toolbox window, users can create tasks by clicking on the **Chat** tab at the top of the toolbox window. From there, users can either click on 
   <span style="color: #2c7eaabc;">{{< fa diagram-project >}}</span> **Run a task** or on the <span style="border: 2px solid #ccc; padding: 4px; display: inline-block;">{{< fa diagram-project >}} **TASKS**</span> button
 
 ::: {.callout-tip}
