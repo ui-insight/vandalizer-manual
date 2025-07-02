@@ -147,4 +147,4 @@ sidebar:
 
 ---
 
-**Questions?** Email nlayman@uidaho.edu - we're here to help make contributing
+**Questions?** Email nlayman@uidaho.edu
