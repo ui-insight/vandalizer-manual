@@ -47,7 +47,7 @@ The goal in developing Vandalizer is not to replace administrators, whose specia
 
 **ACCURACY:** Vandalizer ensures correct data extraction and transformation without hallucinations.
 
-**REPRODUCIBILITY:** Vandalizer delivers consistent results across repeated inputs and users.
+**REPRODUCIBILITY:** Vandalizer delivers consistent results across repeated inputs between users.
 
 **FLEXIBILITY:** Vandalizer adapts to diverse data environments, evolving workflows, and advancing AI models.
 
