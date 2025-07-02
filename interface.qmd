@@ -26,7 +26,7 @@ format:
 # The Vandalizer Interface
 :::
 
-After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that is extracted from the document. These documents provide the input to Vandalizer tasks and workflows. 
+After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that Vandalizer extracts from the document. These documents provide the input for tasks and workflows in Vandalizer. 
  
 Second, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows. 
 
@@ -34,7 +34,7 @@ Second, on the right side of the window, is a panel that we call the Toolbox win
 ![](images/interface.png){width="90%" class="popup-image" onclick="toggleImage(this)"}
 :::
 
-In the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the <i class="fas fa-spinner fa-spin"></i> symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).
+In the Document Viewer window, users can upload files via drag and drop, or by pressing either the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the <i class="fas fa-spinner fa-spin"></i> symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).
  
 ::: {.text-center}
 ![](images/ocr.png){width="90%" class="popup-image" onclick="toggleImage(this)"}
@@ -44,8 +44,8 @@ When the system is finished analyzing, the user will see the symbol change to  {
 
 ## Chatting with a document in Vandalizer
 
-Once a user uploads a document to Vandalizer, the user can chat with the document directly to quickly extract information from a document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the **Chat** tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.
+Once a user uploads a document to Vandalizer, the user can chat with the document directly to quickly ask Vandalizer about the document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the **Chat** tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.
 
-The chat tool is great for a user who wants to pose quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.
+The chat tool is great for posing quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.
  
 
