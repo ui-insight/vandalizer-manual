@@ -34,7 +34,7 @@ A **workflow** is a coordinated assemblage of AI tasks, organized into steps tha
 
 ::: {.callout-tip}
 ## Steps
-All tasks within a step receive the same input and run independantly of each other
+All tasks within a step receive the same input and run independently of each other
 :::
 
-Workflows arrange AI tasks into sequential groups called steps. The purpose of a step is to organize the inputs available to tasks. All tasks within a step receive the same input and all tasks within a step contribute to the step output. The outputs from an upstream step will inform the inputs for a downstream step. For example, a user might ask Vandalizer to extract key information from an NSF Notice of Award (Step 1), then format that information into a template (step 2). This workflow ensures that Vandalizer extracts the same information from each NSF NOA (step 1), and that the outputs are structured consistently, without duplicate information (step 2).     
+Workflows arrange AI tasks into sequential groups called steps. The purpose of a **step** is to coordinate the inputs available to tasks. All tasks within a step receive the same input and all tasks within a step contribute to the step output. The outputs from an upstream step will inform the inputs for a downstream step. For example, a user might ask Vandalizer to extract key information from an NSF Notice of Award (step 1), then format that information into a template (step 2). This workflow ensures that Vandalizer extracts the same information from each NSF NOA (step 1), and that the outputs are structured consistently, without duplicate information (step 2).     
