@@ -108,5 +108,61 @@
     "crumbs": [
       "Introduction"
     ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Thank you for your interest in contributing! This guide will help you get started quickly.\n\n\n\n\nEmail: nlayman@uidaho.edu\nSubject: “Vandalizer Documentation Access Request”\nInclude: - Your GitHub username - Your affiliation with Vandalizer or research administration - What you’d like to contribute (e.g., “workflow examples”, “interface screenshots”)\nResponse time: 2-3 business days\n\n\n\n\nGo to the Vandalizer User Manual and Wiki\nClick “Edit this page” on any page\nMake your changes in the GitHub editor\nWrite a clear commit message describing what you changed\nCommit to main branch\n\nYour changes go live automatically in 2-5 minutes!\n\n\n\nDon’t want to edit directly? Email your ideas to nlayman@uidaho.edu and I’ll incorporate them into the manual.\n\n\n\n\nHigh Priority: - Real-world workflow examples with step-by-step instructions - Screenshots of the Vandalizer interface with explanations - Common troubleshooting issues and solutions - Integration guides for connecting with other RA tools\nContent Types: - Video tutorials or links - Downloadable templates and checklists - FAQ entries - Best practices and tips\n\n\n\nKeep it simple: - Write for research administrators who may be new to AI tools - Use clear, action-oriented language - Include practical examples when possible - Break up long sections with headers\nFormat basics: - Use descriptive headings (## Main Section, ### Subsection) - Add alt text to images: ![Description](image.png) - Use tip boxes for important info: markdown   ::: {.callout-tip}   ## Tip   Your helpful tip here   :::\n\n\n\nNew to Quarto? Start here:\n\nQuarto Get Started Guide - Step-by-step introduction to Quarto basics\nQuarto Markdown Basics - How Quarto extends standard markdown with special features like callout boxes and cross-references\n\nQuick tip: You can always look at existing pages in the documentation to see how formatting is done, then copy and modify the syntax for your own content.\n\n\n\nQuick checklist: - [ ] Content is accurate and helpful - [ ] Links work - [ ] Images display properly - [ ] Commit message clearly describes changes\n\n\n\n\nGeneral questions: Email nlayman@uidaho.edu\nTechnical issues: Create a GitHub issue\nQuarto/Markdown help: Quarto Documentation\n\n\n\n\n\n\nFor Advanced Contributors (click to expand)\n\n\n\n\nMain content: .qmd files in root directory\nImages: Store in images/ folder\nNavigation: Edit _quarto.yml to add new pages\n\n\n\n\n\nDaily roadmap updates: Issues from main repository auto-sync at 6 AM UTC\nAuto-deployment: All changes to main branch deploy automatically\nDon’t edit: data/issues.json (auto-generated)\n\n\n\n\nStep 1: Create your new page using this required header template:\n---\ntitle: \"Your Page Title\"\nformat:\n  html:\n    page-layout: full\n    include-after-body: scripts.html\n---\n\n:::: {.header-logos}\n::: {.grid}\n::: {.g-col-2 .d-flex .justify-content-center .align-items-center}\n![](images/uidaho_logo.png){width=100px}\n:::\n::: {.g-col-7 .d-flex .justify-content-center .align-items-center}\n![](images/vandalizer_logo.png){width=500px}\n:::\n::: {.g-col-3 .d-flex .justify-content-center .align-items-center}\n![](images/suu_logo.png){width=200px}\n:::\n:::\n::::\n\n---\n\n[Your content starts here]\nStep 2: Add to navigation by editing _quarto.yml:\nsidebar:\n  contents:\n    - text: \"Your New Page\"\n      href: your-new-page.qmd\n\n\n\n\nTest all links after changes\nUse GitHub preview before committing\nMake incremental changes when possible\nCoordinate with other contributors on large changes\n\n\n\nQuestions? Email nlayman@uidaho.edu"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#quick-start",
+    "href": "CONTRIBUTING.html#quick-start",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Email: nlayman@uidaho.edu\nSubject: “Vandalizer Documentation Access Request”\nInclude: - Your GitHub username - Your affiliation with Vandalizer or research administration - What you’d like to contribute (e.g., “workflow examples”, “interface screenshots”)\nResponse time: 2-3 business days\n\n\n\n\nGo to the Vandalizer User Manual and Wiki\nClick “Edit this page” on any page\nMake your changes in the GitHub editor\nWrite a clear commit message describing what you changed\nCommit to main branch\n\nYour changes go live automatically in 2-5 minutes!\n\n\n\nDon’t want to edit directly? Email your ideas to nlayman@uidaho.edu and I’ll incorporate them into the manual."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#what-we-need-most",
+    "href": "CONTRIBUTING.html#what-we-need-most",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "High Priority: - Real-world workflow examples with step-by-step instructions - Screenshots of the Vandalizer interface with explanations - Common troubleshooting issues and solutions - Integration guides for connecting with other RA tools\nContent Types: - Video tutorials or links - Downloadable templates and checklists - FAQ entries - Best practices and tips"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#writing-guidelines",
+    "href": "CONTRIBUTING.html#writing-guidelines",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Keep it simple: - Write for research administrators who may be new to AI tools - Use clear, action-oriented language - Include practical examples when possible - Break up long sections with headers\nFormat basics: - Use descriptive headings (## Main Section, ### Subsection) - Add alt text to images: ![Description](image.png) - Use tip boxes for important info: markdown   ::: {.callout-tip}   ## Tip   Your helpful tip here   :::"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#resources-for-new-contributors",
+    "href": "CONTRIBUTING.html#resources-for-new-contributors",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "New to Quarto? Start here:\n\nQuarto Get Started Guide - Step-by-step introduction to Quarto basics\nQuarto Markdown Basics - How Quarto extends standard markdown with special features like callout boxes and cross-references\n\nQuick tip: You can always look at existing pages in the documentation to see how formatting is done, then copy and modify the syntax for your own content."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#before-you-commit",
+    "href": "CONTRIBUTING.html#before-you-commit",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Quick checklist: - [ ] Content is accurate and helpful - [ ] Links work - [ ] Images display properly - [ ] Commit message clearly describes changes"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#need-help",
+    "href": "CONTRIBUTING.html#need-help",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "General questions: Email nlayman@uidaho.edu\nTechnical issues: Create a GitHub issue\nQuarto/Markdown help: Quarto Documentation"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#technical-details",
+    "href": "CONTRIBUTING.html#technical-details",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "For Advanced Contributors (click to expand)\n\n\n\n\nMain content: .qmd files in root directory\nImages: Store in images/ folder\nNavigation: Edit _quarto.yml to add new pages\n\n\n\n\n\nDaily roadmap updates: Issues from main repository auto-sync at 6 AM UTC\nAuto-deployment: All changes to main branch deploy automatically\nDon’t edit: data/issues.json (auto-generated)\n\n\n\n\nStep 1: Create your new page using this required header template:\n---\ntitle: \"Your Page Title\"\nformat:\n  html:\n    page-layout: full\n    include-after-body: scripts.html\n---\n\n:::: {.header-logos}\n::: {.grid}\n::: {.g-col-2 .d-flex .justify-content-center .align-items-center}\n![](images/uidaho_logo.png){width=100px}\n:::\n::: {.g-col-7 .d-flex .justify-content-center .align-items-center}\n![](images/vandalizer_logo.png){width=500px}\n:::\n::: {.g-col-3 .d-flex .justify-content-center .align-items-center}\n![](images/suu_logo.png){width=200px}\n:::\n:::\n::::\n\n---\n\n[Your content starts here]\nStep 2: Add to navigation by editing _quarto.yml:\nsidebar:\n  contents:\n    - text: \"Your New Page\"\n      href: your-new-page.qmd\n\n\n\n\nTest all links after changes\nUse GitHub preview before committing\nMake incremental changes when possible\nCoordinate with other contributors on large changes\n\n\n\nQuestions? Email nlayman@uidaho.edu"
   }
 ]
