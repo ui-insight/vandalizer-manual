@@ -1,95 +1,129 @@
 # Contributing to Vandalizer Documentation
 
-Thank you for your interest in contributing to the Vandalizer documentation! This guide will help you get started with making meaningful contributions to our project.
+Thank you for your interest in contributing! This guide will help you get started quickly.
 
-## Getting Started
+## Quick Start
 
-### Request Repository Access
-
-To contribute to this documentation, you'll need write access to the repository:
+### 1. Get Access
 
 **Email**: nlayman@uidaho.edu  
 **Subject**: "Vandalizer Documentation Access Request"
 
-Please include:
+Include:
 - Your GitHub username
-- Your affiliation with the Vandalizer project or research administration
-- Brief description of your intended contributions (e.g., "updating interface documentation", "adding workflow examples")
-- Your institutional email address
+- Your affiliation with Vandalizer or research administration
+- What you'd like to contribute (e.g., "workflow examples", "interface screenshots")
 
-Response Time: Access requests are typically processed within 2-3 business days.
+*Response time: 2-3 business days*
 
-## Making Contributions
+### 2. Make Your First Edit
 
-### Editing Pages
+1. Go to the [live documentation](https://nate-layman.github.io/vandalizer-manual/)
+2. Click "Edit this page" on any page
+3. Make your changes in the GitHub editor
+4. Write a clear commit message describing what you changed
+5. Commit to main branch
 
-1. Navigate to the [live documentation](https://nate-layman.github.io/vandalizer-manual/)
-2. Click the "Edit this page" button on any page you want to modify
-3. Make your changes directly in the GitHub web editor
-4. Write a clear, descriptive commit message
-5. Commit your changes directly to the main branch
+Your changes go live automatically in 2-5 minutes!
 
-Changes will be automatically deployed to the live site within 2-5 minutes.
+### 3. Alternative: Email Your Ideas
 
-## Content Guidelines
+Don't want to edit directly? **Email your ideas to nlayman@uidaho.edu** and I'll incorporate them into the manual.
 
-### Writing Style
-- Clear and Concise: Write for research administrators who may be new to AI tools
-- Action-Oriented: Use active voice and specific instructions
-- Consistent Terminology: Use the same terms throughout (refer to existing pages)
-- Professional Tone: Maintain a helpful, professional voice
+## What We Need Most
 
-### Content Structure
-- Descriptive Headers: Use clear, hierarchical headings (H1, H2, H3)
-- Logical Flow: Organize content from general to specific
-- Examples: Include practical examples and use cases when possible
-- Cross-References: Link to related sections and external resources
+**High Priority:**
+- Real-world workflow examples with step-by-step instructions
+- Screenshots of the Vandalizer interface with explanations
+- Common troubleshooting issues and solutions
+- Integration guides for connecting with other RA tools
 
-### Markdown Guidelines
-- Use Quarto-flavored Markdown syntax
-- Include alt text for images: `![Description](path/to/image.png)`
-- Use callout boxes for important information:
+**Content Types:**
+- Video tutorials or links
+- Downloadable templates and checklists
+- FAQ entries
+- Best practices and tips
+
+## Writing Guidelines
+
+**Keep it simple:**
+- Write for research administrators who may be new to AI tools
+- Use clear, action-oriented language
+- Include practical examples when possible
+- Break up long sections with headers
+
+**Format basics:**
+- Use descriptive headings (## Main Section, ### Subsection)
+- Add alt text to images: `![Description](image.png)`
+- Use tip boxes for important info:
   ```markdown
   ::: {.callout-tip}
   ## Tip
   Your helpful tip here
   :::
   ```
-- Code blocks should specify language: ````markdown ```python````
 
-### Images and Assets
-- Place images in the `images/` directory
-- Use descriptive filenames: `workflow-diagram-grant-submission.png`
-- Optimize images for web (< 500KB when possible)
-- Include University of Idaho and collaborator logos appropriately
+## Before You Commit
 
-## Understanding Automated Workflows
+Quick checklist:
+- [ ] Content is accurate and helpful
+- [ ] Links work
+- [ ] Images display properly
+- [ ] Commit message clearly describes changes
 
-### Daily Roadmap Updates
-The repository includes automated issue tracking:
-- Schedule: Runs daily at 6 AM UTC
-- Function: Fetches issues from `ui-insight/vandalizer` repository
-- Output: Updates `data/issues.json` and regenerates roadmap page
-- Note: Don't edit `data/issues.json` manually - it's automatically overwritten
+## Need Help?
 
-### Deployment Pipeline
-- Trigger: Any push to `main` branch
-- Process: Quarto renders all `.qmd` files to HTML
-- Output: Deployed to GitHub Pages automatically
-- Timeline: Changes are live within 2-5 minutes
+- **General questions**: Email nlayman@uidaho.edu
+- **Technical issues**: Create a GitHub issue
+- **Quarto/Markdown help**: [Quarto Documentation](https://quarto.org/docs/)
 
-## File Organization
+## Technical Details
 
-### Page Structure
+<details>
+<summary>For Advanced Contributors (click to expand)</summary>
+
+### File Organization
+- Main content: `.qmd` files in root directory
+- Images: Store in `images/` folder
+- Navigation: Edit `_quarto.yml` to add new pages
+
+### Automated Features
+- **Daily roadmap updates**: Issues from main repository auto-sync at 6 AM UTC
+- **Auto-deployment**: All changes to main branch deploy automatically
+- **Don't edit**: `data/issues.json` (auto-generated)
+
+### Adding New Pages
+
+**Step 1:** Create your new page using this required header template:
+```yaml
+---
+title: "Your Page Title"
+format:
+  html:
+    page-layout: full
+    include-after-body: scripts.html
+---
+
+:::: {.header-logos}
+::: {.grid}
+::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
+![](images/uidaho_logo.png){width=100px}
+:::
+::: {.g-col-7 .d-flex .justify-content-center .align-items-center}
+![](images/vandalizer_logo.png){width=500px}
+:::
+::: {.g-col-3 .d-flex .justify-content-center .align-items-center}
+![](images/suu_logo.png){width=200px}
+:::
+:::
+::::
+
+---
+
+[Your content starts here]
 ```
-page-name.qmd                 # Main content file
-├── YAML frontmatter         # Page configuration
-├── Content sections         # Markdown content
-└── References              # Links and citations
-```
 
-### Navigation Updates
-To add new pages to the sidebar navigation, edit `_quarto.yml`:
+**Step 2:** Add to navigation by editing `_quarto.yml`:
 ```yaml
 sidebar:
   contents:
@@ -97,86 +131,14 @@ sidebar:
       href: your-new-page.qmd
 ```
 
-## Reporting Issues
+### Quality Standards
+- Test all links after changes
+- Use GitHub preview before committing
+- Make incremental changes when possible
+- Coordinate with other contributors on large changes
 
-### Documentation Issues
-For problems with the documentation itself:
-1. Use the GitHub Issues tab in this repository
-2. Provide clear description of the problem
-3. Include steps to reproduce if applicable
-4. Suggest improvements when possible
-
-### Vandalizer Product Issues
-For issues with the Vandalizer tool itself:
-- Report in the main Vandalizer repository
-- Reference documentation issues if relevant
-
-## Contribution Ideas
-
-### High-Priority Areas
-- Workflow Examples: Real-world use cases and step-by-step guides
-- Interface Documentation: Screenshots and detailed UI explanations
-- Troubleshooting: Common issues and solutions
-- Integration Guides: Connecting Vandalizer with other RA tools
-
-### Content Types Needed
-- Video tutorials (embedded or linked)
-- Downloadable templates and checklists
-- Frequently asked questions
-- Best practices and tips
-- Case studies from early adopters
-
-## Quality Standards
-
-### Before Committing
-- [ ] Content is accurate and up-to-date
-- [ ] All links work correctly
-- [ ] Images display properly and have alt text
-- [ ] Spelling and grammar are correct
-- [ ] Format is consistent with existing pages
-- [ ] Commit message clearly describes the changes
-
-### Best Practices
-- Test links after making changes
-- Preview your changes using GitHub's preview feature before committing
-- Use clear, descriptive commit messages
-- Make incremental changes rather than large overhauls when possible
-
-## Community Guidelines
-
-### Collaboration
-- Be respectful and constructive in all interactions
-- Coordinate with other contributors to avoid conflicts
-- Ask questions when you need clarification
-- Share knowledge and expertise openly
-
-### Communication
-- Use clear, professional language in commit messages
-- Contact maintainers if you're unsure about changes
-- Use GitHub issues for discussing larger changes
-- Communicate with other contributors when working on related content
-
-## Getting Help
-
-### Technical Support
-- Quarto Questions: [Quarto Documentation](https://quarto.org/docs/)
-- Markdown Syntax: [Quarto Markdown Guide](https://quarto.org/docs/authoring/markdown-basics.html)
-- Git/GitHub: [GitHub Docs](https://docs.github.com/)
-
-### Project Support
-- General Questions: Email nlayman@uidaho.edu
-- Urgent Issues: Create a GitHub issue with "urgent" label
-- Content Questions: Reach out to project maintainers
-
-## Recognition
-
-Contributors to this documentation will be acknowledged in:
-- Git commit history (permanent record)
-- Project acknowledgments (as appropriate)
-- Community recognition for significant contributions
-
-Thank you for helping make Vandalizer documentation better for the research administration community!
+</details>
 
 ---
 
-Questions? Don't hesitate to reach out to nlayman@uidaho.edu for any clarification or assistance.
+**Questions?** Email nlayman@uidaho.edu - we're here to help make contributing as easy as possible!
