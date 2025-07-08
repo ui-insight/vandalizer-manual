@@ -1,4 +1,4 @@
-[workspace]
+[project]
 authors = ["Nathan Layman <nlayman@uidaho.edu>"]
 channels = ["conda-forge"]
 name = "vandalizer-manual"
