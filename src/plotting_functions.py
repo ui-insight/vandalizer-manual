@@ -200,18 +200,23 @@ def create_open_issues_plot(issues_df):
     custom_data = []
     
     for date, row in significant_dates.iterrows():
-        # Calculate open issues for this specific date
-        date_events = events_df[events_df['date'] <= date]
-        current_open_issues = {}
+        # Get issues that should be open on this specific date
+        open_issues_list = []
         
-        for _, event in date_events.iterrows():
-            issue_title = event['issue_data']['title']
-            if event['type'] == 'opened':
-                current_open_issues[issue_title] = event['issue_data']
-            elif event['type'] == 'closed':
-                current_open_issues.pop(issue_title, None)
+        for _, issue in issues_df.iterrows():
+            created_date = pd.to_datetime(issue['created_date']).date()
+            
+            # Issue must be created on or before this date
+            if created_date <= date:
+                if issue['state'] == 'open':
+                    # Open issues are included if created by this date
+                    open_issues_list.append(issue.to_dict())
+                elif issue['state'] == 'closed' and pd.notna(issue['closed_date']):
+                    closed_date = pd.to_datetime(issue['closed_date']).date()
+                    # Closed issues are included only if they closed AFTER this date
+                    if closed_date > date:
+                        open_issues_list.append(issue.to_dict())
         
-        open_issues_list = list(current_open_issues.values())
         grouped_issues = group_issues_by_priority(open_issues_list)
         
         net_change = row['net_change']
