@@ -443,10 +443,40 @@ def create_unified_pie_chart(issues_df):
         else:
             return 3
     
+    def get_legend_config(labels_count, is_labels_grouping=False):
+        """Get optimal legend configuration based on number of labels"""
+        if is_labels_grouping and labels_count > 6:
+            # For many labels, position legend to the right with more space
+            return dict(
+                orientation="v", 
+                x=1.02, 
+                y=0.5,
+                xanchor='left',
+                yanchor='middle'
+            )
+        elif labels_count > 8:
+            # For very many items, position further right
+            return dict(
+                orientation="v", 
+                x=1.05, 
+                y=0.5,
+                xanchor='left',
+                yanchor='middle'
+            )
+        else:
+            # Default positioning for fewer items
+            return dict(
+                orientation="v", 
+                x=0.85, 
+                y=0.5,
+                xanchor='left',
+                yanchor='middle'
+            )
+    
     def prepare_chart_data(filtered_issues, group_by='priority'):
         """Prepare data for a single chart state"""
         if len(filtered_issues) == 0:
-            return [], [], [], [], []
+            return [], [], [], [], [], {}
         
         grouped_data = {}
         
@@ -465,7 +495,7 @@ def create_unified_pie_chart(issues_df):
                 grouped_data[group]['issues'].append(issue_dict)
         
         if not grouped_data:
-            return [], [], [], [], []
+            return [], [], [], [], [], {}
         
         # Sort groups appropriately
         if group_by == 'priority':
@@ -509,23 +539,26 @@ def create_unified_pie_chart(issues_df):
         
         chart_colors = colors[:len(labels)]
         
-        return labels, values, custom_data, hover_text, chart_colors
+        # Get appropriate legend config
+        legend_config = get_legend_config(len(labels), group_by == 'labels')
+        
+        return labels, values, custom_data, hover_text, chart_colors, legend_config
     
     # Pre-compute all four chart states
     open_issues = issues_df[issues_df['state'] == 'open']
     all_issues = issues_df
     
     # State 1: Open issues by priority
-    labels_op, values_op, custom_op, hover_op, colors_op = prepare_chart_data(open_issues, 'priority')
+    labels_op, values_op, custom_op, hover_op, colors_op, legend_op = prepare_chart_data(open_issues, 'priority')
     
     # State 2: All issues by priority  
-    labels_ap, values_ap, custom_ap, hover_ap, colors_ap = prepare_chart_data(all_issues, 'priority')
+    labels_ap, values_ap, custom_ap, hover_ap, colors_ap, legend_ap = prepare_chart_data(all_issues, 'priority')
     
     # State 3: Open issues by labels
-    labels_ol, values_ol, custom_ol, hover_ol, colors_ol = prepare_chart_data(open_issues, 'labels')
+    labels_ol, values_ol, custom_ol, hover_ol, colors_ol, legend_ol = prepare_chart_data(open_issues, 'labels')
     
-    # State 4: All issues by labels
-    labels_al, values_al, custom_al, hover_al, colors_al = prepare_chart_data(all_issues, 'labels')
+    # State 4: All issues by labels (this is the problematic one!)
+    labels_al, values_al, custom_al, hover_al, colors_al, legend_al = prepare_chart_data(all_issues, 'labels')
     
     # Create the figure with all traces (only first one visible initially)
     fig = go.Figure()
@@ -565,14 +598,15 @@ def create_unified_pie_chart(issues_df):
                 hoverinfo='skip'
             ))
     
-    # Layout without built-in updatemenus (we'll add custom toggles via JavaScript)
-    fig.update_layout(
-        height=600,  # Increased from 700 to 800
-        margin=dict(t=20, b=20, l=20, r=20),  # Reduced all margins for maximum chart space
-        showlegend=True,
-        legend=dict(orientation="v", x=0.80, y=0.5)
-    )
+    # Use the legend config from the first (default) trace
+    default_legend = legend_op if labels_op else dict(orientation="v", x=0.85, y=0.5)
     
-    # Note: JavaScript will coordinate toggles using DOM queries - no metadata needed
+    # Layout with dynamic margins to accommodate legend
+    fig.update_layout(
+        height=600,
+        margin=dict(t=20, b=20, l=20, r=120),  # Increased right margin for legend
+        showlegend=True,
+        legend=default_legend
+    )
     
     return fig

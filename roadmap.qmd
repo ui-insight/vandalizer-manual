@@ -113,8 +113,8 @@ HTML(add_click_functionality())
 ```
 
 ```{python}
-#| label: add-toggle-coordination
-#| output: asis
+# | label: add-toggle-coordination
+# | output: asis
 # Add coordinated toggle functionality for the pie chart
 HTML(add_coordinated_toggle_functionality())
 ```

@@ -154,7 +154,8 @@ def add_click_functionality():
 
 def add_coordinated_toggle_functionality():
     """
-    Add JavaScript to create custom toggle switches for the unified pie chart.
+    Add JavaScript to create custom toggle switches for the unified pie chart
+    with dynamic legend positioning.
     """
     
     html_content = """
@@ -309,11 +310,19 @@ def add_coordinated_toggle_functionality():
         return true;
     }
     
-    // === TOGGLE HANDLERS ===
+    // === TOGGLE HANDLERS WITH DYNAMIC LEGEND ===
     function setupToggleHandlers(unifiedChart) {
         // Track current state
         let currentScope = 'open';  // 'open' or 'all'
         let currentGrouping = 'priority';  // 'priority' or 'labels'
+        
+        // Define legend configurations for each state
+        const legendConfigs = {
+            'open-priority': { orientation: "v", x: 0.85, y: 0.5, xanchor: 'left', yanchor: 'middle' },
+            'all-priority': { orientation: "v", x: 0.85, y: 0.5, xanchor: 'left', yanchor: 'middle' },
+            'open-labels': { orientation: "v", x: 0.85, y: 0.5, xanchor: 'left', yanchor: 'middle' },
+            'all-labels': { orientation: "v", x: 1.02, y: 0.5, xanchor: 'left', yanchor: 'middle' } // Special positioning for this problematic case
+        };
         
         // Function to update chart based on current state
         function updateChart() {
@@ -322,13 +331,21 @@ def add_coordinated_toggle_functionality():
             visibility[traceIndex] = true;
             
             const title = `${currentScope === 'open' ? 'Open' : 'All'} Issues by ${currentGrouping === 'priority' ? 'Priority' : 'Labels'}`;
+            const legendKey = `${currentScope}-${currentGrouping}`;
+            const legendConfig = legendConfigs[legendKey];
             
+            // Update both trace visibility and legend positioning
             Plotly.update(unifiedChart, 
                 { visible: visibility },
-                { title: title }
+                { 
+                    title: title,
+                    legend: legendConfig,
+                    // Adjust right margin based on legend position
+                    'margin.r': legendConfig.x > 1 ? 150 : 120
+                }
             );
             
-            console.log(`Updated chart to: ${title}`);
+            console.log(`Updated chart to: ${title} with legend config:`, legendConfig);
         }
         
         function getTraceIndex(scope, grouping) {
@@ -377,7 +394,7 @@ def add_coordinated_toggle_functionality():
             });
         }
         
-        console.log('Toggle handlers set up successfully');
+        console.log('Toggle handlers with dynamic legend set up successfully');
     }
     
     // === INITIALIZATION ===
@@ -419,32 +436,8 @@ def add_coordinated_toggle_functionality():
     
     observer.observe(document.body, { childList: true, subtree: true });
     
-    console.log('Custom toggle functionality loaded');
+    console.log('Custom toggle functionality with dynamic legend loaded');
     </script>
     """
     
     return html_content
-
-
-def add_complete_interactivity():
-    """
-    Add both click functionality and coordinated toggle functionality.
-    This combines both interactive features in a single function call.
-    """
-    
-    click_html = add_click_functionality()
-    toggle_html = add_coordinated_toggle_functionality()
-    
-    # Remove the duplicate script tags and combine
-    click_content = click_html.replace('<script>', '').replace('</script>', '')
-    toggle_content = toggle_html.replace('<script>', '').replace('</script>', '')
-    
-    combined_html = f"""
-    <script>
-    {click_content}
-    
-    {toggle_content}
-    </script>
-    """
-    
-    return combined_html

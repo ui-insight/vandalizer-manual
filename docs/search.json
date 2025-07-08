@@ -255,5 +255,59 @@
     "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
     "section": "",
     "text": "Testing Phase 1 implementation in roadmap2.qmd. Basic charts functional, ready to add remaining interactive features once core functionality is validated."
+  },
+  {
+    "objectID": "roadmap.html#cumulative-issues-over-time",
+    "href": "roadmap.html#cumulative-issues-over-time",
+    "title": "Vandalizer Wiki",
+    "section": "Cumulative Issues Over Time",
+    "text": "Cumulative Issues Over Time",
+    "crumbs": [
+      "Roadmap"
+    ]
+  },
+  {
+    "objectID": "roadmap.html#open-issues-trend",
+    "href": "roadmap.html#open-issues-trend",
+    "title": "Vandalizer Wiki",
+    "section": "Open Issues Trend",
+    "text": "Open Issues Trend",
+    "crumbs": [
+      "Roadmap"
+    ]
+  },
+  {
+    "objectID": "roadmap.html#weekly-issue-activity",
+    "href": "roadmap.html#weekly-issue-activity",
+    "title": "Vandalizer Wiki",
+    "section": "Weekly Issue Activity",
+    "text": "Weekly Issue Activity",
+    "crumbs": [
+      "Roadmap"
+    ]
+  },
+  {
+    "objectID": "roadmap.html#issues-analysis",
+    "href": "roadmap.html#issues-analysis",
+    "title": "Vandalizer Wiki",
+    "section": "Issues Analysis",
+    "text": "Issues Analysis",
+    "crumbs": [
+      "Roadmap"
+    ]
+  },
+  {
+    "objectID": "roadmap_javascript.html#issues-by-creation-date",
+    "href": "roadmap_javascript.html#issues-by-creation-date",
+    "title": "Roadmap",
+    "section": "Issues by Creation Date",
+    "text": "Issues by Creation Date"
+  },
+  {
+    "objectID": "roadmap_javascript.html#issues-by-label",
+    "href": "roadmap_javascript.html#issues-by-label",
+    "title": "Roadmap",
+    "section": "Issues by Label",
+    "text": "Issues by Label"
   }
 ]
