@@ -1,5 +1,53 @@
 [
   {
+    "assignees": [],
+    "created_at": "2025-07-07T21:52:11Z",
+    "id": 3210336607,
+    "labels": [],
+    "number": 160,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Update excel and docx viewer is far too delayed on upload",
+    "updated_at": "2025-07-07T21:52:11Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/160"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-07T21:30:10Z",
+    "id": 3210298799,
+    "labels": [],
+    "number": 159,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Add loading back in before chat response streams in",
+    "updated_at": "2025-07-07T21:30:10Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/159"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-07T21:18:57Z",
+    "id": 3210278767,
+    "labels": [],
+    "number": 158,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Collapse add folder and upload files into a + New dropdown",
+    "updated_at": "2025-07-07T21:18:57Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/158"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-07T21:18:15Z",
+    "id": 3210277137,
+    "labels": [],
+    "number": 157,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "When you are in a folder, it should reflect that in the interface",
+    "updated_at": "2025-07-07T21:18:15Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/157"
+  },
+  {
     "assignees": [
       "ViaJables"
     ],
@@ -100,6 +148,108 @@
     "url": "https://github.com/ui-insight/vandalizer/issues/131"
   },
   {
+    "assignees": [],
+    "created_at": "2025-06-24T22:57:20Z",
+    "id": 3210137524,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 138,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Refresh Button for Re-running Extraction Sets in Vandalizer",
+    "updated_at": "2025-07-07T20:34:36Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/138"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-24T22:53:12Z",
+    "id": 3210138031,
+    "labels": [
+      "bug"
+    ],
+    "number": 139,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Improve Extraction Task Item Selection and Highlighting in Vandalizer",
+    "updated_at": "2025-07-07T20:39:10Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/139"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-06-24T22:43:34Z",
+    "id": 3210138434,
+    "labels": [
+      "priority: high"
+    ],
+    "number": 140,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Concurrent User Issue in Vandalizer's Extraction Task",
+    "updated_at": "2025-07-07T20:40:13Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/140"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-24T22:36:46Z",
+    "id": 3210138821,
+    "labels": [
+      "bug"
+    ],
+    "number": 141,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Improve Extraction Task Result Display in Vandalizer",
+    "updated_at": "2025-07-07T20:39:40Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/141"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-20T19:01:38Z",
+    "id": 3210139373,
+    "labels": [
+      "bug"
+    ],
+    "number": 142,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Add Enclosing Box to Tabs on Home Page (Toolbox)",
+    "updated_at": "2025-07-07T20:38:30Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/142"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-20T19:01:29Z",
+    "id": 3210139811,
+    "labels": [
+      "bug"
+    ],
+    "number": 143,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Add 'Toolbox' Enclosing Box for Tabs on Home Page",
+    "updated_at": "2025-07-07T20:38:03Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/143"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-06-20T18:57:47Z",
+    "id": 3210140288,
+    "labels": [
+      "priority: low"
+    ],
+    "number": 144,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Rename 'Chat' Tab to 'Tasks' for Clarity",
+    "updated_at": "2025-07-07T21:28:39Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/144"
+  },
+  {
     "assignees": [
       "ViaJables"
     ],
@@ -171,6 +321,20 @@
   },
   {
     "assignees": [],
+    "created_at": "2025-06-11T19:19:59Z",
+    "id": 3210140924,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 145,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Selective OCR and Fast Mode for Vandalizer",
+    "updated_at": "2025-07-07T20:45:53Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/145"
+  },
+  {
+    "assignees": [],
     "created_at": "2025-06-10T18:31:45Z",
     "id": 3134516195,
     "labels": [],
@@ -192,6 +356,166 @@
     "title": "Processing spinners on main directory, plus polling",
     "updated_at": "2025-06-10T20:55:36Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/124"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-09T19:08:50Z",
+    "id": 3210141927,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 146,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "PDF Preview Zoom Capability for Vandalizer Application",
+    "updated_at": "2025-07-07T20:40:58Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/146"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-09T19:04:42Z",
+    "id": 3210142384,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 147,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Text Highlighting for Extraction Targets in Vandalizer",
+    "updated_at": "2025-07-07T20:42:25Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/147"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-09T19:03:35Z",
+    "id": 3210142770,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 148,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "JSON Data Visualizer for Vandalizer Application",
+    "updated_at": "2025-07-07T20:44:33Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/148"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-09T19:00:05Z",
+    "id": 3210143228,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 149,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "External File Upload for Extraction Targets in Vandalizer",
+    "updated_at": "2025-07-07T20:51:25Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/149"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-09T18:58:19Z",
+    "id": 3210143811,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 150,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Re-Organizable Workflow Steps for Vandalizer",
+    "updated_at": "2025-07-07T20:43:25Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/150"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-06-06T02:04:55Z",
+    "id": 3210144344,
+    "labels": [
+      "priority: low"
+    ],
+    "number": 151,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Allow Updating Workflow Description in Vandalizer",
+    "updated_at": "2025-07-07T20:53:18Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/151"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-05T18:13:14Z",
+    "id": 3210144822,
+    "labels": [
+      "priority: medium"
+    ],
+    "number": 152,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Vulnerability: Vandalizer Output Susceptible to JavaScript Injection",
+    "updated_at": "2025-07-07T20:50:16Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/152"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-06-05T15:58:22Z",
+    "id": 3210145272,
+    "labels": [
+      "priority: medium"
+    ],
+    "number": 153,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Workflow Focus Issue After Re-Running a Workflow",
+    "updated_at": "2025-07-07T20:45:10Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/153"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-05T05:35:05Z",
+    "id": 3210146394,
+    "labels": [
+      "bug"
+    ],
+    "number": 156,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Resizable Panes for Document Viewer and Workflow in Vandalizer",
+    "updated_at": "2025-07-07T20:33:44Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/156"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-06-05T05:08:55Z",
+    "id": 3210146084,
+    "labels": [
+      "priority: medium"
+    ],
+    "number": 155,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Integration API 404 Error in Vandalizer Application",
+    "updated_at": "2025-07-07T20:50:00Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/155"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-06-05T04:15:40Z",
+    "id": 3210145729,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 154,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "API Integration for JSON Input and Output in Vandalizer",
+    "updated_at": "2025-07-07T20:46:53Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/154"
   },
   {
     "assignees": [],
@@ -246,9 +570,9 @@
     ],
     "number": 122,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Text-Wrapping/Overflow Error in Vandalizer Workflow Output",
-    "updated_at": "2025-06-04T20:28:10Z",
+    "updated_at": "2025-07-07T20:33:12Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/122"
   },
   {
@@ -260,9 +584,9 @@
     ],
     "number": 121,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Workflow Timeout Issue in Vandalizer Application",
-    "updated_at": "2025-06-04T20:27:57Z",
+    "updated_at": "2025-07-07T20:32:39Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/121"
   },
   {
@@ -274,9 +598,9 @@
     ],
     "number": 120,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Workflow Copying and Version Comparison Feature",
-    "updated_at": "2025-06-04T20:27:45Z",
+    "updated_at": "2025-07-07T20:32:01Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/120"
   },
   {
@@ -363,9 +687,9 @@
     "labels": [],
     "number": 112,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Update readme ensuring  a bare deploy or update can easily be accomplished.",
-    "updated_at": "2025-05-10T02:37:57Z",
+    "updated_at": "2025-07-07T20:32:14Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/112"
   },
   {
@@ -967,7 +1291,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Extraction Task Results Persistence Across Tabs in Vandalizer",
-    "updated_at": "2025-03-04T18:34:27Z",
+    "updated_at": "2025-07-07T20:52:11Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/54"
   },
   {
@@ -1117,9 +1441,9 @@
     ],
     "number": 40,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Enhancements and Clarifications for Vandalizer 2.0 - INVESTIGATE ",
-    "updated_at": "2025-02-21T19:15:53Z",
+    "updated_at": "2025-07-07T20:49:09Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/40"
   },
   {
@@ -1336,9 +1660,9 @@
     ],
     "number": 45,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Strange characters in pdf output",
-    "updated_at": "2025-02-24T18:39:05Z",
+    "updated_at": "2025-07-07T20:49:29Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/45"
   },
   {
@@ -1516,9 +1840,9 @@
     ],
     "number": 18,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Reorder search set items",
-    "updated_at": "2025-06-10T17:00:10Z",
+    "updated_at": "2025-07-07T20:48:08Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/18"
   },
   {
@@ -1572,9 +1896,9 @@
     ],
     "number": 14,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "RAG system indicator",
-    "updated_at": "2025-06-04T20:24:15Z",
+    "updated_at": "2025-07-07T20:35:41Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/14"
   },
   {
@@ -1714,9 +2038,9 @@
     ],
     "number": 4,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "NSF Module: GRANTED use case",
-    "updated_at": "2025-02-24T18:39:54Z",
+    "updated_at": "2025-07-07T20:36:02Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/4"
   },
   {
