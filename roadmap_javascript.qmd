@@ -1,0 +1,40 @@
+---
+title: "Roadmap"
+format:
+  html:
+    page-layout: full
+    include-after-body: scripts.html
+---
+
+:::: {.header-logos}
+::: {.grid}
+::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
+![](images/uidaho_logo.png){width=100px}
+:::
+::: {.g-col-7 .d-flex .justify-content-center .align-items-center}
+![](images/vandalizer_logo.png){width=500px}
+:::
+::: {.g-col-3 .d-flex .justify-content-center .align-items-center}
+![](images/suu_logo.png){width=200px}
+:::
+:::
+::::
+
+---
+
+<div id="roadmap-summary">
+  <p>Loading issue data...</p>
+</div>
+
+<br> 
+<br>
+
+## Issues by Creation Date
+
+<div id="roadmap-timeline-chart" style="height: 400px;"></div>
+<div id="roadmap-backlog-chart" style="height: 400px;"></div>
+
+## Issues by Label
+
+<div id="roadmap-pie-chart" style="height: 400px;"></div>
+
