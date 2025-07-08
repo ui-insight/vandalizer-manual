@@ -2,7 +2,7 @@
 authors = ["Nathan Layman <nlayman@uidaho.edu>"]
 channels = ["conda-forge"]
 name = "vandalizer-manual"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
