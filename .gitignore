@@ -9,3 +9,7 @@
 /docs
 
 /.quarto/
+
+# pixi environments
+.pixi
+*.egg-info

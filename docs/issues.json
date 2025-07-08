@@ -1,14 +1,30 @@
 [
   {
-    "assignees": [],
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-07-03T18:09:36Z",
+    "id": 3200224230,
+    "labels": [],
+    "number": 137,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "If an item fails validation and we are on the main browser, maybe reload the page?",
+    "updated_at": "2025-07-07T17:45:06Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/137"
+  },
+  {
+    "assignees": [
+      "kandersonko"
+    ],
     "created_at": "2025-06-30T22:12:41Z",
     "id": 3190004758,
     "labels": [],
     "number": 136,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "DocX image breaks validator",
-    "updated_at": "2025-06-30T22:12:41Z",
+    "updated_at": "2025-07-03T17:57:38Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/136"
   },
   {
@@ -20,9 +36,9 @@
     "labels": [],
     "number": 135,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Ingestion crash on docx upload",
-    "updated_at": "2025-06-30T22:12:13Z",
+    "updated_at": "2025-07-03T17:57:39Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/135"
   },
   {
@@ -31,12 +47,14 @@
     ],
     "created_at": "2025-06-27T18:50:53Z",
     "id": 3183793329,
-    "labels": [],
+    "labels": [
+      "priority: blocker"
+    ],
     "number": 134,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "All workflow step operations broken",
-    "updated_at": "2025-06-27T18:50:53Z",
+    "updated_at": "2025-07-07T17:45:04Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/134"
   },
   {
@@ -62,9 +80,9 @@
     "labels": [],
     "number": 132,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Issues with security check",
-    "updated_at": "2025-06-30T18:06:22Z",
+    "updated_at": "2025-07-03T18:01:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/132"
   },
   {
@@ -90,37 +108,37 @@
     "labels": [],
     "number": 130,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Update document upload panel to reflect new PDF page processing",
-    "updated_at": "2025-06-20T18:27:58Z",
+    "updated_at": "2025-07-01T18:30:32Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/130"
   },
   {
     "assignees": [
-      "kandersonko"
+      "ViaJables"
     ],
     "created_at": "2025-06-20T18:27:38Z",
     "id": 3164090440,
     "labels": [],
     "number": 129,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Update document upload panel to show security check",
-    "updated_at": "2025-06-30T18:06:59Z",
+    "updated_at": "2025-07-03T17:57:54Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/129"
   },
   {
     "assignees": [
-      "kandersonko"
+      "ViaJables"
     ],
     "created_at": "2025-06-20T18:26:45Z",
     "id": 3164087923,
     "labels": [],
     "number": 128,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
-    "title": "Update document upload panel to work with multiple file uploads",
-    "updated_at": "2025-06-20T18:26:45Z",
+    "state": "closed",
+    "title": "Upload panel upgrades",
+    "updated_at": "2025-07-03T17:57:53Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/128"
   },
   {

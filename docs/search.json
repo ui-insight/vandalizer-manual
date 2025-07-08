@@ -1,5 +1,25 @@
 [
   {
+    "objectID": "introduction.html#understanding-vandalizer-components",
+    "href": "introduction.html#understanding-vandalizer-components",
+    "title": "Introduction",
+    "section": "Understanding Vandalizer Components",
+    "text": "Understanding Vandalizer Components\nWithin Vandalizer, users can create tasks, which are specific, repeatable jobs handled by AI. These tasks can be collected into steps, for which tasks within each step receive the same input. Steps can be chained together, where downstream steps receive input from upstream steps, creating structured, repeatable workflows.\nThese Workflows—tasks coordinated into steps—can be reused across documents with similar formats or content. All tasks and workflows are organized within workspaces, which serve as centralized hubs for managing and tracking work. Workspaces can be customized to align with the needs of a Research Administration office, organized by individual users, job roles, or document types.\nWith Vandalizer, Research Administrators can create efficient, reusable systems that improve consistency and productivity across their document and data processing tasks.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#accessing-vandalizer",
+    "href": "introduction.html#accessing-vandalizer",
+    "title": "Introduction",
+    "section": "Accessing Vandalizer",
+    "text": "Accessing Vandalizer\nVandalizer can be accessed through university specific access points. For the University of Southern Utah, this access point is: https://nsfai.suu.edu/. SUU employees should contact Nathan Wiggins (nathanwiggins@suu.edu) for access.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
     "objectID": "example.html",
     "href": "example.html",
     "title": "Example Workflow",
@@ -14,49 +34,9 @@
     "href": "index.html#what-is-vandalizer",
     "title": "A Beginner’s Guide to Vandalizer",
     "section": "What is Vandalizer?",
-    "text": "What is Vandalizer?\n\n\nVandalizer is an AI management tool designed to assist research administrators in managing and streamlining their work.\nAt research institutions across the United States, Research Administration (RA) offices are facing increasing demands with limited resources. AI tools promise to ease the burden of routine administrative tasks, but commercially available AI tools do not reliably meet RA offices’ high standards for accuracy, reproducibility, flexibility and security. While general use AI tools create exciting opportunities for augmentation, there is a gap between their potential and their practical implementation in RA offices.\nThe goal in developing Vandalizer is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.\n\n\n\n\n\n\n\n\nWHY USE VANDALIZER?\n\n\n\nDOMAIN KNOWLEDGE: Vandalizer is purpose-built for Research Administration, enabling offices to deploy AI tools at scale without compromising standards.\nACCURACY: Vandalizer ensures correct data extraction and transformation without hallucinations.\nREPRODUCIBILITY: Vandalizer delivers consistent results across repeated inputs and users.\nFLEXIBILITY: Vandalizer adapts to diverse data environments, evolving workflows, and advancing AI models.\nSECURITY: Vandalizer complies with organizational IT policies and data governance requirements.",
+    "text": "What is Vandalizer?\n\n\nVandalizer is an AI management tool designed to assist Research Administrators in managing and streamlining their work.\nAt research institutions across the United States, Research Administration (RA) offices are facing increasing demands with limited resources. AI tools promise to ease the burden of routine administrative tasks, but commercially available AI tools do not reliably meet RA offices’ high standards for accuracy, reproducibility, flexibility and security. While general use AI tools create exciting opportunities for augmentation, there is a gap between their potential and their practical implementation in RA offices.\nThe goal in developing Vandalizer is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.\n\n\n\n\n\n\n\n\nWHY USE VANDALIZER?\n\n\n\nDOMAIN KNOWLEDGE: Vandalizer is purpose-built for Research Administration, enabling offices to deploy AI tools at scale without compromising standards.\nACCURACY: Vandalizer ensures correct data extraction and transformation without hallucinations.\nREPRODUCIBILITY: Vandalizer delivers consistent results across repeated inputs between users.\nFLEXIBILITY: Vandalizer adapts to diverse data environments, evolving workflows, and advancing AI models.\nSECURITY: Vandalizer complies with organizational IT policies and data governance requirements.",
     "crumbs": [
       "Home"
-    ]
-  },
-  {
-    "objectID": "workflows.html",
-    "href": "workflows.html",
-    "title": "Workflows",
-    "section": "",
-    "text": "Workflows\n\nA workflow is a coordinated assemblage of AI tasks, organized into steps that Vandalizer performs in sequence. Designing workflows can take some time and consideration, but their reproducibility can save RA offices substantial time, particularly for multi-step processes that will be repeated.\n\n\n\n\n\n\nSteps\n\n\n\nAll tasks within a step receive the same input and run independantly of each other\n\n\nWorkflows arrange AI tasks into sequential groups called steps. The purpose of a step is to organize the inputs available to tasks. All tasks within a step receive the same input and all tasks within a step contribute to the step output. The outputs from an upstream step will inform the inputs for a downstream step. For example, a user might ask Vandalizer to extract key information from an NSF Notice of Award (Step 1), then format that information into a template (step 2). This workflow ensures that Vandalizer extracts the same information from each NSF NOA (step 1), and that the outputs are structured consistently, without duplicate information (step 2).",
-    "crumbs": [
-      "Workflows"
-    ]
-  },
-  {
-    "objectID": "tasks.html",
-    "href": "tasks.html",
-    "title": "Tasks",
-    "section": "",
-    "text": "Tasks\n\nTasks describe the jobs that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time. Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.\n\nTypes of Tasks\n\n\n\nExtraction tasks: Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e. any information that the user can expect using the ‘Find’ feature on a document processor like Microsoft Word.\nPrompt tasks: Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.\nFormatting tasks: Vandalizer structures its outputs into the format that the user requests, such as a table with a summary below it.\n\n\n\n\n\n\nIn the toolbox window, users can create tasks by clicking on the Chat tab at the top of the window. From there, users can either click on  Run a task or on the  TASKS button\n\n\n\n\n\n\nDESIGNING TASKS\n\n\n\n\nExtraction Tasks Users choose which terms Vandalizer pulls from a document by typing them under “Add term to extract” or by clicking “From Document” to have AI suggest an initial set.\nPrompt and Formatting Tasks Users enter their query using natural language prompts in the “write your prompt here” box",
-    "crumbs": [
-      "Tasks"
-    ]
-  },
-  {
-    "objectID": "interface.html",
-    "href": "interface.html",
-    "title": "The Vandalizer Interface",
-    "section": "",
-    "text": "After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that is extracted from the document. These documents provide the input to Vandalizer tasks and workflows.\nSecond, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows.\nIn the Document Viewer window, users can upload files via drag and drop, or by pressing the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the  symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).\nWhen the system is finished analyzing, the user will see the symbol change to . This symbol indicates that Vandalizer has finished extracting the text data from the document. Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.",
-    "crumbs": [
-      "Interface"
-    ]
-  },
-  {
-    "objectID": "interface.html#chatting-with-a-document-in-vandalizer",
-    "href": "interface.html#chatting-with-a-document-in-vandalizer",
-    "title": "The Vandalizer Interface",
-    "section": "Chatting with a document in Vandalizer",
-    "text": "Chatting with a document in Vandalizer\nOnce a user uploads a document to Vandalizer, the user can chat with the document directly to quickly extract information from a document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the Chat tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.\nThe chat tool is great for a user who wants to pose quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.",
-    "crumbs": [
-      "Interface"
     ]
   },
   {
@@ -80,6 +60,74 @@
     ]
   },
   {
+    "objectID": "interface.html",
+    "href": "interface.html",
+    "title": "The Vandalizer Interface",
+    "section": "",
+    "text": "After logging into Vandalizer, a user will be directed to a page with two primary windows. First, on the left, is the Document Viewer window. This window allows users to upload documents, view documents, and view the text that Vandalizer extracts from the document. These documents provide the input for tasks and workflows in Vandalizer.\nSecond, on the right side of the window, is a panel that we call the Toolbox window. Once a document is uploaded, users can use this window to create tasks for Vandalizer and coordinate these tasks into multistep workflows.\nIn the Document Viewer window, users can upload files via drag and drop, or by pressing either the “Upload File” or “Add Folder” buttons. Once a file is uploaded, the user will see the  symbol in the top right corner of the window. This symbol means that Vandalizer is analyzing the document, extracting text from the pdf. This process is called Optical Character Recognition (OCR).\nWhen the system is finished analyzing, the user will see the symbol change to . This symbol indicates that Vandalizer has finished extracting the text data from the document. Users can click on this symbol to see the extracted text. While Vandalizer has been developed to extract high quality text from documents, it is worth checking to make sure that the extracted text looks right before proceeding.",
+    "crumbs": [
+      "Interface"
+    ]
+  },
+  {
+    "objectID": "interface.html#chatting-with-a-document-in-vandalizer",
+    "href": "interface.html#chatting-with-a-document-in-vandalizer",
+    "title": "The Vandalizer Interface",
+    "section": "Chatting with a document in Vandalizer",
+    "text": "Chatting with a document in Vandalizer\nOnce a user uploads a document to Vandalizer, the user can chat with the document directly to quickly ask Vandalizer about the document. To do this, the user writes a query into the textbox at the bottom of the toolbox window, under the Chat tab. Chatting with Vandalizer will prompt the Large Language Model to make extractions and/or inferences from the document to answer the user’s query.\nThe chat tool is great for posing quick queries about the document. There are times when the user will want to save the task into their workspace or to coordinate a series of tasks into a workflow. For these use-cases, users should create tasks under the TASKS page.",
+    "crumbs": [
+      "Interface"
+    ]
+  },
+  {
+    "objectID": "tasks.html",
+    "href": "tasks.html",
+    "title": "Tasks",
+    "section": "",
+    "text": "Tasks\n\nA task is a job that Vandalizer performs. Creating sets of tasks is valuable for a RA office because they allow users to perform these jobs quickly, and in the same way each time. Vandalizer can perform three types of tasks: extraction tasks, prompt tasks, and formatting tasks.\n\nTypes of Tasks\n\n\n\nExtraction tasks: Vandalizer pulls information directly from the document. Extraction tasks are best for information that is exact and communicated consistently between documents (i.e. any information that the user can expect using the ‘Find’ feature on a document processor like Microsoft Word.\nPrompt tasks: Vandalizer creates outputs that are informed by the document and the prompt that the user crafts. These tasks are most useful for tasks that require more flexibility and inference from Vandalizer.\nFormatting tasks: Vandalizer structures its outputs into the format that the user requests, such as a table with a summary below it.\n\n\n\n\n\n\nIn the toolbox window, users can create tasks by clicking on the Chat tab at the top of the toolbox window. From there, users can either click on  Run a task or on the  TASKS button\n\n\n\n\n\n\nDESIGNING TASKS\n\n\n\n\nExtraction Tasks Users choose which terms Vandalizer pulls from a document by typing them under “Add term to extract” or by clicking “From Document” to have AI suggest an initial set.\nPrompt and Formatting Tasks Users enter their query using natural language prompts in the “write your prompt here” box",
+    "crumbs": [
+      "Tasks"
+    ]
+  },
+  {
+    "objectID": "workflows.html",
+    "href": "workflows.html",
+    "title": "Workflows",
+    "section": "",
+    "text": "Workflows\n\nA workflow is a coordinated assemblage of AI tasks, organized into steps that Vandalizer performs in sequence. Designing workflows can take some time and consideration, but their reproducibility can save RA offices substantial time, particularly for multi-step processes that will be repeated.\n\n\n\n\n\n\nSteps\n\n\n\nAll tasks within a step receive the same input and run independently of each other\n\n\nWorkflows arrange AI tasks into sequential groups called steps. The purpose of a step is to coordinate the inputs available to tasks. All tasks within a step receive the same input and all tasks within a step contribute to the step output. The outputs from an upstream step will inform the inputs for a downstream step. For example, a user might ask Vandalizer to extract key information from an NSF Notice of Award (step 1), then format that information into a template (step 2). This workflow ensures that Vandalizer extracts the same information from each NSF NOA (step 1), and that the outputs are structured consistently, without duplicate information (step 2).",
+    "crumbs": [
+      "Workflows"
+    ]
+  },
+  {
+    "objectID": "roadmap2.html#cumulative-issues-over-time",
+    "href": "roadmap2.html#cumulative-issues-over-time",
+    "title": "Vandalizer Wiki",
+    "section": "Cumulative Issues Over Time",
+    "text": "Cumulative Issues Over Time"
+  },
+  {
+    "objectID": "roadmap2.html#open-issues-trend",
+    "href": "roadmap2.html#open-issues-trend",
+    "title": "Vandalizer Wiki",
+    "section": "Open Issues Trend",
+    "text": "Open Issues Trend"
+  },
+  {
+    "objectID": "roadmap2.html#weekly-issue-activity",
+    "href": "roadmap2.html#weekly-issue-activity",
+    "title": "Vandalizer Wiki",
+    "section": "Weekly Issue Activity",
+    "text": "Weekly Issue Activity"
+  },
+  {
+    "objectID": "roadmap2.html#issues-analysis",
+    "href": "roadmap2.html#issues-analysis",
+    "title": "Vandalizer Wiki",
+    "section": "Issues Analysis",
+    "text": "Issues Analysis"
+  },
+  {
     "objectID": "disclaimer.html",
     "href": "disclaimer.html",
     "title": "Disclaimer",
@@ -87,26 +135,6 @@
     "text": "Disclaimer\n\n\n\n\n\n\n\n\nImportant\n\n\n\nVandalizer is in active development and currently utilizes commercial large language models (LLMs) provided by third-party services. Future developments will enable secure document processing on-premises, but for now please do not input sensitive, confidential, or personally identifiable information. This includes proposal narratives, which should only be shared if you are certain you have the right to do so. Proposal narratives may contain patentable ideas and sharing them could jeopardize intellectual property rights. In addition, large document handling is not yet available. Users should limit pdf file inputs to documents with less than 50 pages.",
     "crumbs": [
       "Disclaimer"
-    ]
-  },
-  {
-    "objectID": "introduction.html#understanding-vandalizer-components",
-    "href": "introduction.html#understanding-vandalizer-components",
-    "title": "Introduction",
-    "section": "Understanding Vandalizer Components",
-    "text": "Understanding Vandalizer Components\nWithin Vandalizer, users can create tasks, which are specific, repeatable jobs handled by AI. These tasks can be collected into steps with every task within each step receiving the same input. Steps can then be chained together, where downstream steps receive input from upstream steps, creating structured, repeatable workflows.\nThese Workflows—tasks coordinated into steps—can be reused across documents with similar formats or content. All tasks and workflows are organized within workspaces, which serve as centralized hubs for managing and tracking work. Workspaces can be customized to align with the needs of a Research Administration office, organized by individual users, job roles, or document types.\nWith Vandalizer, Research Administrators can create efficient, reusable systems that improve consistency and productivity across their document and data processing tasks.",
-    "crumbs": [
-      "Introduction"
-    ]
-  },
-  {
-    "objectID": "introduction.html#accessing-vandalizer",
-    "href": "introduction.html#accessing-vandalizer",
-    "title": "Introduction",
-    "section": "Accessing Vandalizer",
-    "text": "Accessing Vandalizer\nVandalizer can be accessed through university specific access points. For the University of Southern Utah, this access point is: https://nsfai.suu.edu/. SUU employees should contact Nathan Wiggins (nathanwiggins@suu.edu) for access.",
-    "crumbs": [
-      "Introduction"
     ]
   },
   {
@@ -164,5 +192,68 @@
     "title": "Contributing to Vandalizer Documentation",
     "section": "",
     "text": "For Advanced Contributors (click to expand)\n\n\n\n\nMain content: .qmd files in root directory\nImages: Store in images/ folder\nNavigation: Edit _quarto.yml to add new pages\n\n\n\n\n\nDaily roadmap updates: Issues from main repository auto-sync at 6 AM UTC\nAuto-deployment: All changes to main branch deploy automatically\nDon’t edit: data/issues.json (auto-generated)\n\n\n\n\nStep 1: Create your new page using this required header template:\n---\ntitle: \"Your Page Title\"\nformat:\n  html:\n    page-layout: full\n    include-after-body: scripts.html\n---\n\n:::: {.header-logos}\n::: {.grid}\n::: {.g-col-2 .d-flex .justify-content-center .align-items-center}\n![](images/uidaho_logo.png){width=100px}\n:::\n::: {.g-col-7 .d-flex .justify-content-center .align-items-center}\n![](images/vandalizer_logo.png){width=500px}\n:::\n::: {.g-col-3 .d-flex .justify-content-center .align-items-center}\n![](images/suu_logo.png){width=200px}\n:::\n:::\n::::\n\n---\n\n[Your content starts here]\nStep 2: Add to navigation by editing _quarto.yml:\nsidebar:\n  contents:\n    - text: \"Your New Page\"\n      href: your-new-page.qmd\n\n\n\n\nTest all links after changes\nUse GitHub preview before committing\nMake incremental changes when possible\nCoordinate with other contributors on large changes\n\n\n\nQuestions? Email nlayman@uidaho.edu"
+  },
+  {
+    "objectID": "roadmap_conversion.html",
+    "href": "roadmap_conversion.html",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Migrate existing JavaScript-based roadmap dashboard to Python + Quarto for better maintainability, version control, and data processing capabilities.\n\n\n\n\nInteractive dashboard with timeline plots, pie charts, and weekly activity charts\nJavaScript code that processes JSON issue data client-side\nPlotly.js for visualizations with click events and modal interactions\nCustom functionality: priority extraction, cumulative calculations, date extensions to current date\n\n\n\n\nLanguage Choice: Python (chosen over R) - Pandas for data processing (similar to current JS logic) - Plotly Python for interactive charts - Quarto for document structure and rendering\nProject Structure: Option A: Simple (Direct JSON)\nroadmap-analysis/\n├── data/issues.json\n├── src/plotting_functions.py  \n├── roadmap_dashboard.qmd\n└── _quarto.yml\nOption B: Intermediate (CSV Cache)\nroadmap-analysis/\n├── data/\n│   ├── raw/issues.json\n│   └── processed/issues_processed.csv\n├── src/data_processing.py\n├── roadmap_dashboard.qmd\n└── _quarto.yml\nOption C: Advanced (Parquet Pipeline)\nroadmap-analysis/\n├── data/\n│   ├── raw/issues.json\n│   └── processed/issues_processed.parquet\n├── src/\n│   ├── data_processing.py\n│   └── plotting_functions.py\n├── roadmap_dashboard.qmd\n└── _quarto.yml\n\n\n\nPhase 1: Direct JSON Processing - Load JSON directly with pandas (pd.DataFrame(json.load())) - Convert JS date operations to pandas datetime - Implement priority extraction and timeline extension - Keep processing logic in Quarto document initially\nPhase 2: Chart Recreation\n- Timeline chart (cumulative issues over time) - Open issues trend with weekly impulse chart - Priority and label pie charts - Maintain click events and hover text\nPhase 3: Quarto Integration - Document structure and styling - Interactive parameters/toggles - HTML widgets for complex interactions\nPhase 4: Enhanced Features - Better data pipeline - Automated updates - Additional analytics\n\n\n\n\nInteractivity: Most current features translatable to Plotly Python\nCustom modals: May need different UX approach\n\nPerformance: Direct JSON processing (similar to current approach)\nDeployment: Static HTML output maintained\nSimplicity: No intermediate data files to manage\n\n\n\n\n\nStart with timeline chart migration as proof of concept\nSet up basic Quarto document structure\nConvert data processing functions\nRecreate chart functionality piece by piece\n\n\n\n\n\n\nPhase 1 - Core Migration (In Progress) - [x] Set up Python + Quarto document structure - [x] Converted JSON loading from JavaScript to pandas - [x] Implemented timeline chart with current date extension - [x] Created open issues trend chart - [x] Built basic pie chart for labels - [x] Preserved original layout and styling (logos, headers) - [x] Added summary statistics display - [x] Fixed timezone and date comparison issues\n\n\n\n\nroadmap2.qmd created with basic functionality\nBug Fixes Applied: Handle missing closed_at field, timezone issues, date comparisons\nCore charts rendering with Python/Plotly instead of JavaScript\n\n\n\n\nRecommended Structure:\nroadmap-analysis/\n├── data/issues.json\n├── src/\n│   ├── __init__.py\n│   ├── data_processing.py       # Data loading, processing functions\n│   ├── plotting_functions.py    # Chart creation functions  \n│   └── utils.py                 # Helper functions (HTML generation, etc.)\n├── roadmap2.qmd\n└── _quarto.yml\nBenefits: - Clean separation of concerns - Reusable functions across notebooks - Easier testing and maintenance - Better version control\n\n\n\nPhase 2 - Function Organization & Enhanced Charts - [ ] Cumulative Issues Plot: Single chart with two traces (cumulative opened + cumulative closed over time) - [ ] Move functions to separate modules in src/ directory - [ ] Weekly impulse chart (bar chart showing weekly activity) - [ ] Priority pie chart with toggle functionality - [ ] Click events for chart drill-downs - [ ] Interactive toggles (All Issues vs Open Issues)\nPhase 3 - Advanced Features - [ ] Modal-like interactions (or alternative UX) - [ ] Filter controls - [ ] Export functionality - [ ] Performance optimization if needed\n\n\n\n\nTesting Phase 1 implementation in roadmap2.qmd. Basic charts functional, ready to add remaining interactive features once core functionality is validated."
+  },
+  {
+    "objectID": "roadmap_conversion.html#project-goal",
+    "href": "roadmap_conversion.html#project-goal",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Migrate existing JavaScript-based roadmap dashboard to Python + Quarto for better maintainability, version control, and data processing capabilities."
+  },
+  {
+    "objectID": "roadmap_conversion.html#current-state",
+    "href": "roadmap_conversion.html#current-state",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Interactive dashboard with timeline plots, pie charts, and weekly activity charts\nJavaScript code that processes JSON issue data client-side\nPlotly.js for visualizations with click events and modal interactions\nCustom functionality: priority extraction, cumulative calculations, date extensions to current date"
+  },
+  {
+    "objectID": "roadmap_conversion.html#target-architecture",
+    "href": "roadmap_conversion.html#target-architecture",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Language Choice: Python (chosen over R) - Pandas for data processing (similar to current JS logic) - Plotly Python for interactive charts - Quarto for document structure and rendering\nProject Structure: Option A: Simple (Direct JSON)\nroadmap-analysis/\n├── data/issues.json\n├── src/plotting_functions.py  \n├── roadmap_dashboard.qmd\n└── _quarto.yml\nOption B: Intermediate (CSV Cache)\nroadmap-analysis/\n├── data/\n│   ├── raw/issues.json\n│   └── processed/issues_processed.csv\n├── src/data_processing.py\n├── roadmap_dashboard.qmd\n└── _quarto.yml\nOption C: Advanced (Parquet Pipeline)\nroadmap-analysis/\n├── data/\n│   ├── raw/issues.json\n│   └── processed/issues_processed.parquet\n├── src/\n│   ├── data_processing.py\n│   └── plotting_functions.py\n├── roadmap_dashboard.qmd\n└── _quarto.yml"
+  },
+  {
+    "objectID": "roadmap_conversion.html#migration-plan",
+    "href": "roadmap_conversion.html#migration-plan",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Phase 1: Direct JSON Processing - Load JSON directly with pandas (pd.DataFrame(json.load())) - Convert JS date operations to pandas datetime - Implement priority extraction and timeline extension - Keep processing logic in Quarto document initially\nPhase 2: Chart Recreation\n- Timeline chart (cumulative issues over time) - Open issues trend with weekly impulse chart - Priority and label pie charts - Maintain click events and hover text\nPhase 3: Quarto Integration - Document structure and styling - Interactive parameters/toggles - HTML widgets for complex interactions\nPhase 4: Enhanced Features - Better data pipeline - Automated updates - Additional analytics"
+  },
+  {
+    "objectID": "roadmap_conversion.html#key-considerations",
+    "href": "roadmap_conversion.html#key-considerations",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Interactivity: Most current features translatable to Plotly Python\nCustom modals: May need different UX approach\n\nPerformance: Direct JSON processing (similar to current approach)\nDeployment: Static HTML output maintained\nSimplicity: No intermediate data files to manage"
+  },
+  {
+    "objectID": "roadmap_conversion.html#next-steps",
+    "href": "roadmap_conversion.html#next-steps",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Start with timeline chart migration as proof of concept\nSet up basic Quarto document structure\nConvert data processing functions\nRecreate chart functionality piece by piece"
+  },
+  {
+    "objectID": "roadmap_conversion.html#progress",
+    "href": "roadmap_conversion.html#progress",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Phase 1 - Core Migration (In Progress) - [x] Set up Python + Quarto document structure - [x] Converted JSON loading from JavaScript to pandas - [x] Implemented timeline chart with current date extension - [x] Created open issues trend chart - [x] Built basic pie chart for labels - [x] Preserved original layout and styling (logos, headers) - [x] Added summary statistics display - [x] Fixed timezone and date comparison issues\n\n\n\n\nroadmap2.qmd created with basic functionality\nBug Fixes Applied: Handle missing closed_at field, timezone issues, date comparisons\nCore charts rendering with Python/Plotly instead of JavaScript\n\n\n\n\nRecommended Structure:\nroadmap-analysis/\n├── data/issues.json\n├── src/\n│   ├── __init__.py\n│   ├── data_processing.py       # Data loading, processing functions\n│   ├── plotting_functions.py    # Chart creation functions  \n│   └── utils.py                 # Helper functions (HTML generation, etc.)\n├── roadmap2.qmd\n└── _quarto.yml\nBenefits: - Clean separation of concerns - Reusable functions across notebooks - Easier testing and maintenance - Better version control\n\n\n\nPhase 2 - Function Organization & Enhanced Charts - [ ] Cumulative Issues Plot: Single chart with two traces (cumulative opened + cumulative closed over time) - [ ] Move functions to separate modules in src/ directory - [ ] Weekly impulse chart (bar chart showing weekly activity) - [ ] Priority pie chart with toggle functionality - [ ] Click events for chart drill-downs - [ ] Interactive toggles (All Issues vs Open Issues)\nPhase 3 - Advanced Features - [ ] Modal-like interactions (or alternative UX) - [ ] Filter controls - [ ] Export functionality - [ ] Performance optimization if needed"
+  },
+  {
+    "objectID": "roadmap_conversion.html#current-status",
+    "href": "roadmap_conversion.html#current-status",
+    "title": "Roadmap Dashboard Migration: JavaScript → Python + Quarto",
+    "section": "",
+    "text": "Testing Phase 1 implementation in roadmap2.qmd. Basic charts functional, ready to add remaining interactive features once core functionality is validated."
   }
 ]
