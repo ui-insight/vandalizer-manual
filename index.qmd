@@ -25,7 +25,7 @@ format:
 :::
 
 ::: {.text-center}
-**Authors**: Barrie Robison, Luke Sheneman, John Brunsfeld, Jason Cahoon, Nathan Layman, and Sarah Martonick | [Contribution Guidelines](https://github.com/nate-layman/vandalizer-manual/blob/main/CONTRIBUTING.md)
+**Authors**: Barrie Robison, Luke Sheneman, John Brunsfeld, Labib Ehsan, Jason Cahoon, Nathan Layman, and Sarah Martonick | [Contribution Guidelines](https://github.com/nate-layman/vandalizer-manual/blob/main/CONTRIBUTING.md)
 :::
 
 ## What is Vandalizer?
