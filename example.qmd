@@ -23,33 +23,87 @@ format:
 ---
 
 ::: {.text-center}
-# Example Workflow
+# Example Workflow: Building an RFA Checklist
 :::
 
-Workflows are best understood through practice. The following section offers a walkthrough building an example workflow and provides some suggested use-cases. 
+## Understanding the Challenge
 
-Let’s say that a user wants to use Vandalizer to create an RFA checklist. RFA’s often contain similar information, but it may not always be communicated the same way between RFA documents. For this reason, the user is going to need added flexibility from Vandalizer, so they will select a prompt task to extract key information from the RFA such as deadlines, eligibility criteria, award information, or application criteria.  The user wants their output structured in a table so that information can be easily compared between documents. Here are the steps that the user will take.
+Research Funding Announcements (RFAs) present a common challenge for research administrators. While they contain critical information about deadlines, eligibility requirements, award details, and application components, this information is rarely organized consistently across different funding agencies.
 
-Upload an RFA. This step will allow Vandalizer to perform OCR and extract text from the document. Wait until the OCR process is finished as indicated by the spinner icon  changing to a data display icon  .
+This is where Vandalizer truly shines. Let's walk through creating a workflow that transforms varied RFA documents into standardized, actionable checklists that your team can rely on.
 
-Create tasks. This workflow requires the coordination of two tasks, a prompt task and formatting task. To add these tasks, the user will click the      button at the bottom of the toolbox window, then click +New Task to add each task. For both a prompt task and formatting task, the user will name the task, then write their query for Vandalizer. 
+## Creating Your RFA Checklist Workflow
 
-Create a workflow. Once the user creates some tasks, they are ready to create a workflow that coordinates these tasks. To do this, the user will press the Workflows tab on the right side of the toolbox window. From there, the user will click on +New Workflow. 
+### Step 1: Upload Your RFA Document
 
-Coordinate steps. The user determines how information will flow between steps in their workflow. All tasks within a step receive the same input. In this case, information from the prompt step will flow downstream to the formatting step. Therefore, the user determines that this workflow requires a two-step process where the prompt task is assigned to step 1 and the formatting task is assigned to step 2. 
+Begin by uploading an RFA document to the Document Viewer window. You can simply drag and drop the file or use the "Upload File" button. 
 
-Assign tasks to each step. Under the workflows tab, the user adds two steps, titling them “RFA Extraction” and “Format RFA Checklist.” Then, the user clicks on each step to assign pre-made tasks to each step. 
+Vandalizer will immediately begin analyzing the document with its Optical Character Recognition (OCR) process, indicated by the {{< fa spinner fa-spin >}} spinner icon in the corner. Wait for this process to complete—when you see the {{< fa code >}} icon, Vandalizer has successfully extracted all the text and is ready for the next step.
 
-Run workflow. Now that the user’s tasks are appropriately assembled and coordinated, the user is ready to run the workflow. The user clicks Run Workflow in the bottom right corner of the toolbox window and Vandalizer produces the desired output. 
-
-Apply to other documents. This workflow is saved into the user’s Vandalizer workspace. Now the user can run the same assemblage of tasks on future RFA’s. 
-
-
-::: {.text-center}
-# Other Workflow Ideas
+::: {.callout-tip}
+Take a moment to click the {{< fa code >}} icon and review the extracted text to ensure the document was processed correctly before proceeding.
 :::
 
-- RFA checklist creation tool. Using a prompt task identify key dates, deadlines, eligibility criteria, award information, application criteria. A prompt task is best here because the necessary information won’t always be present in the same place between RFA’s. 
-  
-- NSF award notice Extraction. Using an extract task important information from an award letter such as PI, dates, or total budget can be extracted. Because NSF award notices use a standard format an extraction task is a better choice than a prompt task.
-  
+### Step 2: Design Your Tasks
+
+For an effective RFA checklist, you'll need to create two types of tasks:
+
+1. **Six Parallel Prompt Tasks** - These tasks will identify and pull out specific categories of information from the RFA document regardless of where it appears or how it's labeled. You'll create separate prompt tasks for:
+   - Dates & Deadlines
+   - Eligibility Requirements 
+   - Award Information
+   - Application Components
+   - Budget Requirements & Policies
+   - Submission Details
+
+2. **Formatting Prompt Task** - This task will organize and consolidate all the information gathered by the six prompt tasks into a clean, standardized checklist format.
+
+To create these tasks:
+- Click the Tasks tab in the Toolbox window
+- Click the + button at the bottom and select "+New Task" for each task
+- Name each task descriptively (e.g., "Dates & Deadlines Extraction")
+- Write specific prompts for each task that focus on its particular information category
+- Create the formatting task with instructions on how to consolidate and organize the outputs
+
+### Step 3: Build Your Workflow
+
+Now that you have your tasks created, let's organize them into a workflow:
+
+1. Navigate to the Workflows tab in the Toolbox window
+2. Click "+New Workflow" and give it a meaningful name like "RFA Checklist Builder"
+3. Add two sequential steps to your workflow:
+   - First step: "Extraction" (this will contain all six prompt tasks)
+   - Second step: "Formatting Prompt" (this will contain your formatting task)
+
+### Step 4: Connect Your Steps
+
+In Vandalizer, each step in a workflow receives input and produces output that flows to the next step:
+
+- Assign all six prompt tasks to the first "Extraction" step
+- Assign your formatting prompt task to the second "Formatting Prompt" step
+
+This creates a powerful parallel processing approach where each prompt task focuses on a specific type of information simultaneously, and then the formatting task consolidates everything into a standardized checklist.
+
+### Step 5: Run Your Workflow
+
+With your workflow built, you're ready to put it to work:
+
+1. Make sure your RFA document is selected in the Document Viewer
+2. Click "Run Workflow" in the bottom right corner of the Toolbox window
+3. Watch as Vandalizer processes each step, first running all six prompt tasks in parallel and then formatting the combined results into your checklist
+
+The result? A comprehensive, well-organized checklist containing all the critical information from the RFA, presented in a consistent format regardless of how the original document was structured.
+
+### Step 6: Reuse With Future RFAs
+
+The real power of this workflow is its reusability. The next time you receive an RFA:
+
+1. Upload the new document
+2. Select your saved "RFA Checklist Builder" workflow
+3. Run the workflow with a single click
+
+This consistent approach ensures that every RFA is processed the same way, creating standardized checklists that your team can immediately use for planning and compliance tracking.
+
+::: {.callout-note}
+The parallel prompt task approach is particularly effective for RFAs because it allows each task to specialize in finding a specific type of information, even when that information is scattered throughout the document or described using different terminology across funding agencies.
+:::
