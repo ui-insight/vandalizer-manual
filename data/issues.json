@@ -1,6 +1,8 @@
 [
   {
-    "assignees": [],
+    "assignees": [
+      "kandersonko"
+    ],
     "created_at": "2025-07-07T21:52:11Z",
     "id": 3210336607,
     "labels": [],
@@ -8,7 +10,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Update excel and docx viewer is far too delayed on upload",
-    "updated_at": "2025-07-07T21:52:11Z",
+    "updated_at": "2025-07-15T18:59:05Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/160"
   },
   {
@@ -444,7 +446,9 @@
     "url": "https://github.com/ui-insight/vandalizer/issues/151"
   },
   {
-    "assignees": [],
+    "assignees": [
+      "kandersonko"
+    ],
     "created_at": "2025-06-05T18:13:14Z",
     "id": 3210144822,
     "labels": [
@@ -454,7 +458,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Vulnerability: Vandalizer Output Susceptible to JavaScript Injection",
-    "updated_at": "2025-07-07T20:50:16Z",
+    "updated_at": "2025-07-15T18:59:27Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/152"
   },
   {
