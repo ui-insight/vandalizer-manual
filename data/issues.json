@@ -1,6 +1,98 @@
 [
   {
     "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-07-22T16:49:40Z",
+    "id": 3253397592,
+    "labels": [],
+    "number": 168,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "180 second limit in workflow execution",
+    "updated_at": "2025-07-22T17:04:05Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/168"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-07-22T16:46:11Z",
+    "id": 3253387753,
+    "labels": [],
+    "number": 167,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "Download workflow buttons don't work until you restart the workflow once",
+    "updated_at": "2025-07-22T18:34:28Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/167"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-22T16:38:10Z",
+    "id": 3253362868,
+    "labels": [],
+    "number": 166,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "If a user clicks run workflow without anything in it, throw an error",
+    "updated_at": "2025-07-22T16:38:10Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/166"
+  },
+  {
+    "assignees": [
+      "kandersonko"
+    ],
+    "created_at": "2025-07-22T16:37:53Z",
+    "id": 3253361684,
+    "labels": [],
+    "number": 165,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Don't display thinking tokens in qwen secure models",
+    "updated_at": "2025-07-22T17:19:23Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/165"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-22T16:37:20Z",
+    "id": 3253360001,
+    "labels": [],
+    "number": 164,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "PDF doesn't resize with browser resize",
+    "updated_at": "2025-07-22T16:37:20Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/164"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-07-22T16:37:06Z",
+    "id": 3253359160,
+    "labels": [],
+    "number": 163,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Local models are prone to raw html output",
+    "updated_at": "2025-07-22T17:18:57Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/163"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-22T16:36:46Z",
+    "id": 3253358139,
+    "labels": [],
+    "number": 162,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "DocX and Excel don't display until recommendation is completed",
+    "updated_at": "2025-07-22T16:43:02Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/162"
+  },
+  {
+    "assignees": [
       "kandersonko"
     ],
     "created_at": "2025-07-07T21:52:11Z",
@@ -20,9 +112,9 @@
     "labels": [],
     "number": 159,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Add loading back in before chat response streams in",
-    "updated_at": "2025-07-07T21:30:10Z",
+    "updated_at": "2025-07-22T16:35:27Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/159"
   },
   {
@@ -188,9 +280,9 @@
     ],
     "number": 140,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Concurrent User Issue in Vandalizer's Extraction Task",
-    "updated_at": "2025-07-07T20:40:13Z",
+    "updated_at": "2025-07-22T16:40:11Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/140"
   },
   {
@@ -440,9 +532,9 @@
     ],
     "number": 151,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Allow Updating Workflow Description in Vandalizer",
-    "updated_at": "2025-07-07T20:53:18Z",
+    "updated_at": "2025-07-22T16:39:26Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/151"
   },
   {
@@ -456,9 +548,9 @@
     ],
     "number": 152,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Vulnerability: Vandalizer Output Susceptible to JavaScript Injection",
-    "updated_at": "2025-07-15T18:59:27Z",
+    "updated_at": "2025-07-22T20:07:12Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/152"
   },
   {
@@ -472,9 +564,9 @@
     ],
     "number": 153,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Workflow Focus Issue After Re-Running a Workflow",
-    "updated_at": "2025-07-07T20:45:10Z",
+    "updated_at": "2025-07-22T16:41:37Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/153"
   },
   {
@@ -649,9 +741,9 @@
     ],
     "number": 117,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Workflow Timer Inaccuracy Issue in Vandalizer",
-    "updated_at": "2025-05-27T20:39:21Z",
+    "updated_at": "2025-07-22T20:26:44Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/117"
   },
   {
@@ -1417,9 +1509,9 @@
     ],
     "number": 41,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
-    "title": "Stop Task and Workflow Buttons",
-    "updated_at": "2025-06-10T16:59:13Z",
+    "state": "closed",
+    "title": "Stop Workflow Buttons",
+    "updated_at": "2025-07-22T20:27:01Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/41"
   },
   {
