@@ -1,5 +1,129 @@
 [
   {
+    "assignees": [],
+    "created_at": "2025-07-23T22:07:32Z",
+    "id": 3257845681,
+    "labels": [],
+    "number": 181,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Don't throw error if there is nothing in recommendation database",
+    "updated_at": "2025-07-23T22:07:32Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/181"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-23T21:59:15Z",
+    "id": 3257825894,
+    "labels": [],
+    "number": 180,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "File \"/app/app/blueprints/files/routes.py\", line 219",
+    "updated_at": "2025-07-23T21:59:15Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/180"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-23T21:33:40Z",
+    "id": 3257768075,
+    "labels": [],
+    "number": 179,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "File \"/html/vandalizer/app/blueprints/tasks/routes.py\", line 585, in delete_search_set_item",
+    "updated_at": "2025-07-23T21:33:40Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/179"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-23T21:32:38Z",
+    "id": 3257766304,
+    "labels": [],
+    "number": 178,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "workflows/routes.py\", line 1174 bug",
+    "updated_at": "2025-07-23T21:32:38Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/178"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-23T21:28:16Z",
+    "id": 3257758850,
+    "labels": [],
+    "number": 177,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "workflow route line 733",
+    "updated_at": "2025-07-23T21:28:16Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/177"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-23T21:24:20Z",
+    "id": 3257751536,
+    "labels": [],
+    "number": 176,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Lockup the \"From Document\" button if there is a set",
+    "updated_at": "2025-07-23T21:24:20Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/176"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-23T21:19:17Z",
+    "id": 3257742254,
+    "labels": [],
+    "number": 175,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Create a reset vandalized script",
+    "updated_at": "2025-07-23T21:19:17Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/175"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-07-23T21:18:46Z",
+    "id": 3257741327,
+    "labels": [],
+    "number": 174,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Something is duplicating the number of search set items in a extraction group",
+    "updated_at": "2025-07-23T21:18:46Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/174"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-07-23T21:18:29Z",
+    "id": 3257740843,
+    "labels": [],
+    "number": 173,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "When you click create or run task, it starts a scanner",
+    "updated_at": "2025-07-23T21:20:21Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/173"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-07-23T20:23:55Z",
+    "id": 3257609474,
+    "labels": [],
+    "number": 172,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Lockup extraction when it is working",
+    "updated_at": "2025-07-23T20:24:48Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/172"
+  },
+  {
     "assignees": [
       "ViaJables"
     ],
@@ -67,7 +191,7 @@
   },
   {
     "assignees": [
-      "ViaJables"
+      "kandersonko"
     ],
     "created_at": "2025-07-22T16:37:06Z",
     "id": 3253359160,
@@ -76,7 +200,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Local models are prone to raw html output",
-    "updated_at": "2025-07-22T17:18:57Z",
+    "updated_at": "2025-07-23T20:24:32Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/163"
   },
   {
