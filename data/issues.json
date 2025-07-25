@@ -6,9 +6,9 @@
     "labels": [],
     "number": 181,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Don't throw error if there is nothing in recommendation database",
-    "updated_at": "2025-07-23T22:07:32Z",
+    "updated_at": "2025-07-24T17:52:34Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/181"
   },
   {
@@ -18,9 +18,9 @@
     "labels": [],
     "number": 180,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "File \"/app/app/blueprints/files/routes.py\", line 219",
-    "updated_at": "2025-07-23T21:59:15Z",
+    "updated_at": "2025-07-24T17:19:38Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/180"
   },
   {
@@ -30,9 +30,9 @@
     "labels": [],
     "number": 179,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "File \"/html/vandalizer/app/blueprints/tasks/routes.py\", line 585, in delete_search_set_item",
-    "updated_at": "2025-07-23T21:33:40Z",
+    "updated_at": "2025-07-24T17:16:08Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/179"
   },
   {
@@ -42,9 +42,9 @@
     "labels": [],
     "number": 178,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "workflows/routes.py\", line 1174 bug",
-    "updated_at": "2025-07-23T21:32:38Z",
+    "updated_at": "2025-07-24T17:13:14Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/178"
   },
   {
@@ -54,9 +54,9 @@
     "labels": [],
     "number": 177,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "workflow route line 733",
-    "updated_at": "2025-07-23T21:28:16Z",
+    "updated_at": "2025-07-24T18:38:05Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/177"
   },
   {
@@ -66,9 +66,9 @@
     "labels": [],
     "number": 176,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Lockup the \"From Document\" button if there is a set",
-    "updated_at": "2025-07-23T21:24:20Z",
+    "updated_at": "2025-07-24T17:39:30Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/176"
   },
   {
@@ -90,9 +90,9 @@
     "labels": [],
     "number": 174,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Something is duplicating the number of search set items in a extraction group",
-    "updated_at": "2025-07-23T21:18:46Z",
+    "updated_at": "2025-07-24T17:39:47Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/174"
   },
   {
@@ -104,9 +104,9 @@
     "labels": [],
     "number": 173,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "When you click create or run task, it starts a scanner",
-    "updated_at": "2025-07-23T21:20:21Z",
+    "updated_at": "2025-07-24T17:49:33Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/173"
   },
   {
@@ -1912,9 +1912,9 @@
     ],
     "number": 28,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Lockup chat when we are thinking",
-    "updated_at": "2025-06-18T20:07:37Z",
+    "updated_at": "2025-07-24T17:43:25Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/28"
   },
   {
