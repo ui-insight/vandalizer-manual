@@ -82,7 +82,7 @@ Begin by uploading an RFA document to the Document Viewer window. You can simply
 
 ![Uploading an RFA document to Vandalizer](images/examples/step1-upload.gif){.border .shadow width="90%"}
 
-Vandalizer will immediately begin analyzing the document with its Optical Character Recognition (OCR) process, indicated by the {{< fa spinner fa-spin >}} spinner icon in the corner. Wait for this process to complete—when you see the {{< fa code >}} icon, Vandalizer has successfully extracted all the text and is ready for the next step.
+Vandalizer will immediately begin analyzing the document with its Optical Character Recognition (OCR) process, indicated by the spinner icon in the corner. Wait for this process to complete—when you see the {{< fa code >}} icon, Vandalizer has successfully extracted all the text and is ready for the next step.
 
 ![Document processing with OCR](images/examples/step1-ocr-process.gif){.border .shadow width="50%"}
 
@@ -114,11 +114,11 @@ Navigate to the Workflows tab in the Toolbox window and click on the ![+New Work
 
 ![Creating a new workflow](images/examples/step3-create-workflow.png){.border .shadow width="81%"}
 
-Then click on the ![Add Step](images/buttons/add-step-btn.png){height="30px"} button.
+Then, click on the ![Add Step](images/buttons/add-step-btn.png){height="30px"} button.
 
 ![Adding a step to the workflow](images/examples/step3-add-step.gif){.border .shadow width="80%"}
 
-Now click on the ![Add your first task](images/buttons/add-first-task-btn.png){height="30px"} button, click **Prompts**, and select your previously created prompt task. Repeat these steps for the other 5 prompts.
+Now click on the ![Add your first task](images/buttons/add-first-task-btn.png){height="30px"} button, click **Prompts**, and select your previously created prompt task. Repeat these steps to add the other 5 prompt tasks (In the same step).
 
 ::: {.grid .align-items-center .mb-4}
 ::: {.g-col-6}
@@ -134,7 +134,7 @@ Now click on the ![Add your first task](images/buttons/add-first-task-btn.png){h
 The parallel prompt task approach is particularly effective for RFAs because it allows each task to specialize in finding a specific type of information, even when that information is scattered throughout the document or described using different terminology across funding agencies.
 :::
 
-Now we will add a new step and do the same thing for the formatting prompt.
+Now we will add a new step and do the same thing to add the formatting prompt task in a new step.
 
 ![Adding the formatting prompt task](images/examples/step3-add-formatting.gif){.border .shadow width="80%"}
 
