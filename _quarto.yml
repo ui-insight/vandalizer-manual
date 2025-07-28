@@ -39,3 +39,4 @@ format:
     toc: true
     toc-location: left
     number-sections: false
+    include-in-header: hide-pages.html
