@@ -27,8 +27,6 @@ website:
         href: workflows.qmd
       - text: "Examples"
         href: example.qmd
-      - text: "Next Steps"
-        href: next-steps.qmd
       - text: "Roadmap"
         href: roadmap.qmd
 
@@ -39,4 +37,3 @@ format:
     toc: true
     toc-location: left
     number-sections: false
-    include-in-header: hide-pages.html
