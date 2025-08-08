@@ -78,9 +78,9 @@
     "labels": [],
     "number": 175,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Create a reset vandalized script",
-    "updated_at": "2025-07-23T21:19:17Z",
+    "updated_at": "2025-08-07T16:54:57Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/175"
   },
   {
@@ -118,9 +118,9 @@
     "labels": [],
     "number": 172,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Lockup extraction when it is working",
-    "updated_at": "2025-07-23T20:24:48Z",
+    "updated_at": "2025-08-07T16:54:54Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/172"
   },
   {
