@@ -200,9 +200,9 @@
     "labels": [],
     "number": 165,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Don't display thinking tokens in qwen secure models",
-    "updated_at": "2025-07-22T17:19:23Z",
+    "updated_at": "2025-08-19T16:52:42Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/165"
   },
   {
@@ -226,9 +226,9 @@
     "labels": [],
     "number": 163,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Local models are prone to raw html output",
-    "updated_at": "2025-07-23T20:24:32Z",
+    "updated_at": "2025-08-19T16:52:47Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/163"
   },
   {
@@ -292,9 +292,9 @@
     "labels": [],
     "number": 158,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Collapse add folder and upload files into a + New dropdown",
-    "updated_at": "2025-08-13T16:56:54Z",
+    "updated_at": "2025-08-19T17:33:59Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/158"
   },
   {
@@ -306,9 +306,9 @@
     "labels": [],
     "number": 157,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "When you are in a folder, it should reflect that in the interface",
-    "updated_at": "2025-08-13T16:56:58Z",
+    "updated_at": "2025-08-19T17:34:07Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/157"
   },
   {
