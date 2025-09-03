@@ -1,5 +1,75 @@
 [
   {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-09-02T20:57:34Z",
+    "id": 3377471998,
+    "labels": [],
+    "number": 200,
+    "repository": "ui-insight/vandalizer",
+    "state": "closed",
+    "title": "User Session updates",
+    "updated_at": "2025-09-02T20:57:39Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/200"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-09-02T20:55:39Z",
+    "id": 3377467877,
+    "labels": [],
+    "number": 199,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Bug: Model validation",
+    "updated_at": "2025-09-02T20:55:39Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/199"
+  },
+  {
+    "assignees": [
+      "ViaJables"
+    ],
+    "created_at": "2025-09-02T20:55:06Z",
+    "id": 3377466779,
+    "labels": [],
+    "number": 198,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Bug: model param",
+    "updated_at": "2025-09-02T20:55:06Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/198"
+  },
+  {
+    "assignees": [
+      "kandersonko"
+    ],
+    "created_at": "2025-09-02T20:52:47Z",
+    "id": 3377460451,
+    "labels": [],
+    "number": 197,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Add Button - Add website content",
+    "updated_at": "2025-09-02T20:56:49Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/197"
+  },
+  {
+    "assignees": [
+      "kandersonko"
+    ],
+    "created_at": "2025-09-02T20:50:28Z",
+    "id": 3377455134,
+    "labels": [],
+    "number": 196,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Add Button - Add files to current chat",
+    "updated_at": "2025-09-02T20:53:01Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/196"
+  },
+  {
     "assignees": [],
     "created_at": "2025-07-29T18:05:11Z",
     "id": 3315019090,
@@ -22,9 +92,9 @@
     ],
     "number": 187,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Download and Copy Formatted Output Option for Vandalizer",
-    "updated_at": "2025-08-12T16:25:40Z",
+    "updated_at": "2025-09-02T20:48:45Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/187"
   },
   {
@@ -266,9 +336,9 @@
     "labels": [],
     "number": 160,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Update excel and docx viewer is far too delayed on upload",
-    "updated_at": "2025-08-27T20:08:05Z",
+    "updated_at": "2025-09-02T20:48:07Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/160"
   },
   {
