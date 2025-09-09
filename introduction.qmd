@@ -38,4 +38,4 @@ These Workflows—tasks coordinated into steps—can be reused across documents 
 
 ## Accessing Vandalizer
 
-Vandalizer can be accessed through university specific access points. For the University of Southern Utah, this access point is: [https://nsfai.suu.edu/](https://nsfai.suu.edu/). SUU employees should contact Nathan Wiggins ([nathanwiggins@suu.edu](nathanwiggins@suu.edu)) for access.
+Vandalizer can be accessed through university specific access points. For the University of Idaho, this access point is: [https://vandalizer.nkn.uidaho.edu/](https://vandalizer.nkn.uidaho.edu/). UofI employees should contact Nathan Layman [nlayman@uidaho.edu](nlayman@uidaho.edu). For the University of Southern Utah, this access point is: [https://nsfai.suu.edu/](https://nsfai.suu.edu/). SUU employees should contact Nathan Wiggins ([nathanwiggins@suu.edu](nathanwiggins@suu.edu)) for access. Basically if you're stuck, find a Nathan.
