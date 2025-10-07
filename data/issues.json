@@ -52,7 +52,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Activity work that is left",
-    "updated_at": "2025-10-02T20:26:57Z",
+    "updated_at": "2025-10-06T16:37:12Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/211"
   },
   {
@@ -204,9 +204,9 @@
     "labels": [],
     "number": 199,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Bug: Model validation",
-    "updated_at": "2025-09-02T20:55:39Z",
+    "updated_at": "2025-10-06T18:29:12Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/199"
   },
   {
@@ -218,9 +218,9 @@
     "labels": [],
     "number": 198,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Bug: model param",
-    "updated_at": "2025-09-02T20:55:06Z",
+    "updated_at": "2025-10-06T18:28:32Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/198"
   },
   {
