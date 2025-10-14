@@ -1,6 +1,20 @@
 [
   {
     "assignees": [
+      "kandersonko"
+    ],
+    "created_at": "2025-10-13T17:29:47Z",
+    "id": 3510889029,
+    "labels": [],
+    "number": 222,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Extractions and building extractions from documents don't obey current model selection",
+    "updated_at": "2025-10-13T17:29:47Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/222"
+  },
+  {
+    "assignees": [
       "ViaJables"
     ],
     "created_at": "2025-10-02T17:37:33Z",
@@ -15,7 +29,7 @@
   },
   {
     "assignees": [
-      "ViaJables"
+      "kandersonko"
     ],
     "created_at": "2025-10-02T17:37:14Z",
     "id": 3478354138,
@@ -24,7 +38,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Workflow download coming out in markdown",
-    "updated_at": "2025-10-02T17:37:14Z",
+    "updated_at": "2025-10-13T16:54:39Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/220"
   },
   {
@@ -52,7 +66,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Activity work that is left",
-    "updated_at": "2025-10-06T16:37:12Z",
+    "updated_at": "2025-10-13T16:55:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/211"
   },
   {
@@ -80,7 +94,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Teams work that is left",
-    "updated_at": "2025-10-01T21:03:30Z",
+    "updated_at": "2025-10-13T17:22:04Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/209"
   },
   {
@@ -106,9 +120,9 @@
     "labels": [],
     "number": 207,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Chat thread history does not persist",
-    "updated_at": "2025-10-07T19:21:52Z",
+    "updated_at": "2025-10-13T16:46:18Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/207"
   },
   {
@@ -234,7 +248,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Add Button - Add website content",
-    "updated_at": "2025-10-01T16:43:26Z",
+    "updated_at": "2025-10-13T16:52:34Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/197"
   },
   {
@@ -248,7 +262,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Add Button - Add files to current chat",
-    "updated_at": "2025-10-01T16:43:01Z",
+    "updated_at": "2025-10-13T16:53:45Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/196"
   },
   {
