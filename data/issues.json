@@ -3,6 +3,20 @@
     "assignees": [
       "kandersonko"
     ],
+    "created_at": "2025-10-14T20:23:16Z",
+    "id": 3515372890,
+    "labels": [],
+    "number": 223,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Add download for admin report",
+    "updated_at": "2025-10-14T20:23:16Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/223"
+  },
+  {
+    "assignees": [
+      "kandersonko"
+    ],
     "created_at": "2025-10-13T17:29:47Z",
     "id": 3510889029,
     "labels": [],
