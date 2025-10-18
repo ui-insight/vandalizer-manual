@@ -154,7 +154,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Activity work that is left",
-    "updated_at": "2025-10-15T16:42:12Z",
+    "updated_at": "2025-10-17T17:48:09Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/211"
   },
   {
@@ -182,7 +182,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Teams work that is left",
-    "updated_at": "2025-10-15T16:42:23Z",
+    "updated_at": "2025-10-17T17:40:22Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/209"
   },
   {
@@ -336,9 +336,9 @@
     "labels": [],
     "number": 197,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Add Button - Add website content",
-    "updated_at": "2025-10-15T16:42:41Z",
+    "updated_at": "2025-10-17T17:14:52Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/197"
   },
   {
@@ -352,7 +352,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Add Button - Add files to current chat",
-    "updated_at": "2025-10-15T16:42:52Z",
+    "updated_at": "2025-10-17T17:17:32Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/196"
   },
   {
@@ -654,7 +654,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "Usage Metrics and Statistics for Vandalizer Application",
-    "updated_at": "2025-10-15T16:49:02Z",
+    "updated_at": "2025-10-17T17:18:01Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/188"
   },
   {
