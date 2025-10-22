@@ -1,6 +1,18 @@
 [
   {
     "assignees": [],
+    "created_at": "2025-10-21T20:37:37Z",
+    "id": 3538086810,
+    "labels": [],
+    "number": 230,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Add token counts in chat input",
+    "updated_at": "2025-10-21T20:37:37Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/230"
+  },
+  {
+    "assignees": [],
     "created_at": "2025-10-15T16:58:58Z",
     "id": 3518863905,
     "labels": [],
