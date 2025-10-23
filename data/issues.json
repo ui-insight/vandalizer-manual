@@ -1,5 +1,33 @@
 [
   {
+    "assignees": [
+      "kandersonko"
+    ],
+    "created_at": "2025-10-22T18:11:00Z",
+    "id": 3541849579,
+    "labels": [],
+    "number": 232,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "BLOCKER: Security check uses insecure models to OpenAI or breaks",
+    "updated_at": "2025-10-22T18:11:00Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/232"
+  },
+  {
+    "assignees": [
+      "kandersonko"
+    ],
+    "created_at": "2025-10-22T18:09:55Z",
+    "id": 3541844181,
+    "labels": [],
+    "number": 231,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "BLOCKER: pdflatex installation notes in README",
+    "updated_at": "2025-10-22T18:10:13Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/231"
+  },
+  {
     "assignees": [],
     "created_at": "2025-10-21T20:37:37Z",
     "id": 3538086810,
@@ -362,9 +390,9 @@
     "labels": [],
     "number": 196,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Add Button - Add files to current chat",
-    "updated_at": "2025-10-17T17:17:32Z",
+    "updated_at": "2025-10-22T21:15:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/196"
   },
   {
