@@ -56,15 +56,9 @@ When the recipient clicks the shared link (with Vandalizer already open), the wo
 
 ---
 
-## Tips for Creating Shareable Workflows
+## Share Your Workflow
 
-When you're planning to share a workflow with others:
-
-1. **Test thoroughly** - Run through the workflow multiple times with different inputs
-2. **Document your steps** - Add clear descriptions to each step explaining what it does
-3. **Handle edge cases** - Consider different document formats or data variations
-4. **Use clear naming** - Give your workflow a descriptive name that explains its purpose
-5. **Provide context** - When sharing, include a brief note explaining what the workflow does and when to use it
+When you're ready to start sharing your workflow please share it with us! Email the link to [ai4ra@uidaho.edu](ai4ra@uidaho.edu).
 
 <script>
 document.getElementById('shareWorkflowBtn').addEventListener('click', function() {

@@ -266,11 +266,11 @@
     ]
   },
   {
-    "objectID": "share-workflows.html#tips-for-creating-shareable-workflows",
-    "href": "share-workflows.html#tips-for-creating-shareable-workflows",
+    "objectID": "share-workflows.html#share-your-workflow",
+    "href": "share-workflows.html#share-your-workflow",
     "title": "Share Workflows",
-    "section": "Tips for Creating Shareable Workflows",
-    "text": "Tips for Creating Shareable Workflows\nWhen you’re planning to share a workflow with others:\n\nTest thoroughly - Run through the workflow multiple times with different inputs\nDocument your steps - Add clear descriptions to each step explaining what it does\nHandle edge cases - Consider different document formats or data variations\nUse clear naming - Give your workflow a descriptive name that explains its purpose\nProvide context - When sharing, include a brief note explaining what the workflow does and when to use it",
+    "section": "Share Your Workflow",
+    "text": "Share Your Workflow\nWhen you’re ready to start sharing your workflow please share it with us! Email the link to ai4ra@uidaho.edu.",
     "crumbs": [
       "Share Workflows"
     ]
