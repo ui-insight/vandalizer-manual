@@ -6,7 +6,7 @@ format:
 ---
 
 ::: {.text-center}
-# <i class="fa-solid fa-globe"></i> Global Tasks
+# {{< fa globe >}} Global Tasks
 :::
 
 ## What are Global Tasks?
@@ -17,23 +17,22 @@ Global tasks are pre-built, standardized tasks that are shared across your organ
 
 ## Available Global Tasks
 
-### Extract Task: NIH Awards
+### Example: {{< fa globe >}} NIH Awards Task
 
-The **NIH Awards** task is a pre-configured extraction task designed to automatically extract key information from NIH award documents. This global task can process NIH award documents and extract relevant data fields, saving time and ensuring consistent data extraction across your organization.
+The **NIH Awards** task is an example of a global task—a pre-configured extraction task designed to automatically extract key information from NIH award documents. Like all tasks, this extraction task pulls specific information directly from documents using exact, consistent terms.
+
+**To access this global task:**
+
+1. Open Vandalizer and navigate to the **Chat** tab in the toolbox window
+2. Click the <span style="border: 2px solid #ccc; padding: 4px; display: inline-block;">{{< fa diagram-project >}} **TASKS**</span> button
+3. Select the **NIH Awards** task from the list of available global tasks
+4. Upload your NIH award documents
+5. The task will automatically extract key fields from each document
 
 **Task Details:**
-- **Type**: Extract
+- **Type**: Extraction task
 - **Purpose**: Extract key information from NIH award documents
-- **Availability**: 6 items ready to extract
-
-<div style="margin: 2em 0; padding: 1.5em; background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid #577231;">
-  <div style="display: flex; align-items: center; gap: 1em; font-size: 1.1em;">
-    <span style="font-size: 1.5em;">▼</span>
-    <i class="fa-solid fa-globe" style="font-size: 1.2em;"></i>
-    <span style="font-weight: bold;">NIH Awards</span>
-    <span style="margin-left: auto; color: #666;">6 items</span>
-  </div>
-</div>
+- **Status**: Ready to use (6 example documents available)
 
 ---
 
@@ -59,5 +58,5 @@ The **NIH Awards** task is a pre-configured extraction task designed to automati
 
 ## More Tasks Coming
 
-Global tasks are an expanding feature. Additional pre-built tasks for common research administration workflows are continuously being developed and added to the platform. Check back regularly for new global tasks tailored to your organization's needs.
+Global tasks are an expanding feature. Additional pre-built tasks for common research administration workflows are continuously being developed and added to the platform. We'll also be adding global workflows soon. Check back regularly for the latest updates!
 

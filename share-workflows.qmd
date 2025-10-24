@@ -24,14 +24,14 @@ After running the workflow, locate the workflow action buttons at the top of the
   <button style="background-color: #FFC107; color: #000; padding: 12px 24px; border: none; border-radius: 4px; font-weight: bold; font-size: 14px; cursor: pointer; font-family: Arial, sans-serif; transition: background-color 0.2s;">DOWNLOAD</button>
 </div>
 
-**Try it out!** Click the "SHARE WORKFLOW" button above to see the popup message.
-
 ### Step 3: Copy the Link
-When you click the **"SHARE WORKFLOW"** button, a popup will appear displaying:
+When you click the **"SHARE WORKFLOW"** button, a notification will appear at the bottom center of the screen displaying:
 
 > **Link Copied! Share it to others! 🚀**
 
-This popup confirms that the unique workflow link has been copied to your clipboard. The link contains all the workflow configuration and can be shared with anyone in your organization.
+This notification confirms that the unique workflow link has been copied to your clipboard. The link contains all the workflow configuration and can be shared with anyone in your organization.
+
+**Try it out!** Click the "SHARE WORKFLOW" button above to see the notification and test how the workflow link gets copied to your clipboard.
 
 ### Step 4: Share the Link
 Paste the copied link into an email, message, or communication channel and send it to the person you want to share the workflow with. The link can be formatted as a clickable hyperlink in most email and messaging applications.
@@ -62,34 +62,52 @@ When you're ready to start sharing your workflow please share it with us! Email 
 
 <script>
 document.getElementById('shareWorkflowBtn').addEventListener('click', function() {
-  // Create popup overlay
-  const overlay = document.createElement('div');
-  overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; z-index: 10000;';
+  // Copy link to clipboard
+  const workflowLink = 'https://vandalizer.nkn.uidaho.edu/workflows/duplicate/682f8e4f4573123b4cc87654';
+  navigator.clipboard.writeText(workflowLink).then(function() {
+    // Create toast notification
+    const toast = document.createElement('div');
+    toast.style.cssText = 'position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: rgba(255, 255, 255, 0.95); color: #333; padding: 16px 24px; border-radius: 50px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); font-family: Arial, sans-serif; font-size: 14px; z-index: 10000; animation: slideIn 0.3s ease-out forwards; white-space: nowrap;';
+    toast.textContent = 'Link Copied! Share it to others! 🚀';
 
-  // Create popup box
-  const popup = document.createElement('div');
-  popup.style.cssText = 'background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); text-align: center; max-width: 400px; font-family: Arial, sans-serif;';
-
-  // Add content
-  popup.innerHTML = '<h2 style="margin-top: 0; color: #577231; font-size: 1.3em;">Link Copied! Share it to others! 🚀</h2>';
-
-  // Create close button
-  const closeBtn = document.createElement('button');
-  closeBtn.textContent = 'Close';
-  closeBtn.style.cssText = 'background-color: #577231; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 20px;';
-  closeBtn.addEventListener('click', function() {
-    document.body.removeChild(overlay);
-  });
-
-  popup.appendChild(closeBtn);
-  overlay.appendChild(popup);
-  document.body.appendChild(overlay);
-
-  // Close on overlay click
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) {
-      document.body.removeChild(overlay);
+    // Add animation styles
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes slideIn {
+        from {
+          transform: translateX(-50%) translateY(100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(-50%) translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes slideOut {
+        from {
+          transform: translateX(-50%) translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(-50%) translateY(100px);
+          opacity: 0;
+        }
+      }
+    `;
+    if (!document.querySelector('style[data-toast-animations]')) {
+      style.setAttribute('data-toast-animations', 'true');
+      document.head.appendChild(style);
     }
+
+    document.body.appendChild(toast);
+
+    // Fade out and remove after 3 seconds
+    setTimeout(function() {
+      toast.style.animation = 'slideOut 0.3s ease-out forwards';
+      setTimeout(function() {
+        document.body.removeChild(toast);
+      }, 300);
+    }, 3000);
   });
 });
 
