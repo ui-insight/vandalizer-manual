@@ -31,8 +31,8 @@ website:
         href: share-workflows.qmd
       - text: "Examples"
         href: example.qmd
-      - text: "Roadmap"
-        href: roadmap.qmd
+      - text: "Issue Tracker"
+        href: issue-tracker.qmd
 
 format:
   html:

@@ -24,6 +24,15 @@ jupyter: python3
 :::
 :::
 ::::
+
+---
+
+::: {.text-center}
+# Issue Tracker
+:::
+
+This page tracks the development progress of Vandalizer by monitoring open issues, bug reports, and feature requests. The visualizations below show issue trends over time, helping you understand what's being worked on and what improvements are coming to the platform.
+
 ---
 
 ```{python}

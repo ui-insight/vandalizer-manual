@@ -1,52 +1,98 @@
 [
   {
-    "objectID": "introduction.html#understanding-vandalizer-components",
-    "href": "introduction.html#understanding-vandalizer-components",
-    "title": "Introduction",
-    "section": "Understanding Vandalizer Components",
-    "text": "Understanding Vandalizer Components\nWithin Vandalizer, users can create tasks, which are specific, repeatable jobs handled by AI. These tasks can be collected into steps, for which tasks within each step receive the same input. Steps can be chained together, where downstream steps receive input from upstream steps, creating structured, repeatable workflows.\nThese Workflows—tasks coordinated into steps—can be reused across documents with similar formats or content. All tasks and workflows are organized within workspaces, which serve as centralized hubs for managing and tracking work. Workspaces can be customized to align with the needs of a Research Administration office, organized by individual users, job roles, or document types.\nWith Vandalizer, Research Administrators can create efficient, reusable systems that improve consistency and productivity across their document and data processing tasks.",
+    "objectID": "share-workflows.html#how-to-share-a-workflow",
+    "href": "share-workflows.html#how-to-share-a-workflow",
+    "title": "Share Workflows",
+    "section": "How to Share a Workflow",
+    "text": "How to Share a Workflow\nOnce you’ve created or modified a workflow that you’d like to share with others, follow these simple steps:\n\nStep 1: Run the Workflow\nExecute the workflow to ensure it’s working as intended before sharing it.\n\n\nStep 2: Click the “SHARE WORKFLOW” Button\nAfter running the workflow, locate the workflow action buttons at the top of the interface. You’ll see the dark “SHARE WORKFLOW” button next to the yellow “DOWNLOAD” button.\n\nSHARE WORKFLOW DOWNLOAD\n\n\n\nStep 3: Copy the Link\nWhen you click the “SHARE WORKFLOW” button, a notification will appear at the bottom center of the screen displaying:\n\nLink Copied! Share it to others! 🚀\n\nThis notification confirms that the unique workflow link has been copied to your clipboard. The link contains all the workflow configuration and can be shared with anyone in your organization.\nTry it out! Click the “SHARE WORKFLOW” button above to see the notification and test how the workflow link gets copied to your clipboard.\n\n\nStep 4: Share the Link\nPaste the copied link into an email, message, or communication channel and send it to the person you want to share the workflow with. The link can be formatted as a clickable hyperlink in most email and messaging applications.\n\n\nImportant: Open Vandalizer First\n\n⚠️ Important: The recipient must have Vandalizer already open in their browser before clicking the shared workflow link. If they click the link without having Vandalizer open, the link may not work correctly.\n\n\n\nStep 5: Recipient Opens the Workflow\nWhen the recipient clicks the shared link (with Vandalizer already open), the workflow will automatically load into their workspace with all the same configuration and settings you created.",
     "crumbs": [
-      "Introduction"
+      "Share Workflows"
     ]
   },
   {
-    "objectID": "introduction.html#accessing-vandalizer",
-    "href": "introduction.html#accessing-vandalizer",
-    "title": "Introduction",
-    "section": "Accessing Vandalizer",
-    "text": "Accessing Vandalizer\nVandalizer can be accessed through university specific access points. For the University of Idaho, this access point is: https://vandalizer.nkn.uidaho.edu/. UofI employees should contact Nathan Layman nlayman@uidaho.edu. For the University of Southern Utah, this access point is: https://nsfai.suu.edu/. SUU employees should contact Nathan Wiggins (nathanwiggins@suu.edu) for access. Basically if you’re stuck, find a Nathan.",
+    "objectID": "share-workflows.html#benefits-of-shared-workflows",
+    "href": "share-workflows.html#benefits-of-shared-workflows",
+    "title": "Share Workflows",
+    "section": "Benefits of Shared Workflows",
+    "text": "Benefits of Shared Workflows\n\nConsistency: All users follow the same documented process\nEfficiency: No need to recreate workflows—use proven, tested versions\nCollaboration: Share improvements and refinements across your team\nTraining: New team members can quickly adopt established workflows\nDocumentation: Workflows serve as executable documentation of your processes",
     "crumbs": [
-      "Introduction"
+      "Share Workflows"
     ]
   },
   {
-    "objectID": "example.html#understanding-the-challenge",
-    "href": "example.html#understanding-the-challenge",
-    "title": "Example Workflow: Building an RFA Checklist",
-    "section": "Understanding the Challenge",
-    "text": "Understanding the Challenge\nResearch Funding Announcements (RFAs) present a common challenge for research administrators. While they contain critical information about deadlines, eligibility requirements, award details, and application components, this information is rarely organized consistently across different funding agencies.\nThis is where Vandalizer truly shines. Let’s walk through creating a workflow that transforms varied RFA documents into standardized, actionable checklists that your team can rely on.\n\n\n\n\n\nWorkflow Overview\n\n\n\n\n\n\n\n\n\n\nStandardized output",
+    "objectID": "share-workflows.html#share-your-workflow",
+    "href": "share-workflows.html#share-your-workflow",
+    "title": "Share Workflows",
+    "section": "Share Your Workflow",
+    "text": "Share Your Workflow\nWhen you’re ready to start sharing your workflow please share it with us! Email the link to ai4ra@uidaho.edu.",
     "crumbs": [
-      "Examples"
+      "Share Workflows"
     ]
   },
   {
-    "objectID": "example.html#creating-your-rfa-checklist-workflow",
-    "href": "example.html#creating-your-rfa-checklist-workflow",
-    "title": "Example Workflow: Building an RFA Checklist",
-    "section": "Creating Your RFA Checklist Workflow",
-    "text": "Creating Your RFA Checklist Workflow\n\nStep 1: Upload Your RFA Document\nBegin by uploading an RFA document to the Document Viewer window. You can simply drag and drop the file or use the  button.\n\n\n\nUploading an RFA document to Vandalizer\n\n\nVandalizer will immediately begin analyzing the document with its Optical Character Recognition (OCR) process, indicated by the spinner icon in the corner. Wait for this process to complete—when you see the  icon, Vandalizer has successfully extracted all the text and is ready for the next step.\n\n\n\nDocument processing with OCR\n\n\n\n\n\n\n\n\nTip\n\n\n\nTake a moment to click the  icon and review the extracted text to ensure the document was processed correctly before proceeding.\n\n\n\n\nStep 2: Design Your Tasks\nFor an effective RFA checklist, you’ll need to create two types of tasks:\n\nSix Parallel Prompt Tasks - These tasks will identify and pull out specific categories of information from the RFA document regardless of where it appears or how it’s labeled. You’ll create separate prompt tasks for:\n\nDates & Deadlines\nEligibility Requirements\nAward Information\nApplication Components\nBudget Requirements & Policies\nSubmission Details\n\nFormatting Prompt Task - This task will organize and consolidate all the information gathered by the six prompt tasks into a clean, standardized checklist format.\n\nClick the  button on the bottom right and then click the  button. Select Prompt from the options and type in your prompt. Repeat these steps for all 6 prompt tasks and then the formatting prompt.\n\n\n\nCreating a new prompt task\n\n\n\n\nStep 3: Build Your Workflow\nNavigate to the Workflows tab in the Toolbox window and click on the  button.\n\n\n\nCreating a new workflow\n\n\nThen, click on the  button.\n\n\n\nAdding a step to the workflow\n\n\nNow click on the  button, click Prompts, and select your previously created prompt task. Repeat these steps to add the other 5 prompt tasks (In the same step).\n\n\n\n\n\nAdding prompt tasks to first step\n\n\n\n\n\n\n\nAll 6 extraction tasks added\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe parallel prompt task approach is particularly effective for RFAs because it allows each task to specialize in finding a specific type of information, even when that information is scattered throughout the document or described using different terminology across funding agencies.\n\n\nNow we will add a new step and do the same thing to add the formatting prompt task in a new step.\n\n\n\nAdding the formatting prompt task\n\n\n\n\nStep 4: Run Your Workflow\nWith your workflow built, you’re ready to put it to work:\n\nMake sure your RFA document is selected in the Document Viewer\nClick the  button in the bottom right corner of the Toolbox window\nWatch as Vandalizer processes each step, first running all six prompt tasks in parallel and then formatting the combined results into your checklist\n\n\n\n\nRunning the workflow on your RFA document\n\n\nThe result? A comprehensive, well-organized checklist containing all the critical information from the RFA, presented in a consistent format regardless of how the original document was structured.\n\n\n\nFinal checklist output from the workflow\n\n\n\n\nStep 5: Reuse With Future RFAs\nThe real power of this workflow is its reusability. The next time you receive an RFA:\n\nUpload the new document\nSelect your saved “RFA Checklist Builder” workflow\nRun the workflow with a single click",
-    "crumbs": [
-      "Examples"
-    ]
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Thank you for your interest in contributing! This guide will help you get started quickly.\n\n\n\n\nEmail: nlayman@uidaho.edu\nSubject: “Vandalizer Documentation Access Request”\nInclude: - Your GitHub username - Your affiliation with Vandalizer or research administration - What you’d like to contribute (e.g., “workflow examples”, “interface screenshots”)\nResponse time: 2-3 business days\n\n\n\n\nGo to the Vandalizer User Manual and Wiki\nClick “Edit this page” on any page\nMake your changes in the GitHub editor\nWrite a clear commit message describing what you changed\nCommit to main branch\n\nYour changes go live automatically in 2-5 minutes!\n\n\n\nDon’t want to edit directly? Email your ideas to nlayman@uidaho.edu and I’ll incorporate them into the manual.\n\n\n\n\nHigh Priority: - Real-world workflow examples with step-by-step instructions - Screenshots of the Vandalizer interface with explanations - Common troubleshooting issues and solutions - Integration guides for connecting with other RA tools\nContent Types: - Video tutorials or links - Downloadable templates and checklists - FAQ entries - Best practices and tips\n\n\n\nKeep it simple: - Write for research administrators who may be new to AI tools - Use clear, action-oriented language - Include practical examples when possible - Break up long sections with headers\nFormat basics: - Use descriptive headings (## Main Section, ### Subsection) - Add alt text to images: ![Description](image.png) - Use tip boxes for important info: markdown   ::: {.callout-tip}   ## Tip   Your helpful tip here   :::\n\n\n\nNew to Quarto? Start here:\n\nQuarto Get Started Guide - Step-by-step introduction to Quarto basics\nQuarto Markdown Basics - How Quarto extends standard markdown with special features like callout boxes and cross-references\n\nQuick tip: You can always look at existing pages in the documentation to see how formatting is done, then copy and modify the syntax for your own content.\n\n\n\nQuick checklist: - [ ] Content is accurate and helpful - [ ] Links work - [ ] Images display properly - [ ] Commit message clearly describes changes\n\n\n\n\nGeneral questions: Email nlayman@uidaho.edu\nTechnical issues: Create a GitHub issue\nQuarto/Markdown help: Quarto Documentation\n\n\n\n\n\n\nFor Advanced Contributors (click to expand)\n\n\n\n\nMain content: .qmd files in root directory\nImages: Store in images/ folder\nNavigation: Edit _quarto.yml to add new pages\n\n\n\n\n\nDaily roadmap updates: Issues from main repository auto-sync at 6 AM UTC\nAuto-deployment: All changes to main branch deploy automatically\nDon’t edit: data/issues.json (auto-generated)\n\n\n\n\nStep 1: Create your new page using this required header template:\n---\ntitle: \"Your Page Title\"\nformat:\n  html:\n    page-layout: full\n    include-after-body: scripts.html\n---\n\n:::: {.header-logos}\n::: {.grid}\n::: {.g-col-2 .d-flex .justify-content-center .align-items-center}\n![](images/uidaho_logo.png){width=100px}\n:::\n::: {.g-col-7 .d-flex .justify-content-center .align-items-center}\n![](images/vandalizer_logo.png){width=500px}\n:::\n::: {.g-col-3 .d-flex .justify-content-center .align-items-center}\n![](images/suu_logo.png){width=200px}\n:::\n:::\n::::\n\n---\n\n[Your content starts here]\nStep 2: Add to navigation by editing _quarto.yml:\nsidebar:\n  contents:\n    - text: \"Your New Page\"\n      href: your-new-page.qmd\n\n\n\n\nTest all links after changes\nUse GitHub preview before committing\nMake incremental changes when possible\nCoordinate with other contributors on large changes\n\n\n\nQuestions? Email nlayman@uidaho.edu"
   },
   {
-    "objectID": "index.html#what-is-vandalizer",
-    "href": "index.html#what-is-vandalizer",
-    "title": "A Beginner’s Guide to Vandalizer",
-    "section": "What is Vandalizer?",
-    "text": "What is Vandalizer?\n\n\nVandalizer is an AI management tool designed to assist Research Administrators in managing and streamlining their work.\nAt research institutions across the United States, Research Administration (RA) offices are facing increasing demands with limited resources. AI tools promise to ease the burden of routine administrative tasks, but commercially available AI tools do not reliably meet RA offices’ high standards for accuracy, reproducibility, flexibility and security. While general use AI tools create exciting opportunities for augmentation, there is a gap between their potential and their practical implementation in RA offices.\nThe goal in developing Vandalizer is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.\n\n\n\n\n\n\n\n\nWHY USE VANDALIZER?\n\n\n\nDOMAIN KNOWLEDGE: Vandalizer is purpose-built for Research Administration, enabling offices to deploy AI tools at scale without compromising standards.\nACCURACY: Vandalizer ensures correct data extraction and transformation without hallucinations.\nREPRODUCIBILITY: Vandalizer delivers consistent results across repeated inputs between users.\nFLEXIBILITY: Vandalizer adapts to diverse data environments, evolving workflows, and advancing AI models.\nSECURITY: Vandalizer complies with organizational IT policies and data governance requirements.",
+    "objectID": "CONTRIBUTING.html#quick-start",
+    "href": "CONTRIBUTING.html#quick-start",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Email: nlayman@uidaho.edu\nSubject: “Vandalizer Documentation Access Request”\nInclude: - Your GitHub username - Your affiliation with Vandalizer or research administration - What you’d like to contribute (e.g., “workflow examples”, “interface screenshots”)\nResponse time: 2-3 business days\n\n\n\n\nGo to the Vandalizer User Manual and Wiki\nClick “Edit this page” on any page\nMake your changes in the GitHub editor\nWrite a clear commit message describing what you changed\nCommit to main branch\n\nYour changes go live automatically in 2-5 minutes!\n\n\n\nDon’t want to edit directly? Email your ideas to nlayman@uidaho.edu and I’ll incorporate them into the manual."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#what-we-need-most",
+    "href": "CONTRIBUTING.html#what-we-need-most",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "High Priority: - Real-world workflow examples with step-by-step instructions - Screenshots of the Vandalizer interface with explanations - Common troubleshooting issues and solutions - Integration guides for connecting with other RA tools\nContent Types: - Video tutorials or links - Downloadable templates and checklists - FAQ entries - Best practices and tips"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#writing-guidelines",
+    "href": "CONTRIBUTING.html#writing-guidelines",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Keep it simple: - Write for research administrators who may be new to AI tools - Use clear, action-oriented language - Include practical examples when possible - Break up long sections with headers\nFormat basics: - Use descriptive headings (## Main Section, ### Subsection) - Add alt text to images: ![Description](image.png) - Use tip boxes for important info: markdown   ::: {.callout-tip}   ## Tip   Your helpful tip here   :::"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#resources-for-new-contributors",
+    "href": "CONTRIBUTING.html#resources-for-new-contributors",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "New to Quarto? Start here:\n\nQuarto Get Started Guide - Step-by-step introduction to Quarto basics\nQuarto Markdown Basics - How Quarto extends standard markdown with special features like callout boxes and cross-references\n\nQuick tip: You can always look at existing pages in the documentation to see how formatting is done, then copy and modify the syntax for your own content."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#before-you-commit",
+    "href": "CONTRIBUTING.html#before-you-commit",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "Quick checklist: - [ ] Content is accurate and helpful - [ ] Links work - [ ] Images display properly - [ ] Commit message clearly describes changes"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#need-help",
+    "href": "CONTRIBUTING.html#need-help",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "General questions: Email nlayman@uidaho.edu\nTechnical issues: Create a GitHub issue\nQuarto/Markdown help: Quarto Documentation"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#technical-details",
+    "href": "CONTRIBUTING.html#technical-details",
+    "title": "Contributing to Vandalizer Documentation",
+    "section": "",
+    "text": "For Advanced Contributors (click to expand)\n\n\n\n\nMain content: .qmd files in root directory\nImages: Store in images/ folder\nNavigation: Edit _quarto.yml to add new pages\n\n\n\n\n\nDaily roadmap updates: Issues from main repository auto-sync at 6 AM UTC\nAuto-deployment: All changes to main branch deploy automatically\nDon’t edit: data/issues.json (auto-generated)\n\n\n\n\nStep 1: Create your new page using this required header template:\n---\ntitle: \"Your Page Title\"\nformat:\n  html:\n    page-layout: full\n    include-after-body: scripts.html\n---\n\n:::: {.header-logos}\n::: {.grid}\n::: {.g-col-2 .d-flex .justify-content-center .align-items-center}\n![](images/uidaho_logo.png){width=100px}\n:::\n::: {.g-col-7 .d-flex .justify-content-center .align-items-center}\n![](images/vandalizer_logo.png){width=500px}\n:::\n::: {.g-col-3 .d-flex .justify-content-center .align-items-center}\n![](images/suu_logo.png){width=200px}\n:::\n:::\n::::\n\n---\n\n[Your content starts here]\nStep 2: Add to navigation by editing _quarto.yml:\nsidebar:\n  contents:\n    - text: \"Your New Page\"\n      href: your-new-page.qmd\n\n\n\n\nTest all links after changes\nUse GitHub preview before committing\nMake incremental changes when possible\nCoordinate with other contributors on large changes\n\n\n\nQuestions? Email nlayman@uidaho.edu"
+  },
+  {
+    "objectID": "disclaimer.html",
+    "href": "disclaimer.html",
+    "title": "Disclaimer",
+    "section": "",
+    "text": "Disclaimer\n\n\n\n\n\n\n\n\nImportant\n\n\n\nVandalizer is in active development and currently utilizes commercial large language models (LLMs) provided by third-party services. Future developments will enable secure document processing on-premises, but for now please do not input sensitive, confidential, or personally identifiable information. This includes proposal narratives, which should only be shared if you are certain you have the right to do so. Proposal narratives may contain patentable ideas and sharing them could jeopardize intellectual property rights. In addition, large document handling is not yet available. Users should limit pdf file inputs to documents with less than 50 pages.",
     "crumbs": [
-      "Home"
+      "Disclaimer"
     ]
   },
   {
@@ -140,139 +186,103 @@
     ]
   },
   {
-    "objectID": "roadmap.html#cumulative-issues-over-time",
-    "href": "roadmap.html#cumulative-issues-over-time",
-    "title": "Vandalizer Wiki",
+    "objectID": "index.html#what-is-vandalizer",
+    "href": "index.html#what-is-vandalizer",
+    "title": "A Beginner’s Guide to Vandalizer",
+    "section": "What is Vandalizer?",
+    "text": "What is Vandalizer?\n\n\nVandalizer is an AI management tool designed to assist Research Administrators in managing and streamlining their work.\nAt research institutions across the United States, Research Administration (RA) offices are facing increasing demands with limited resources. AI tools promise to ease the burden of routine administrative tasks, but commercially available AI tools do not reliably meet RA offices’ high standards for accuracy, reproducibility, flexibility and security. While general use AI tools create exciting opportunities for augmentation, there is a gap between their potential and their practical implementation in RA offices.\nThe goal in developing Vandalizer is not to replace administrators, whose specialized expertise in interpreting policies, exercising judgment, and ensuring compliance cannot be replicated. Rather, Vandalizer serves as a tool to enhance their efficiency by automating routine, repetitive tasks and supporting data-driven decision-making.\n\n\n\n\n\n\n\n\nWHY USE VANDALIZER?\n\n\n\nDOMAIN KNOWLEDGE: Vandalizer is purpose-built for Research Administration, enabling offices to deploy AI tools at scale without compromising standards.\nACCURACY: Vandalizer ensures correct data extraction and transformation without hallucinations.\nREPRODUCIBILITY: Vandalizer delivers consistent results across repeated inputs between users.\nFLEXIBILITY: Vandalizer adapts to diverse data environments, evolving workflows, and advancing AI models.\nSECURITY: Vandalizer complies with organizational IT policies and data governance requirements.",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "example.html#understanding-the-challenge",
+    "href": "example.html#understanding-the-challenge",
+    "title": "Example Workflow: Building an RFA Checklist",
+    "section": "Understanding the Challenge",
+    "text": "Understanding the Challenge\nResearch Funding Announcements (RFAs) present a common challenge for research administrators. While they contain critical information about deadlines, eligibility requirements, award details, and application components, this information is rarely organized consistently across different funding agencies.\nThis is where Vandalizer truly shines. Let’s walk through creating a workflow that transforms varied RFA documents into standardized, actionable checklists that your team can rely on.\n\n\n\n\n\nWorkflow Overview\n\n\n\n\n\n\n\n\n\n\nStandardized output",
+    "crumbs": [
+      "Examples"
+    ]
+  },
+  {
+    "objectID": "example.html#creating-your-rfa-checklist-workflow",
+    "href": "example.html#creating-your-rfa-checklist-workflow",
+    "title": "Example Workflow: Building an RFA Checklist",
+    "section": "Creating Your RFA Checklist Workflow",
+    "text": "Creating Your RFA Checklist Workflow\n\nStep 1: Upload Your RFA Document\nBegin by uploading an RFA document to the Document Viewer window. You can simply drag and drop the file or use the  button.\n\n\n\nUploading an RFA document to Vandalizer\n\n\nVandalizer will immediately begin analyzing the document with its Optical Character Recognition (OCR) process, indicated by the spinner icon in the corner. Wait for this process to complete—when you see the  icon, Vandalizer has successfully extracted all the text and is ready for the next step.\n\n\n\nDocument processing with OCR\n\n\n\n\n\n\n\n\nTip\n\n\n\nTake a moment to click the  icon and review the extracted text to ensure the document was processed correctly before proceeding.\n\n\n\n\nStep 2: Design Your Tasks\nFor an effective RFA checklist, you’ll need to create two types of tasks:\n\nSix Parallel Prompt Tasks - These tasks will identify and pull out specific categories of information from the RFA document regardless of where it appears or how it’s labeled. You’ll create separate prompt tasks for:\n\nDates & Deadlines\nEligibility Requirements\nAward Information\nApplication Components\nBudget Requirements & Policies\nSubmission Details\n\nFormatting Prompt Task - This task will organize and consolidate all the information gathered by the six prompt tasks into a clean, standardized checklist format.\n\nClick the  button on the bottom right and then click the  button. Select Prompt from the options and type in your prompt. Repeat these steps for all 6 prompt tasks and then the formatting prompt.\n\n\n\nCreating a new prompt task\n\n\n\n\nStep 3: Build Your Workflow\nNavigate to the Workflows tab in the Toolbox window and click on the  button.\n\n\n\nCreating a new workflow\n\n\nThen, click on the  button.\n\n\n\nAdding a step to the workflow\n\n\nNow click on the  button, click Prompts, and select your previously created prompt task. Repeat these steps to add the other 5 prompt tasks (In the same step).\n\n\n\n\n\nAdding prompt tasks to first step\n\n\n\n\n\n\n\nAll 6 extraction tasks added\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe parallel prompt task approach is particularly effective for RFAs because it allows each task to specialize in finding a specific type of information, even when that information is scattered throughout the document or described using different terminology across funding agencies.\n\n\nNow we will add a new step and do the same thing to add the formatting prompt task in a new step.\n\n\n\nAdding the formatting prompt task\n\n\n\n\nStep 4: Run Your Workflow\nWith your workflow built, you’re ready to put it to work:\n\nMake sure your RFA document is selected in the Document Viewer\nClick the  button in the bottom right corner of the Toolbox window\nWatch as Vandalizer processes each step, first running all six prompt tasks in parallel and then formatting the combined results into your checklist\n\n\n\n\nRunning the workflow on your RFA document\n\n\nThe result? A comprehensive, well-organized checklist containing all the critical information from the RFA, presented in a consistent format regardless of how the original document was structured.\n\n\n\nFinal checklist output from the workflow\n\n\n\n\nStep 5: Reuse With Future RFAs\nThe real power of this workflow is its reusability. The next time you receive an RFA:\n\nUpload the new document\nSelect your saved “RFA Checklist Builder” workflow\nRun the workflow with a single click",
+    "crumbs": [
+      "Examples"
+    ]
+  },
+  {
+    "objectID": "introduction.html#understanding-vandalizer-components",
+    "href": "introduction.html#understanding-vandalizer-components",
+    "title": "Introduction",
+    "section": "Understanding Vandalizer Components",
+    "text": "Understanding Vandalizer Components\nWithin Vandalizer, users can create tasks, which are specific, repeatable jobs handled by AI. These tasks can be collected into steps, for which tasks within each step receive the same input. Steps can be chained together, where downstream steps receive input from upstream steps, creating structured, repeatable workflows.\nThese Workflows—tasks coordinated into steps—can be reused across documents with similar formats or content. All tasks and workflows are organized within workspaces, which serve as centralized hubs for managing and tracking work. Workspaces can be customized to align with the needs of a Research Administration office, organized by individual users, job roles, or document types.\nWith Vandalizer, Research Administrators can create efficient, reusable systems that improve consistency and productivity across their document and data processing tasks.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "introduction.html#accessing-vandalizer",
+    "href": "introduction.html#accessing-vandalizer",
+    "title": "Introduction",
+    "section": "Accessing Vandalizer",
+    "text": "Accessing Vandalizer\nVandalizer can be accessed through university specific access points. For the University of Idaho, this access point is: https://vandalizer.nkn.uidaho.edu/. UofI employees should contact Nathan Layman nlayman@uidaho.edu. For the University of Southern Utah, this access point is: https://nsfai.suu.edu/. SUU employees should contact Nathan Wiggins (nathanwiggins@suu.edu) for access. Basically if you’re stuck, find a Nathan.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "issue-tracker.html",
+    "href": "issue-tracker.html",
+    "title": "Issue Tracker",
+    "section": "",
+    "text": "This page tracks the development progress of Vandalizer by monitoring open issues, bug reports, and feature requests. The visualizations below show issue trends over time, helping you understand what’s being worked on and what improvements are coming to the platform.",
+    "crumbs": [
+      "Issue Tracker"
+    ]
+  },
+  {
+    "objectID": "issue-tracker.html#cumulative-issues-over-time",
+    "href": "issue-tracker.html#cumulative-issues-over-time",
+    "title": "Issue Tracker",
     "section": "Cumulative Issues Over Time",
     "text": "Cumulative Issues Over Time",
     "crumbs": [
-      "Roadmap"
+      "Issue Tracker"
     ]
   },
   {
-    "objectID": "roadmap.html#open-issues-trend",
-    "href": "roadmap.html#open-issues-trend",
-    "title": "Vandalizer Wiki",
+    "objectID": "issue-tracker.html#open-issues-trend",
+    "href": "issue-tracker.html#open-issues-trend",
+    "title": "Issue Tracker",
     "section": "Open Issues Trend",
     "text": "Open Issues Trend",
     "crumbs": [
-      "Roadmap"
+      "Issue Tracker"
     ]
   },
   {
-    "objectID": "roadmap.html#weekly-issue-activity",
-    "href": "roadmap.html#weekly-issue-activity",
-    "title": "Vandalizer Wiki",
+    "objectID": "issue-tracker.html#weekly-issue-activity",
+    "href": "issue-tracker.html#weekly-issue-activity",
+    "title": "Issue Tracker",
     "section": "Weekly Issue Activity",
     "text": "Weekly Issue Activity",
     "crumbs": [
-      "Roadmap"
+      "Issue Tracker"
     ]
   },
   {
-    "objectID": "roadmap.html#issues-analysis",
-    "href": "roadmap.html#issues-analysis",
-    "title": "Vandalizer Wiki",
+    "objectID": "issue-tracker.html#issues-analysis",
+    "href": "issue-tracker.html#issues-analysis",
+    "title": "Issue Tracker",
     "section": "Issues Analysis",
     "text": "Issues Analysis",
     "crumbs": [
-      "Roadmap"
-    ]
-  },
-  {
-    "objectID": "disclaimer.html",
-    "href": "disclaimer.html",
-    "title": "Disclaimer",
-    "section": "",
-    "text": "Disclaimer\n\n\n\n\n\n\n\n\nImportant\n\n\n\nVandalizer is in active development and currently utilizes commercial large language models (LLMs) provided by third-party services. Future developments will enable secure document processing on-premises, but for now please do not input sensitive, confidential, or personally identifiable information. This includes proposal narratives, which should only be shared if you are certain you have the right to do so. Proposal narratives may contain patentable ideas and sharing them could jeopardize intellectual property rights. In addition, large document handling is not yet available. Users should limit pdf file inputs to documents with less than 50 pages.",
-    "crumbs": [
-      "Disclaimer"
-    ]
-  },
-  {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "Thank you for your interest in contributing! This guide will help you get started quickly.\n\n\n\n\nEmail: nlayman@uidaho.edu\nSubject: “Vandalizer Documentation Access Request”\nInclude: - Your GitHub username - Your affiliation with Vandalizer or research administration - What you’d like to contribute (e.g., “workflow examples”, “interface screenshots”)\nResponse time: 2-3 business days\n\n\n\n\nGo to the Vandalizer User Manual and Wiki\nClick “Edit this page” on any page\nMake your changes in the GitHub editor\nWrite a clear commit message describing what you changed\nCommit to main branch\n\nYour changes go live automatically in 2-5 minutes!\n\n\n\nDon’t want to edit directly? Email your ideas to nlayman@uidaho.edu and I’ll incorporate them into the manual.\n\n\n\n\nHigh Priority: - Real-world workflow examples with step-by-step instructions - Screenshots of the Vandalizer interface with explanations - Common troubleshooting issues and solutions - Integration guides for connecting with other RA tools\nContent Types: - Video tutorials or links - Downloadable templates and checklists - FAQ entries - Best practices and tips\n\n\n\nKeep it simple: - Write for research administrators who may be new to AI tools - Use clear, action-oriented language - Include practical examples when possible - Break up long sections with headers\nFormat basics: - Use descriptive headings (## Main Section, ### Subsection) - Add alt text to images: ![Description](image.png) - Use tip boxes for important info: markdown   ::: {.callout-tip}   ## Tip   Your helpful tip here   :::\n\n\n\nNew to Quarto? Start here:\n\nQuarto Get Started Guide - Step-by-step introduction to Quarto basics\nQuarto Markdown Basics - How Quarto extends standard markdown with special features like callout boxes and cross-references\n\nQuick tip: You can always look at existing pages in the documentation to see how formatting is done, then copy and modify the syntax for your own content.\n\n\n\nQuick checklist: - [ ] Content is accurate and helpful - [ ] Links work - [ ] Images display properly - [ ] Commit message clearly describes changes\n\n\n\n\nGeneral questions: Email nlayman@uidaho.edu\nTechnical issues: Create a GitHub issue\nQuarto/Markdown help: Quarto Documentation\n\n\n\n\n\n\nFor Advanced Contributors (click to expand)\n\n\n\n\nMain content: .qmd files in root directory\nImages: Store in images/ folder\nNavigation: Edit _quarto.yml to add new pages\n\n\n\n\n\nDaily roadmap updates: Issues from main repository auto-sync at 6 AM UTC\nAuto-deployment: All changes to main branch deploy automatically\nDon’t edit: data/issues.json (auto-generated)\n\n\n\n\nStep 1: Create your new page using this required header template:\n---\ntitle: \"Your Page Title\"\nformat:\n  html:\n    page-layout: full\n    include-after-body: scripts.html\n---\n\n:::: {.header-logos}\n::: {.grid}\n::: {.g-col-2 .d-flex .justify-content-center .align-items-center}\n![](images/uidaho_logo.png){width=100px}\n:::\n::: {.g-col-7 .d-flex .justify-content-center .align-items-center}\n![](images/vandalizer_logo.png){width=500px}\n:::\n::: {.g-col-3 .d-flex .justify-content-center .align-items-center}\n![](images/suu_logo.png){width=200px}\n:::\n:::\n::::\n\n---\n\n[Your content starts here]\nStep 2: Add to navigation by editing _quarto.yml:\nsidebar:\n  contents:\n    - text: \"Your New Page\"\n      href: your-new-page.qmd\n\n\n\n\nTest all links after changes\nUse GitHub preview before committing\nMake incremental changes when possible\nCoordinate with other contributors on large changes\n\n\n\nQuestions? Email nlayman@uidaho.edu"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#quick-start",
-    "href": "CONTRIBUTING.html#quick-start",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "Email: nlayman@uidaho.edu\nSubject: “Vandalizer Documentation Access Request”\nInclude: - Your GitHub username - Your affiliation with Vandalizer or research administration - What you’d like to contribute (e.g., “workflow examples”, “interface screenshots”)\nResponse time: 2-3 business days\n\n\n\n\nGo to the Vandalizer User Manual and Wiki\nClick “Edit this page” on any page\nMake your changes in the GitHub editor\nWrite a clear commit message describing what you changed\nCommit to main branch\n\nYour changes go live automatically in 2-5 minutes!\n\n\n\nDon’t want to edit directly? Email your ideas to nlayman@uidaho.edu and I’ll incorporate them into the manual."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#what-we-need-most",
-    "href": "CONTRIBUTING.html#what-we-need-most",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "High Priority: - Real-world workflow examples with step-by-step instructions - Screenshots of the Vandalizer interface with explanations - Common troubleshooting issues and solutions - Integration guides for connecting with other RA tools\nContent Types: - Video tutorials or links - Downloadable templates and checklists - FAQ entries - Best practices and tips"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#writing-guidelines",
-    "href": "CONTRIBUTING.html#writing-guidelines",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "Keep it simple: - Write for research administrators who may be new to AI tools - Use clear, action-oriented language - Include practical examples when possible - Break up long sections with headers\nFormat basics: - Use descriptive headings (## Main Section, ### Subsection) - Add alt text to images: ![Description](image.png) - Use tip boxes for important info: markdown   ::: {.callout-tip}   ## Tip   Your helpful tip here   :::"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#resources-for-new-contributors",
-    "href": "CONTRIBUTING.html#resources-for-new-contributors",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "New to Quarto? Start here:\n\nQuarto Get Started Guide - Step-by-step introduction to Quarto basics\nQuarto Markdown Basics - How Quarto extends standard markdown with special features like callout boxes and cross-references\n\nQuick tip: You can always look at existing pages in the documentation to see how formatting is done, then copy and modify the syntax for your own content."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#before-you-commit",
-    "href": "CONTRIBUTING.html#before-you-commit",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "Quick checklist: - [ ] Content is accurate and helpful - [ ] Links work - [ ] Images display properly - [ ] Commit message clearly describes changes"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#need-help",
-    "href": "CONTRIBUTING.html#need-help",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "General questions: Email nlayman@uidaho.edu\nTechnical issues: Create a GitHub issue\nQuarto/Markdown help: Quarto Documentation"
-  },
-  {
-    "objectID": "CONTRIBUTING.html#technical-details",
-    "href": "CONTRIBUTING.html#technical-details",
-    "title": "Contributing to Vandalizer Documentation",
-    "section": "",
-    "text": "For Advanced Contributors (click to expand)\n\n\n\n\nMain content: .qmd files in root directory\nImages: Store in images/ folder\nNavigation: Edit _quarto.yml to add new pages\n\n\n\n\n\nDaily roadmap updates: Issues from main repository auto-sync at 6 AM UTC\nAuto-deployment: All changes to main branch deploy automatically\nDon’t edit: data/issues.json (auto-generated)\n\n\n\n\nStep 1: Create your new page using this required header template:\n---\ntitle: \"Your Page Title\"\nformat:\n  html:\n    page-layout: full\n    include-after-body: scripts.html\n---\n\n:::: {.header-logos}\n::: {.grid}\n::: {.g-col-2 .d-flex .justify-content-center .align-items-center}\n![](images/uidaho_logo.png){width=100px}\n:::\n::: {.g-col-7 .d-flex .justify-content-center .align-items-center}\n![](images/vandalizer_logo.png){width=500px}\n:::\n::: {.g-col-3 .d-flex .justify-content-center .align-items-center}\n![](images/suu_logo.png){width=200px}\n:::\n:::\n::::\n\n---\n\n[Your content starts here]\nStep 2: Add to navigation by editing _quarto.yml:\nsidebar:\n  contents:\n    - text: \"Your New Page\"\n      href: your-new-page.qmd\n\n\n\n\nTest all links after changes\nUse GitHub preview before committing\nMake incremental changes when possible\nCoordinate with other contributors on large changes\n\n\n\nQuestions? Email nlayman@uidaho.edu"
-  },
-  {
-    "objectID": "share-workflows.html#how-to-share-a-workflow",
-    "href": "share-workflows.html#how-to-share-a-workflow",
-    "title": "Share Workflows",
-    "section": "How to Share a Workflow",
-    "text": "How to Share a Workflow\nOnce you’ve created or modified a workflow that you’d like to share with others, follow these simple steps:\n\nStep 1: Run the Workflow\nExecute the workflow to ensure it’s working as intended before sharing it.\n\n\nStep 2: Click the “SHARE WORKFLOW” Button\nAfter running the workflow, locate the workflow action buttons at the top of the interface. You’ll see the dark “SHARE WORKFLOW” button next to the yellow “DOWNLOAD” button.\n\nSHARE WORKFLOW DOWNLOAD\n\n\n\nStep 3: Copy the Link\nWhen you click the “SHARE WORKFLOW” button, a notification will appear at the bottom center of the screen displaying:\n\nLink Copied! Share it to others! 🚀\n\nThis notification confirms that the unique workflow link has been copied to your clipboard. The link contains all the workflow configuration and can be shared with anyone in your organization.\nTry it out! Click the “SHARE WORKFLOW” button above to see the notification and test how the workflow link gets copied to your clipboard.\n\n\nStep 4: Share the Link\nPaste the copied link into an email, message, or communication channel and send it to the person you want to share the workflow with. The link can be formatted as a clickable hyperlink in most email and messaging applications.\n\n\nImportant: Open Vandalizer First\n\n⚠️ Important: The recipient must have Vandalizer already open in their browser before clicking the shared workflow link. If they click the link without having Vandalizer open, the link may not work correctly.\n\n\n\nStep 5: Recipient Opens the Workflow\nWhen the recipient clicks the shared link (with Vandalizer already open), the workflow will automatically load into their workspace with all the same configuration and settings you created.",
-    "crumbs": [
-      "Share Workflows"
-    ]
-  },
-  {
-    "objectID": "share-workflows.html#benefits-of-shared-workflows",
-    "href": "share-workflows.html#benefits-of-shared-workflows",
-    "title": "Share Workflows",
-    "section": "Benefits of Shared Workflows",
-    "text": "Benefits of Shared Workflows\n\nConsistency: All users follow the same documented process\nEfficiency: No need to recreate workflows—use proven, tested versions\nCollaboration: Share improvements and refinements across your team\nTraining: New team members can quickly adopt established workflows\nDocumentation: Workflows serve as executable documentation of your processes",
-    "crumbs": [
-      "Share Workflows"
-    ]
-  },
-  {
-    "objectID": "share-workflows.html#share-your-workflow",
-    "href": "share-workflows.html#share-your-workflow",
-    "title": "Share Workflows",
-    "section": "Share Your Workflow",
-    "text": "Share Your Workflow\nWhen you’re ready to start sharing your workflow please share it with us! Email the link to ai4ra@uidaho.edu.",
-    "crumbs": [
-      "Share Workflows"
+      "Issue Tracker"
     ]
   }
 ]
