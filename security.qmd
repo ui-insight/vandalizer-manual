@@ -26,125 +26,25 @@ format:
 # {{< fa lock >}} Security & Data Privacy
 :::
 
-## Cloud vs. Private Mode
+## Choose Your Processing Mode
 
-Vandalizer offers flexible deployment options to match your institution's security and compliance requirements. You can switch between **Cloud** and **Private** modes to control where your data is processed:
+Vandalizer allows you to choose between two processing modes:
 
-:::: {.grid}
-::: {.g-col-6}
-### Cloud Mode
-- Uses Large Language Models (LLMs) running in the cloud
-- Suitable for non-sensitive documents
-- Faster processing with cloud-based AI services
-- **⚠️ Not recommended for PII (Personally Identifiable Information)**
+**Cloud Mode** sends data through third-party cloud services—suitable for non-sensitive, general-purpose documents. Cloud mode leverages scalable cloud resources for faster processing.
 
-:::
-::: {.g-col-6}
-### Private Mode
-- Routes requests to models running on your institution's on-premises infrastructure
-- Keeps sensitive data within your local hardware and network
-- Ideal for working with confidential, protected, or regulated documents
-- **Recommended for all PII and sensitive data processing**
+**Private Mode** keeps data within the University of Idaho's infrastructure at Idaho National Laboratory, staying on local hardware. Use this mode for confidential, sensitive, or regulated documents. Data never leaves our network and cannot be used to train external AI models. 
 
-:::
-::::
+Private mode also runs on servers housed at the Idaho National Laboratory, which is committed to renewable and alternative energy research and development. By choosing Private mode, you're supporting sustainable computing practices and infrastructure invested in clean energy innovation. Learn more at [![](images/inl_logo.png){width=60px}](https://inl.gov)
+
+Look for the {{< fa lock >}} dropdown selector in the Vandalizer interface to switch between modes.
 
 ::: {.text-center}
 ![](images/vandalizer_security.png){width="60%"}
 :::
 
-## Selecting Your Processing Mode
-
-To switch between Cloud and Private modes:
-
-1. Open the Vandalizer application
-2. Look for the security/deployment mode selector button in the interface
-3. Click the {{< fa lock >}} **Cloud** dropdown button to see available options
-4. Choose **Cloud** for general-purpose, non-sensitive document processing
-5. Choose **Private** for any work involving personally identifiable information or sensitive institutional data
-
-::: {style="display: flex; align-items: center; gap: 1rem; margin: 2rem 0; padding: 1rem; background-color: #f8f9fa; border-radius: 4px;"}
-<span style="border: 2px solid #999; padding: 8px 16px; border-radius: 4px; font-weight: bold; display: flex; align-items: center; gap: 8px;">{{< fa lock >}} Cloud <span style="color: #666; font-size: 1.2em;">∨</span></span>
-:::
-
-The mode selector shows which deployment option is currently active. Click to expand and choose between Cloud or Private based on your data sensitivity requirements.
-
 ---
 
-## Understanding AI Security with Vandalizer
+## Upcoming: Automatic PII Detection
 
-### Cloud Mode: Data Sharing & Training
-When you use **Cloud mode**, your data is processed by third-party cloud-based AI services. Important considerations include:
-- Your data may be visible to external organizations
-- Depending on the service terms, your data could potentially be used to train and improve AI models
-- More suitable for non-sensitive, publicly available, or general-purpose information
-
-### Private Mode: Data Isolation & Control
-When you use **Private mode**, your data stays within your institution's infrastructure:
-- {{< fa lock >}} **No external sharing**: Your data never leaves your organization's network
-- {{< fa lock >}} **No training data**: Your documents cannot be used to train external AI models
-- {{< fa lock >}} **Full control**: You maintain complete ownership and control of your data
-- {{< fa lock >}} **Compliance-friendly**: Supports strict data governance and regulatory requirements
-
-By running AI models on your local hardware, Private mode ensures your institutional data remains confidential and cannot be leveraged by external AI providers for model improvement.
-
----
-
-## PII (Personally Identifiable Information) Protection
-
-**Important**: Do not use Cloud mode when processing documents containing PII such as:
-- Names, addresses, and phone numbers
-- Social Security Numbers or other government IDs
-- Financial information (bank accounts, credit card numbers)
-- Medical or health information
-- Student records and academic information
-- Employment and salary information
-
-Always use **Private** mode when your documents contain any of this information.
-
-### Upcoming: Automatic PII Detection
-
-We are currently developing an automatic PII detector that will help protect your data. Once implemented, this feature will:
-- Automatically scan documents for potential PII
-- Enforce the use of **Private** mode when sensitive data is detected
-- Provide warnings and guidance to users
-- Help prevent accidental exposure of confidential information
-
-This additional layer of protection will make it even easier to ensure your sensitive data stays secure.
-
----
-
-## Environmental Impact & Sustainable Computing
-
-### Why Infrastructure Matters
-
-AI and cloud computing consume significant energy. By choosing where your data is processed, you can also support more sustainable computing practices.
-
-### Private Mode: Supporting Renewable Energy
-
-Vandalizer's **Private mode** routes processing to servers housed at **Idaho National Laboratory (INL)**, which is committed to renewable and alternative energy research and development. INL's key sustainability initiatives include:
-
-- **Renewable Energy Leadership**: INL leads the nation in developing integrated clean energy systems combining nuclear, geothermal, wind, and solar technologies
-- **Alternative Energy Innovation**: Active research in hydrogen production, biomass fuels, and energy storage systems
-- **Energy-Efficient Operations**: Commitment to reducing environmental impact through advanced energy management
-- **Sustainable Grid Technologies**: Development of technologies that enhance grid stability and support a clean energy future
-
-By using **Private mode** for your document processing, you're supporting an institution dedicated to advancing renewable energy and sustainable technology innovation.
-
-### Making an Environmentally Conscious Choice
-
-- **Cloud Mode**: Uses third-party cloud infrastructure with varying environmental commitments
-- **Private Mode**: Supports infrastructure invested in renewable energy and sustainability research
-
-When sensitivity permits, choosing Private mode aligns your institution's technology practices with environmental stewardship and clean energy principles.
-
----
-
-## Best Practices
-
-1. **Default to Private Mode**: When in doubt, use Private mode to ensure maximum security
-2. **Review Your Data**: Understand what data is in your documents before processing
-3. **Workspace Organization**: Consider organizing workspaces by sensitivity level to make mode selection clearer
-4. **Compliance Requirements**: Consult with your institution's IT and compliance teams about which mode to use for specific document types
-5. **Stay Informed**: Keep up with security updates and best practices as Vandalizer evolves
+We're developing an automatic PII detector that will scan documents and enforce Private mode when sensitive information is detected, adding an extra layer of protection. Check back here for updates!
 
