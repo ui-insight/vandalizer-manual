@@ -458,8 +458,8 @@ function initializeRoadmap() {
       data.push({
         type: 'scatter', mode: 'lines+markers',
         x: openedDates, y: openedCounts, name: 'Total Issues',
-        marker: { color: '#4ECDC4', size: 8 },
-        line: { color: '#4ECDC4', width: 3 },
+        marker: { color: '#577231', size: 8 },
+        line: { color: '#577231', width: 3 },
         hovertemplate: '%{hovertext}<extra></extra>',
         hovertext: openedHoverText,
         customdata: openedDates.map(date => `opened-${date}`)
@@ -1059,7 +1059,7 @@ function initializeRoadmap() {
       document.getElementById('roadmap-summary').innerHTML = `
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
           <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-            <h3 style="margin: 0; color: #4ECDC4;">${summary.totalIssues}</h3>
+            <h3 style="margin: 0; color: #577231;">${summary.totalIssues}</h3>
             <p style="margin: 5px 0 0 0;">Total Issues</p>
           </div>
           <div style="text-align: center; padding: 15px; background: #f8f9fa; border-radius: 8px;">
