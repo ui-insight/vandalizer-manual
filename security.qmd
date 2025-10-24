@@ -1,0 +1,124 @@
+---
+title: ""
+format:
+  html:
+    page-layout: full
+    include-after-body: scripts.html
+---
+
+:::: {.header-logos}
+::: {.grid}
+::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
+![](images/uidaho_logo.png){width=100px}
+:::
+::: {.g-col-7 .d-flex .justify-content-center .align-items-center}
+![](images/vandalizer_logo.png){width=500px}
+:::
+::: {.g-col-3 .d-flex .justify-content-center .align-items-center}
+![](images/suu_logo.png){width=200px}
+:::
+:::
+::::
+
+---
+
+::: {.text-center}
+# {{< fa lock >}} Security & Data Privacy
+:::
+
+## Cloud vs. Private Mode
+
+Vandalizer offers flexible deployment options to match your institution's security and compliance requirements. You can switch between **Cloud** and **Private** modes to control where your data is processed:
+
+:::: {.grid}
+::: {.g-col-6}
+### Cloud Mode
+- Uses Large Language Models (LLMs) running in the cloud
+- Suitable for non-sensitive documents
+- Faster processing with cloud-based AI services
+- **⚠️ Not recommended for PII (Personally Identifiable Information)**
+
+:::
+::: {.g-col-6}
+### Private Mode
+- Routes requests to models running on your institution's on-premises infrastructure
+- Keeps sensitive data within your local hardware and network
+- Ideal for working with confidential, protected, or regulated documents
+- **Recommended for all PII and sensitive data processing**
+
+:::
+::::
+
+::: {.text-center}
+![](images/vandalizer_security.png){width="60%"}
+:::
+
+## Selecting Your Processing Mode
+
+To switch between Cloud and Private modes:
+
+1. Open the Vandalizer application
+2. Look for the security/deployment mode selector button in the interface
+3. Click the {{< fa lock >}} **Cloud** dropdown button to see available options
+4. Choose **Cloud** for general-purpose, non-sensitive document processing
+5. Choose **Private** for any work involving personally identifiable information or sensitive institutional data
+
+::: {style="display: flex; align-items: center; gap: 1rem; margin: 2rem 0; padding: 1rem; background-color: #f8f9fa; border-radius: 4px;"}
+<span style="border: 2px solid #999; padding: 8px 16px; border-radius: 4px; font-weight: bold; display: flex; align-items: center; gap: 8px;">{{< fa lock >}} Cloud <span style="color: #666; font-size: 1.2em;">∨</span></span>
+:::
+
+The mode selector shows which deployment option is currently active. Click to expand and choose between Cloud or Private based on your data sensitivity requirements.
+
+---
+
+## Understanding AI Security with Vandalizer
+
+### Cloud Mode: Data Sharing & Training
+When you use **Cloud mode**, your data is processed by third-party cloud-based AI services. Important considerations include:
+- Your data may be visible to external organizations
+- Depending on the service terms, your data could potentially be used to train and improve AI models
+- More suitable for non-sensitive, publicly available, or general-purpose information
+
+### Private Mode: Data Isolation & Control
+When you use **Private mode**, your data stays within your institution's infrastructure:
+- {{< fa lock >}} **No external sharing**: Your data never leaves your organization's network
+- {{< fa lock >}} **No training data**: Your documents cannot be used to train external AI models
+- {{< fa lock >}} **Full control**: You maintain complete ownership and control of your data
+- {{< fa lock >}} **Compliance-friendly**: Supports strict data governance and regulatory requirements
+
+By running AI models on your local hardware, Private mode ensures your institutional data remains confidential and cannot be leveraged by external AI providers for model improvement.
+
+---
+
+## PII (Personally Identifiable Information) Protection
+
+**Important**: Do not use Cloud mode when processing documents containing PII such as:
+- Names, addresses, and phone numbers
+- Social Security Numbers or other government IDs
+- Financial information (bank accounts, credit card numbers)
+- Medical or health information
+- Student records and academic information
+- Employment and salary information
+
+Always use **Private** mode when your documents contain any of this information.
+
+### Upcoming: Automatic PII Detection
+
+We are currently developing an automatic PII detector that will help protect your data. Once implemented, this feature will:
+- Automatically scan documents for potential PII
+- Enforce the use of **Private** mode when sensitive data is detected
+- Provide warnings and guidance to users
+- Help prevent accidental exposure of confidential information
+
+This additional layer of protection will make it even easier to ensure your sensitive data stays secure.
+
+---
+
+## Best Practices
+
+1. **Default to Private Mode**: When in doubt, use Private mode to ensure maximum security
+2. **Review Your Data**: Understand what data is in your documents before processing
+3. **Workspace Organization**: Consider organizing workspaces by sensitivity level to make mode selection clearer
+4. **Compliance Requirements**: Consult with your institution's IT and compliance teams about which mode to use for specific document types
+5. **Stay Informed**: Keep up with security updates and best practices as Vandalizer evolves
+

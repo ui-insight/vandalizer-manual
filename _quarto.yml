@@ -19,6 +19,8 @@ website:
         href: disclaimer.qmd
       - text: "Introduction"
         href: introduction.qmd
+      - text: "Security & Privacy"
+        href: security.qmd
       - text: "Interface"
         href: interface.qmd
       - text: "Tasks"
