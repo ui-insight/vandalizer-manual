@@ -1,0 +1,72 @@
+---
+title: ""
+format:
+  html:
+    page-layout: full
+---
+
+::: {.text-center}
+# <i class="fa-solid fa-globe"></i> Global Workflows
+:::
+
+## What are Global Workflows?
+
+Global workflows are pre-built, standardized workflows that are shared across your organization. These workflows are designed by your research administration team and made available to all Vandalizer users, ensuring consistency and efficiency across departments. Rather than each user creating their own workflows, everyone can access and use these vetted, production-ready workflows.
+
+---
+
+## How to Share a Workflow
+
+Once you've created or modified a workflow that you'd like to share with others, follow these simple steps:
+
+### Step 1: Run the Workflow
+Execute the workflow to ensure it's working as intended before sharing it.
+
+### Step 2: Click the "SHARE WORKFLOW" Button
+After running the workflow, locate the workflow action buttons at the top of the interface. You'll see the dark **"SHARE WORKFLOW"** button next to the yellow **"DOWNLOAD"** button.
+
+<div style="margin: 2em 0; display: flex; gap: 1em;">
+  <button style="background-color: #000; color: white; padding: 12px 24px; border: none; border-radius: 4px; font-weight: bold; font-size: 14px; cursor: pointer; font-family: Arial, sans-serif;">SHARE WORKFLOW</button>
+  <button style="background-color: #FFC107; color: #000; padding: 12px 24px; border: none; border-radius: 4px; font-weight: bold; font-size: 14px; cursor: pointer; font-family: Arial, sans-serif;">DOWNLOAD</button>
+</div>
+
+### Step 3: Copy the Link
+When you click the **"SHARE WORKFLOW"** button, a popup will appear displaying:
+
+> **Link Copied! Share it to others! 🚀**
+
+This popup confirms that the unique workflow link has been copied to your clipboard. The link contains all the workflow configuration and can be shared with anyone in your organization.
+
+### Step 4: Share the Link
+Paste the copied link into an email, message, or communication channel and send it to the person you want to share the workflow with. The link can be formatted as a clickable hyperlink in most email and messaging applications.
+
+### Important: Open Vandalizer First
+<div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1em; margin: 1.5em 0; border-radius: 4px;">
+  <strong>⚠️ Important:</strong> The recipient must have Vandalizer already open in their browser before clicking the shared workflow link. If they click the link without having Vandalizer open, the link may not work correctly.
+</div>
+
+### Step 5: Recipient Opens the Workflow
+When the recipient clicks the shared link (with Vandalizer already open), the workflow will automatically load into their workspace with all the same configuration and settings you created.
+
+---
+
+## Benefits of Shared Workflows
+
+- **Consistency**: All users follow the same documented process
+- **Efficiency**: No need to recreate workflows—use proven, tested versions
+- **Collaboration**: Share improvements and refinements across your team
+- **Training**: New team members can quickly adopt established workflows
+- **Documentation**: Workflows serve as executable documentation of your processes
+
+---
+
+## Tips for Creating Shareable Workflows
+
+When you're planning to share a workflow with others:
+
+1. **Test thoroughly** - Run through the workflow multiple times with different inputs
+2. **Document your steps** - Add clear descriptions to each step explaining what it does
+3. **Handle edge cases** - Consider different document formats or data variations
+4. **Use clear naming** - Give your workflow a descriptive name that explains its purpose
+5. **Provide context** - When sharing, include a brief note explaining what the workflow does and when to use it
+

@@ -25,6 +25,8 @@ website:
         href: tasks.qmd
       - text: "Workflows"
         href: workflows.qmd
+      - text: "Global Workflows"
+        href: global-workflows.qmd
       - text: "Examples"
         href: example.qmd
       - text: "Roadmap"

@@ -136,6 +136,46 @@
     ]
   },
   {
+    "objectID": "global-workflows.html#what-are-global-workflows",
+    "href": "global-workflows.html#what-are-global-workflows",
+    "title": " Global Workflows",
+    "section": "What are Global Workflows?",
+    "text": "What are Global Workflows?\nGlobal workflows are pre-built, standardized workflows that are shared across your organization. These workflows are designed by your research administration team and made available to all Vandalizer users, ensuring consistency and efficiency across departments. Rather than each user creating their own workflows, everyone can access and use these vetted, production-ready workflows.",
+    "crumbs": [
+      "Global Workflows"
+    ]
+  },
+  {
+    "objectID": "global-workflows.html#how-to-share-a-workflow",
+    "href": "global-workflows.html#how-to-share-a-workflow",
+    "title": " Global Workflows",
+    "section": "How to Share a Workflow",
+    "text": "How to Share a Workflow\nOnce you’ve created or modified a workflow that you’d like to share with others, follow these simple steps:\n\nStep 1: Run the Workflow\nExecute the workflow to ensure it’s working as intended before sharing it.\n\n\nStep 2: Click the “SHARE WORKFLOW” Button\nAfter running the workflow, locate the workflow action buttons at the top of the interface. You’ll see the dark “SHARE WORKFLOW” button next to the yellow “DOWNLOAD” button.\n\nSHARE WORKFLOW DOWNLOAD\n\n\n\nStep 3: Copy the Link\nWhen you click the “SHARE WORKFLOW” button, a popup will appear displaying:\n\nLink Copied! Share it to others! 🚀\n\nThis popup confirms that the unique workflow link has been copied to your clipboard. The link contains all the workflow configuration and can be shared with anyone in your organization.\n\n\nStep 4: Share the Link\nPaste the copied link into an email, message, or communication channel and send it to the person you want to share the workflow with. The link can be formatted as a clickable hyperlink in most email and messaging applications.\n\n\nImportant: Open Vandalizer First\n\n⚠️ Important: The recipient must have Vandalizer already open in their browser before clicking the shared workflow link. If they click the link without having Vandalizer open, the link may not work correctly.\n\n\n\nStep 5: Recipient Opens the Workflow\nWhen the recipient clicks the shared link (with Vandalizer already open), the workflow will automatically load into their workspace with all the same configuration and settings you created.",
+    "crumbs": [
+      "Global Workflows"
+    ]
+  },
+  {
+    "objectID": "global-workflows.html#benefits-of-shared-workflows",
+    "href": "global-workflows.html#benefits-of-shared-workflows",
+    "title": " Global Workflows",
+    "section": "Benefits of Shared Workflows",
+    "text": "Benefits of Shared Workflows\n\nConsistency: All users follow the same documented process\nEfficiency: No need to recreate workflows—use proven, tested versions\nCollaboration: Share improvements and refinements across your team\nTraining: New team members can quickly adopt established workflows\nDocumentation: Workflows serve as executable documentation of your processes",
+    "crumbs": [
+      "Global Workflows"
+    ]
+  },
+  {
+    "objectID": "global-workflows.html#tips-for-creating-shareable-workflows",
+    "href": "global-workflows.html#tips-for-creating-shareable-workflows",
+    "title": " Global Workflows",
+    "section": "Tips for Creating Shareable Workflows",
+    "text": "Tips for Creating Shareable Workflows\nWhen you’re planning to share a workflow with others:\n\nTest thoroughly - Run through the workflow multiple times with different inputs\nDocument your steps - Add clear descriptions to each step explaining what it does\nHandle edge cases - Consider different document formats or data variations\nUse clear naming - Give your workflow a descriptive name that explains its purpose\nProvide context - When sharing, include a brief note explaining what the workflow does and when to use it",
+    "crumbs": [
+      "Global Workflows"
+    ]
+  },
+  {
     "objectID": "workflows.html",
     "href": "workflows.html",
     "title": "Workflows",
@@ -190,7 +230,7 @@
     "href": "introduction.html#accessing-vandalizer",
     "title": "Introduction",
     "section": "Accessing Vandalizer",
-    "text": "Accessing Vandalizer\nVandalizer can be accessed through university specific access points. For the University of Southern Utah, this access point is: https://nsfai.suu.edu/. SUU employees should contact Nathan Wiggins (nathanwiggins@suu.edu) for access.",
+    "text": "Accessing Vandalizer\nVandalizer can be accessed through university specific access points. For the University of Idaho, this access point is: https://vandalizer.nkn.uidaho.edu/. UofI employees should contact Nathan Layman nlayman@uidaho.edu. For the University of Southern Utah, this access point is: https://nsfai.suu.edu/. SUU employees should contact Nathan Wiggins (nathanwiggins@suu.edu) for access. Basically if you’re stuck, find a Nathan.",
     "crumbs": [
       "Introduction"
     ]
