@@ -1,0 +1,63 @@
+---
+title: ""
+format:
+  html:
+    page-layout: full
+---
+
+::: {.text-center}
+# <i class="fa-solid fa-globe"></i> Global Tasks
+:::
+
+## What are Global Tasks?
+
+Global tasks are pre-built, standardized tasks that are shared across your organization. These tasks are designed by your research administration team and made available to all Vandalizer users, ensuring consistency and efficiency across departments. Rather than each user creating their own tasks, everyone can access and use these vetted, production-ready tasks for common research administration workflows.
+
+---
+
+## Available Global Tasks
+
+### Extract Task: NIH Awards
+
+The **NIH Awards** task is a pre-configured extraction task designed to automatically extract key information from NIH award documents. This global task can process NIH award documents and extract relevant data fields, saving time and ensuring consistent data extraction across your organization.
+
+**Task Details:**
+- **Type**: Extract
+- **Purpose**: Extract key information from NIH award documents
+- **Availability**: 6 items ready to extract
+
+<div style="margin: 2em 0; padding: 1.5em; background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid #577231;">
+  <div style="display: flex; align-items: center; gap: 1em; font-size: 1.1em;">
+    <span style="font-size: 1.5em;">▼</span>
+    <i class="fa-solid fa-globe" style="font-size: 1.2em;"></i>
+    <span style="font-weight: bold;">NIH Awards</span>
+    <span style="margin-left: auto; color: #666;">6 items</span>
+  </div>
+</div>
+
+---
+
+## How to Use a Global Task
+
+1. **Access the Task**: Find the global task in your Vandalizer workspace
+2. **Review Configuration**: The task is already configured with all necessary settings and parameters
+3. **Upload Documents**: Add your documents that match the task's intended input (e.g., NIH award documents for the NIH Awards task)
+4. **Run the Task**: Execute the task on your documents
+5. **Extract Results**: Review and download the extracted data
+
+---
+
+## Benefits of Global Tasks
+
+- **Consistency**: All users follow the same data extraction and processing logic
+- **Efficiency**: No need to recreate tasks—use proven, tested versions
+- **Standardization**: Ensures uniform handling of documents across your research administration office
+- **Training**: New team members can quickly adopt established extraction tasks
+- **Documentation**: Tasks serve as executable documentation of your extraction workflows
+
+---
+
+## More Tasks Coming
+
+Global tasks are an expanding feature. Additional pre-built tasks for common research administration workflows are continuously being developed and added to the platform. Check back regularly for new global tasks tailored to your organization's needs.
+
