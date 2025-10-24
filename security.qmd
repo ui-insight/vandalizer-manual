@@ -114,6 +114,32 @@ This additional layer of protection will make it even easier to ensure your sens
 
 ---
 
+## Environmental Impact & Sustainable Computing
+
+### Why Infrastructure Matters
+
+AI and cloud computing consume significant energy. By choosing where your data is processed, you can also support more sustainable computing practices.
+
+### Private Mode: Supporting Renewable Energy
+
+Vandalizer's **Private mode** routes processing to servers housed at **Idaho National Laboratory (INL)**, which is committed to renewable and alternative energy research and development. INL's key sustainability initiatives include:
+
+- **Renewable Energy Leadership**: INL leads the nation in developing integrated clean energy systems combining nuclear, geothermal, wind, and solar technologies
+- **Alternative Energy Innovation**: Active research in hydrogen production, biomass fuels, and energy storage systems
+- **Energy-Efficient Operations**: Commitment to reducing environmental impact through advanced energy management
+- **Sustainable Grid Technologies**: Development of technologies that enhance grid stability and support a clean energy future
+
+By using **Private mode** for your document processing, you're supporting an institution dedicated to advancing renewable energy and sustainable technology innovation.
+
+### Making an Environmentally Conscious Choice
+
+- **Cloud Mode**: Uses third-party cloud infrastructure with varying environmental commitments
+- **Private Mode**: Supports infrastructure invested in renewable energy and sustainability research
+
+When sensitivity permits, choosing Private mode aligns your institution's technology practices with environmental stewardship and clean energy principles.
+
+---
+
 ## Best Practices
 
 1. **Default to Private Mode**: When in doubt, use Private mode to ensure maximum security
