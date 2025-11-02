@@ -42,9 +42,9 @@ Please click the following link to access the workshop instance. Each instance w
 
 The following test files are provided to allow for low-risk experimentation with the Vandalizer system:
 
-1. [Sample NOFO](https://github.com/nate-layman/vandalizer-manual/raw/main/test-files/Sample_NOFO.pdf){download="Sample_NOFO.pdf"}
-2. [Sample Grant](https://github.com/nate-layman/vandalizer-manual/raw/main/test-files/Sample_Grant.pdf){download="Sample_Grant.pdf"}
-3. [Sample Budget](https://github.com/nate-layman/vandalizer-manual/raw/main/test-files/Sample_Budget.xlsx){download="Sample_Budget.xlsx"}
+1. [Sample NOFO](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_NOFO.pdf){download="Sample_NOFO.pdf"}
+2. [Sample Grant](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Grant.pdf){download="Sample_Grant.pdf"}
+3. [Sample Budget](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Budget.xlsx){download="Sample_Budget.xlsx"}
 4. [Sample RFA]()
 5. [Sample FOA]()
 6. [Sample Federal Award Notice]()
