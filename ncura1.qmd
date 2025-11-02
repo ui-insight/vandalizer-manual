@@ -49,13 +49,13 @@ The following test files are provided to allow for low-risk experimentation with
    - A completed grant proposal demonstrating standard sections and formatting
 
 3. **[Sample Budget](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Budget.xlsx){download="Sample_Budget.xlsx"}**
-   - A budget spreadsheet with detailed line items and budget justification
+   - A budget spreadsheet with line items and budget justification
 
 4. **[Sample RFA](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Pilot%20Grant%20RFA.pdf){download="Pilot Grant RFA.pdf"}**
    - A Request for Application document outlining submission requirements and evaluation criteria
 
 5. **[Award Announcement](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/award_announcement.pdf){download="award_announcement.pdf"}**
-   - A federal award notice detailing funding amounts, terms, and compliance requirements
+   - An award notice detailing funding amounts, terms, and compliance requirements
 
 ---
 
