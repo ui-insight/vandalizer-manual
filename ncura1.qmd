@@ -64,7 +64,7 @@ The workflow sharing links below will only work if you have the Vandalizer insta
 
 ### Learn More About Vandalizer
 
-Interested in implementing Vandalizer at your institution? Visit **[AI4RA at University of Idaho](https://ai4ra.uidaho.edu/){target="_blank"}** to sign up for updates, learn more about the project, and explore implementation opportunities.
+Interested in implementing Vandalizer at your institution? Visit **[AI4RA at University of Idaho](https://ai4ra.uidaho.edu/){target="_blank"}** to sign up for updates, learn more about the project, and explore what the University of Idaho and Southern Utah University are up to.
 
 ---
 
