@@ -196,6 +196,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#important-open-vandalizer-first" id="toc-important-open-vandalizer-first" class="nav-link" data-scroll-target="#important-open-vandalizer-first">Important: Open Vandalizer First</a></li>
   <li><a href="#step-5-recipient-opens-the-workflow" id="toc-step-5-recipient-opens-the-workflow" class="nav-link" data-scroll-target="#step-5-recipient-opens-the-workflow">Step 5: Recipient Opens the Workflow</a></li>
   </ul></li>
+  <li><a href="#important-notes-about-shared-workflows" id="toc-important-notes-about-shared-workflows" class="nav-link" data-scroll-target="#important-notes-about-shared-workflows">Important Notes About Shared Workflows</a>
+  <ul class="collapse">
+  <li><a href="#sharing-workflow-sharing-output" id="toc-sharing-workflow-sharing-output" class="nav-link" data-scroll-target="#sharing-workflow-sharing-output">Sharing Workflow ≠ Sharing Output</a></li>
+  <li><a href="#ai-output-variance" id="toc-ai-output-variance" class="nav-link" data-scroll-target="#ai-output-variance">AI Output Variance</a></li>
+  </ul></li>
   <li><a href="#benefits-of-shared-workflows" id="toc-benefits-of-shared-workflows" class="nav-link" data-scroll-target="#benefits-of-shared-workflows">Benefits of Shared Workflows</a></li>
   <li><a href="#share-your-workflow" id="toc-share-your-workflow" class="nav-link" data-scroll-target="#share-your-workflow">Share Your Workflow</a></li>
   </ul>
@@ -245,11 +250,26 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="important-open-vandalizer-first">Important: Open Vandalizer First</h3>
 <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1em; margin: 1.5em 0; border-radius: 4px;">
 <p><strong>⚠️ Important:</strong> The recipient must have Vandalizer already open in their browser before clicking the shared workflow link. If they click the link without having Vandalizer open, the link may not work correctly.</p>
+<p>Additionally, shared workflow links may interact with institutional firewalls and security infrastructure. If you experience issues accessing or using shared workflow links, consult with your institution’s IT department for any necessary firewall or security policy adjustments.</p>
 </div>
 </section>
 <section id="step-5-recipient-opens-the-workflow" class="level3">
 <h3 class="anchored" data-anchor-id="step-5-recipient-opens-the-workflow">Step 5: Recipient Opens the Workflow</h3>
 <p>When the recipient clicks the shared link (with Vandalizer already open), the workflow will automatically load into their workspace with all the same configuration and settings you created.</p>
+<hr>
+</section>
+</section>
+<section id="important-notes-about-shared-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="important-notes-about-shared-workflows">Important Notes About Shared Workflows</h2>
+<section id="sharing-workflow-sharing-output" class="level3">
+<h3 class="anchored" data-anchor-id="sharing-workflow-sharing-output">Sharing Workflow ≠ Sharing Output</h3>
+<p>When you share a workflow link, you are sharing only the <strong>workflow configuration and process</strong>, not the <strong>output or results</strong>. The recipient receives an empty workflow with the same structure and settings you created, and they must process their own documents to generate their own results. Previous outputs from your processing are not included in the shared workflow.</p>
+</section>
+<section id="ai-output-variance" class="level3">
+<h3 class="anchored" data-anchor-id="ai-output-variance">AI Output Variance</h3>
+<p>Since Vandalizer uses generative AI, it’s important to understand that even when two people use the exact same workflow on the same document, the output may vary slightly. This is a natural characteristic of how generative AI models work—they produce different responses based on probabilistic processes, even with identical inputs and settings.</p>
+<p><strong>To mitigate output variance and ensure consistency:</strong> - <strong>Use re-usable workflows</strong>: By standardizing workflows across your team, you establish a consistent process that reduces variability - <strong>Document your workflows</strong>: Shared workflows serve as executable documentation of your exact methodology - <strong>Test across documents</strong>: Run workflows on multiple documents and review results to understand the range of variation - <strong>Iterate and refine</strong>: Use multiple runs to identify the most reliable workflow configurations for your use cases</p>
+<p>Standardized, shared workflows help your team work more consistently despite the inherent variability of generative AI.</p>
 <hr>
 </section>
 </section>

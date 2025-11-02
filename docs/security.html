@@ -224,8 +224,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="choose-your-processing-mode" class="level2">
 <h2 class="anchored" data-anchor-id="choose-your-processing-mode">Choose Your Processing Mode</h2>
 <p>Vandalizer allows you to choose between two processing modes:</p>
-<p><strong>Cloud Mode</strong> sends data through third-party cloud services—suitable for non-sensitive, general-purpose documents. Cloud mode leverages scalable cloud resources for faster processing.</p>
-<p><strong>Private Mode</strong> keeps data within the University of Idaho’s infrastructure at Idaho National Laboratory, staying on local hardware. Use this mode for confidential, sensitive, or regulated documents. Data never leaves our network and cannot be used to train external AI models.</p>
+<p><strong>Cloud Mode</strong> sends data through third-party cloud services such as OpenAI and Anthropic—suitable for non-sensitive, general-purpose documents. Cloud mode leverages these scalable cloud resources for faster processing. Your documents are not sold or used to train commercial AI models; they are used only for your specific processing request.</p>
+<p><strong>Private Mode</strong> keeps data within the University of Idaho’s infrastructure at Idaho National Laboratory, staying on local hardware. Use this mode for confidential, sensitive, or regulated documents such as: - Personally identifiable information (PII) like social security numbers, addresses, or contact information - Proprietary research data or institutional intellectual property - Health information, medical records, or clinical data - Financial records or budget information - Personnel files or performance evaluations - Documents containing export control information</p>
+<p>Data in Private Mode never leaves our network and cannot be used to train external AI models.</p>
 <p>Private mode also runs on servers housed at the Idaho National Laboratory, which is committed to renewable and alternative energy research and development. By choosing Private mode, you’re supporting sustainable computing practices and infrastructure invested in clean energy innovation. Learn more at <a href="https://inl.gov"><img src="images/inl_logo.png" class="img-fluid" width="60"></a></p>
 <p>Look for the <i class="fa-solid fa-lock" aria-label="lock"></i> dropdown selector in the Vandalizer interface to switch between modes.</p>
 <div class="text-center">
@@ -235,7 +236,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="upcoming-automatic-pii-detection" class="level2">
 <h2 class="anchored" data-anchor-id="upcoming-automatic-pii-detection">Upcoming: Automatic PII Detection</h2>
-<p>We’re developing an automatic PII detector that will scan documents and enforce Private mode when sensitive information is detected, adding an extra layer of protection. Check back here for updates!</p>
+<p>We’re developing an automatic <strong>PII (Personally Identifiable Information)</strong> detector that will scan documents and enforce Private mode when sensitive information is detected, adding an extra layer of protection.</p>
+<p>PII includes information that can identify an individual, such as: - Social security numbers - Names and addresses - Phone numbers and email addresses - Dates of birth - Financial account numbers - Medical information - Government ID numbers</p>
+<p>Check back here for updates on this important security feature!</p>
 
 
 </section>

@@ -39,10 +39,32 @@ Paste the copied link into an email, message, or communication channel and send 
 ### Important: Open Vandalizer First
 <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1em; margin: 1.5em 0; border-radius: 4px;">
   <strong>⚠️ Important:</strong> The recipient must have Vandalizer already open in their browser before clicking the shared workflow link. If they click the link without having Vandalizer open, the link may not work correctly.
+
+Additionally, shared workflow links may interact with institutional firewalls and security infrastructure. If you experience issues accessing or using shared workflow links, consult with your institution's IT department for any necessary firewall or security policy adjustments.
 </div>
 
 ### Step 5: Recipient Opens the Workflow
 When the recipient clicks the shared link (with Vandalizer already open), the workflow will automatically load into their workspace with all the same configuration and settings you created.
+
+---
+
+## Important Notes About Shared Workflows
+
+### Sharing Workflow ≠ Sharing Output
+
+When you share a workflow link, you are sharing only the **workflow configuration and process**, not the **output or results**. The recipient receives an empty workflow with the same structure and settings you created, and they must process their own documents to generate their own results. Previous outputs from your processing are not included in the shared workflow.
+
+### AI Output Variance
+
+Since Vandalizer uses generative AI, it's important to understand that even when two people use the exact same workflow on the same document, the output may vary slightly. This is a natural characteristic of how generative AI models work—they produce different responses based on probabilistic processes, even with identical inputs and settings.
+
+**To mitigate output variance and ensure consistency:**
+- **Use re-usable workflows**: By standardizing workflows across your team, you establish a consistent process that reduces variability
+- **Document your workflows**: Shared workflows serve as executable documentation of your exact methodology
+- **Test across documents**: Run workflows on multiple documents and review results to understand the range of variation
+- **Iterate and refine**: Use multiple runs to identify the most reliable workflow configurations for your use cases
+
+Standardized, shared workflows help your team work more consistently despite the inherent variability of generative AI.
 
 ---
 

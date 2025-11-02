@@ -39,10 +39,12 @@ The **NIH Awards** task is an example of a global task—a pre-configured extrac
 ## How to Use a Global Task
 
 1. **Access the Task**: Find the global task in your Vandalizer workspace
-2. **Review Configuration**: The task is already configured with all necessary settings and parameters
+2. **Review Configuration**: The task is already configured with all necessary settings and parameters. If needed, you can edit and customize the task configuration to better fit your specific use case before running it.
 3. **Upload Documents**: Add your documents that match the task's intended input (e.g., NIH award documents for the NIH Awards task)
 4. **Run the Task**: Execute the task on your documents
 5. **Extract Results**: Review and download the extracted data
+
+Global tasks are designed to be both flexible and standardized—while they provide a proven baseline configuration, you can modify them as needed for your unique requirements.
 
 ---
 

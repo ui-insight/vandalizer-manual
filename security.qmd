@@ -30,9 +30,17 @@ format:
 
 Vandalizer allows you to choose between two processing modes:
 
-**Cloud Mode** sends data through third-party cloud services—suitable for non-sensitive, general-purpose documents. Cloud mode leverages scalable cloud resources for faster processing.
+**Cloud Mode** sends data through third-party cloud services such as OpenAI and Anthropic—suitable for non-sensitive, general-purpose documents. Cloud mode leverages these scalable cloud resources for faster processing. Your documents are not sold or used to train commercial AI models; they are used only for your specific processing request.
 
-**Private Mode** keeps data within the University of Idaho's infrastructure at Idaho National Laboratory, staying on local hardware. Use this mode for confidential, sensitive, or regulated documents. Data never leaves our network and cannot be used to train external AI models. 
+**Private Mode** keeps data within the University of Idaho's infrastructure at Idaho National Laboratory, staying on local hardware. Use this mode for confidential, sensitive, or regulated documents such as:
+- Personally identifiable information (PII) like social security numbers, addresses, or contact information
+- Proprietary research data or institutional intellectual property
+- Health information, medical records, or clinical data
+- Financial records or budget information
+- Personnel files or performance evaluations
+- Documents containing export control information
+
+Data in Private Mode never leaves our network and cannot be used to train external AI models. 
 
 Private mode also runs on servers housed at the Idaho National Laboratory, which is committed to renewable and alternative energy research and development. By choosing Private mode, you're supporting sustainable computing practices and infrastructure invested in clean energy innovation. Learn more at [![](images/inl_logo.png){width=60px}](https://inl.gov)
 
@@ -46,5 +54,16 @@ Look for the {{< fa lock >}} dropdown selector in the Vandalizer interface to sw
 
 ## Upcoming: Automatic PII Detection
 
-We're developing an automatic PII detector that will scan documents and enforce Private mode when sensitive information is detected, adding an extra layer of protection. Check back here for updates!
+We're developing an automatic **PII (Personally Identifiable Information)** detector that will scan documents and enforce Private mode when sensitive information is detected, adding an extra layer of protection.
+
+PII includes information that can identify an individual, such as:
+- Social security numbers
+- Names and addresses
+- Phone numbers and email addresses
+- Dates of birth
+- Financial account numbers
+- Medical information
+- Government ID numbers
+
+Check back here for updates on this important security feature!
 
