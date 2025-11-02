@@ -203,6 +203,23 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<script>
+// Simple password protection for NCURA workshop page
+(function() {
+  const correctPassword = "NCURA2024"; // Change this to your desired password
+
+  if (sessionStorage.getItem('ncura_authenticated') !== 'true') {
+    const password = prompt('This page requires a password. Please enter it to continue:');
+
+    if (password === correctPassword) {
+      sessionStorage.setItem('ncura_authenticated', 'true');
+    } else {
+      document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;"><div style="text-align: center;"><h1>Access Denied</h1><p>Incorrect password. This page is restricted to workshop participants only.</p></div></div>';
+      document.body.style.margin = '0';
+    }
+  }
+})();
+</script>
 <div class="header-logos">
 <div class="grid">
 <div class="g-col-2 d-flex justify-content-center align-items-center">
