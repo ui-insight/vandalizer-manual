@@ -2,8 +2,9 @@ project:
   type: website
   output-dir: docs
   title: "Vandalizer Wiki"
-  post-render: 
+  post-render:
   - cp data/issues.json docs/issues.json
+  - cp -r test-files docs/test-files
 
 website:
   title: "Vandalizer Wiki"
@@ -35,6 +36,8 @@ website:
         href: example.qmd
       - text: "Issue Tracker"
         href: issue-tracker.qmd
+      - text: "NCURA Workshop"
+        href: ncura1.qmd
 
 format:
   html:
