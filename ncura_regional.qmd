@@ -1,0 +1,22 @@
+# NCURA Regional Conference 
+
+## NCURA1
+
+Please click the following link to access the instance. Each instance will be available for the next 4 days for you to experiment. To begin, create an account and sign in. Remember that these instances run on University of Idaho infrasctructure and access cloud services. Please do not upload sensitive information. The following three test files are provided to allow for low risk experimentation.
+
+### Test Files:
+1. Sample_NOFO.pdf
+2. Sample_Grant.pdf
+3. Sample_Budget.xlsx
+
+In addition we have developed a few test workflows that, once signed in, can be added to your workspace by clicking the following links
+
+### Sample Workflows:
+1. [RFA Checklist Maker](): 
+2. [Award Notice/Agreement Compliance Analysis](): 
+3. [FOA Checklist Maker](): 
+4. [Federal Financial Report (FFR) Requirements](): 
+5. [Subaward Summary Generator](): 
+6. [Prior Approval Requirements Tracking Summary](): 
+
+**Please review the Vandalizer manual for directions on how to use the application**
