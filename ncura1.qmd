@@ -42,13 +42,20 @@ Please click the following link to access the workshop instance. Each instance w
 
 The following test files are provided to allow for low-risk experimentation with the Vandalizer system:
 
-1. [Sample NOFO](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_NOFO.pdf){download="Sample_NOFO.pdf"}
-2. [Sample Grant](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Grant.pdf){download="Sample_Grant.pdf"}
-3. [Sample Budget](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Budget.xlsx){download="Sample_Budget.xlsx"}
-4. [Sample RFA]()
-5. [Sample FOA]()
-6. [Sample Federal Award Notice]()
-7. [Award Notices/Agreements]()
+1. **[Sample NOFO](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_NOFO.pdf){download="Sample_NOFO.pdf"}**
+   - A Notice of Funding Opportunity document showing typical grant announcement requirements and guidelines
+
+2. **[Sample Grant](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Grant.pdf){download="Sample_Grant.pdf"}**
+   - A completed grant proposal demonstrating standard sections and formatting
+
+3. **[Sample Budget](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Budget.xlsx){download="Sample_Budget.xlsx"}**
+   - A budget spreadsheet with detailed line items and budget justification
+
+4. **[Sample RFA](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Pilot%20Grant%20RFA.pdf){download="Pilot Grant RFA.pdf"}**
+   - A Request for Application document outlining submission requirements and evaluation criteria
+
+5. **[Award Announcement](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/award_announcement.pdf){download="award_announcement.pdf"}**
+   - A federal award notice detailing funding amounts, terms, and compliance requirements
 
 ---
 
