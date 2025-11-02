@@ -48,11 +48,23 @@ format:
 
 Welcome to the NCURA Regional Conference Workshop! This page contains resources and information for attendees participating in the Vandalizer workshop.
 
-Please click the following link to access the workshop instance. Each instance will be available for the next 4 days for you to experiment. To begin, create an account and sign in.
+### Access the Workshop Instance
+
+**[Click here to access the Vandalizer workshop instance →](https://ncura1.insight.uidaho.edu/){target="_blank"}**
+
+::: {.callout-important}
+**IMPORTANT - Keep this link open in your browser during the workshop!**
+
+The workflow sharing links below will only work if you have the Vandalizer instance open in another tab or window. Additionally, these workflows are configured specifically for this instance and will only function during the conference period (available for the next 4 days).
+:::
 
 ::: {.callout-warning}
-**Important**: These instances run on University of Idaho infrastructure and access cloud services. **Please do not upload sensitive information.**
+**Security Note**: These instances run on University of Idaho infrastructure and access cloud services. **Please do not upload sensitive information.**
 :::
+
+### Learn More About Vandalizer
+
+Interested in implementing Vandalizer at your institution? Visit **[AI4RA at University of Idaho](https://ai4ra.uidaho.edu/){target="_blank"}** to sign up for updates, learn more about the project, and explore implementation opportunities.
 
 ---
 
