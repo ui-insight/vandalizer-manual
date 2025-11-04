@@ -36,7 +36,7 @@ website:
         href: example.qmd
       - text: "Issue Tracker"
         href: issue-tracker.qmd
-      - text: "NCURA Workshop"
+      - text: "NCURA Conference"
         href: ncura1.qmd
 
 format:
