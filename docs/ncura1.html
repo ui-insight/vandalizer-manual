@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ncura1 – Vandalizer Wiki</title>
+<title>NCURA Regional Conference Workshop – Vandalizer Wiki</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5bf7ca59d8cc7f7a8155307016a58e21.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-c5685f074de57baac406b8b5e89b35d2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -188,12 +217,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#ncura-regional-conference-workshop" id="toc-ncura-regional-conference-workshop" class="nav-link active" data-scroll-target="#ncura-regional-conference-workshop">NCURA Regional Conference Workshop</a></li>
   <li><a href="#workshop-overview" id="toc-workshop-overview" class="nav-link" data-scroll-target="#workshop-overview">Workshop Overview</a>
   <ul class="collapse">
-  <li><a href="#access-the-workshop-instance" id="toc-access-the-workshop-instance" class="nav-link" data-scroll-target="#access-the-workshop-instance">Access the Workshop Instance</a></li>
+  <li><a href="#access-the-workshop-instance" id="toc-access-the-workshop-instance" class="nav-link" data-scroll-target="#access-the-workshop-instance"><strong>Access the Workshop Instance</strong></a></li>
   <li><a href="#learn-more-about-vandalizer" id="toc-learn-more-about-vandalizer" class="nav-link" data-scroll-target="#learn-more-about-vandalizer">Learn More About Vandalizer</a></li>
   </ul></li>
-  <li><a href="#test-files" id="toc-test-files" class="nav-link" data-scroll-target="#test-files">Test Files</a></li>
-  <li><a href="#sample-workflows" id="toc-sample-workflows" class="nav-link" data-scroll-target="#sample-workflows">Sample Workflows</a></li>
-  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
+  <li><a href="#test-files-public" id="toc-test-files-public" class="nav-link" data-scroll-target="#test-files-public">Test Files (Public)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ui-insight/vandalizer-manual/edit/main/ncura1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
 </nav>
@@ -202,27 +229,50 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-right" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">NCURA Regional Conference Workshop</h1>
+</div>
 
 
+
+<div class="quarto-title-meta column-page-right">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <script>
-// Simple password protection for NCURA workshop page
-(function() {
-  const correctPassword = "CostaMesa2025"; // Change this to your desired password
+// Function to handle the password prompt and redirect
+function accessWorkshopMaterials() {
+  const correctPassword = "CostaMesa2025"; 
+  const targetPage = "workshop-materials.html";
 
-  if (sessionStorage.getItem('ncura_authenticated') !== 'true') {
-    const password = prompt('This page requires a password. Please enter it to continue:');
-
-    if (password === correctPassword) {
-      sessionStorage.setItem('ncura_authenticated', 'true');
-    } else {
-      document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;"><div style="text-align: center;"><h1>Access Denied</h1><p>Incorrect password. This page is restricted to workshop participants only.</p></div></div>';
-      document.body.style.margin = '0';
-    }
+  // Check if content is already unlocked for the session
+  if (sessionStorage.getItem('ncura_materials_authenticated') === 'true') {
+    window.location.href = targetPage;
+    return;
   }
-})();
+  
+  const password = prompt('This section requires a password. Please enter it to continue:');
+
+  if (password === correctPassword) {
+    // Set a session flag so the user is not prompted again during this session
+    sessionStorage.setItem('ncura_materials_authenticated', 'true');
+    // Redirect to the protected page
+    window.location.href = targetPage;
+  } else if (password !== null) { // Check if user pressed cancel (password is null)
+    alert('Access Denied. Incorrect password. Please try again or ask a workshop assistant.');
+  }
+}
 </script>
 <div class="header-logos">
 <div class="grid">
@@ -245,8 +295,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="workshop-overview">Workshop Overview</h2>
 <p>Welcome to the NCURA Regional Conference Workshop! This page contains resources and information for attendees participating in the Vandalizer workshop.</p>
 <section id="access-the-workshop-instance" class="level3">
-<h3 class="anchored" data-anchor-id="access-the-workshop-instance">Access the Workshop Instance</h3>
-<p><strong><a href="https://ncura1.insight.uidaho.edu/" target="_blank">Click here to access the Vandalizer workshop instance →</a></strong></p>
+<h3 class="anchored" data-anchor-id="access-the-workshop-instance"><strong>Access the Workshop Instance</strong></h3>
+<p><strong><a href="https://ncura2.insight.uidaho.edu/" target="_blank">Click here to access the Vandalizer workshop instance <span class="math inline">\(\rightarrow\)</span></a></strong></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -258,7 +308,7 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>IMPORTANT - Keep this link open in your browser during the workshop!</strong></p>
-<p>The workflow sharing links below will only work if you have the Vandalizer instance open in another tab or window. Additionally, these workflows are configured specifically for this instance and will only function during the conference period (available for the next 4 days).</p>
+<p>The workflow sharing links (found in the Workshop Materials section below) will only work if you have the Vandalizer instance open in another tab or window. Additionally, these workflows are configured specifically for this instance and will only function during the conference period (available for the next 4 days).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -281,9 +331,9 @@ Warning
 <hr>
 </section>
 </section>
-<section id="test-files" class="level2">
-<h2 class="anchored" data-anchor-id="test-files">Test Files</h2>
-<p>The following test files are provided to allow for low-risk experimentation with the Vandalizer system:</p>
+<section id="test-files-public" class="level2">
+<h2 class="anchored" data-anchor-id="test-files-public">Test Files (Public)</h2>
+<p>The following test files are provided to allow for low-risk experimentation with the Vandalizer system. <strong>No password is required to download these files:</strong></p>
 <ol type="1">
 <li><strong><a href="https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_NOFO.pdf" download="Sample_NOFO.pdf">Sample NOFO</a></strong>
 <ul>
@@ -307,42 +357,9 @@ Warning
 </ul></li>
 </ol>
 <hr>
-</section>
-<section id="sample-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="sample-workflows">Sample Workflows</h2>
-<p>Once you’ve signed in, you can add the following test workflows to your workspace by clicking the links below. Each workflow demonstrates different capabilities of Vandalizer:</p>
-<ol type="1">
-<li><strong><a href="https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fc38476292df6997bb5c" target="_blank">RFA Checklist Maker</a></strong>
-<ul>
-<li>Input: RFA</li>
-<li>Output: A structured checklist with key information extracted from an RFA</li>
-</ul></li>
-<li><strong><a href="https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fde8476292df6997bb69" target="_blank">Award Notice Compliance Analysis</a></strong>
-<ul>
-<li>Input: Federal Award Notices</li>
-<li>Output: A post-award summary that synthesizes all compliance terms and financial requirements into a single, structured ‘Compliance &amp; Financial Overview’ document</li>
-</ul></li>
-<li><strong><a href="https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fe56476292df6997bb6f" target="_blank">Federal Financial Report (FFR) Requirements</a></strong>
-<ul>
-<li>Input: Federal Award Notices</li>
-<li>Output: An actionable guide that isolates all FFR and financial reporting obligations</li>
-</ul></li>
-<li><strong><a href="https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fec5476292df6997bb74" target="_blank">Subaward Summary Generator</a></strong>
-<ul>
-<li>Input: Federal Award Notice</li>
-<li>Output: An actionable guide that isolates all FFR and financial reporting obligations, detailing submission schedules, systems, required data, and compliance rules</li>
-</ul></li>
-<li><strong><a href="https://ncura1.insight.uidaho.edu/workflows/duplicate/6906ff64476292df6997bb7e" target="_blank">Prior Approval Requirements Tracking Summary</a></strong>
-<ul>
-<li>Input: Federal Award Notice</li>
-<li>Output: A comprehensive tracking summary that isolates prior approval requirements</li>
-</ul></li>
-</ol>
-<hr>
-</section>
-<section id="getting-help" class="level2">
-<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
-<p>For detailed directions on how to use Vandalizer, please review the <a href="index.html">Vandalizer manual</a>.</p>
+<div class="text-center" style="margin-top: 30px; margin-bottom: 30px;">
+<p><strong>The Vandalizer workflow links and the <code>ncura1</code> instance link are located on a separate, protected page.</strong> <br> <button type="button" class="btn btn-primary btn-lg" onclick="accessWorkshopMaterials()" style="margin-top: 15px;"> 🔑 <strong>Access Workshop Materials</strong> </button></p>
+</div>
 
 
 </section>

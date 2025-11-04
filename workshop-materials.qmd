@@ -1,0 +1,48 @@
+---
+title: "Workshop Materials"
+format:
+  html:
+    page-layout: article
+    theme:
+      - pulse 
+---
+
+# 🔑 Workshop Materials & Workflows
+
+This page contains links to the specific Vandalizer instance and pre-built workflows for the NCURA workshop.
+
+## 🔗 Vandalizer Workshop Instance
+
+You must have this instance open to import the workflows listed below.
+
+[Vandalizer Workflow Instance Link $\rightarrow$](https://ncura1.insight.uidaho.edu/){target="_blank"}
+
+***
+
+## 🛠️ Sample Workflows to Import
+
+Click the links below to instantly add these pre-built workflows to your **ncura1** Vandalizer workspace.
+
+1.  **RFA Checklist Maker**
+    * *Description:* Input: RFA | Output: A structured checklist with key information extracted from an RFA
+    * [Import Workflow Link](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fc38476292df6997bb5c){target="_blank"}
+
+2.  **Award Notice Compliance Analysis**
+    * *Description:* Input: Federal Award Notices | Output: Post-award summary of compliance terms and financial requirements
+    * [Import Workflow Link](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fde8476292df6997bb69){target="_blank"}
+
+3.  **Federal Financial Report (FFR) Requirements**
+    * *Description:* Input: Federal Award Notices | Output: An actionable guide that isolates all FFR and financial reporting obligations
+    * [Import Workflow Link](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fe56476292df6997bb6f){target="_blank"}
+
+4.  **Subaward Summary Generator**
+    * *Description:* Input: Federal Award Notice | Output: Details on submission schedules, systems, required data, and compliance rules
+    * [Import Workflow Link](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fec5476292df6997bb74){target="_blank"}
+
+5.  **Prior Approval Requirements Tracking Summary**
+    * *Description:* Input: Federal Award Notice | Output: A comprehensive tracking summary that isolates prior approval requirements
+    * [Import Workflow Link](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906ff64476292df6997bb7e){target="_blank"}
+
+***
+
+[← Back to Main Page](index.html)

@@ -1,27 +1,36 @@
 ---
-title: ""
+title: "NCURA Regional Conference Workshop"
 format:
   html:
     page-layout: full
     include-after-body: scripts.html
+    theme:
+      - pulse 
 ---
 
 <script>
-// Simple password protection for NCURA workshop page
-(function() {
-  const correctPassword = "CostaMesa2025"; // Change this to your desired password
+// Function to handle the password prompt and redirect
+function accessWorkshopMaterials() {
+  const correctPassword = "CostaMesa2025"; 
+  const targetPage = "workshop-materials.html";
 
-  if (sessionStorage.getItem('ncura_authenticated') !== 'true') {
-    const password = prompt('This page requires a password. Please enter it to continue:');
-
-    if (password === correctPassword) {
-      sessionStorage.setItem('ncura_authenticated', 'true');
-    } else {
-      document.body.innerHTML = '<div style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;"><div style="text-align: center;"><h1>Access Denied</h1><p>Incorrect password. This page is restricted to workshop participants only.</p></div></div>';
-      document.body.style.margin = '0';
-    }
+  // Check if content is already unlocked for the session
+  if (sessionStorage.getItem('ncura_materials_authenticated') === 'true') {
+    window.location.href = targetPage;
+    return;
   }
-})();
+  
+  const password = prompt('This section requires a password. Please enter it to continue:');
+
+  if (password === correctPassword) {
+    // Set a session flag so the user is not prompted again during this session
+    sessionStorage.setItem('ncura_materials_authenticated', 'true');
+    // Redirect to the protected page
+    window.location.href = targetPage;
+  } else if (password !== null) { // Check if user pressed cancel (password is null)
+    alert('Access Denied. Incorrect password. Please try again or ask a workshop assistant.');
+  }
+}
 </script>
 
 :::: {.header-logos}
@@ -48,14 +57,14 @@ format:
 
 Welcome to the NCURA Regional Conference Workshop! This page contains resources and information for attendees participating in the Vandalizer workshop.
 
-### Access the Workshop Instance
+### **Access the Workshop Instance**
 
-**[Click here to access the Vandalizer workshop instance →](https://ncura1.insight.uidaho.edu/){target="_blank"}**
+**[Click here to access the Vandalizer workshop instance $\rightarrow$](https://ncura2.insight.uidaho.edu/){target="_blank"}**
 
 ::: {.callout-important}
 **IMPORTANT - Keep this link open in your browser during the workshop!**
 
-The workflow sharing links below will only work if you have the Vandalizer instance open in another tab or window. Additionally, these workflows are configured specifically for this instance and will only function during the conference period (available for the next 4 days).
+The workflow sharing links (found in the Workshop Materials section below) will only work if you have the Vandalizer instance open in another tab or window. Additionally, these workflows are configured specifically for this instance and will only function during the conference period (available for the next 4 days).
 :::
 
 ::: {.callout-warning}
@@ -68,13 +77,13 @@ Interested in implementing Vandalizer at your institution? Visit **[AI4RA at Uni
 
 ---
 
-## Test Files
+## Test Files (Public)
 
-The following test files are provided to allow for low-risk experimentation with the Vandalizer system:
+The following test files are provided to allow for low-risk experimentation with the Vandalizer system. **No password is required to download these files:**
 
 1. **[Sample NOFO](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_NOFO.pdf){download="Sample_NOFO.pdf"}**
    - A Notice of Funding Opportunity document showing typical grant announcement requirements and guidelines
-
+   
 2. **[Sample Grant](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_Grant.pdf){download="Sample_Grant.pdf"}**
    - A completed grant proposal demonstrating standard sections and formatting
 
@@ -89,32 +98,10 @@ The following test files are provided to allow for low-risk experimentation with
 
 ---
 
-## Sample Workflows
-
-Once you've signed in, you can add the following test workflows to your workspace by clicking the links below. Each workflow demonstrates different capabilities of Vandalizer:
-
-1. **[RFA Checklist Maker](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fc38476292df6997bb5c){target="_blank"}**
-   - Input: RFA
-   - Output: A structured checklist with key information extracted from an RFA
-
-2. **[Award Notice Compliance Analysis](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fde8476292df6997bb69){target="_blank"}**
-   - Input: Federal Award Notices
-   - Output: A post-award summary that synthesizes all compliance terms and financial requirements into a single, structured 'Compliance & Financial Overview' document
-
-3. **[Federal Financial Report (FFR) Requirements](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fe56476292df6997bb6f){target="_blank"}**
-   - Input: Federal Award Notices
-   - Output: An actionable guide that isolates all FFR and financial reporting obligations
-
-4. **[Subaward Summary Generator](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906fec5476292df6997bb74){target="_blank"}**
-   - Input: Federal Award Notice
-   - Output: An actionable guide that isolates all FFR and financial reporting obligations, detailing submission schedules, systems, required data, and compliance rules
-
-5. **[Prior Approval Requirements Tracking Summary](https://ncura1.insight.uidaho.edu/workflows/duplicate/6906ff64476292df6997bb7e){target="_blank"}**
-   - Input: Federal Award Notice
-   - Output: A comprehensive tracking summary that isolates prior approval requirements
-
----
-
-## Getting Help
-
-For detailed directions on how to use Vandalizer, please review the [Vandalizer manual](index.html).
+<div class="text-center" style="margin-top: 30px; margin-bottom: 30px;">
+  **The Vandalizer workflow links and the `ncura1` instance link are located on a separate, protected page.**
+  <br>
+  <button type="button" class="btn btn-primary btn-lg" onclick="accessWorkshopMaterials()" style="margin-top: 15px;">
+    🔑 **Access Workshop Materials**
+  </button>
+</div>
