@@ -55,17 +55,11 @@ function accessWorkshopMaterials() {
 
 ## Workshop Overview
 
-Welcome to the NCURA Regional Conference Workshop! This page contains resources and information for attendees participating in the Vandalizer workshop.
+Welcome to the NCURA Regional Conference! This page contains resources and information for attendees participating in the Vandalizer workshop, concurrent presentation and discussion session.
 
-### **Access the Workshop Instance**
+### **Access**
 
 **[Click here to access the Vandalizer workshop instance $\rightarrow$](https://ncura2.insight.uidaho.edu/){target="_blank"}**
-
-::: {.callout-important}
-**IMPORTANT - Keep this link open in your browser during the workshop!**
-
-The workflow sharing links (found in the Workshop Materials section below) will only work if you have the Vandalizer instance open in another tab or window. Additionally, these workflows are configured specifically for this instance and will only function during the conference period (available for the next 4 days).
-:::
 
 ::: {.callout-warning}
 **Security Note**: These instances run on University of Idaho infrastructure and access cloud services. **Please do not upload sensitive information.**
@@ -79,7 +73,7 @@ Interested in implementing Vandalizer at your institution? Visit **[AI4RA at Uni
 
 ## Test Files (Public)
 
-The following test files are provided to allow for low-risk experimentation with the Vandalizer system. **No password is required to download these files:**
+The following test files are provided to allow for low-risk experimentation with the Vandalizer system.
 
 1. **[Sample NOFO](https://github.com/ui-insight/vandalizer-manual/raw/main/test-files/Sample_NOFO.pdf){download="Sample_NOFO.pdf"}**
    - A Notice of Funding Opportunity document showing typical grant announcement requirements and guidelines

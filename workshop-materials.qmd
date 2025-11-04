@@ -19,6 +19,12 @@ You must have this instance open to import the workflows listed below.
 
 ***
 
+::: {.callout-important}
+**IMPORTANT - Keep this link open in your browser during the workshop!**
+
+The workflow sharing links (found in the Workshop Materials section below) will only work if you have the Vandalizer instance open in another tab or window. Additionally, these workflows are configured specifically for this instance and will only function during the conference period (available for the next 4 days).
+:::
+
 ## 🛠️ Sample Workflows to Import
 
 Click the links below to instantly add these pre-built workflows to your **ncura1** Vandalizer workspace.
