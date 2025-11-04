@@ -1,5 +1,5 @@
 ---
-title: "NCURA Regional Conference Workshop"
+title: "NCURA Regional Conference"
 format:
   html:
     page-layout: full
@@ -50,16 +50,16 @@ function accessWorkshopMaterials() {
 ---
 
 ::: {.text-center}
-# NCURA Regional Conference Workshop
+# NCURA Regional Conference
 :::
 
-## Workshop Overview
+## Overview
 
 Welcome to the NCURA Regional Conference! This page contains resources and information for attendees participating in the Vandalizer workshop, concurrent presentation and discussion session.
 
 ### **Access**
 
-**[Click here to access the Vandalizer workshop instance $\rightarrow$](https://ncura2.insight.uidaho.edu/){target="_blank"}**
+**[Click here to access the Vandalizer instance $\rightarrow$](https://ncura2.insight.uidaho.edu/){target="_blank"}**
 
 ::: {.callout-warning}
 **Security Note**: These instances run on University of Idaho infrastructure and access cloud services. **Please do not upload sensitive information.**
