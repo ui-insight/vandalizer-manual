@@ -99,3 +99,5 @@ The following test files are provided to allow for low-risk experimentation with
     🔑 **Access Workshop Materials**
   </button>
 </div>
+
+[Sample Workflow](https://ncura2.insight.uidaho.edu/workflows/duplicate/690a3fe7e56952e827b2796b)
