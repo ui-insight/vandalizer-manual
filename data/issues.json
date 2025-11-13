@@ -1,14 +1,58 @@
 [
   {
     "assignees": [],
+    "created_at": "2025-11-12T19:46:20Z",
+    "id": 3617971075,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 238,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Barrie's small tweaks Vandalizer 3.0",
+    "updated_at": "2025-11-12T20:14:56Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/238"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-11-12T19:34:25Z",
+    "id": 3617933103,
+    "labels": [
+      "bug"
+    ],
+    "number": 237,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "new NSF Extraction fields don't work",
+    "updated_at": "2025-11-12T19:39:17Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/237"
+  },
+  {
+    "assignees": [],
+    "created_at": "2025-11-12T19:32:20Z",
+    "id": 3617927220,
+    "labels": [
+      "bug"
+    ],
+    "number": 236,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Stuck in page view",
+    "updated_at": "2025-11-12T19:39:30Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/236"
+  },
+  {
+    "assignees": [],
     "created_at": "2025-11-11T21:36:42Z",
     "id": 3614008986,
-    "labels": [],
+    "labels": [
+      "bug"
+    ],
     "number": 235,
     "repository": "ui-insight/vandalizer",
     "state": "open",
     "title": "New Prompt Task does not run.",
-    "updated_at": "2025-11-12T00:15:41Z",
+    "updated_at": "2025-11-12T19:39:42Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/235"
   },
   {
