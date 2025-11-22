@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./issue-tracker.html" rel="next">
-<link href="./share-workflows.html" rel="prev">
+<link href="./global-tasks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,8 +42,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-459f15dc1b2d1fa8309c6bff0d21de83.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -136,12 +134,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./interface.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Interface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./tasks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tasks</span></a>
   </div>
@@ -154,14 +146,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./global-tasks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Global Tasks</span></a>
+  <a href="./create-workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Create and Share a Workflow</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./share-workflows.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Share Workflows</span></a>
+  <a href="./global-tasks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Global Tasks</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -176,12 +168,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Issue Tracker</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./ncura1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NCURA Conference</span></a>
-  </div>
-</li>
     </ul>
     </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
@@ -192,11 +178,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#understanding-the-challenge" id="toc-understanding-the-challenge" class="nav-link" data-scroll-target="#understanding-the-challenge">Understanding the Challenge</a></li>
   <li><a href="#creating-your-rfa-checklist-workflow" id="toc-creating-your-rfa-checklist-workflow" class="nav-link" data-scroll-target="#creating-your-rfa-checklist-workflow">Creating Your RFA Checklist Workflow</a>
   <ul class="collapse">
-  <li><a href="#step-1-upload-your-rfa-document" id="toc-step-1-upload-your-rfa-document" class="nav-link" data-scroll-target="#step-1-upload-your-rfa-document">Step 1: Upload Your RFA Document</a></li>
-  <li><a href="#step-2-design-your-tasks" id="toc-step-2-design-your-tasks" class="nav-link" data-scroll-target="#step-2-design-your-tasks">Step 2: Design Your Tasks</a></li>
-  <li><a href="#step-3-build-your-workflow" id="toc-step-3-build-your-workflow" class="nav-link" data-scroll-target="#step-3-build-your-workflow">Step 3: Build Your Workflow</a></li>
-  <li><a href="#step-4-run-your-workflow" id="toc-step-4-run-your-workflow" class="nav-link" data-scroll-target="#step-4-run-your-workflow">Step 4: Run Your Workflow</a></li>
-  <li><a href="#step-5-reuse-with-future-rfas" id="toc-step-5-reuse-with-future-rfas" class="nav-link" data-scroll-target="#step-5-reuse-with-future-rfas">Step 5: Reuse With Future RFAs</a></li>
+  <li><a href="#step-1-design-your-tasks" id="toc-step-1-design-your-tasks" class="nav-link" data-scroll-target="#step-1-design-your-tasks">Step 1: Design Your Tasks</a></li>
+  <li><a href="#step-2-build-your-workflow" id="toc-step-2-build-your-workflow" class="nav-link" data-scroll-target="#step-2-build-your-workflow">Step 2: Build Your Workflow</a></li>
+  <li><a href="#step-3-run-your-workflow" id="toc-step-3-run-your-workflow" class="nav-link" data-scroll-target="#step-3-run-your-workflow">Step 3: Run Your Workflow</a></li>
+  <li><a href="#step-4-reuse-with-future-rfas" id="toc-step-4-reuse-with-future-rfas" class="nav-link" data-scroll-target="#step-4-reuse-with-future-rfas">Step 4: Reuse With Future RFAs</a></li>
   </ul></li>
   <li><a href="#other-workflow-ideas" id="toc-other-workflow-ideas" class="nav-link" data-scroll-target="#other-workflow-ideas">Other Workflow Ideas</a></li>
   </ul>
@@ -212,33 +197,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<style>
-/* Custom styling for image alignment and caption centering */
-figure {
-  display: block;
-  margin: 0;
-  padding: 0;
-  text-align: left; /* Left align the figure container */
-}
-
-figure img {
-  display: block;
-  margin-left: 0; /* Left align the image */
-  margin-right: auto;
-}
-
-.figure-caption {
-  display: block;
-  text-align: center; /* Center the caption text */
-  width: 100%; /* Match the width of the image */
-  margin-top: 8px;
-}
-
-/* For grid images */
-.grid figure {
-  width: 100%;
-}
-</style>
 <div class="header-logos">
 <div class="grid">
 <div class="g-col-2 d-flex justify-content-center align-items-center">
@@ -284,38 +242,8 @@ figure img {
 </section>
 <section id="creating-your-rfa-checklist-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="creating-your-rfa-checklist-workflow">Creating Your RFA Checklist Workflow</h2>
-<section id="step-1-upload-your-rfa-document" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-upload-your-rfa-document">Step 1: Upload Your RFA Document</h3>
-<p>Begin by uploading an RFA document to the Document Viewer window. You can simply drag and drop the file or use the <img src="images/buttons/upload-file-btn.png" height="30" alt="Upload File"> button.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step1-upload.gif" class="border shadow img-fluid figure-img" style="width:90.0%"></p>
-<figcaption>Uploading an RFA document to Vandalizer</figcaption>
-</figure>
-</div>
-<p>Vandalizer will immediately begin analyzing the document with its Optical Character Recognition (OCR) process, indicated by the spinner icon in the corner. Wait for this process to complete—when you see the <i class="fa-solid fa-code" aria-label="code"></i> icon, Vandalizer has successfully extracted all the text and is ready for the next step.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step1-ocr-process.gif" class="border shadow img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>Document processing with OCR</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Take a moment to click the <i class="fa-solid fa-code" aria-label="code"></i> icon and review the extracted text to ensure the document was processed correctly before proceeding.</p>
-</div>
-</div>
-</section>
-<section id="step-2-design-your-tasks" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-design-your-tasks">Step 2: Design Your Tasks</h3>
+<section id="step-1-design-your-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-design-your-tasks">Step 1: Design Your Tasks</h3>
 <p>For an effective RFA checklist, you’ll need to create two types of tasks:</p>
 <ol type="1">
 <li><strong>Six Parallel Prompt Tasks</strong> - These tasks will identify and pull out specific categories of information from the RFA document regardless of where it appears or how it’s labeled. You’ll create separate prompt tasks for:
@@ -329,49 +257,12 @@ Tip
 </ul></li>
 <li><strong>Formatting Prompt Task</strong> - This task will organize and consolidate all the information gathered by the six prompt tasks into a clean, standardized checklist format.</li>
 </ol>
-<p>Click the <img src="images/buttons/tasks-btn.png" height="30" alt="Tasks"> button on the bottom right and then click the <img src="images/buttons/new-task-btn.png" height="30" alt="+NEW TASK"> button. Select <strong>Prompt</strong> from the options and type in your prompt. Repeat these steps for all 6 prompt tasks and then the formatting prompt.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step2a-create-task.gif" class="border shadow img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Creating a new prompt task</figcaption>
-</figure>
-</div>
+<p>Click the <strong>Tasks</strong> button on the bottom right and then click the <strong>+NEW TASK</strong> button. Select <strong>Prompt</strong> from the options and type in your prompt. Repeat these steps for all 6 prompt tasks and then the formatting prompt.</p>
 </section>
-<section id="step-3-build-your-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-build-your-workflow">Step 3: Build Your Workflow</h3>
-<p>Navigate to the Workflows tab in the Toolbox window and click on the <img src="images/buttons/new-workflow-btn.png" height="30" alt="+New Workflow"> button.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step3-create-workflow.png" class="border shadow img-fluid figure-img" style="width:81.0%"></p>
-<figcaption>Creating a new workflow</figcaption>
-</figure>
-</div>
-<p>Then, click on the <img src="images/buttons/add-step-btn.png" height="30" alt="Add Step"> button.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step3-add-step.gif" class="border shadow img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Adding a step to the workflow</figcaption>
-</figure>
-</div>
-<p>Now click on the <img src="images/buttons/add-first-task-btn.png" height="30" alt="Add your first task"> button, click <strong>Prompts</strong>, and select your previously created prompt task. Repeat these steps to add the other 5 prompt tasks (In the same step).</p>
-<div class="grid align-items-center mb-4">
-<div class="g-col-6">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step3-add-tasks.gif" class="img-fluid border shadow figure-img"></p>
-<figcaption>Adding prompt tasks to first step</figcaption>
-</figure>
-</div>
-</div>
-<div class="g-col-6">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step3-all-tasks-added.png" class="img-fluid border shadow figure-img"></p>
-<figcaption>All 6 extraction tasks added</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="step-2-build-your-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-build-your-workflow">Step 2: Build Your Workflow</h3>
+<p>Navigate to the Workflows tab in the Toolbox window and click on the <strong>+New Workflow</strong> button. Then, click on the <strong>Add Step</strong> button.</p>
+<p>Now click on the <strong>Add your first task</strong> button, click <strong>Prompts</strong>, and select your previously created prompt task. Repeat these steps to add the other 5 prompt tasks (In the same step).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -385,28 +276,16 @@ Note
 <p>The parallel prompt task approach is particularly effective for RFAs because it allows each task to specialize in finding a specific type of information, even when that information is scattered throughout the document or described using different terminology across funding agencies.</p>
 </div>
 </div>
-<p>Now we will add a new step and do the same thing to add the formatting prompt task in a new step.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step3-add-formatting.gif" class="border shadow img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Adding the formatting prompt task</figcaption>
-</figure>
-</div>
+<p>Now add a new step and add the formatting prompt task in that new step.</p>
 </section>
-<section id="step-4-run-your-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="step-4-run-your-workflow">Step 4: Run Your Workflow</h3>
+<section id="step-3-run-your-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-run-your-workflow">Step 3: Run Your Workflow</h3>
 <p>With your workflow built, you’re ready to put it to work:</p>
 <ol type="1">
 <li>Make sure your RFA document is selected in the Document Viewer</li>
-<li>Click the <img src="images/buttons/run-workflow-btn.png" height="30" alt="Run Workflow"> button in the bottom right corner of the Toolbox window</li>
+<li>Click the <strong>Run Workflow</strong> button in the bottom right corner of the Toolbox window</li>
 <li>Watch as Vandalizer processes each step, first running all six prompt tasks in parallel and then formatting the combined results into your checklist</li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/examples/step5a-run-workflow.png" class="border shadow img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Running the workflow on your RFA document</figcaption>
-</figure>
-</div>
 <p>The result? A comprehensive, well-organized checklist containing all the critical information from the RFA, presented in a consistent format regardless of how the original document was structured.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -415,8 +294,8 @@ Note
 </figure>
 </div>
 </section>
-<section id="step-5-reuse-with-future-rfas" class="level3">
-<h3 class="anchored" data-anchor-id="step-5-reuse-with-future-rfas">Step 5: Reuse With Future RFAs</h3>
+<section id="step-4-reuse-with-future-rfas" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-reuse-with-future-rfas">Step 4: Reuse With Future RFAs</h3>
 <p>The real power of this workflow is its reusability. The next time you receive an RFA:</p>
 <ol type="1">
 <li>Upload the new document</li>
@@ -1720,8 +1599,8 @@ function initializeRoadmap() {
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="./share-workflows.html" class="pagination-link" aria-label="Share Workflows">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Share Workflows</span>
+      <a href="./global-tasks.html" class="pagination-link" aria-label="Global Tasks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Global Tasks</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -23,7 +23,7 @@ format:
 ::: {.text-center}
 # **A Beginner's Guide to Vandalizer** {.display-4}
 
-<span style="font-size: 0.5em; font-style: italic;">Version 2.1</span>
+<span style="font-size: 0.5em; font-style: italic;">Version 3.0</span>
 :::
 
 ::: {.text-center}

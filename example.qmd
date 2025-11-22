@@ -6,34 +6,6 @@ format:
     include-after-body: scripts.html
 ---
 
-<style>
-/* Custom styling for image alignment and caption centering */
-figure {
-  display: block;
-  margin: 0;
-  padding: 0;
-  text-align: left; /* Left align the figure container */
-}
-
-figure img {
-  display: block;
-  margin-left: 0; /* Left align the image */
-  margin-right: auto;
-}
-
-.figure-caption {
-  display: block;
-  text-align: center; /* Center the caption text */
-  width: 100%; /* Match the width of the image */
-  margin-top: 8px;
-}
-
-/* For grid images */
-.grid figure {
-  width: 100%;
-}
-</style>
-
 :::: {.header-logos}
 ::: {.grid}
 ::: {.g-col-2 .d-flex .justify-content-center .align-items-center}
@@ -76,21 +48,7 @@ This is where Vandalizer truly shines. Let's walk through creating a workflow th
 
 ## Creating Your RFA Checklist Workflow
 
-### Step 1: Upload Your RFA Document
-
-Begin by uploading an RFA document to the Document Viewer window. You can simply drag and drop the file or use the ![Upload File](images/buttons/upload-file-btn.png){height="30px"} button.
-
-![Uploading an RFA document to Vandalizer](images/examples/step1-upload.gif){.border .shadow width="90%"}
-
-Vandalizer will immediately begin analyzing the document with its Optical Character Recognition (OCR) process, indicated by the spinner icon in the corner. Wait for this process to complete—when you see the {{< fa code >}} icon, Vandalizer has successfully extracted all the text and is ready for the next step.
-
-![Document processing with OCR](images/examples/step1-ocr-process.gif){.border .shadow width="50%"}
-
-::: {.callout-tip}
-Take a moment to click the {{< fa code >}} icon and review the extracted text to ensure the document was processed correctly before proceeding.
-:::
-
-### Step 2: Design Your Tasks
+### Step 1: Design Your Tasks
 
 For an effective RFA checklist, you'll need to create two types of tasks:
 
@@ -104,55 +62,33 @@ For an effective RFA checklist, you'll need to create two types of tasks:
 
 2. **Formatting Prompt Task** - This task will organize and consolidate all the information gathered by the six prompt tasks into a clean, standardized checklist format.
 
-Click the ![Tasks](images/buttons/tasks-btn.png){height="30px"} button on the bottom right and then click the ![+NEW TASK](images/buttons/new-task-btn.png){height="30px"} button. Select **Prompt** from the options and type in your prompt. Repeat these steps for all 6 prompt tasks and then the formatting prompt.
+Click the **Tasks** button on the bottom right and then click the **+NEW TASK** button. Select **Prompt** from the options and type in your prompt. Repeat these steps for all 6 prompt tasks and then the formatting prompt.
 
-![Creating a new prompt task](images/examples/step2a-create-task.gif){.border .shadow width="80%"}
+### Step 2: Build Your Workflow
 
-### Step 3: Build Your Workflow
+Navigate to the Workflows tab in the Toolbox window and click on the **+New Workflow** button. Then, click on the **Add Step** button.
 
-Navigate to the Workflows tab in the Toolbox window and click on the ![+New Workflow](images/buttons/new-workflow-btn.png){height="30px"} button.
-
-![Creating a new workflow](images/examples/step3-create-workflow.png){.border .shadow width="81%"}
-
-Then, click on the ![Add Step](images/buttons/add-step-btn.png){height="30px"} button.
-
-![Adding a step to the workflow](images/examples/step3-add-step.gif){.border .shadow width="80%"}
-
-Now click on the ![Add your first task](images/buttons/add-first-task-btn.png){height="30px"} button, click **Prompts**, and select your previously created prompt task. Repeat these steps to add the other 5 prompt tasks (In the same step).
-
-::: {.grid .align-items-center .mb-4}
-::: {.g-col-6}
-![Adding prompt tasks to first step](images/examples/step3-add-tasks.gif){.img-fluid .border .shadow}
-:::
-
-::: {.g-col-6}
-![All 6 extraction tasks added](images/examples/step3-all-tasks-added.png){.img-fluid .border .shadow}
-:::
-:::
+Now click on the **Add your first task** button, click **Prompts**, and select your previously created prompt task. Repeat these steps to add the other 5 prompt tasks (In the same step).
 
 ::: {.callout-note}
 The parallel prompt task approach is particularly effective for RFAs because it allows each task to specialize in finding a specific type of information, even when that information is scattered throughout the document or described using different terminology across funding agencies.
 :::
 
-Now we will add a new step and do the same thing to add the formatting prompt task in a new step.
+Now add a new step and add the formatting prompt task in that new step.
 
-![Adding the formatting prompt task](images/examples/step3-add-formatting.gif){.border .shadow width="80%"}
-
-### Step 4: Run Your Workflow
+### Step 3: Run Your Workflow
 
 With your workflow built, you're ready to put it to work:
 
 1. Make sure your RFA document is selected in the Document Viewer
-2. Click the ![Run Workflow](images/buttons/run-workflow-btn.png){height="30px"} button in the bottom right corner of the Toolbox window
+2. Click the **Run Workflow** button in the bottom right corner of the Toolbox window
 3. Watch as Vandalizer processes each step, first running all six prompt tasks in parallel and then formatting the combined results into your checklist
-
-![Running the workflow on your RFA document](images/examples/step5a-run-workflow.png){.border .shadow width="80%"}
 
 The result? A comprehensive, well-organized checklist containing all the critical information from the RFA, presented in a consistent format regardless of how the original document was structured.
 
 ![Final checklist output from the workflow](images/examples/step5b-final-output.png){.border .shadow width="80%"}
 
-### Step 5: Reuse With Future RFAs
+### Step 4: Reuse With Future RFAs
 
 The real power of this workflow is its reusability. The next time you receive an RFA:
 

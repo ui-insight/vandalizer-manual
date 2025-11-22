@@ -22,22 +22,18 @@ website:
         href: introduction.qmd
       - text: "Security & Privacy"
         href: security.qmd
-      - text: "Interface"
-        href: interface.qmd
       - text: "Tasks"
         href: tasks.qmd
       - text: "Workflows"
         href: workflows.qmd
+      - text: "Create and Share a Workflow"
+        href: create-workflow.qmd
       - text: "Global Tasks"
         href: global-tasks.qmd
-      - text: "Share Workflows"
-        href: share-workflows.qmd
       - text: "Examples"
         href: example.qmd
       - text: "Issue Tracker"
         href: issue-tracker.qmd
-      - text: "NCURA Conference"
-        href: ncura1.qmd
 
 format:
   html:
