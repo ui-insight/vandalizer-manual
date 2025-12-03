@@ -32,8 +32,7 @@ Vandalizer allows you to choose between two processing modes:
 
 **Cloud Mode** sends data through third-party cloud services such as OpenAI and Anthropic—suitable for non-sensitive, general-purpose documents. Cloud mode leverages these scalable cloud resources for faster processing. Your documents are not sold or used to train commercial AI models; they are used only for your specific processing request.
 
-**Private Mode** keeps data within the University of Idaho's infrastructure at Idaho National Laboratory, staying on local hardware. Use this mode for confidential, sensitive, or regulated documents
-
+**Private Mode** keeps data within the University of Idaho's infrastructure at Idaho National Laboratory, staying on local hardware. Use this mode for more sensitive information that you want to remain on campus.
 Data in Private Mode never leaves our network and cannot be used to train external AI models. 
 
 Private mode also runs on servers housed at the Idaho National Laboratory, which is committed to renewable and alternative energy research and development. By choosing Private mode, you're supporting sustainable computing practices and infrastructure invested in clean energy innovation. Learn more at [![](images/inl_logo.png){width=60px}](https://inl.gov)
