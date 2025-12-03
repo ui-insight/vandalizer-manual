@@ -1,5 +1,21 @@
 [
   {
+    "assignees": [
+      "kandersonko"
+    ],
+    "created_at": "2025-12-02T21:20:57Z",
+    "id": 3687588533,
+    "labels": [
+      "enhancement"
+    ],
+    "number": 241,
+    "repository": "ui-insight/vandalizer",
+    "state": "open",
+    "title": "Globally verified workflows",
+    "updated_at": "2025-12-02T21:20:57Z",
+    "url": "https://github.com/ui-insight/vandalizer/issues/241"
+  },
+  {
     "assignees": [],
     "created_at": "2025-11-14T18:35:41Z",
     "id": 3626727296,
