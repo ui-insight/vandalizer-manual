@@ -8,9 +8,9 @@
     "labels": [],
     "number": 273,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Add a ReCaptcha to username and password",
-    "updated_at": "2026-02-26T18:45:04Z",
+    "updated_at": "2026-03-31T04:52:13Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/273"
   },
   {
@@ -20,9 +20,9 @@
     "labels": [],
     "number": 272,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Passive Vandalizer - Map shared local drive to SmartFolder in team",
-    "updated_at": "2026-02-12T20:42:43Z",
+    "updated_at": "2026-03-31T04:52:15Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/272"
   },
   {
@@ -32,9 +32,9 @@
     "labels": [],
     "number": 271,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Passive Vandalizer - Workflow Output to Email",
-    "updated_at": "2026-02-12T20:42:05Z",
+    "updated_at": "2026-03-31T04:52:18Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/271"
   },
   {
@@ -44,9 +44,9 @@
     "labels": [],
     "number": 270,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Passive Vandalizer - Workflow Output to Teams",
-    "updated_at": "2026-02-12T20:41:53Z",
+    "updated_at": "2026-03-31T04:52:20Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/270"
   },
   {
@@ -56,9 +56,9 @@
     "labels": [],
     "number": 269,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Pass Vandalizer - Write Output to Folder",
-    "updated_at": "2026-02-12T20:41:28Z",
+    "updated_at": "2026-03-31T04:52:23Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/269"
   },
   {
@@ -68,9 +68,9 @@
     "labels": [],
     "number": 268,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Passive Vandalizer - GraphQL",
-    "updated_at": "2026-02-12T20:40:50Z",
+    "updated_at": "2026-03-31T04:52:25Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/268"
   },
   {
@@ -80,9 +80,9 @@
     "labels": [],
     "number": 267,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Passive Vandalizer - Input from Folder",
-    "updated_at": "2026-02-12T20:39:57Z",
+    "updated_at": "2026-03-31T04:52:28Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/267"
   },
   {
@@ -92,9 +92,9 @@
     "labels": [],
     "number": 266,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Demo Instance - Usage Metrics",
-    "updated_at": "2026-02-12T21:04:13Z",
+    "updated_at": "2026-03-31T04:52:31Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/266"
   },
   {
@@ -104,9 +104,9 @@
     "labels": [],
     "number": 265,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Demo Instance - Web Form",
-    "updated_at": "2026-02-12T19:32:03Z",
+    "updated_at": "2026-03-31T04:52:33Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/265"
   },
   {
@@ -116,9 +116,9 @@
     "labels": [],
     "number": 264,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Demo Instance - Waitlist",
-    "updated_at": "2026-02-12T19:32:29Z",
+    "updated_at": "2026-03-31T04:52:36Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/264"
   },
   {
@@ -130,9 +130,9 @@
     ],
     "number": 263,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Vandalizer Application: Error Polling Workflow Status on RFPs Taking More Than 3 Minutes",
-    "updated_at": "2026-02-12T19:23:01Z",
+    "updated_at": "2026-03-31T04:52:38Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/263"
   },
   {
@@ -144,9 +144,9 @@
     ],
     "number": 262,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Batch Workflow Processing for Enterprise Edition of vandalizer",
-    "updated_at": "2026-02-12T19:22:37Z",
+    "updated_at": "2026-03-31T04:52:40Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/262"
   },
   {
@@ -160,9 +160,9 @@
     ],
     "number": 261,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Issue Encountered While Running Prompt in Vandalizer on GRANTED Project",
-    "updated_at": "2026-02-12T19:24:57Z",
+    "updated_at": "2026-03-31T04:52:43Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/261"
   },
   {
@@ -176,7 +176,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Customization: Custom AUTH",
-    "updated_at": "2026-02-12T19:25:21Z",
+    "updated_at": "2026-03-31T04:55:13Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/245"
   },
   {
@@ -190,7 +190,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Customization: Custom OCR",
-    "updated_at": "2026-02-12T19:25:29Z",
+    "updated_at": "2026-03-31T04:55:13Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/244"
   },
   {
@@ -204,7 +204,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Customization: Custom models",
-    "updated_at": "2026-02-12T19:25:37Z",
+    "updated_at": "2026-03-31T04:55:13Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/243"
   },
   {
@@ -218,7 +218,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Request for Hide/Minimize Activity Panel Feature in vandalizer",
-    "updated_at": "2025-12-18T18:39:58Z",
+    "updated_at": "2026-03-31T04:55:13Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/246"
   },
   {
@@ -232,7 +232,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Request for Workflow Duration Display in Vandalizer Application",
-    "updated_at": "2025-12-18T18:39:59Z",
+    "updated_at": "2026-03-31T04:55:14Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/247"
   },
   {
@@ -244,9 +244,9 @@
     ],
     "number": 248,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Issue with RFA or FOA Checklist Workflow in vandalizer Application",
-    "updated_at": "2025-12-15T19:16:06Z",
+    "updated_at": "2026-03-31T04:52:46Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/248"
   },
   {
@@ -258,9 +258,9 @@
     ],
     "number": 249,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Issue with RFA Complete Checklist Timer in Vandalizer (Windows, Chrome)",
-    "updated_at": "2025-12-15T19:16:24Z",
+    "updated_at": "2026-03-31T04:52:48Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/249"
   },
   {
@@ -272,9 +272,9 @@
     ],
     "number": 250,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Issue with OCR on .docx files containing images in Vandalizer application",
-    "updated_at": "2025-12-15T19:16:43Z",
+    "updated_at": "2026-03-31T04:52:51Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/250"
   },
   {
@@ -288,9 +288,9 @@
     ],
     "number": 241,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Globally verified workflows",
-    "updated_at": "2025-12-15T19:22:56Z",
+    "updated_at": "2026-03-31T04:55:13Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/241"
   },
   {
@@ -302,9 +302,9 @@
     ],
     "number": 251,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Request for Task Visibility within Workflow in vandalizer Application",
-    "updated_at": "2025-12-15T19:17:14Z",
+    "updated_at": "2026-03-31T04:52:56Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/251"
   },
   {
@@ -316,9 +316,9 @@
     ],
     "number": 252,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Issue with task deletion in vandalizer's Admin Dashboard",
-    "updated_at": "2025-12-15T19:27:35Z",
+    "updated_at": "2026-03-31T04:55:17Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/252"
   },
   {
@@ -330,9 +330,9 @@
     ],
     "number": 239,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Task Verification Screen keeps disappearing",
-    "updated_at": "2025-11-14T18:35:41Z",
+    "updated_at": "2026-03-31T04:53:01Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/239"
   },
   {
@@ -344,9 +344,9 @@
     ],
     "number": 238,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Barrie's small tweaks Vandalizer 3.0",
-    "updated_at": "2025-11-12T20:14:56Z",
+    "updated_at": "2026-03-31T04:53:04Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/238"
   },
   {
@@ -358,9 +358,9 @@
     ],
     "number": 237,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "new NSF Extraction fields don't work",
-    "updated_at": "2025-11-12T19:39:17Z",
+    "updated_at": "2026-03-31T04:53:07Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/237"
   },
   {
@@ -386,9 +386,9 @@
     ],
     "number": 253,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Vandalizer Application - Scanning Animation Glitch During Workflow Execution on Windows Chrome",
-    "updated_at": "2025-12-15T19:17:55Z",
+    "updated_at": "2026-03-31T04:53:10Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/253"
   },
   {
@@ -400,9 +400,9 @@
     ],
     "number": 235,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "New Prompt Task does not run.",
-    "updated_at": "2025-11-15T00:13:34Z",
+    "updated_at": "2026-03-31T04:53:12Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/235"
   },
   {
@@ -482,9 +482,9 @@
     "labels": [],
     "number": 229,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Global telemetry",
-    "updated_at": "2026-01-20T19:08:08Z",
+    "updated_at": "2026-03-31T04:55:12Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/229"
   },
   {
@@ -506,9 +506,9 @@
     "labels": [],
     "number": 227,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Usage agreements",
-    "updated_at": "2025-12-15T19:25:39Z",
+    "updated_at": "2026-03-31T04:55:17Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/227"
   },
   {
@@ -530,9 +530,9 @@
     "labels": [],
     "number": 225,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Vandalizer 3.1",
-    "updated_at": "2025-10-15T16:39:28Z",
+    "updated_at": "2026-03-31T04:53:19Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/225"
   },
   {
@@ -544,9 +544,9 @@
     "labels": [],
     "number": 224,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "NSF Extraction disappeared",
-    "updated_at": "2025-12-15T19:25:31Z",
+    "updated_at": "2026-03-31T04:55:17Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/224"
   },
   {
@@ -558,9 +558,9 @@
     "labels": [],
     "number": 223,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Add download for admin report",
-    "updated_at": "2025-10-15T16:40:32Z",
+    "updated_at": "2026-03-31T04:53:24Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/223"
   },
   {
@@ -574,7 +574,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Extractions and building extractions from documents don't obey current model selection",
-    "updated_at": "2025-12-15T19:11:47Z",
+    "updated_at": "2026-03-31T04:55:12Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/222"
   },
   {
@@ -586,9 +586,9 @@
     ],
     "number": 254,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Alignment of AI Tool Output with SCO Reporting Requirements for Contract and Agreement Extraction",
-    "updated_at": "2025-12-15T19:18:17Z",
+    "updated_at": "2026-03-31T04:53:26Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/254"
   },
   {
@@ -600,9 +600,9 @@
     ],
     "number": 255,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Workflow Output Source Linking Feature",
-    "updated_at": "2025-12-15T19:18:48Z",
+    "updated_at": "2026-03-31T04:53:29Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/255"
   },
   {
@@ -630,7 +630,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Workflow download needs to by asynchronous with an indicator",
-    "updated_at": "2026-02-12T19:24:09Z",
+    "updated_at": "2026-03-31T04:55:17Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/221"
   },
   {
@@ -768,9 +768,9 @@
     ],
     "number": 217,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Internal Server Error When Deleting Documents with Failed OCR",
-    "updated_at": "2025-12-15T19:25:22Z",
+    "updated_at": "2026-03-31T04:55:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/217"
   },
   {
@@ -798,9 +798,9 @@
     ],
     "number": 215,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Workflow Creation Issue in Vandalizer Application",
-    "updated_at": "2025-12-15T19:25:18Z",
+    "updated_at": "2026-03-31T04:55:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/215"
   },
   {
@@ -924,9 +924,9 @@
     ],
     "number": 189,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Automated Award Letter Data Extraction in Vandalizer",
-    "updated_at": "2025-12-15T19:25:12Z",
+    "updated_at": "2026-03-31T04:55:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/189"
   },
   {
@@ -1102,9 +1102,9 @@
     "labels": [],
     "number": 166,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "If a user clicks run workflow without anything in it, throw an error",
-    "updated_at": "2025-12-15T19:25:07Z",
+    "updated_at": "2026-03-31T04:55:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/166"
   },
   {
@@ -1170,9 +1170,9 @@
     ],
     "number": 188,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Usage Metrics and Statistics for Vandalizer Application",
-    "updated_at": "2025-10-17T17:18:01Z",
+    "updated_at": "2026-03-31T04:53:40Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/188"
   },
   {
@@ -1682,9 +1682,9 @@
     ],
     "number": 155,
     "repository": "ui-insight/vandalizer",
-    "state": "open",
+    "state": "closed",
     "title": "Integration API 404 Error in Vandalizer Application",
-    "updated_at": "2025-12-15T19:25:01Z",
+    "updated_at": "2026-03-31T04:55:16Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/155"
   },
   {
@@ -3052,7 +3052,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Generate a workflow from a checklist document.",
-    "updated_at": "2025-04-01T21:24:16Z",
+    "updated_at": "2026-03-31T04:55:08Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/16"
   },
   {
@@ -3096,7 +3096,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Plugin / Addon for Microsoft Excel",
-    "updated_at": "2025-03-24T17:34:35Z",
+    "updated_at": "2026-03-31T04:55:08Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/13"
   },
   {
@@ -3110,7 +3110,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Plugin / Addon for Microsoft Word",
-    "updated_at": "2025-03-24T17:34:46Z",
+    "updated_at": "2026-03-31T04:55:08Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/12"
   },
   {
@@ -3122,7 +3122,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Document highlighting from a prompt",
-    "updated_at": "2025-03-24T17:35:19Z",
+    "updated_at": "2026-03-31T04:55:08Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/11"
   },
   {
@@ -3136,7 +3136,7 @@
     "repository": "ui-insight/vandalizer",
     "state": "closed",
     "title": "Extraction Highlight",
-    "updated_at": "2025-04-01T21:24:38Z",
+    "updated_at": "2026-03-31T04:55:08Z",
     "url": "https://github.com/ui-insight/vandalizer/issues/10"
   },
   {
